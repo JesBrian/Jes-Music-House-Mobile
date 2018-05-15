@@ -1,4 +1,5 @@
 {
-  "name": "musicHouse",
-  "displayName": "musicHouse"
+  "expo": {
+    "sdkVersion": "27.0.0"
+  }
 }
