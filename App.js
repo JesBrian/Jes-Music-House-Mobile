@@ -1,5 +1,7 @@
-import React  from 'react';
-import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+import React  from 'react'
+import { StyleSheet, Text, View, Switch, TouchableHighlight } from 'react-native'
+
+import MyButton from './src/components/MyButton.js'
 
 export default class App extends React.Component {
   state = {
@@ -22,8 +24,13 @@ export default class App extends React.Component {
           <Text>Button</Text>
         </TouchableHighlight>
         <Text>点击次数: {this.state.likes}</Text>
+
+        <Switch value={true}/>
+
+        {/*<MyButton/>*/}
+        <MyButton/>
       </View>
-    );
+    )
   }
 }
 
@@ -34,4 +41,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})
