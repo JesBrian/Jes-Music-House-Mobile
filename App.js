@@ -1,12 +1,27 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React  from 'react';
+import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
 export default class App extends React.Component {
+  state = {
+    likes: 0
+  }
+
+  onPressButton = () => {
+    const { likes } = this.state
+    this.setState({
+      likes: likes + 1
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text>Hello World!</Text>
         <Text>Hello React Native!</Text>
+        <TouchableHighlight onPress={this.onPressButton}>
+          <Text>Button</Text>
+        </TouchableHighlight>
+        <Text>点击次数: {this.state.likes}</Text>
       </View>
     );
   }
