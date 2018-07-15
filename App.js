@@ -1,7 +1,7 @@
 import React  from 'react'
 import { StyleSheet, Text, View, Switch, TouchableHighlight } from 'react-native'
 
-import MyButton from './src/components/MyButton.js'
+import SuperButton from './src/components/SuperButton.js'
 
 export default class App extends React.Component {
   state = {
@@ -27,8 +27,8 @@ export default class App extends React.Component {
 
         <Switch value={true}/>
 
-        {/*<MyButton/>*/}
-        <MyButton/>
+        <SuperButton />
+
       </View>
     )
   }
