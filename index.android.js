@@ -4,7 +4,8 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React  from 'react';
+
 import {
   AppRegistry,
   StyleSheet,
@@ -12,20 +13,17 @@ import {
   View
 } from 'react-native';
 
-export default class MusicHouseApp extends Component {
+import LinearGradient from 'react-native-linear-gradient'
+import SuperButton from './src/components/SuperButton.js'
+
+export default class MusicHouseApp extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu 666
-        </Text>
+        <Text>用户登录 88</Text>
+
+        <SuperButton/>
+
       </View>
     );
   }
@@ -36,18 +34,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    backgroundColor: 'transparent'
+  }
 });
 
 AppRegistry.registerComponent('MusicHouseApp', () => MusicHouseApp);
