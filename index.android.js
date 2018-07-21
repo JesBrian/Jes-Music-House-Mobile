@@ -22,7 +22,7 @@ export default class MusicHouseApp extends React.Component {
       <View style={styles.container}>
         <Text>用户登录 88</Text>
 
-        <SuperButton/>
+        <SuperButton label="6长8时间6ghy6" />
 
       </View>
     );
