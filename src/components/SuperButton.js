@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient'
+import {BoxShadow}  from 'react-native-shadow'
 
 
 export default class SuperButton extends React.Component {
@@ -28,34 +29,65 @@ export default class SuperButton extends React.Component {
   }
 
   render () {
+
+    const shadowOpt = {
+      normal: {
+        width:88,
+        height:35,
+        color:"#282828",
+        border:3,
+        radius:3,
+        opacity:0.8,
+        x:0,
+        y:1,
+        style:{marginVertical:5}
+      },
+      active: {
+        width:88,
+        height:35,
+        color:"#000",
+        border:2,
+        radius:3,
+        opacity:0.8,
+        x:0,
+        y:1,
+        style:{marginVertical:5}
+      }
+    }
+
     return (
-      <TouchableWithoutFeedback onPressIn={e => this.buttonOnPress(e)} onPressOut={e => this.buttonOnPress(e)}>
-        <LinearGradient colors={this.state.isClick === false ? this.state.normalOutColorArray : this.state.clickOutColorArray} style={styles.superButtonOut}>
-          <LinearGradient colors={this.state.isClick === false ? this.state.normalInColorArray : this.state.clickInColorArray} style={styles.superButtonIn}>
-            <Text style={{color:'#fff', fontSize: 16,}}>
-              {this.props.label}
-            </Text>
+      <BoxShadow setting={this.state.isClick === false ? shadowOpt.normal : shadowOpt.active}>
+        <TouchableWithoutFeedback onPressIn={e => this.buttonOnPress(e)} onPressOut={e => this.buttonOnPress(e)}>
+          <LinearGradient colors={this.state.normalOutColorArray} style={styles.superButtonOut}>
+            <LinearGradient colors={this.state.isClick === false ? this.state.normalInColorArray : this.state.clickInColorArray} style={[styles.superButtonIn, this.state.isClick === true ? styles.superButtonInActive : '']}>
+              <Text style={{color:'#AAA', fontSize:16, textShadowOffset:{width:2, height:2}, textShadowRadius:2, textShadowColor:'#000'}}>
+                {this.props.label}
+              </Text>
+            </LinearGradient>
           </LinearGradient>
-        </LinearGradient>
-      </TouchableWithoutFeedback>
+        </TouchableWithoutFeedback>
+      </BoxShadow>
     )
   }
 }
 
 const styles = StyleSheet.create({
   superButtonOut: {
-    padding:6,
+    padding:5,
     justifyContent:'center',
     alignItems:'center',
-    borderRadius:4
+    borderRadius:2,
   },
   superButtonIn: {
+    width:'100%',
     height:25,
-    paddingLeft:8,
-    paddingRight:8,
     paddingBottom:1,
     justifyContent:'center',
     alignItems:'center',
-    borderRadius:2
+    borderWidth:1,
+    borderColor:'#555',
   },
+  superButtonInActive: {
+    borderColor:'#000'
+  }
 });

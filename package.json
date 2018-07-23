@@ -11,6 +11,8 @@
 		"react": "16.0.0-alpha.6",
 		"react-native": "0.44.3",
 		"react-native-linear-gradient": "^2.4.0",
+		"react-native-shadow": "^1.2.2",
+		"react-native-svg": "^4.6.1",
 		"watchman": "^1.0.0"
 	},
 	"devDependencies": {
