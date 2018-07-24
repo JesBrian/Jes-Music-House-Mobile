@@ -13,7 +13,6 @@ import {
   View
 } from 'react-native';
 
-import LinearGradient from 'react-native-linear-gradient'
 import SuperButton from './src/components/SuperButton.js'
 
 export default class MusicHouseApp extends React.Component {
