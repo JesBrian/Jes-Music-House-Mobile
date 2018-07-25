@@ -3,19 +3,15 @@ import React  from 'react';
 import {
   StyleSheet,
   View,
-  Text,
-  Button
+  Text
 } from 'react-native';
 
 import SuperButton from '../components/SuperButton.js'
 import LeftMenuPanel from '../components/layout/LeftMenuPanel.js'
 import Drawer from 'react-native-drawer'
-import TopNavbar from "../components/layout/TopNavbar";
 
 
 export default class Index extends React.Component {
-
-
   closeControlPanel = () => {
     this._drawer.close()
   };
@@ -48,7 +44,6 @@ export default class Index extends React.Component {
       >
 
         <View style={styles.container}>
-          <TopNavbar />
 
           <Text onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
 
