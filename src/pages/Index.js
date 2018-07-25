@@ -1,24 +1,21 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React  from 'react';
 
 import {
   StyleSheet,
+  View,
   Text,
-  View
+  Button
 } from 'react-native';
 
-import SuperButton from '../SuperButton.js'
-import LeftMenuPanel from '../layout/LeftMenuPanel.js'
+import SuperButton from '../components/SuperButton.js'
+import LeftMenuPanel from '../components/layout/LeftMenuPanel.js'
 import Drawer from 'react-native-drawer'
-import TopNavbar from "../layout/TopNavbar";
+import TopNavbar from "../components/layout/TopNavbar";
 
 
-export default class MusicHouseApp extends React.Component {
+export default class Index extends React.Component {
+
+
   closeControlPanel = () => {
     this._drawer.close()
   };
