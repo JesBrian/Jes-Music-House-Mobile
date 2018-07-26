@@ -15,6 +15,9 @@ export default class Login extends React.Component {
       <View style={styles.container}>
         <Text onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
         <SuperButton label="登录" />
+
+
+        <Text onPress={()=>this.props.navigation.navigate('Register')} >跳转到注册页面</Text>
       </View>
     );
   }

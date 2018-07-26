@@ -3,12 +3,13 @@ import React  from 'react';
 import {
   StyleSheet,
   View,
-  Text
+  Text,
+  Button
 } from 'react-native';
 
 import SuperButton from '../components/SuperButton.js'
-import LeftMenuPanel from '../components/layout/LeftMenuPanel.js'
 import Drawer from 'react-native-drawer'
+import LeftMenuPanel from '../layout/LeftMenuPanel.js'
 
 
 export default class Index extends React.Component {
@@ -34,7 +35,7 @@ export default class Index extends React.Component {
 
         ref={(ref) => this._drawer = ref}
 
-        content={<LeftMenuPanel closeControlPanel={this.closeControlPanel}/>}
+        content={<LeftMenuPanel closeControlPanel={this.closeControlPanel} navigation={this.props.navigation}/>}
 
         styles={drawerStyles}
 
@@ -45,9 +46,12 @@ export default class Index extends React.Component {
 
         <View style={styles.container}>
 
-          <Text onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
+          <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
 
           <SuperButton label="g3好gbg" />
+
+
+          <Button title='跳转到详情' onPress={()=>this.props.navigation.navigate('Login')} />
         </View>
 
       </Drawer>
