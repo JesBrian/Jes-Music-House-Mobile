@@ -7,9 +7,10 @@ import {
   Button
 } from 'react-native';
 
-import SuperButton from '../components/SuperButton.js'
+import IndexTopNavbar from '../layout/Top/IndexTopNavbar.js'
+import LeftMenuPanel from '../layout/Left/LeftMenuPanel.js'
 import Drawer from 'react-native-drawer'
-import LeftMenuPanel from '../layout/LeftMenuPanel.js'
+import SuperButton from '../components/SuperButton.js'
 
 
 export default class Index extends React.Component {
@@ -45,13 +46,17 @@ export default class Index extends React.Component {
       >
 
         <View style={styles.container}>
+          <IndexTopNavbar />
+
 
           <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
 
           <SuperButton label="g3好gbg" />
 
 
-          <Button title='跳转到详情' onPress={()=>this.props.navigation.navigate('Login')} />
+          <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Login')} />
+          <Button title='跳转到歌单' onPress={()=>this.props.navigation.navigate('PlayList')} />
+          <Button title='跳转到歌手' onPress={()=>this.props.navigation.navigate('Singer')} />
         </View>
 
       </Drawer>

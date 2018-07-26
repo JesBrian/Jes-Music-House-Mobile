@@ -14,6 +14,8 @@ import { StackNavigator } from 'react-navigation'
 import Index from './src/pages/Index.js'
 import Login from './src/pages/Login.js'
 import Register from './src/pages/Register.js'
+import Singer from './src/pages/Singer.js'
+import PlayList from './src/pages/PlayList.js'
 
 
 // 注册导航
@@ -21,6 +23,8 @@ const PageRouter = StackNavigator({
   Index: { screen: Index },
   Login: { screen: Login },
   Register: { screen: Register },
+  Singer: { screen: Singer },
+  PlayList: { screen: PlayList },
 }, {
   initialRouteName: 'Index', // 默认显示界面
 
