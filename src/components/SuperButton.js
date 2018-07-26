@@ -57,7 +57,7 @@ export default class SuperButton extends React.Component {
 
     return (
       <BoxShadow setting={this.state.isClick === false ? shadowOpt.normal : shadowOpt.active}>
-        <TouchableWithoutFeedback onPressIn={e => this.buttonOnPress(e)} onPressOut={e => this.buttonOnPress(e)}>
+        <TouchableWithoutFeedback onPress={() => this.props.onPressEvent()} onPressIn={e => this.buttonOnPress(e)} onPressOut={e => this.buttonOnPress(e)}>
           <LinearGradient colors={this.state.normalOutColorArray} style={styles.superButtonOut}>
             <LinearGradient colors={this.state.isClick === false ? this.state.normalInColorArray : this.state.clickInColorArray} style={[styles.superButtonIn, this.state.isClick === true ? styles.superButtonInActive : '']}>
               <Text style={{color:'#AAA', fontSize:16, textShadowOffset:{width:2, height:2}, textShadowRadius:2, textShadowColor:'#000'}}>

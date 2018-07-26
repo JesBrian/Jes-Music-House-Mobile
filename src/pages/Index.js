@@ -10,6 +10,7 @@ import {
 import IndexTopNavbar from '../layout/Top/IndexTopNavbar.js'
 import LeftMenuPanel from '../layout/Left/LeftMenuPanel.js'
 import Drawer from 'react-native-drawer'
+import MusicPlayer from '../layout/Bottom/MusicPlayer.js'
 import SuperButton from '../components/SuperButton.js'
 
 
@@ -19,6 +20,10 @@ export default class Index extends React.Component {
   };
   openControlPanel = () => {
     this._drawer.open()
+  };
+
+  buttonClickEvent = () => {
+    this.props.navigation.navigate('Login');
   };
 
   render() {
@@ -51,12 +56,14 @@ export default class Index extends React.Component {
 
           <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
 
-          <SuperButton label="g3好gbg" />
+          <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent} />
 
 
           <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Login')} />
           <Button title='跳转到歌单' onPress={()=>this.props.navigation.navigate('PlayList')} />
           <Button title='跳转到歌手' onPress={()=>this.props.navigation.navigate('Singer')} />
+
+          <MusicPlayer />
         </View>
 
       </Drawer>
@@ -71,6 +78,10 @@ const styles = StyleSheet.create({
 });
 
 const drawerStyles = {
-  drawer: { shadowColor:'#000', shadowOpacity: 0.8, shadowRadius: 3},
-  main: {paddingLeft: 3},
+  drawer: {
+    shadowColor:'#000', shadowOpacity:0.8, shadowRadius:3
+  },
+  main: {
+    paddingLeft:2
+  },
 }
