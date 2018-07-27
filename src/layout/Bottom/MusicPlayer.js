@@ -20,7 +20,7 @@ export default class MusicPlayer extends React.Component {
 
   render () {
     return (
-      <View style={{width:'100%', height:48, backgroundColor:'#333'}}>
+      <View style={{width:'100%', height:53, backgroundColor:'#333'}}>
       </View>
     )
   }

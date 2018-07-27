@@ -25,7 +25,7 @@ export default class NormalTopNavbar extends React.Component {
 const styles = StyleSheet.create({
   container: {
     width:'100%',
-    height:48,
+    height:55,
     justifyContent: 'center',
     backgroundColor: 'lightgreen'
   },

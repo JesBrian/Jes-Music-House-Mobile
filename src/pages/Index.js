@@ -3,6 +3,7 @@ import React  from 'react';
 import {
   StyleSheet,
   View,
+  ScrollView,
   Text,
   Button
 } from 'react-native';
@@ -53,15 +54,28 @@ export default class Index extends React.Component {
         <View style={styles.container}>
           <IndexTopNavbar />
 
-
-          <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
-
-          <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent} />
-
-
-          <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Login')} />
-          <Button title='跳转到歌单' onPress={()=>this.props.navigation.navigate('PlayList')} />
-          <Button title='跳转到歌手' onPress={()=>this.props.navigation.navigate('Singer')} />
+          <ScrollView style={{width:'100%', flex:1}}>
+            <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
+            <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent} />
+            <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Login')} />
+            <Button title='跳转到歌单' onPress={()=>this.props.navigation.navigate('PlayList')} />
+            <Button title='跳转到歌手' onPress={()=>this.props.navigation.navigate('Singer')} />
+            <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
+            <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent} />
+            <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Login')} />
+            <Button title='跳转到歌单' onPress={()=>this.props.navigation.navigate('PlayList')} />
+            <Button title='跳转到歌手' onPress={()=>this.props.navigation.navigate('Singer')} />
+            <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
+            <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent} />
+            <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Login')} />
+            <Button title='跳转到歌单' onPress={()=>this.props.navigation.navigate('PlayList')} />
+            <Button title='跳转到歌手' onPress={()=>this.props.navigation.navigate('Singer')} />
+            <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
+            <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent} />
+            <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Login')} />
+            <Button title='跳转到歌单' onPress={()=>this.props.navigation.navigate('PlayList')} />
+            <Button title='跳转到歌手' onPress={()=>this.props.navigation.navigate('Singer')} />
+          </ScrollView>
 
           <MusicPlayer />
         </View>
@@ -73,15 +87,15 @@ export default class Index extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'transparent'
+    height:'100%',
+    position:'relative',
+    flexDirection:'column',
+    backgroundColor:'transparent'
   },
 });
 
 const drawerStyles = {
   drawer: {
     shadowColor:'#000', shadowOpacity:0.8, shadowRadius:3
-  },
-  main: {
-    paddingLeft:2
-  },
+  }
 }

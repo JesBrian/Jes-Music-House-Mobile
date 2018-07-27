@@ -7,10 +7,12 @@
 import React  from 'react';
 
 import {
-  AppRegistry,
+  AppRegistry
 } from 'react-native';
 
 import { StackNavigator } from 'react-navigation'
+import StackViewStyleInterpolator from 'react-navigation/src/views/StackView/StackViewStyleInterpolator'
+
 import Index from './src/pages/Index.js'
 import Login from './src/pages/Login.js'
 import Register from './src/pages/Register.js'
@@ -27,9 +29,10 @@ const PageRouter = StackNavigator({
   PlayList: { screen: PlayList },
 }, {
   initialRouteName: 'Index', // 默认显示界面
-
-  mode: 'card',  // 页面切换模式, 左右是card(相当于iOS中的push效果), 上下是modal(相当于iOS中的modal效果)
   headerMode: 'none', // 导航栏的显示模式, screen: 有渐变透明效果, float: 无透明效果, none: 隐藏导航栏
+  transitionConfig: () => ({ // 页面切换效果 - forHorizontal[right -> left], forVertical[bottom -> up]
+    screenInterpolator: StackViewStyleInterpolator.forHorizontal,
+  })
 });
 
 

@@ -25,8 +25,8 @@ export default class IndexTopNavbar extends React.Component {
 const styles = StyleSheet.create({
   container: {
     width:'100%',
-    height:48,
-    justifyContent: 'center',
-    backgroundColor: 'lightgreen'
+    height:55,
+    justifyContent:'center',
+    backgroundColor:'lightgreen'
   },
 })
