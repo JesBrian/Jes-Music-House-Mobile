@@ -13,7 +13,7 @@
 		"react-native-drawer": "^2.5.0",
 		"react-native-linear-gradient": "^2.4.0",
 		"react-native-shadow": "^1.2.2",
-		"react-native-svg": "^4.6.1",
+		"react-native-svg": "5.1.8",
 		"react-navigation": "^2.9.0",
 		"watchman": "^1.0.0"
 	},
