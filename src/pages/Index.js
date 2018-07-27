@@ -35,9 +35,8 @@ export default class Index extends React.Component {
 
         open={false}//默认是否打开抽屉
         tapToClose={true}//点击内容处 会关闭抽屉
-
-        openDrawerOffset={0.18} // 抽屉占整个屏幕的百分比（1-0.6=0.4）
-        closedDrawerOffset={0}//关闭抽屉后 抽屉在屏幕中的显示比例
+        openDrawerOffset={0.18} // 抽屉占整个屏幕的百分比
+        closedDrawerOffset={-3}//关闭抽屉后 抽屉在屏幕中的显示比例
         panCloseMask={0.18}//最右边的频幕宽度比例范围内为关闭响应区域
 
         ref={(ref) => this._drawer = ref}
@@ -47,7 +46,7 @@ export default class Index extends React.Component {
         styles={drawerStyles}
 
         tweenHandler={(ratio) => ({
-          main: { opacity:(2-ratio)/2 }
+          main: {opacity: (2 - ratio) / 2}
         })}
       >
 

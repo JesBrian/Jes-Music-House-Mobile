@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient'
-import {BoxShadow}  from 'react-native-shadow'
+import { BoxShadow }  from 'react-native-shadow'
 
 
 export default class SuperButton extends React.Component {
@@ -29,32 +29,6 @@ export default class SuperButton extends React.Component {
   }
 
   render () {
-
-    const shadowOpt = {
-      normal: {
-        width:88,
-        height:35,
-        color:"#282828",
-        border:3,
-        radius:3,
-        opacity:0.8,
-        x:0,
-        y:1,
-        style:{marginVertical:5}
-      },
-      active: {
-        width:88,
-        height:35,
-        color:"#000",
-        border:2,
-        radius:3,
-        opacity:0.8,
-        x:0,
-        y:1,
-        style:{marginVertical:5}
-      }
-    }
-
     return (
       <BoxShadow setting={this.state.isClick === false ? shadowOpt.normal : shadowOpt.active}>
         <TouchableWithoutFeedback onPress={() => this.props.onPressEvent()} onPressIn={e => this.buttonOnPress(e)} onPressOut={e => this.buttonOnPress(e)}>
@@ -68,6 +42,32 @@ export default class SuperButton extends React.Component {
         </TouchableWithoutFeedback>
       </BoxShadow>
     )
+  }
+}
+
+
+const shadowOpt = {
+  normal: {
+    width:88,
+    height:35,
+    color:"#282828",
+    border:3,
+    radius:3,
+    opacity:0.8,
+    x:0,
+    y:1,
+    style:{marginVertical:5}
+  },
+  active: {
+    width:88,
+    height:35,
+    color:"#000",
+    border:2,
+    radius:3,
+    opacity:0.8,
+    x:0,
+    y:1,
+    style:{marginVertical:5}
   }
 }
 

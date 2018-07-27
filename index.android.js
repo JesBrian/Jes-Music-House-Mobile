@@ -10,7 +10,7 @@ import {
   AppRegistry
 } from 'react-native';
 
-import { StackNavigator } from 'react-navigation'
+import { createDrawerNavigator, createStackNavigator } from 'react-navigation'
 import StackViewStyleInterpolator from 'react-navigation/src/views/StackView/StackViewStyleInterpolator'
 
 import Index from './src/pages/Index.js'
@@ -21,7 +21,7 @@ import PlayList from './src/pages/PlayList.js'
 
 
 // 注册导航
-const PageRouter = StackNavigator({
+const PageRouter = createStackNavigator({
   Index: { screen: Index },
   Login: { screen: Login },
   Register: { screen: Register },
@@ -39,7 +39,7 @@ const PageRouter = StackNavigator({
 
 export default class MusicHouseApp extends React.Component {
   render() {
-    return <PageRouter />;
+    return <PageRouter/>;
   }
 }
 
