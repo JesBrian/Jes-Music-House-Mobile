@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 
 import {
   StyleSheet,
@@ -6,17 +6,19 @@ import {
   Text
 } from 'react-native';
 
+import {common} from '../../assets/styles/common.js'
+
 export default class IndexTopNavbar extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
   }
 
-  render () {
+  render() {
     return (
       <View style={styles.container}>
-        <Text>index</Text>
+        {/*<Text>index</Text>*/}
+        <Text style={[common.icon, styles.icon]}>&#xe654;</Text>
       </View>
     )
   }
@@ -24,9 +26,12 @@ export default class IndexTopNavbar extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    width:'100%',
-    height:55,
-    justifyContent:'center',
-    backgroundColor:'lightgreen'
+    width: '100%',
+    height: 55,
+    justifyContent: 'center',
+    backgroundColor: 'lightgreen'
   },
+  icon: {
+    color: 'red', fontSize: 30
+  }
 })
