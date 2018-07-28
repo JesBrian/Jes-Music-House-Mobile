@@ -36,7 +36,7 @@ export default class Index extends React.Component {
         renderNavigationView={() => (<LeftMenuPanel/>)}>
 
         <View style={styles.container}>
-          <IndexTopNavbar/>
+          <IndexTopNavbar navigation={this.props.navigation} />
 
           <ScrollView style={{width: '100%', flex: 1}}>
             <View>
@@ -66,9 +66,3 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
 });
-
-const drawerStyles = {
-  drawer: {
-    shadowColor: '#000', shadowOpacity: 0.8, shadowRadius: 3
-  }
-}

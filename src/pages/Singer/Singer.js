@@ -10,7 +10,7 @@ import NormalTopNavbar from '../../layout/Top/NormalTopNavbar.js'
 import SuperButton from '../../components/SuperButton.js'
 
 
-export default class PlayList extends React.Component {
+export default class Singer extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -28,8 +28,3 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
 });
-
-const drawerStyles = {
-  drawer: { shadowColor:'#000', shadowOpacity: 0.8, shadowRadius: 3},
-  main: {paddingLeft: 3},
-}

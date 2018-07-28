@@ -9,7 +9,7 @@ import {
 import SuperButton from '../../components/SuperButton.js'
 
 
-export default class Register extends React.Component {
+export default class Comment extends React.Component {
   render() {
     return (
       <View style={styles.container}>

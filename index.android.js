@@ -16,8 +16,12 @@ import StackViewStyleInterpolator from 'react-navigation/src/views/StackView/Sta
 import Index from './src/pages/Index/IndexAndroid.js'
 import Login from './src/pages/Login/Login.js'
 import Register from './src/pages/Register/Register.js'
+import Search from './src/pages/Search/Search.js'
 import Singer from './src/pages/Singer/Singer.js'
+import User from './src/pages/User/User.js'
 import PlayList from './src/pages/PlayList/PlayList.js'
+import Song from './src/pages/Song/Song.js'
+import Comment from './src/pages/Comment/Comment.js'
 
 
 // 注册导航
@@ -25,8 +29,12 @@ const PageRouter = createStackNavigator({
   Index: { screen: Index },
   Login: { screen: Login },
   Register: { screen: Register },
+  Search: { screen: Search },
   Singer: { screen: Singer },
+  User: { screen: User },
   PlayList: { screen: PlayList },
+  Song: { screen: Song },
+  Comment: { screen: Comment },
 }, {
   initialRouteName: 'Index', // 默认显示界面
   headerMode: 'none', // 导航栏的显示模式, screen: 有渐变透明效果, float: 无透明效果, none: 隐藏导航栏
