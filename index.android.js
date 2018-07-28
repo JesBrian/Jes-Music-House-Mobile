@@ -10,14 +10,14 @@ import {
   AppRegistry
 } from 'react-native';
 
-import { createDrawerNavigator, createStackNavigator } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation'
 import StackViewStyleInterpolator from 'react-navigation/src/views/StackView/StackViewStyleInterpolator'
 
-import Index from './src/pages/Index.js'
-import Login from './src/pages/Login.js'
-import Register from './src/pages/Register.js'
-import Singer from './src/pages/Singer.js'
-import PlayList from './src/pages/PlayList.js'
+import Index from './src/pages/Index/IndexAndroid.js'
+import Login from './src/pages/Login/Login.js'
+import Register from './src/pages/Register/Register.js'
+import Singer from './src/pages/Singer/Singer.js'
+import PlayList from './src/pages/PlayList/PlayList.js'
 
 
 // 注册导航

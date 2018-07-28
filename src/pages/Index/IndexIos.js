@@ -8,11 +8,11 @@ import {
   Button
 } from 'react-native';
 
-import IndexTopNavbar from '../layout/Top/IndexTopNavbar.js'
-import LeftMenuPanel from '../layout/Left/LeftMenuPanel.js'
+import IndexTopNavbar from '../../layout/Top/IndexTopNavbar.js'
+import LeftMenuPanel from '../../layout/Left/LeftMenuPanel.js'
 import Drawer from 'react-native-drawer'
-import MusicPlayer from '../layout/Bottom/MusicPlayer.js'
-import SuperButton from '../components/SuperButton.js'
+import MusicPlayer from '../../layout/Bottom/MusicPlayer.js'
+import SuperButton from '../../components/SuperButton.js'
 
 
 export default class Index extends React.Component {

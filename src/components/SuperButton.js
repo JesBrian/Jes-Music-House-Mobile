@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   superButtonIn: {
     width:'100%',
     height:25,
-    paddingBottom:1,
+    paddingBottom:3,
     justifyContent:'center',
     alignItems:'center',
     borderWidth:1,

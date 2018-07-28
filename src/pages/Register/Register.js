@@ -6,7 +6,7 @@ import {
   Text
 } from 'react-native';
 
-import SuperButton from '../components/SuperButton.js'
+import SuperButton from '../../components/SuperButton.js'
 
 
 export default class Register extends React.Component {

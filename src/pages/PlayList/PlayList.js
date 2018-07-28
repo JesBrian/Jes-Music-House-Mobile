@@ -6,8 +6,8 @@ import {
   Text
 } from 'react-native';
 
-import NormalTopNavbar from '../layout/Top/NormalTopNavbar.js'
-import SuperButton from '../components/SuperButton.js'
+import NormalTopNavbar from '../../layout/Top/NormalTopNavbar.js'
+import SuperButton from '../../components/SuperButton.js'
 
 
 export default class PlayList extends React.Component {
