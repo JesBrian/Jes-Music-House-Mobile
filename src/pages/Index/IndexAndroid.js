@@ -48,6 +48,42 @@ export default class Index extends React.Component {
               <Button title='跳转到歌单' onPress={() => this.props.navigation.navigate('PlayList')}/>
               <Button title='跳转到歌手' onPress={() => this.props.navigation.navigate('Singer')}/>
             </View>
+            <View>
+              <Text style={{marginTop: 45}} onPress={() => {
+                this.openControlPanel()
+              }}>用户登录 88</Text>
+              <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent}/>
+              <Button title='跳转到登录' onPress={() => this.props.navigation.navigate('Login')}/>
+              <Button title='跳转到歌单' onPress={() => this.props.navigation.navigate('PlayList')}/>
+              <Button title='跳转到歌手' onPress={() => this.props.navigation.navigate('Singer')}/>
+            </View>
+            <View>
+              <Text style={{marginTop: 45}} onPress={() => {
+                this.openControlPanel()
+              }}>用户登录 88</Text>
+              <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent}/>
+              <Button title='跳转到登录' onPress={() => this.props.navigation.navigate('Login')}/>
+              <Button title='跳转到歌单' onPress={() => this.props.navigation.navigate('PlayList')}/>
+              <Button title='跳转到歌手' onPress={() => this.props.navigation.navigate('Singer')}/>
+            </View>
+            <View>
+              <Text style={{marginTop: 45}} onPress={() => {
+                this.openControlPanel()
+              }}>用户登录 88</Text>
+              <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent}/>
+              <Button title='跳转到登录' onPress={() => this.props.navigation.navigate('Login')}/>
+              <Button title='跳转到歌单' onPress={() => this.props.navigation.navigate('PlayList')}/>
+              <Button title='跳转到歌手' onPress={() => this.props.navigation.navigate('Singer')}/>
+            </View>
+            <View>
+              <Text style={{marginTop: 45}} onPress={() => {
+                this.openControlPanel()
+              }}>用户登录 88</Text>
+              <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent}/>
+              <Button title='跳转到登录' onPress={() => this.props.navigation.navigate('Login')}/>
+              <Button title='跳转到歌单' onPress={() => this.props.navigation.navigate('PlayList')}/>
+              <Button title='跳转到歌手' onPress={() => this.props.navigation.navigate('Singer')}/>
+            </View>
           </ScrollView>
 
           <MusicPlayer/>
