@@ -11,7 +11,7 @@ export default class Song extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text onPress={()=>{this.openControlPanel()}} >用户注册 88</Text>
+        <Text>歌曲页面</Text>
       </View>
     );
   }

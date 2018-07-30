@@ -76,7 +76,7 @@ export default class Index extends React.Component {
             <Button title='跳转到歌手' onPress={()=>this.props.navigation.navigate('Singer')} />
           </ScrollView>
 
-          <MusicPlayer />
+          <MusicPlayer navigation={this.props.navigation} />
         </View>
 
       </Drawer>
