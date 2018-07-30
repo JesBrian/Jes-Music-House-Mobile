@@ -6,7 +6,7 @@ import {
   Text,
 } from 'react-native';
 
-export default class SearchTopNavbar extends React.Component {
+export default class SearchNavbar extends React.Component {
   constructor (props) {
     super(props);
     this.state = {

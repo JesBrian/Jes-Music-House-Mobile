@@ -10,8 +10,8 @@ import {
   Button
 } from 'react-native';
 
-import IndexTopNavbar from '../../layout/Top/IndexTopNavbar.js'
-import LeftMenuPanel from '../../layout/Left/LeftMenuPanel.js'
+import IndexNavbar from '../../layout/Top/IndexNavbar.js'
+import MenuPanel from '../../layout/Left/MenuPanel.js'
 import MusicPlayer from '../../layout/Bottom/MusicPlayer.js'
 import SuperButton from '../../components/SuperButton.js'
 
@@ -33,10 +33,10 @@ export default class Index extends React.Component {
       <DrawerLayoutAndroid
         drawerWidth={Dimensions.get('window').width * 0.82}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
-        renderNavigationView={() => (<LeftMenuPanel/>)}>
+        renderNavigationView={() => (<MenuPanel/>)}>
 
         <View style={styles.container}>
-          <IndexTopNavbar navigation={this.props.navigation} />
+          <IndexNavbar navigation={this.props.navigation} />
 
           <ScrollView style={{width: '100%', flex: 1}}>
             <View>

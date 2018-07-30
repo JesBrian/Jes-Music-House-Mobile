@@ -6,7 +6,7 @@ import {
   Text,
 } from 'react-native';
 
-export default class NormalTopNavbar extends React.Component {
+export default class NormalNavbar extends React.Component {
   constructor (props) {
     super(props);
     this.state = {

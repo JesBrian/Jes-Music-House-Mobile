@@ -9,7 +9,7 @@ import {
 import {common} from '../../assets/styles/common.js'
 import SuperButton from "../../components/SuperButton";
 
-export default class IndexTopNavbar extends React.Component {
+export default class IndexNavbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};

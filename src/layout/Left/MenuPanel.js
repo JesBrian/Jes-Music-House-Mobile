@@ -10,7 +10,7 @@ import {
 
 import { BoxShadow }  from 'react-native-shadow'
 
-export default class LeftMenuPanel extends React.Component {
+export default class MenuPanel extends React.Component {
   constructor (props) {
     super(props);
     this.state = {

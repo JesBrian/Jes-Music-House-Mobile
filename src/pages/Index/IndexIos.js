@@ -8,8 +8,8 @@ import {
   Button
 } from 'react-native';
 
-import IndexTopNavbar from '../../layout/Top/IndexTopNavbar.js'
-import LeftMenuPanel from '../../layout/Left/LeftMenuPanel.js'
+import IndexNavbar from '../../layout/Top/IndexNavbar.js'
+import MenuPanel from '../../layout/Left/MenuPanel.js'
 import Drawer from 'react-native-drawer'
 import MusicPlayer from '../../layout/Bottom/MusicPlayer.js'
 import SuperButton from '../../components/SuperButton.js'
@@ -41,7 +41,7 @@ export default class Index extends React.Component {
 
         ref={(ref) => this._drawer = ref}
 
-        content={<LeftMenuPanel closeControlPanel={this.closeControlPanel} navigation={this.props.navigation}/>}
+        content={<MenuPanel closeControlPanel={this.closeControlPanel} navigation={this.props.navigation}/>}
 
         styles={drawerStyles}
 
@@ -51,7 +51,7 @@ export default class Index extends React.Component {
       >
 
         <View style={styles.container}>
-          <IndexTopNavbar />
+          <IndexNavbar />
 
           <ScrollView style={{width:'100%', flex:1}}>
             <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
