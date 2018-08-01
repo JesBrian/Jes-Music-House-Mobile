@@ -16,16 +16,6 @@ import SuperButton from '../../components/SuperButton.js'
 
 
 export default class Index extends React.Component {
-  closeControlPanel = () => {
-    this._drawer.close()
-  };
-  openControlPanel = () => {
-    this._drawer.open()
-  };
-
-  buttonClickEvent = () => {
-    this.props.navigation.navigate('Login');
-  };
 
   render() {
     return (
@@ -82,6 +72,16 @@ export default class Index extends React.Component {
       </Drawer>
     );
   }
+
+  closeControlPanel = () => {
+    this._drawer.close()
+  };
+  openControlPanel = () => {
+    this._drawer.open()
+  };
+  buttonClickEvent = () => {
+    this.props.navigation.navigate('Login');
+  };
 }
 
 const styles = StyleSheet.create({

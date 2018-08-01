@@ -19,6 +19,7 @@ export default class Song extends React.Component {
     super(props);
     this.state = {
       showSongContentType: 'lyric', // [img/lyric]
+      playModel: 'loop'
     };
   }
 
@@ -51,17 +52,17 @@ export default class Song extends React.Component {
               </View>
             </View>
 
-            <View style={{flex:1, flexDirection:'row', backgroundColor:'lightgreen'}}>
+            <View style={{flex:1, flexDirection:'row'}}>
               <View style={{width:68, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-                <Text style={[common.icon]}>&#xe66c;</Text>
+                <Text onPress={this.changePlayModel} style={[common.icon, {fontSize:24}]}>&#xe66c;</Text>
               </View>
-              <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center', backgroundColor:'#555'}}>
-                <Text style={[common.icon]}>&#xe602;</Text>
-                <Text style={[common.icon]}>&#xe6b4;</Text>
-                <Text style={[common.icon]}>&#xe604;</Text>
+              <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+                <Text style={[common.icon, {fontSize:28}]}>&#xe602;</Text>
+                <Text style={[common.icon, {margin:28, fontSize:48}]}>&#xe6b4;</Text>
+                <Text style={[common.icon, {fontSize:28}]}>&#xe604;</Text>
               </View>
               <View style={{width:68, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-                <Text style={[common.icon]}>&#xe654;</Text>
+                <Text style={[common.icon, {fontSize:24}]}>&#xe654;</Text>
               </View>
             </View>
 
@@ -71,10 +72,28 @@ export default class Song extends React.Component {
     );
   }
 
-
+  /**
+   * 修改展示內容
+   * @param type [img/lyric]
+   */
   changeShowContentType (type = 'img') {
     this.setState({
       showSongContentType: type
+    });
+  };
+
+  /**
+   * 修改播放模式
+   */
+  changePlayModel = () => {
+    let type = 'loop';
+    if (this.state.playModel === 'loop') {
+      type = 'single-loop';
+    } else if (this.state.playModel === 'single-loop') {
+      type = 'random';
+    }
+    this.setState({
+      playModel: type
     });
   }
 }
