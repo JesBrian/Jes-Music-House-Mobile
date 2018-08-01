@@ -15,13 +15,23 @@ import SongLyric from '../Singer/type/SongLyric.js'
 import {common} from "../../assets/styles/common";
 
 export default class Song extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      showSongContentType: 'lyric', // [img/lyric]
+    };
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <SongNavbar/>
 
-        {/*<SongImg/>*/}
-        <SongLyric/>
+        {
+          this.state.showSongContentType === 'img' ?
+            (<SongImg changeSongContentType={showSongContentType => this.changeShowContentType(showSongContentType)} />) :
+            (<SongLyric changeSongContentType={showSongContentType => this.changeShowContentType(showSongContentType)} />)
+        }
 
         <TouchableWithoutFeedback>
           <View style={{width: '100%', height: 88, backgroundColor: 'lightblue'}}>
@@ -41,13 +51,31 @@ export default class Song extends React.Component {
               </View>
             </View>
 
-            <View style={{flex:1, backgroundColor:'lightgreen'}}>
+            <View style={{flex:1, flexDirection:'row', backgroundColor:'lightgreen'}}>
+              <View style={{width:68, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+                <Text style={[common.icon]}>&#xe66c;</Text>
+              </View>
+              <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center', backgroundColor:'#555'}}>
+                <Text style={[common.icon]}>&#xe602;</Text>
+                <Text style={[common.icon]}>&#xe6b4;</Text>
+                <Text style={[common.icon]}>&#xe604;</Text>
+              </View>
+              <View style={{width:68, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+                <Text style={[common.icon]}>&#xe654;</Text>
+              </View>
             </View>
 
           </View>
         </TouchableWithoutFeedback>
       </View>
     );
+  }
+
+
+  changeShowContentType (type = 'img') {
+    this.setState({
+      showSongContentType: type
+    });
   }
 }
 
