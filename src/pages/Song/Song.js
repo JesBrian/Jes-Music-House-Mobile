@@ -18,8 +18,9 @@ export default class Song extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      showSongContentType: 'lyric', // [img/lyric]
-      playModel: 'loop'
+      playStatus: false,
+      showSongContentType: 'img', // [img/lyric]
+      playModel: 'loop', // [loop/single-loop/random]
     };
   }
 
@@ -34,40 +35,55 @@ export default class Song extends React.Component {
             (<SongLyric changeSongContentType={showSongContentType => this.changeShowContentType(showSongContentType)} />)
         }
 
-        <TouchableWithoutFeedback>
-          <View style={{width: '100%', height: 88, backgroundColor: 'lightblue'}}>
-            <View style={{flexDirection:'row', justifyContent:'center',}}>
-              <View style={{width:'90%', height:28, flexDirection:'row'}}>
-                <View style={{width:68, height:'100%', flexDirection:'row', justifyContent:'center'}}>
-                  <Text style={{lineHeight:28, fontSize:12,}}>00:00</Text>
-                </View>
-                <View style={{flex:1, justifyContent:'center'}}>
-                  <TouchableWithoutFeedback>
-                    <View style={{width:'100%', height:4, backgroundColor:'green'}} />
-                  </TouchableWithoutFeedback>
-                </View>
-                <View style={{width:68, height:'100%', flexDirection:'row', justifyContent:'center'}}>
-                  <Text style={{lineHeight:28, fontSize:12,}}>00:00</Text>
-                </View>
+        <View style={{width: '100%', height: 88, backgroundColor: 'lightblue'}}>
+          <View style={{flexDirection:'row', justifyContent:'center',}}>
+            <View style={{width:'90%', height:28, flexDirection:'row'}}>
+              <View style={{width:68, height:'100%', flexDirection:'row', justifyContent:'center'}}>
+                <Text style={{lineHeight:28, fontSize:12,}}>00:00</Text>
+              </View>
+              <View style={{flex:1, justifyContent:'center'}}>
+                <TouchableWithoutFeedback>
+                  <View style={{width:'100%', height:4, backgroundColor:'green'}} />
+                </TouchableWithoutFeedback>
+              </View>
+              <View style={{width:68, height:'100%', flexDirection:'row', justifyContent:'center'}}>
+                <Text style={{lineHeight:28, fontSize:12,}}>00:00</Text>
               </View>
             </View>
-
-            <View style={{flex:1, flexDirection:'row'}}>
-              <View style={{width:68, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-                <Text onPress={this.changePlayModel} style={[common.icon, {fontSize:24}]}>&#xe66c;</Text>
-              </View>
-              <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-                <Text style={[common.icon, {fontSize:28}]}>&#xe602;</Text>
-                <Text style={[common.icon, {margin:28, fontSize:48}]}>&#xe6b4;</Text>
-                <Text style={[common.icon, {fontSize:28}]}>&#xe604;</Text>
-              </View>
-              <View style={{width:68, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-                <Text style={[common.icon, {fontSize:24}]}>&#xe654;</Text>
-              </View>
-            </View>
-
           </View>
-        </TouchableWithoutFeedback>
+
+          <View style={{flex:1, flexDirection:'row'}}>
+            <View style={{width:68, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+              <TouchableWithoutFeedback onPress={this.changePlayModel} >
+                <View>
+                  {
+                    this.state.playModel === 'loop' ?
+                      <Text style={[common.icon, {fontSize:24}]}>&#xe66c;</Text>
+                        : this.state.playModel === 'single-loop' ?
+                          <Text style={[common.icon, {fontSize:24}]}>&#xe66b;</Text> :
+                            <Text style={[common.icon, {fontSize:24}]}>&#xe607;</Text>
+                  }
+                </View>
+              </TouchableWithoutFeedback>
+            </View>
+            <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+              <Text style={[common.icon, {fontSize:28}]}>&#xe602;</Text>
+              <TouchableWithoutFeedback onPress={this.changePlayStatus}>
+                <View style={{margin:28}}>
+                  {
+                    this.state.playStatus === false ?
+                      <Text style={[common.icon, {fontSize:48}]}>&#xe6b4;</Text> : <Text style={[common.icon, {fontSize:48}]}>&#xe8c8;</Text>
+                  }
+                </View>
+              </TouchableWithoutFeedback>
+              <Text style={[common.icon, {fontSize:28}]}>&#xe604;</Text>
+            </View>
+            <View style={{width:68, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+              <Text style={[common.icon, {fontSize:24}]}>&#xe654;</Text>
+            </View>
+          </View>
+
+        </View>
       </View>
     );
   }
@@ -94,6 +110,15 @@ export default class Song extends React.Component {
     }
     this.setState({
       playModel: type
+    });
+  };
+
+  /**
+   * 修改播放状态
+   */
+  changePlayStatus = () => {
+    this.setState({
+      playStatus: !this.state.playStatus
     });
   }
 }
