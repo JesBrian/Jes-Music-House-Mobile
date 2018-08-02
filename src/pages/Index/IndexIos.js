@@ -41,7 +41,7 @@ export default class Index extends React.Component {
       >
 
         <View style={styles.container}>
-          <IndexNavbar />
+          <IndexNavbar navigation={this.props.navigation} openControlPanel={this.openControlPanel} />
 
           <ScrollView style={{width:'100%', flex:1}}>
             <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>

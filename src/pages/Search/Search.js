@@ -14,6 +14,7 @@ export default class Search extends React.Component {
     return (
       <View style={styles.container}>
         <SearchNavbar />
+
         <Text onPress={()=>{this.openControlPanel()}} >搜索</Text>
       </View>
     );
