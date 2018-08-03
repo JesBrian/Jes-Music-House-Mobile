@@ -34,7 +34,7 @@ export default class SuperButton extends React.Component {
         <TouchableWithoutFeedback onPress={() => this.props.onPressEvent()} onPressIn={e => this.buttonOnPress(e)} onPressOut={e => this.buttonOnPress(e)}>
           <LinearGradient colors={this.state.normalOutColorArray} style={styles.superButtonOut}>
             <LinearGradient colors={this.state.isClick === false ? this.state.normalInColorArray : this.state.clickInColorArray} style={[styles.superButtonIn, this.state.isClick === true ? styles.superButtonInActive : '']}>
-              <Text style={{backgroundColor:'transparent', color:'#AAA', fontSize:16, textShadowOffset:{width:2, height:2}, textShadowRadius:2, textShadowColor:'#000'}}>
+              <Text style={[styles.superButtonLabel, this.state.isClick === true ? styles.superButtonLabelActive : null]}>
                 {this.props.label}
               </Text>
             </LinearGradient>
@@ -89,5 +89,12 @@ const styles = StyleSheet.create({
   },
   superButtonInActive: {
     borderColor:'#000'
+  },
+
+  superButtonLabel: {
+    backgroundColor:'transparent', color:'#AAA', fontSize:16, textShadowOffset:{width:2, height:2}, textShadowRadius:2, textShadowColor:'#000'
+  },
+  superButtonLabelActive: {
+    color:'#20dbfc'
   }
 });

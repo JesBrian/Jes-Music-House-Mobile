@@ -20,12 +20,13 @@ export default class Index extends React.Component {
   render() {
     return (
       <DrawerLayoutAndroid
+        ref={(drawer) => { this.drawer = drawer; }}
         drawerWidth={Dimensions.get('window').width * 0.82}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
-        renderNavigationView={() => (<MenuPanel/>)}>
+        renderNavigationView={() => (<MenuPanel navigation={this.props.navigation} />)}>
 
         <View style={styles.container}>
-          <IndexNavbar navigation={this.props.navigation} />
+          <IndexNavbar openControlPanel={this.onPenLeftDrawable} navigation={this.props.navigation} />
 
           <ScrollView style={{width: '100%', flex: 1}}>
             <View>
@@ -75,11 +76,16 @@ export default class Index extends React.Component {
             </View>
           </ScrollView>
 
-          <MusicPlayer/>
+          <MusicPlayer navigation={this.props.navigation} />
         </View>
 
       </DrawerLayoutAndroid>
     );
+  }
+
+  //打开侧滑栏
+  onPenLeftDrawable = () => {
+    this.drawer.openDrawer();
   }
 }
 

@@ -38,6 +38,9 @@ const PageRouter = createStackNavigator({
 }, {
   initialRouteName: 'Index', // 默认显示界面
   headerMode: 'none', // 导航栏的显示模式, screen: 有渐变透明效果, float: 无透明效果, none: 隐藏导航栏
+  navigationOptions: {
+    gesturesEnabled: true,
+  },
   transitionConfig: () => ({ // 页面切换效果 - forHorizontal[right -> left], forVertical[bottom -> up]
     screenInterpolator: StackViewStyleInterpolator.forHorizontal,
   })

@@ -2,6 +2,7 @@ import React  from 'react';
 
 import {
   StyleSheet,
+  Dimensions,
   View,
   Text
 } from 'react-native';
@@ -16,7 +17,7 @@ export default class Search extends React.Component {
       <View style={styles.container}>
         <SearchNavbar navigation={this.props.navigation} />
 
-        <View style={{flex:1}}>
+        <View style={{height:Dimensions.get('window').height - 128}}>
           <Text onPress={()=>{this.openControlPanel()}} >搜索</Text>
         </View>
 
