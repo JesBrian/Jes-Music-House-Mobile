@@ -7,15 +7,20 @@ import {
 } from 'react-native';
 
 import SearchNavbar from '../../layout/Top/SearchNavbar.js'
+import MusicPlayer from '../../layout/Bottom/MusicPlayer.js'
 
 
 export default class Search extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <SearchNavbar />
+        <SearchNavbar navigation={this.props.navigation} />
 
-        <Text onPress={()=>{this.openControlPanel()}} >搜索</Text>
+        <View style={{flex:1}}>
+          <Text onPress={()=>{this.openControlPanel()}} >搜索</Text>
+        </View>
+
+        <MusicPlayer navigation={this.props.navigation} />
       </View>
     );
   }
@@ -23,6 +28,8 @@ export default class Search extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex:1,
+    flexDirection:'column',
     backgroundColor: 'transparent'
-  },
+  }
 });

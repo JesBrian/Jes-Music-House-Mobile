@@ -22,13 +22,19 @@ export default class SearchNavbar extends React.Component {
   render () {
     return (
       <View style={styles.container}>
+        <TouchableWithoutFeedback onPress={() => {this.props.navigation.goBack()}}>
+          <View style={{width:50, flexDirection:'row', justifyContent:'center'}}>
+            <Text style={[common.icon, {fontSize:31}]}>&#xe8ca;</Text>
+          </View>
+        </TouchableWithoutFeedback>
+
         <View style={{flex:1}}>
-          <TextInput placeholder={'cvshgbcjhsbkcskjcnbskcbksj'} onChangeText={(text) => { this.setState({searchKey: text})}} value={this.state.searchKey}/>
+          <TextInput style={{flex:1}} onChangeText={(text) => { this.setState({searchKey: text})}} value={this.state.searchKey} />
         </View>
 
         <TouchableWithoutFeedback>
-          <View style={{width:55}}>
-            <Text style={[common.icon]}>&#xe65a;</Text>
+          <View style={{width:50, flexDirection:'row', justifyContent:'center'}}>
+            <Text style={[common.icon, {fontSize:31}]}>&#xe65a;</Text>
           </View>
         </TouchableWithoutFeedback>
       </View>
@@ -44,5 +50,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'lightgreen',
-  },
+  }
 })
