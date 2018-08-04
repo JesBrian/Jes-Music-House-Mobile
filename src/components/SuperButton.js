@@ -11,6 +11,11 @@ import { BoxShadow }  from 'react-native-shadow'
 
 
 export default class SuperButton extends React.Component {
+  static defaultProps = {
+    width: 35,
+    height: 35
+  };
+
   constructor (props) {
     super(props);
     this.state = {
@@ -23,13 +28,18 @@ export default class SuperButton extends React.Component {
   }
 
   render () {
+    const shadowOpt = {
+      normal: {width:this.props.width, height:this.props.height, color:"#282828", border:4, radius:3, opacity:0.8, x:0, y:1, style:{marginVertical:5}},
+      active: {width:this.props.width, height:this.props.height, color:"#111", border:2.5, radius:3, opacity:0.8, x:0, y:1, style:{marginVertical:5}}
+    };
+
     return (
       <BoxShadow setting={this.state.isClick === false ? shadowOpt.normal : shadowOpt.active}>
-        <TouchableWithoutFeedback onPress={() => this.props.onPressEvent()} onPressIn={e => this.buttonOnPress(e)} onPressOut={e => this.buttonOnPress(e)}>
+        <TouchableWithoutFeedback onPress={() => this.props.onPressEvent()} onPressIn={this.buttonOnPress.bind(this)} onPressOut={this.buttonOnPress.bind(this)}>
           <LinearGradient colors={this.state.normalOutColorArray} style={styles.superButtonOut}>
             <LinearGradient colors={this.state.isClick === false ? this.state.normalInColorArray : this.state.clickInColorArray} style={[styles.superButtonIn, this.state.isClick === true ? styles.superButtonInActive : '']}>
               <Text style={[styles.superButtonLabel, this.state.isClick === true ? styles.superButtonLabelActive : null]}>
-                {this.props.label}
+                { this.props.label }
               </Text>
             </LinearGradient>
           </LinearGradient>
@@ -39,36 +49,10 @@ export default class SuperButton extends React.Component {
   }
 
 
-  buttonOnPress (e) {
+  buttonOnPress () {
     this.setState({
       isClick: !this.state.isClick
     });
-  }
-}
-
-
-const shadowOpt = {
-  normal: {
-    width:88,
-    height:35,
-    color:"#282828",
-    border:3,
-    radius:3,
-    opacity:0.8,
-    x:0,
-    y:1,
-    style:{marginVertical:5}
-  },
-  active: {
-    width:88,
-    height:35,
-    color:"#000",
-    border:2,
-    radius:3,
-    opacity:0.8,
-    x:0,
-    y:1,
-    style:{marginVertical:5}
   }
 }
 
@@ -81,7 +65,7 @@ const styles = StyleSheet.create({
   },
   superButtonIn: {
     width:'100%',
-    height:25,
+    height:'100%',
     paddingBottom:3,
     justifyContent:'center',
     alignItems:'center',
