@@ -27,14 +27,14 @@ export default class SongLyric extends React.Component {
                 <View>
                   {
                     this.state.volumeStatus === true ?
-                      <Text style={[common.icon]}>&#xe6ac;</Text> : <Text style={[common.icon]}>&#xe6aa;</Text>
+                      <Text style={[common.icon, {fontSize:21}]}>&#xe6ac;</Text> : <Text style={[common.icon, {fontSize:21}]}>&#xe6aa;</Text>
                   }
                 </View>
               </TouchableWithoutFeedback>
             </View>
             <View style={{flex: 1, justifyContent: 'center'}}>
               <TouchableWithoutFeedback>
-                <View style={{width: '95%', height: 4, backgroundColor: 'green'}}/>
+                <View style={{width: '95%', height: 4, borderRadius:4, backgroundColor: 'green'}}/>
               </TouchableWithoutFeedback>
             </View>
           </View>

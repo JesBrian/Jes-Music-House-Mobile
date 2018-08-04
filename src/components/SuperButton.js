@@ -22,12 +22,6 @@ export default class SuperButton extends React.Component {
     };
   }
 
-  buttonOnPress (e) {
-    this.setState({
-      isClick: !this.state.isClick
-    });
-  }
-
   render () {
     return (
       <BoxShadow setting={this.state.isClick === false ? shadowOpt.normal : shadowOpt.active}>
@@ -42,6 +36,13 @@ export default class SuperButton extends React.Component {
         </TouchableWithoutFeedback>
       </BoxShadow>
     )
+  }
+
+
+  buttonOnPress (e) {
+    this.setState({
+      isClick: !this.state.isClick
+    });
   }
 }
 

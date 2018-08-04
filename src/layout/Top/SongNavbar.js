@@ -4,7 +4,7 @@ import {
   StyleSheet,
   View,
   Text,
-  TouchableOpacity
+  TouchableWithoutFeedback
 } from 'react-native';
 
 import { common } from '../../assets/styles/common.js'
@@ -19,17 +19,23 @@ export default class SearchNavbar extends React.Component {
   render () {
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={{width:48}}>
-          <Text style={common.icon}>&#xe8ca;</Text>
-        </TouchableOpacity>
+        <TouchableWithoutFeedback onPress={() => {this.props.navigation.goBack()}}>
+          <View style={{width:50, flexDirection:'row', justifyContent:'center'}}>
+            <Text style={[common.icon, {fontSize:31}]}>&#xe8ca;</Text>
+          </View>
+        </TouchableWithoutFeedback>
 
-        <TouchableOpacity style={{flex:1, justifyContent:'flex-start'}}>
-          <Text>dc432f生成gv纯净水hjk</Text>
-        </TouchableOpacity>
+        <TouchableWithoutFeedback>
+          <View style={{flex:1, justifyContent:'flex-start'}}>
+            <Text>dc432f生成gv纯净水hjk</Text>
+          </View>
+        </TouchableWithoutFeedback>
 
-        <TouchableOpacity style={{width:48}}>
-          <Text style={common.icon}>&#xe615;</Text>
-        </TouchableOpacity>
+        <TouchableWithoutFeedback>
+          <View style={{width:50, flexDirection:'row', justifyContent:'center'}}>
+            <Text style={[common.icon, {fontSize:31}]}>&#xe615;</Text>
+          </View>
+        </TouchableWithoutFeedback>
       </View>
     )
   }
@@ -41,6 +47,7 @@ const styles = StyleSheet.create({
     height:55,
     flexDirection: 'row',
     justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: 'lightgreen'
   },
 })

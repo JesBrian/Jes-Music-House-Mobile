@@ -13,9 +13,10 @@ import {
 import { createStackNavigator } from 'react-navigation'
 import StackViewStyleInterpolator from 'react-navigation/src/views/StackView/StackViewStyleInterpolator'
 
-import Index from './src/pages/Index/IndexAndroid.js'
+import Home from './src/pages/Home/Home.js'
 import Login from './src/pages/Login/Login.js'
 import Register from './src/pages/Register/Register.js'
+import Index from './src/pages/Index/IndexAndroid.js'
 import Search from './src/pages/Search/Search.js'
 import Singer from './src/pages/Singer/Singer.js'
 import User from './src/pages/User/User.js'
@@ -26,9 +27,10 @@ import Comment from './src/pages/Comment/Comment.js'
 
 // 注册导航
 const PageRouter = createStackNavigator({
-  Index: { screen: Index },
+  Home: { screen: Home },
   Login: { screen: Login },
   Register: { screen: Register },
+  Index: { screen: Index },
   Search: { screen: Search },
   Singer: { screen: Singer },
   User: { screen: User },
