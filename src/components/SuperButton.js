@@ -19,11 +19,7 @@ export default class SuperButton extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      isClick: false,
-      normalOutColorArray: ['#23fcfc', '#2e8ce6'],
-      clickOutColorArray: ['#23fcfc', '#00d8ff'],
-      normalInColorArray: ['#535353', '#222'],
-      clickInColorArray: ['#333', '#121212']
+      isClick: false
     };
   }
 
@@ -32,12 +28,17 @@ export default class SuperButton extends React.Component {
       normal: {width:this.props.width, height:this.props.height, color:"#282828", border:4, radius:3, opacity:0.8, x:0, y:1, style:{marginVertical:5}},
       active: {width:this.props.width, height:this.props.height, color:"#111", border:2.5, radius:3, opacity:0.8, x:0, y:1, style:{marginVertical:5}}
     };
+    const colorLinearGradient = {
+      normalOutColorArray: ['#23fcfc', '#2e8ce6'],
+      normalInColorArray: ['#535353', '#222'],
+      clickInColorArray: ['#333', '#121212']
+    }
 
     return (
       <BoxShadow setting={this.state.isClick === false ? shadowOpt.normal : shadowOpt.active}>
         <TouchableWithoutFeedback onPress={() => this.props.onPressEvent()} onPressIn={this.buttonOnPress.bind(this)} onPressOut={this.buttonOnPress.bind(this)}>
-          <LinearGradient colors={this.state.normalOutColorArray} style={styles.superButtonOut}>
-            <LinearGradient colors={this.state.isClick === false ? this.state.normalInColorArray : this.state.clickInColorArray} style={[styles.superButtonIn, this.state.isClick === true ? styles.superButtonInActive : '']}>
+          <LinearGradient colors={colorLinearGradient.normalOutColorArray} style={styles.superButtonOut}>
+            <LinearGradient colors={this.state.isClick === false ? colorLinearGradient.normalInColorArray : colorLinearGradient.clickInColorArray} style={[styles.superButtonIn, this.state.isClick === true ? styles.superButtonInActive : '']}>
               <Text style={[styles.superButtonLabel, this.state.isClick === true ? styles.superButtonLabelActive : null]}>
                 { this.props.label }
               </Text>

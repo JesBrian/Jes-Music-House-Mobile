@@ -7,7 +7,7 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
-import SongNavbar from '../../layout/Top/SongNavbar.js'
+import SongNavbar from '../../layout/Top/type/SongNavbar.js'
 import SongImg from './type/SongImg.js'
 import SongLyric from './type/SongLyric.js'
 

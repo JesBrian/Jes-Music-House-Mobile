@@ -10,7 +10,7 @@ import {
   Button
 } from 'react-native';
 
-import IndexNavbar from '../../layout/Top/IndexNavbar.js'
+import IndexNavbar from '../../layout/Top/type/IndexNavbar.js'
 import MenuPanel from '../../layout/Left/MenuPanel.js'
 import MusicPlayer from '../../layout/Bottom/MusicPlayer.js'
 import SuperButton from '../../components/SuperButton.js'

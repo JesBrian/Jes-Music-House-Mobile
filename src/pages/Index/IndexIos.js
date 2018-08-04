@@ -8,7 +8,7 @@ import {
   Button
 } from 'react-native';
 
-import IndexNavbar from '../../layout/Top/IndexNavbar.js'
+import IndexNavbar from '../../layout/Top/type/IndexNavbar.js'
 import MenuPanel from '../../layout/Left/MenuPanel.js'
 import Drawer from 'react-native-drawer'
 import MusicPlayer from '../../layout/Bottom/MusicPlayer.js'

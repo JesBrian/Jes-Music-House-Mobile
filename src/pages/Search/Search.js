@@ -7,7 +7,7 @@ import {
   Text
 } from 'react-native';
 
-import SearchNavbar from '../../layout/Top/SearchNavbar.js'
+import SearchNavbar from '../../layout/Top/type/SearchNavbar.js'
 import MusicPlayer from '../../layout/Bottom/MusicPlayer.js'
 
 
