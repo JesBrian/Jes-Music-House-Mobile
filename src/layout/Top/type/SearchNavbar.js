@@ -26,13 +26,14 @@ export default class SearchNavbar extends React.Component {
 
         <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
           <TouchableWithoutFeedback onPress={() => {this.props.navigation.goBack()}}>
-            <View style={{width:50, flexDirection:'row', justifyContent:'center'}}>
+            <View style={{width:45, flexDirection:'row', justifyContent:'center'}}>
               <Text style={[common.icon, {fontSize:31}]}>&#xe8ca;</Text>
             </View>
           </TouchableWithoutFeedback>
 
           <View style={{flex:1}}>
-            <TextInput style={{flex:1}} onChangeText={(text) => { this.setState({searchKey: text})}} value={this.state.searchKey} />
+            <TextInput onChangeText={(text) => { this.setState({searchKey: text})}} value={this.state.searchKey}
+            style={{width:'100%', height:38, paddingLeft:8, borderRadius:6, backgroundColor:'#282828', color:'#38daf0'}} />
           </View>
 
           <TouchableWithoutFeedback>

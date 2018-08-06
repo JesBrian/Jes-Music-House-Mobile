@@ -27,16 +27,20 @@ export default class Login extends React.Component {
         <NormalNavbar navigation={this.props.navigation} label={'手机号登录'} />
 
         <View style={{flex:1, flexDirection:'column', alignItems:'center'}}>
-          <TextInput value={this.state.phone} onChangeText={(phone) => {
-            this.setState({
-              phone: phone
-            })
-          }} style={{width:Dimensions.get('window').width - 88, height:53}} />
-          <TextInput value={this.state.passwd} secureTextEntry={true} onChangeText={(passwd) => {
-            this.setState({
-              passwd: passwd
-            })
-          }} style={{width:Dimensions.get('window').width - 88, height:53}} />
+          <View style={{marginTop:38, justifyContent:'center',}}>
+            <TextInput value={this.state.phone} onChangeText={(phone) => {
+              this.setState({
+                phone: phone
+              })
+            }} style={{width:Dimensions.get('window').width - 88, height:53, paddingLeft:18, paddingRight:18, borderRadius:26, borderWidth:3, borderColor:'#38daf0'}} />
+          </View>
+          <View style={{marginTop:18, marginBottom:18, justifyContent:'center'}}>
+            <TextInput value={this.state.passwd} secureTextEntry={true} onChangeText={(passwd) => {
+              this.setState({
+                passwd: passwd
+              })
+            }} style={{width:Dimensions.get('window').width - 88, height:53, paddingLeft:18, paddingRight:18, borderRadius:26, borderWidth:3, borderColor:'#38daf0'}} />
+          </View>
           <SuperButton label="登录" width={Dimensions.get('window').width - 88} height={53} onPressEvent={this.phoneLogin.bind(this)} />
         </View>
       </View>
@@ -45,10 +49,11 @@ export default class Login extends React.Component {
 
 
   phoneLogin () {
-    phoneLogin({
+    let data = {
       phone: this.state.phone,
       passwd: this.state.passwd
-    }).then( res => {
+    };
+    phoneLogin(data).then( res => {
       alert(res.msg)
     }).catch( error => {
       alert(error)
