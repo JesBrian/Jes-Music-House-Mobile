@@ -46,22 +46,7 @@ export default class Index extends React.Component {
           <ScrollView style={{width:'100%', flex:1}}>
             <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
             <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent} />
-            <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Login')} />
-            <Button title='跳转到歌单' onPress={()=>this.props.navigation.navigate('PlayList')} />
-            <Button title='跳转到歌手' onPress={()=>this.props.navigation.navigate('Singer')} />
-            <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
-            <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent} />
-            <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Login')} />
-            <Button title='跳转到歌单' onPress={()=>this.props.navigation.navigate('PlayList')} />
-            <Button title='跳转到歌手' onPress={()=>this.props.navigation.navigate('Singer')} />
-            <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
-            <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent} />
-            <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Login')} />
-            <Button title='跳转到歌单' onPress={()=>this.props.navigation.navigate('PlayList')} />
-            <Button title='跳转到歌手' onPress={()=>this.props.navigation.navigate('Singer')} />
-            <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
-            <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent} />
-            <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Login')} />
+            <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Home')} />
             <Button title='跳转到歌单' onPress={()=>this.props.navigation.navigate('PlayList')} />
             <Button title='跳转到歌手' onPress={()=>this.props.navigation.navigate('Singer')} />
           </ScrollView>
