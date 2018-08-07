@@ -33,11 +33,11 @@ export default class MusicPlayer extends React.Component {
           </View>
         </TouchableOpacity>
         <View style={{width:80, flexDirection:'row', justifyContent:'center'}}>
-          <TouchableOpacity style={{height:'100%', paddingLeft:6, paddingRight:8, flexDirection:'column', justifyContent:'center'}}>
-            <Text style={[common.icon,  {fontSize:28, color:'#CCC'}]}>&#xe654;</Text>
+          <TouchableOpacity style={{paddingLeft:6, paddingRight:8, flexDirection:'column', justifyContent:'center'}}>
+            <Text style={[common.icon,  {fontSize:28, color:'#CCC'}]}>&#xe6b4;</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{height:'100%', paddingLeft:8, paddingRight:18, flexDirection:'column', justifyContent:'center'}}>
-            <Text style={[common.icon, {fontSize:28, color:'#CCC'}]}>&#xe654;</Text>
+          <TouchableOpacity style={{paddingLeft:8, paddingRight:18, flexDirection:'column', justifyContent:'center'}}>
+            <Text style={[common.icon, {fontSize:26, color:'#CCC'}]}>&#xe654;</Text>
           </TouchableOpacity>
         </View>
 
