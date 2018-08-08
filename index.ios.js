@@ -7,7 +7,8 @@
 import React  from 'react';
 
 import {
-  AppRegistry
+  AppRegistry,
+  View
 } from 'react-native';
 
 import { createStackNavigator } from 'react-navigation'
@@ -49,7 +50,11 @@ const PageRouter = createStackNavigator({
 
 export default class MusicHouseApp extends React.Component {
   render() {
-    return <PageRouter/>;
+    return (
+      <View style={{flex:1}}>
+        <PageRouter/>
+      </View>
+    );
   }
 }
 

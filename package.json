@@ -14,9 +14,13 @@
 		"react-native-drawer": "^2.5.0",
 		"react-native-linear-gradient": "^2.4.0",
 		"react-native-shadow": "^1.2.2",
+		"react-native-sound": "^0.10.9",
 		"react-native-sqlite-storage": "^3.3.6",
 		"react-native-svg": "5.1.8",
-		"react-navigation": "^2.9.0",
+		"react-navigation": "^2.11.2",
+		"react-redux": "^5.0.7",
+		"redux": "^4.0.0",
+		"redux-thunk": "^2.3.0",
 		"watchman": "^1.0.0"
 	},
 	"devDependencies": {
