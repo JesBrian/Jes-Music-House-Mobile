@@ -9,6 +9,7 @@ import {
 import NormalNavbar from '../../layout/Top/type/NormalNavbar.js'
 import SuperButton from '../../components/SuperButton.js'
 
+import Video from 'react-native-video'
 
 export default class Singer extends React.Component {
   render() {
@@ -18,6 +19,18 @@ export default class Singer extends React.Component {
 
         <Text onPress={()=>{this.openControlPanel()}} >歌手</Text>
         <SuperButton label="登录" />
+
+        <View style={styles.backgroundVideo} >
+          {/*<Video source={{uri: "http://music.jesbrian.cn/static/music/test2.mp3"}}   // Can be a URL or a local file.*/}
+          <Video source={{uri: "http://www.runoob.com/try/demo_source/movie.mp4"}}   // Can be a URL or a local file.
+                 ref={(ref) => {
+                   this.player = ref
+                 }}                                      // Store reference
+            // onBuffer={this.onBuffer}                // Callback when remote video is buffering
+            // onEnd={this.onEnd}                      // Callback when playback finishes
+            // onError={this.videoError}               // Callback when video cannot be loaded
+                 style={{flex:1}}/>
+        </View>
       </View>
     );
   }
@@ -26,5 +39,15 @@ export default class Singer extends React.Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'transparent'
+  },
+
+  backgroundVideo: {
+    width:108,
+    height:108,
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    backgroundColor:'#555'
   },
 });

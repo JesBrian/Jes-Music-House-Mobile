@@ -15,6 +15,8 @@ import {
 import { createStackNavigator } from 'react-navigation'
 import StackViewStyleInterpolator from 'react-navigation/src/views/StackView/StackViewStyleInterpolator'
 
+import Video from 'react-native-video'
+
 import Home from './src/pages/Home/Home.js'
 import Login from './src/pages/Login/Login.js'
 import Register from './src/pages/Register/Register.js'
