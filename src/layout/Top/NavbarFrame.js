@@ -1,7 +1,9 @@
 import React from 'react';
 
 import {
-  Dimensions, StyleSheet,
+  Dimensions,
+  Platform,
+  StyleSheet,
   View
 } from 'react-native';
 
@@ -15,8 +17,11 @@ export default class NavbarFrame extends React.Component {
 
   render() {
     const shadowOpt = {
-      width:Dimensions.get('window').width, height:55, color:"#888", border:12, opacity:0.8, x:0, y:1
+      width:Dimensions.get('window').width, height:Platform.OS === 'ios' ? 75 : 55, color:"#888", border:12, opacity:0.8, x:0, y:1
     };
+
+
+
 
     return (
       <BoxShadow setting={shadowOpt}>
@@ -31,7 +36,8 @@ export default class NavbarFrame extends React.Component {
 const styles = StyleSheet.create({
   container: {
     width:'100%',
-    height:55,
+    height:'100%',
+    paddingTop:Platform.OS === 'ios' ? 20 : 0,
     flexDirection:'row',
     alignItems: 'center',
     justifyContent: 'center',

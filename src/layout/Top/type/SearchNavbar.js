@@ -37,7 +37,8 @@ export default class SearchNavbar extends React.Component {
             {
               this.state.searchKey === '' ? null :
                 <TouchableWithoutFeedback onPress={() => {this.setState({searchKey: ''})}}>
-                  <View style={{width:22, height:22, top:8, right:8, position:'absolute', borderRadius:11, backgroundColor:'#38daf0'}}></View>
+                  <View style={{width:22, height:22, top:8, right:8, position:'absolute', borderRadius:11, backgroundColor:'#686868', borderWidth:1, borderColor:'#2EBCC6'}}>
+                  </View>
                 </TouchableWithoutFeedback>
             }
           </View>
