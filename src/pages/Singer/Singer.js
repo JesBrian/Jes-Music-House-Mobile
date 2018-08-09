@@ -22,14 +22,14 @@ export default class Singer extends React.Component {
 
         <View style={styles.backgroundVideo} >
           {/*<Video source={{uri: "http://music.jesbrian.cn/static/music/test2.mp3"}}   // Can be a URL or a local file.*/}
-          <Video source={{uri: "http://www.runoob.com/try/demo_source/movie.mp4"}}   // Can be a URL or a local file.
+          <Video source={{uri: "http://music.jesbrian.cn/static/music/test2.mp3"}}   // Can be a URL or a local file.
                  ref={(ref) => {
                    this.player = ref
                  }}                                      // Store reference
             // onBuffer={this.onBuffer}                // Callback when remote video is buffering
             // onEnd={this.onEnd}                      // Callback when playback finishes
             // onError={this.videoError}               // Callback when video cannot be loaded
-                 style={{flex:1}}/>
+          />
         </View>
       </View>
     );
