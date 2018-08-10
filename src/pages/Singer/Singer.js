@@ -21,8 +21,7 @@ export default class Singer extends React.Component {
         <SuperButton label="登录" />
 
         <View style={styles.backgroundVideo} >
-          {/*<Video source={{uri: "http://music.jesbrian.cn/static/music/test2.mp3"}}   // Can be a URL or a local file.*/}
-          <Video source={{uri: "http://music.jesbrian.cn/static/music/test2.mp3"}}   // Can be a URL or a local file.
+          <Video source={{uri: "http://music.jesbrian.local/resource/test2.mp3"}}   // Can be a URL or a local file.
                  ref={(ref) => {
                    this.player = ref
                  }}                                      // Store reference
