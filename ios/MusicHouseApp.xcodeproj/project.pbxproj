@@ -12,7 +12,6 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* MusicHouseAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MusicHouseAppTests.m */; };
-		0B661CDCFF4E49CCBD1D8EEE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DD397344E87243ED9346A634 /* libsqlite3.0.tbd */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -37,9 +36,8 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		7948891487AA454D81B14757 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B70468FEE2840F48EF4AF49 /* libRNSVG.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		896EC897F62041B5A3CF0490 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C3DEE6048E46F0B88486BF /* libRCTVideo.a */; };
-		AEA6A620ED27421BBFFD324C /* libSQLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE04E3A8FD84740A42FCC3A /* libSQLite.a */; };
 		E893A6AFE9784380990AC54F /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A553F96B23470BA1B680CD /* libBVLinearGradient.a */; };
+		18BB44803DEB479692B3315E /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 892449F290F745DDA9949099 /* libRCTVideo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -225,27 +223,6 @@
 			remoteGlobalIDString = 0CF68AC11AF0540F00FF9E5C;
 			remoteInfo = RNSVG;
 		};
-		5E4669AC211869C000343B40 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A797E1786CC4993BDE82B1C /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E23D7B471ACEFE2A00C59171;
-			remoteInfo = SQLite;
-		};
-		5E81EF67211B30310090DB9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5745C9C1679B4E2E8BF658A8 /* RCTVideo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = RCTVideo;
-		};
-		5E81EF69211B30310090DB9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5745C9C1679B4E2E8BF658A8 /* RCTVideo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 641E28441F0EEC8500443AF6;
-			remoteInfo = "RCTVideo-tvOS";
-		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
@@ -299,17 +276,14 @@
 		1B70468FEE2840F48EF4AF49 /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSVG.a; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* MusicHouseApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MusicHouseApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* MusicHouseApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MusicHouseApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FE04E3A8FD84740A42FCC3A /* libSQLite.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libSQLite.a; sourceTree = "<group>"; };
-		5745C9C1679B4E2E8BF658A8 /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTVideo.xcodeproj; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		726731B920674812AF9F1447 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		860D8F1C5E024A9892E87270 /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
 		99A553F96B23470BA1B680CD /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
-		9A797E1786CC4993BDE82B1C /* SQLite.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../node_modules/react-native-sqlite-storage/src/ios/SQLite.xcodeproj"; sourceTree = "<group>"; };
-		DD397344E87243ED9346A634 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		F3C3DEE6048E46F0B88486BF /* libRCTVideo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTVideo.a; sourceTree = "<group>"; };
+		8400DEA5885C4E0CAA574BE6 /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; name = "RCTVideo.xcodeproj"; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		892449F290F745DDA9949099 /* libRCTVideo.a */ = {isa = PBXFileReference; name = "libRCTVideo.a"; path = "libRCTVideo.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,9 +312,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				E893A6AFE9784380990AC54F /* libBVLinearGradient.a in Frameworks */,
 				7948891487AA454D81B14757 /* libRNSVG.a in Frameworks */,
-				AEA6A620ED27421BBFFD324C /* libSQLite.a in Frameworks */,
-				0B661CDCFF4E49CCBD1D8EEE /* libsqlite3.0.tbd in Frameworks */,
-				896EC897F62041B5A3CF0490 /* libRCTVideo.a in Frameworks */,
+				18BB44803DEB479692B3315E /* libRCTVideo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,14 +447,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1CA59CA308734CA8835129C4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DD397344E87243ED9346A634 /* libsqlite3.0.tbd */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		5E086685211091DE0025BB20 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,23 +460,6 @@
 			isa = PBXGroup;
 			children = (
 				5E0866AA211091DF0025BB20 /* libRNSVG.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		5E46698D211869BD00343B40 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5E4669AD211869C000343B40 /* libSQLite.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		5E81EF52211B30310090DB9B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5E81EF68211B30310090DB9B /* libRCTVideo.a */,
-				5E81EF6A211B30310090DB9B /* libRCTVideo.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -551,8 +498,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				726731B920674812AF9F1447 /* BVLinearGradient.xcodeproj */,
 				860D8F1C5E024A9892E87270 /* RNSVG.xcodeproj */,
-				9A797E1786CC4993BDE82B1C /* SQLite.xcodeproj */,
-				5745C9C1679B4E2E8BF658A8 /* RCTVideo.xcodeproj */,
+				8400DEA5885C4E0CAA574BE6 /* RCTVideo.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -573,7 +519,6 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* MusicHouseAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
-				1CA59CA308734CA8835129C4 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -742,10 +687,6 @@
 					ProjectRef = 00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */;
 				},
 				{
-					ProductGroup = 5E81EF52211B30310090DB9B /* Products */;
-					ProjectRef = 5745C9C1679B4E2E8BF658A8 /* RCTVideo.xcodeproj */;
-				},
-				{
 					ProductGroup = 139FDEE71B06529A00C62182 /* Products */;
 					ProjectRef = 139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */;
 				},
@@ -756,10 +697,6 @@
 				{
 					ProductGroup = 5E086687211091DE0025BB20 /* Products */;
 					ProjectRef = 860D8F1C5E024A9892E87270 /* RNSVG.xcodeproj */;
-				},
-				{
-					ProductGroup = 5E46698D211869BD00343B40 /* Products */;
-					ProjectRef = 9A797E1786CC4993BDE82B1C /* SQLite.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -941,27 +878,6 @@
 			remoteRef = 5E0866A9211091DF0025BB20 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5E4669AD211869C000343B40 /* libSQLite.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSQLite.a;
-			remoteRef = 5E4669AC211869C000343B40 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5E81EF68211B30310090DB9B /* libRCTVideo.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTVideo.a;
-			remoteRef = 5E81EF67211B30310090DB9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5E81EF6A211B30310090DB9B /* libRCTVideo.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTVideo.a;
-			remoteRef = 5E81EF69211B30310090DB9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1132,15 +1048,13 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-sqlite-storage/src/ios",
-					"$(SRCROOT)/../node_modules/react-native-video/ios",
+					"$(SRCROOT)\..\node_modules\react-native-video\ios",
 				);
 				INFOPLIST_FILE = MusicHouseAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1163,15 +1077,13 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-sqlite-storage/src/ios",
-					"$(SRCROOT)/../node_modules/react-native-video/ios",
+					"$(SRCROOT)\..\node_modules\react-native-video\ios",
 				);
 				INFOPLIST_FILE = MusicHouseAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1195,8 +1107,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-sqlite-storage/src/ios",
-					"$(SRCROOT)/../node_modules/react-native-video/ios",
+					"$(SRCROOT)\..\node_modules\react-native-video\ios",
 				);
 				INFOPLIST_FILE = MusicHouseApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1219,8 +1130,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-sqlite-storage/src/ios",
-					"$(SRCROOT)/../node_modules/react-native-video/ios",
+					"$(SRCROOT)\..\node_modules\react-native-video\ios",
 				);
 				INFOPLIST_FILE = MusicHouseApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1250,14 +1160,12 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-sqlite-storage/src/ios",
-					"$(SRCROOT)/../node_modules/react-native-video/ios",
+					"$(SRCROOT)\..\node_modules\react-native-video\ios",
 				);
 				INFOPLIST_FILE = "MusicHouseApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1290,14 +1198,12 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-sqlite-storage/src/ios",
-					"$(SRCROOT)/../node_modules/react-native-video/ios",
+					"$(SRCROOT)\..\node_modules\react-native-video\ios",
 				);
 				INFOPLIST_FILE = "MusicHouseApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1332,7 +1238,6 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.MusicHouseApp-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1357,7 +1262,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",

@@ -30,14 +30,13 @@ export default class Login extends React.Component {
 
         <View style={{flex:1, flexDirection:'column', alignItems:'center'}}>
           <View style={{marginTop:38, justifyContent:'center',}}>
-            <TextInput value={this.state.phone} onChangeText={(phone) => {
-              this.setState({
-                phone: phone
-              })
-            }} style={{width:Dimensions.get('window').width - 88, height:53, paddingLeft:18, paddingRight:18, borderRadius:26, borderWidth:3, borderColor:'#38daf0'}} />
+            <TextInput value={this.state.phone} onChangeText={(phone) => {this.setState({phone: phone})}}
+                       underlineColorAndroid='transparent'
+                       style={{width:Dimensions.get('window').width - 88, height:53, paddingLeft:18, paddingRight:18, borderRadius:26, borderWidth:3, borderColor:'#38daf0'}} />
           </View>
           <View style={{marginTop:18, marginBottom:18, position:'relative', justifyContent:'center'}}>
             <TextInput value={this.state.passwd} secureTextEntry={this.state.isHiddenPasswd} onChangeText={(passwd) => {this.setState({passwd: passwd})}}
+                       underlineColorAndroid='transparent'
                        style={{width:Dimensions.get('window').width - 88, height:53, paddingLeft:18, paddingRight:51, borderRadius:26, borderWidth:3, borderColor:'#38daf0'}} />
             {
               this.state.passwd === '' ? null :
