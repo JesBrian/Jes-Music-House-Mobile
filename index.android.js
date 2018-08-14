@@ -14,12 +14,15 @@ import {
 
 import PageRouter from './src/router/AndroidPageRouter.js'
 
+import MusicPlayer from './src/layout/Bottom/MusicPlayer.js'
+
 export default class MusicHouseApp extends React.Component {
   render() {
     return (
       <View style={{flex:1}}>
         <StatusBar barStyle="light-content" />
         <PageRouter/>
+        <MusicPlayer navigation={this.props.navigation} />
       </View>
     );
   }

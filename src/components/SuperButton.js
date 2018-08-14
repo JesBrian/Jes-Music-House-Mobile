@@ -1,6 +1,7 @@
 import React  from 'react';
 
 import {
+  Platform,
   StyleSheet,
   Text,
   TouchableWithoutFeedback

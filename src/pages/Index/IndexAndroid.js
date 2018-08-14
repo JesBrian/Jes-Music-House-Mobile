@@ -12,7 +12,6 @@ import {
 
 import IndexNavbar from '../../layout/Top/type/IndexNavbar.js'
 import MenuPanel from '../../layout/Left/MenuPanel.js'
-import MusicPlayer from '../../layout/Bottom/MusicPlayer.js'
 import SuperButton from '../../components/SuperButton.js'
 
 
@@ -39,8 +38,6 @@ export default class Index extends React.Component {
               <Button title='跳转到歌手' onPress={() => this.props.navigation.navigate('Singer')}/>
             </View>
           </ScrollView>
-
-          <MusicPlayer navigation={this.props.navigation} />
         </View>
 
       </DrawerLayoutAndroid>
