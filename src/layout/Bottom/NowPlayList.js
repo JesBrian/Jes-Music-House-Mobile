@@ -5,7 +5,8 @@ import {
   View,
   ScrollView,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  TouchableWithoutFeedback
 } from 'react-native';
 
 import {common} from '../../assets/styles/common.js'
@@ -19,16 +20,42 @@ export default class NowPlayList extends React.Component {
   }
 
   render () {
+    let temp = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+
     return (
       <View style={{width:'100%', height:'100%', bottom:0, left:0, flex:1, position:'absolute', backgroundColor:'rgba(0, 0, 0, 0.5)', zIndex:5}}>
         <TouchableOpacity style={{flex:1}}>
           <View />
         </TouchableOpacity>
-        <View style={{height:338, position:'relative', flex:1, flexDirection:'column', borderTopLeftRadius:12, borderTopRightRadius:12, backgroundColor:'#333'}}>
-          <View style={{width:'100%', height:68, borderTopLeftRadius:12, borderTopRightRadius:12, backgroundColor:'#20dbfc'}}>
-            <Text>555</Text>
+        <View style={{height:338, position:'relative', flex:1, flexDirection:'column'}}>
+          <View style={{width:'100%', height:48, flexDirection:'row', borderTopLeftRadius:12, borderTopRightRadius:12, backgroundColor:'#77ffac'}}>
+            <TouchableOpacity>
+              <View style={{width:138, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
+                <Text style={[common.icon, {fontSize:21}]}>&#xe66c;</Text>
+                <Text style={{fontSize:15}}>循环列表[88]</Text>
+              </View>
+            </TouchableOpacity>
+            <View style={{flex:1, flexDirection:'row', justifyContent:'flex-end'}}>
+              <TouchableOpacity>
+                <View style={{width:108, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+                  <Text style={[common.icon, {fontSize:21}]}>&#xe80d;</Text>
+                  <Text style={{fontSize:15}}> 收藏全部</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+            <TouchableOpacity>
+              <View style={{width:46, height:'100%', justifyContent:'center', alignItems:'center'}}>
+                <Text style={[common.icon, {fontSize:21}]}>&#xe61f;</Text>
+              </View>
+            </TouchableOpacity>
           </View>
           <ScrollView style={{flex:1}}>
+            {
+              temp.map((i, index) => {
+                alert(i)
+                return <Text>{i}</Text>
+              })
+            }
           </ScrollView>
         </View>
       </View>
