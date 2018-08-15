@@ -15,14 +15,25 @@ import {
 import PageRouter from './src/router/AndroidPageRouter.js'
 
 import MusicPlayer from './src/layout/Bottom/MusicPlayer.js'
+import NowPlayList from './src/layout/Bottom/NowPlayList.js'
 
 export default class MusicHouseApp extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      bottomType: 'playList'
+    };
+  }
+
   render() {
     return (
-      <View style={{flex:1}}>
+      <View style={{flex:1, position:'relative'}}>
         <StatusBar barStyle="light-content" />
         <PageRouter/>
-        <MusicPlayer navigation={this.props.navigation} />
+
+        {
+          this.state.bottomType === '' ? null : this.state.bottomType === 'music' ? <MusicPlayer/> : <NowPlayList/>
+        }
       </View>
     );
   }
