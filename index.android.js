@@ -12,10 +12,18 @@ import {
   View
 } from 'react-native';
 
+
+import { Provider } from 'react-redux'
+import ConfigureStore from './src/redux/store/ConfigureStore.js'
+
+
 import PageRouter from './src/router/AndroidPageRouter.js'
 
 import MusicPlayer from './src/layout/Bottom/MusicPlayer.js'
 import NowPlayList from './src/layout/Bottom/NowPlayList.js'
+
+
+const store = ConfigureStore();
 
 export default class MusicHouseApp extends React.Component {
   constructor (props) {
@@ -27,14 +35,15 @@ export default class MusicHouseApp extends React.Component {
 
   render() {
     return (
-      <View style={{flex:1, position:'relative'}}>
-        <StatusBar barStyle="light-content" />
-        <PageRouter/>
-
-        {
-          this.state.bottomType === '' ? null : this.state.bottomType === 'music' ? <MusicPlayer/> : <NowPlayList/>
-        }
-      </View>
+      <Provider store={store}>
+        <View style={{flex:1, position:'relative'}}>
+          <StatusBar barStyle="light-content" />
+          <PageRouter/>
+          {
+            this.state.bottomType === '' ? null : this.state.bottomType === 'music' ? <MusicPlayer/> : <NowPlayList/>
+          }
+        </View>
+      </Provider>
     );
   }
 }

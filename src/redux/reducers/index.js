@@ -3,11 +3,12 @@
 'use strict';
 
 import { combineReducers } from 'redux';
-import music from './MusicReducer.js';
+import music from './item/MusicReducer.js';
+import view from './item/ViewReducer.js';
 
 
 const rootReducer = combineReducers({
-  music,
+  music, view
 });
 
 export default rootReducer;

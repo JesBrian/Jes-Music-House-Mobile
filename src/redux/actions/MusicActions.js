@@ -1,6 +1,6 @@
 'use strict';
 
-import * as tyes from '../constants/MusicTypes.js';
+import * as types from '../constants/MusicTypes.js';
 
 export function f() {
 
