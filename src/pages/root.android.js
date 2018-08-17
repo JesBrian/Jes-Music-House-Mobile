@@ -2,7 +2,8 @@ import React  from 'react';
 
 import {
   StatusBar,
-  View
+  View,
+  Text
 } from 'react-native';
 
 
@@ -18,24 +19,17 @@ class Root extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      viewBottomType: 'music'
     };
-  }
-
-  componentWillMount() {
-    alert(this.props.showView)
-    setTimeout(() => {
-      alert(this.props.showView)
-    }, 5000)
   }
 
   render() {
     return (
       <View style={{flex:1, position:'relative'}}>
         <StatusBar barStyle="light-content" />
+        <Text>{ this.props.showView.bottom }</Text>
         <PageRouter/>
         {
-          this.state.viewBottomType === '' ? null : this.state.viewBottomType === 'music' ? <MusicPlayer/> : <NowPlayList/>
+          this.props.showView.bottom === '' ? null : this.props.showView.bottom === 'music' ? <MusicPlayer/> : <NowPlayList/>
         }
       </View>
     );

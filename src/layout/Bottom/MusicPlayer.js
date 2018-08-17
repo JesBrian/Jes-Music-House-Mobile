@@ -9,10 +9,13 @@ import {
 } from 'react-native';
 
 
+import { connect } from 'react-redux'
+import { showBottomPlayList } from '../../redux/actions/ViewActions.js'
+
 import {common} from '../../assets/styles/common.js'
 
 
-export default class MusicPlayer extends React.Component {
+class MusicPlayer extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -21,7 +24,7 @@ export default class MusicPlayer extends React.Component {
 
   render () {
     return (
-      <View style={{width:'100%', height:this.state.showNowPlayList === true ? 338 : 53, backgroundColor:'#333'}}>
+      <View style={{width:'100%', height:53, backgroundColor:'#333'}}>
         <View style={{flex:1, position:'relative', flexDirection:'row'}}>
           <TouchableOpacity onPress={()=>this.props.navigation.navigate('Song')} style={{flex:1, flexDirection:'row', justifyContent:'flex-start'}}>
             <View style={{width:58, flexDirection:'row', alignItems:'center', justifyContent:'center' }}>
@@ -38,7 +41,7 @@ export default class MusicPlayer extends React.Component {
             <TouchableOpacity style={{paddingLeft:6, paddingRight:8, flexDirection:'column', justifyContent:'center'}}>
               <Text style={[common.icon,  {fontSize:28, color:'#CCC'}]}>&#xe6b4;</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}} style={{paddingLeft:8, paddingRight:18, flexDirection:'column', justifyContent:'center'}}>
+            <TouchableOpacity onPress={() => {this.props.dispatch(showBottomPlayList())}} style={{paddingLeft:8, paddingRight:18, flexDirection:'column', justifyContent:'center'}}>
               <Text style={[common.icon, {fontSize:26, color:'#CCC'}]}>&#xe654;</Text>
             </TouchableOpacity>
           </View>
@@ -51,3 +54,12 @@ export default class MusicPlayer extends React.Component {
 
 const styles = StyleSheet.create({
 })
+
+
+function reduxState(store) {
+  return {
+    showView: store.showView,
+  }
+}
+
+export default connect(reduxState)(MusicPlayer);

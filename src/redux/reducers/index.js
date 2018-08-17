@@ -4,11 +4,11 @@
 
 import { combineReducers } from 'redux';
 import music from './item/MusicReducer.js';
-import view from './item/ViewReducer.js';
+import showView from './item/ViewReducer.js';
 
 
 const rootReducer = combineReducers({
-  music, view
+  music, showView
 });
 
 export default rootReducer;

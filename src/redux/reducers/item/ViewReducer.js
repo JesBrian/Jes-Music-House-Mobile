@@ -6,7 +6,7 @@ import * as types from '../../constants/ViewTypes.js';
  * 这里可以初始化一个默认的实体类
  */
 const initialState = {
-  bottom: ''
+  bottom: 'music'
 }
 
 /**
