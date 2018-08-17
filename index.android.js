@@ -17,14 +17,13 @@ import ConfigureStore from './src/redux/store/ConfigureStore.js'
 
 import Root from './src/pages/root.android.js'
 
-
 const store = ConfigureStore();
+
 
 export default class MusicHouseApp extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      bottomType: 'playList'
     };
   }
 

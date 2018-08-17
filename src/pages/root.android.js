@@ -18,12 +18,15 @@ class Root extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      bottomType: 'music'
+      viewBottomType: 'music'
     };
   }
 
   componentWillMount() {
-    // alert(this.state.bottomType)
+    alert(this.props.showView)
+    setTimeout(() => {
+      alert(this.props.showView)
+    }, 5000)
   }
 
   render() {
@@ -32,18 +35,17 @@ class Root extends React.Component {
         <StatusBar barStyle="light-content" />
         <PageRouter/>
         {
-          this.state.bottomType === '' ? null : this.state.bottomType === 'music' ? <MusicPlayer/> : <NowPlayList/>
+          this.state.viewBottomType === '' ? null : this.state.viewBottomType === 'music' ? <MusicPlayer/> : <NowPlayList/>
         }
       </View>
     );
   }
 }
 
-
-function select(store) {
+function reduxState(store) {
   return {
-    GetWeatherReducer : store.view,
+    showView: store.showView,
   }
 }
 
-export default connect(select)(Root);
+export default connect(reduxState)(Root);

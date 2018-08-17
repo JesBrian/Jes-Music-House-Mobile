@@ -1,3 +1,3 @@
 
-export const VIEW_MUSIC = 'VIEW_MUSIC'; //
-export const VIEW_PLAYLIST = 'VIEW_PLAYLIST'; //
+export const VIEW_BOTTOM_MUSIC = 'BOTTOM_MUSIC'; //
+export const VIEW_BOTTOM_PLAYLIST = 'BOTTOM_PLAYLIST'; //
