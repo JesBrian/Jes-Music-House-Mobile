@@ -7,20 +7,31 @@
 import React  from 'react';
 
 import {
-  AppRegistry,
-  StatusBar,
-  View
+  AppRegistry
 } from 'react-native';
 
-import PageRouter from './src/router/IosPageRouter.js'
+
+import { Provider } from 'react-redux'
+
+import ConfigureStore from './src/redux/store/ConfigureStore.js'
+
+import Root from './src/pages/root.ios.js'
+
+const store = ConfigureStore();
+
 
 export default class MusicHouseApp extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+    };
+  }
+
   render() {
     return (
-      <View style={{flex:1}}>
-        <StatusBar barStyle="light-content" />
-        <PageRouter/>
-      </View>
+      <Provider store={store}>
+        <Root />
+      </Provider>
     );
   }
 }
