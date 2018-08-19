@@ -68,11 +68,6 @@ class NowPlayList extends React.Component {
             </TouchableOpacity>
           </View>
           <ScrollView style={{flex:1, backgroundColor:'#FFF'}}>
-            {
-              temp.map((i, index) => {
-                return <Text>{i}</Text>
-              })
-            }
           </ScrollView>
         </View>
       </View>

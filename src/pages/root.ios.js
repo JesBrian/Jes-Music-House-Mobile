@@ -26,8 +26,9 @@ class Root extends React.Component {
       <View style={{flex:1, position:'relative'}}>
         <StatusBar barStyle="light-content" />
         <PageRouter/>
+        <MusicPlayer/>
         {
-          this.props.showView.bottom === '' ? null : this.props.showView.bottom === 'music' ? <MusicPlayer/> : <NowPlayList/>
+          this.props.showView.bottom === '' ? null : this.props.showView.bottom === 'music' ? null : <NowPlayList/>
         }
       </View>
     );
