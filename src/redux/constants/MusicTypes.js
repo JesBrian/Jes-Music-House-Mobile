@@ -1,3 +1,3 @@
 
-export const MUSIC_PLAY = 'MUSIC_PLAY'; // 正在播放
-export const MUSIC_PAUSE = 'MUSIC_PAUSE'; // 暂停播放
+export const MUSIC_STATUS_PLAY = 'MUSIC_PLAY';
+export const MUSIC_STATUS_PAUSE = 'MUSIC_PAUSE';
