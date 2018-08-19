@@ -29,7 +29,10 @@ class Root extends React.Component {
         <Text>{ this.props.showView.bottom }</Text>
         <PageRouter/>
         {
-          this.props.showView.bottom === '' ? null : this.props.showView.bottom === 'music' ? <MusicPlayer/> : <NowPlayList/>
+          this.props.showView.bottomMusic === true ? <MusicPlayer/> : null
+        }
+        {
+          this.props.showView.bottomPlayList === true ?  <NowPlayList/> : null
         }
       </View>
     );

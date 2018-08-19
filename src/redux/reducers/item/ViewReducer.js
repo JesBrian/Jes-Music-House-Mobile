@@ -6,7 +6,8 @@ import * as types from '../../constants/ViewTypes.js';
  * 这里可以初始化一个默认的实体类
  */
 const initialState = {
-  bottom: 'music'
+  bottomMusic: true,
+  bottomPlayList: false
 }
 
 /**
@@ -15,16 +16,26 @@ const initialState = {
  */
 export default function showView(state = initialState, action) {
   switch (action.type) {
-    case types.VIEW_BOTTOM_MUSIC:
+    case types.VIEW_BOTTOM_SHOW_MUSIC: {
       return {
-        ...state, bottom: 'music'
+        ...state, bottomMusic: true
       };
-      break;
-    case types.VIEW_BOTTOM_PLAYLIST:
+    }
+    case types.VIEW_BOTTOM_HIDDEN_MUSIC: {
       return {
-        ...state, bottom: 'playList'
+        ...state, bottomMusic: false
       };
-      break;
+    }
+    case types.VIEW_BOTTOM_SHOW_PLAYLIST: {
+      return {
+        ...state, bottomPlayList: true
+      };
+    }
+    case types.VIEW_BOTTOM_HIDDEN_PLAYLIST: {
+      return {
+        ...state, bottomPlayList: false
+      };
+    }
     default:
       return state;
   }

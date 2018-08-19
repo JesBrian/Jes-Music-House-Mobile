@@ -14,6 +14,7 @@ import { connect } from 'react-redux'
 import { showBottomMusic } from '../../redux/actions/ViewActions.js'
 
 import { common } from '../../assets/styles/common.js'
+import {hiddenBottomPlayList} from "../../redux/actions/ViewActions";
 
 
 class NowPlayList extends React.Component {
@@ -29,7 +30,7 @@ class NowPlayList extends React.Component {
 
     return (
       <View style={{width:'100%', height:'100%', bottom:0, left:0, flex:1, position:'absolute', backgroundColor:'rgba(0, 0, 0, 0.5)', zIndex:5}}>
-        <TouchableOpacity onPress={() => {this.props.dispatch(showBottomMusic())}} style={{flex:1}}>
+        <TouchableOpacity onPress={() => {this.props.dispatch(hiddenBottomPlayList())}} style={{flex:1}}>
           <View />
         </TouchableOpacity>
         <View style={{height:338, position:'relative', flex:1, flexDirection:'column'}}>
