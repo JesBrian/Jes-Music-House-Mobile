@@ -21,6 +21,10 @@ class Root extends React.Component {
     };
   }
 
+  componentDidMount () {
+    // alert(this.props.config.navigatorObj)
+  }
+
   render() {
     return (
       <View style={{flex:1, position:'relative'}}>
@@ -39,7 +43,8 @@ class Root extends React.Component {
 
 function reduxState(store) {
   return {
-    showView: store.showView,
+    config: store.config,
+    showView: store.showView
   }
 }
 

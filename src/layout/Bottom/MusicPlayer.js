@@ -12,6 +12,8 @@ import {
 import { connect } from 'react-redux'
 import { showBottomPlayList } from '../../redux/actions/ViewActions.js'
 
+import { goOpenPage } from '../../utils/router/router.js'
+
 import {common} from '../../assets/styles/common.js'
 
 
@@ -26,9 +28,9 @@ class MusicPlayer extends React.Component {
     return (
       <View style={{width:'100%', height:53, backgroundColor:'#333'}}>
         <View style={{flex:1, position:'relative', flexDirection:'row'}}>
-          <TouchableOpacity onPress={()=>this.props.navigation.navigate('Song')} style={{flex:1, flexDirection:'row', justifyContent:'flex-start'}}>
+          <TouchableOpacity onPress={()=>this.props.config.navigation.navigate('Song')} style={{flex:1, flexDirection:'row', justifyContent:'flex-start'}}>
             <View style={{width:58, flexDirection:'row', alignItems:'center', justifyContent:'center' }}>
-              <TouchableOpacity onPress={()=>this.props.navigation.navigate('Song')} style={{width:'76%', height:'76%', marginLeft:2}}>
+              <TouchableOpacity onPress={()=>this.props.config.navigation.navigate('Song')} style={{width:'76%', height:'76%', marginLeft:2}}>
                 <Image style={{flex:1, marginLeft:2, borderWidth:1, borderRadius:4, borderColor:'#666'}} source={{uri:'http://www.chuanke.com/upload/courseware/f/31/3312428/image/09c68fe797fa58d78a1de4f34e0ea40f.gif'}} />
               </TouchableOpacity>
             </View>
@@ -58,6 +60,8 @@ const styles = StyleSheet.create({
 
 function reduxState(store) {
   return {
+    config: store.config,
+    music: store.music,
     showView: store.showView,
   }
 }

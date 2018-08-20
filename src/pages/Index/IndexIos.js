@@ -8,13 +8,27 @@ import {
   Button
 } from 'react-native';
 
+
+import {connect} from 'react-redux'
+import { setNavigation } from '../../redux/actions/ConfigActions.js'
+
 import IndexNavbar from '../../layout/Top/type/IndexNavbar.js'
 import MenuPanel from '../../layout/Left/MenuPanel.js'
 import Drawer from 'react-native-drawer'
 import SuperButton from '../../components/SuperButton.js'
 
 
-export default class Index extends React.Component {
+class Index extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+    }
+  }
+
+  componentDidMount () {
+    // alert(this.props.navigation)
+    this.props.dispatch(setNavigation(this.props.navigation))
+  }
 
   render() {
     return (
@@ -83,3 +97,13 @@ const drawerStyles = {
     paddingLeft:3
   }
 }
+
+
+function reduxState(store) {
+  return {
+    config: store.config,
+    music: store.music
+  }
+}
+
+export default connect(reduxState)(Index);
