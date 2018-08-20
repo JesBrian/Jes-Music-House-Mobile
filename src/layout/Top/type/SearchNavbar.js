@@ -27,7 +27,7 @@ export default class SearchNavbar extends React.Component {
         <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
           <TouchableWithoutFeedback onPress={() => {this.props.navigation.goBack()}}>
             <View style={{width:45, flexDirection:'row', justifyContent:'center'}}>
-              <Text style={[common.icon, {fontSize:31}]}>&#xe8ca;</Text>
+              <Text style={[common.icon, {fontSize:31, color:'#AAA'}]}>&#xe8ca;</Text>
             </View>
           </TouchableWithoutFeedback>
 
@@ -46,7 +46,7 @@ export default class SearchNavbar extends React.Component {
 
           <TouchableWithoutFeedback>
             <View style={{width:50, flexDirection:'row', justifyContent:'center'}}>
-              <Text style={[common.icon, {fontSize:31}]}>&#xe65a;</Text>
+              <Text style={[common.icon, {fontSize:31, color:'#AAA'}]}>&#xe65a;</Text>
             </View>
           </TouchableWithoutFeedback>
         </View>

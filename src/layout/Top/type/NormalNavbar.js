@@ -9,7 +9,7 @@ import {
 
 import NavbarFrame from '../NavbarFrame.js'
 
-import {common} from '../../../assets/styles/common.js'
+import { common } from '../../../assets/styles/common.js'
 
 export default class NormalNavbar extends React.Component {
   constructor (props) {
@@ -25,7 +25,7 @@ export default class NormalNavbar extends React.Component {
         <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
           <TouchableWithoutFeedback onPress={() => {this.props.navigation.goBack()}}>
             <View style={{width:50, flexDirection:'row', justifyContent:'center'}}>
-              <Text style={[common.icon, {fontSize:31}]}>&#xe8ca;</Text>
+              <Text style={[common.icon, {fontSize:31, color:'#AAA'}]}>&#xe8ca;</Text>
             </View>
           </TouchableWithoutFeedback>
 
