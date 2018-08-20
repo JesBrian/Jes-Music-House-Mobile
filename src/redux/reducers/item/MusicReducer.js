@@ -6,7 +6,8 @@ import * as types from '../../constants/MusicTypes.js';
  * 这里可以初始化一个默认的实体类
  */
 const initialState = {
-  playStatus: false
+  playStatus: false,
+  playModel: 'loop', // [ loop/single-loop/random ]
 }
 
 
@@ -24,6 +25,16 @@ export default function showView(state = initialState, action) {
     case types.MUSIC_STATUS_PAUSE: {
       return {
         ...state, playStatus: false
+      };
+    }
+    case types.CHANGE_MUSIC_PLAY_STATUS: {
+      return {
+        ...state, playStatus: !state.playStatus
+      };
+    }
+    case types.CHANGE_MUSIC_PLAY_MODEL: {
+      return {
+        ...state, playModel: (state.playModel === 'loop' ? 'single-loop' : state.playModel === 'random' ? 'loop' : 'random')
       };
     }
     default:

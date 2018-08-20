@@ -7,6 +7,11 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
+
+import { connect } from 'react-redux'
+import { hiddenBottomMusic, showBottomMusic, showBottomPlayList } from '../../redux/actions/ViewActions.js'
+import { changeMusicPlayStatus, changeMusicPlayModel } from '../../redux/actions/MusicActions.js'
+
 import SongNavbar from '../../layout/Top/type/SongNavbar.js'
 import SongImg from './type/SongImg.js'
 import SongLyric from './type/SongLyric.js'
@@ -14,14 +19,20 @@ import SongLyric from './type/SongLyric.js'
 
 import {common} from "../../assets/styles/common";
 
-export default class Song extends React.Component {
+class Song extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      playStatus: false,
-      showSongContentType: 'img', // [img/lyric]
-      playModel: 'loop', // [loop/single-loop/random]
+      showSongContentType: 'img', // [ img/lyric ]
     };
+  }
+
+  componentWillMount () {
+    this.props.dispatch(hiddenBottomMusic())
+  }
+
+  componentWillUnmount () {
+    this.props.dispatch(showBottomMusic())
   }
 
   render() {
@@ -57,9 +68,9 @@ export default class Song extends React.Component {
               <TouchableWithoutFeedback onPress={this.changePlayModel} >
                 <View>
                   {
-                    this.state.playModel === 'loop' ?
+                    this.props.music.playModel === 'loop' ?
                       <Text style={[common.icon, {fontSize:24}]}>&#xe66c;</Text>
-                        : this.state.playModel === 'single-loop' ?
+                        : this.props.music.playModel === 'single-loop' ?
                           <Text style={[common.icon, {fontSize:24}]}>&#xe66b;</Text> :
                             <Text style={[common.icon, {fontSize:24}]}>&#xe607;</Text>
                   }
@@ -71,16 +82,19 @@ export default class Song extends React.Component {
               <TouchableWithoutFeedback onPress={this.changePlayStatus}>
                 <View style={{margin:28}}>
                   {
-                    this.state.playStatus === false ?
-                      <Text style={[common.icon, {fontSize:48}]}>&#xe6b4;</Text> : <Text style={[common.icon, {fontSize:48}]}>&#xe8c8;</Text>
+                    this.props.music.playStatus === false ?
+                      <Text style={[common.icon, {fontSize:48}]}>&#xe6b4;</Text> :
+                        <Text style={[common.icon, {fontSize:48}]}>&#xe8c8;</Text>
                   }
                 </View>
               </TouchableWithoutFeedback>
               <Text style={[common.icon, {fontSize:28}]}>&#xe604;</Text>
             </View>
-            <View style={{width:68, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-              <Text style={[common.icon, {fontSize:24}]}>&#xe654;</Text>
-            </View>
+            <TouchableWithoutFeedback onPress={() => {this.props.dispatch(showBottomPlayList());}}>
+              <View style={{width:68, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+                <Text style={[common.icon, {fontSize:24}]}>&#xe654;</Text>
+              </View>
+            </TouchableWithoutFeedback>
           </View>
 
         </View>
@@ -102,24 +116,14 @@ export default class Song extends React.Component {
    * 修改播放模式
    */
   changePlayModel = () => {
-    let type = 'loop';
-    if (this.state.playModel === 'loop') {
-      type = 'single-loop';
-    } else if (this.state.playModel === 'single-loop') {
-      type = 'random';
-    }
-    this.setState({
-      playModel: type
-    });
+    this.props.dispatch(changeMusicPlayModel());
   };
 
   /**
    * 修改播放状态
    */
   changePlayStatus = () => {
-    this.setState({
-      playStatus: !this.state.playStatus
-    });
+    this.props.dispatch(changeMusicPlayStatus());
   }
 }
 
@@ -131,3 +135,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
 });
+
+
+function reduxState(store) {
+  return {
+    music: store.music
+  }
+}
+
+export default connect(reduxState)(Song);

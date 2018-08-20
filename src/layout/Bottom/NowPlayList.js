@@ -11,7 +11,7 @@ import {
 
 
 import { connect } from 'react-redux'
-import { showBottomMusic } from '../../redux/actions/ViewActions.js'
+import { changeMusicPlayModel } from '../../redux/actions/MusicActions.js'
 
 import { common } from '../../assets/styles/common.js'
 import {hiddenBottomPlayList} from "../../redux/actions/ViewActions";
@@ -37,19 +37,19 @@ class NowPlayList extends React.Component {
           <View style={{width:'100%', height:48, flexDirection:'row', borderTopLeftRadius:12, borderTopRightRadius:12, backgroundColor:'#444'}}>
             <TouchableOpacity onPress={this.changePlayModel.bind(this)}>
               {
-                this.state.playModel === 'loop' ?
+                this.props.music.playModel === 'loop' ?
                   <View style={{width:138, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
-                    <Text style={[common.icon, {marginRight:4, fontSize:20, color:'#FFF'}]}>&#xe66c;</Text>
+                    <Text style={[common.icon, {marginRight:4, fontSize:18, color:'#FFF'}]}>&#xe66c;</Text>
                     <Text style={{fontSize:16, color:'#FFF'}}>循环列表[88]</Text>
                   </View>
-                  : this.state.playModel === 'single-loop' ?
+                  : this.props.music.playModel === 'single-loop' ?
                   <View style={{width:138, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
-                    <Text style={[common.icon, {marginRight:4, fontSize:20, color:'#FFF'}]}>&#xe66b;</Text>
+                    <Text style={[common.icon, {marginRight:4, fontSize:18, color:'#FFF'}]}>&#xe66b;</Text>
                     <Text style={{fontSize:16, color:'#FFF'}}>单曲循环[88]</Text>
                   </View>
                   :
                   <View style={{width:138, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
-                    <Text style={[common.icon, {marginRight:4, fontSize:20, color:'#FFF'}]}>&#xe607;</Text>
+                    <Text style={[common.icon, {marginRight:4, fontSize:18, color:'#FFF'}]}>&#xe607;</Text>
                     <Text style={{fontSize:16, color:'#FFF'}}>随机播放[88]</Text>
                   </View>
               }
@@ -57,7 +57,7 @@ class NowPlayList extends React.Component {
             <View style={{flex:1, flexDirection:'row', justifyContent:'flex-end'}}>
               <TouchableOpacity>
                 <View style={{width:108, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-                  <Text style={[common.icon, {fontSize:20, color:'#FFF'}]}>&#xe80d;</Text>
+                  <Text style={[common.icon, {fontSize:18, color:'#FFF'}]}>&#xe80d;</Text>
                   <Text style={{fontSize:16, color:'#FFF'}}> 收藏全部</Text>
                 </View>
               </TouchableOpacity>
@@ -77,15 +77,7 @@ class NowPlayList extends React.Component {
 
 
   changePlayModel () {
-    let type = 'loop';
-    if (this.state.playModel === 'loop') {
-      type = 'single-loop';
-    } else if (this.state.playModel === 'single-loop') {
-      type = 'random';
-    }
-    this.setState({
-      playModel: type
-    });
+    this.props.dispatch(changeMusicPlayModel());
   }
 }
 
@@ -94,7 +86,8 @@ const styles = StyleSheet.create({
 
 function reduxState(store) {
   return {
-    showView: store.showView,
+    music: store.music,
+    showView: store.showView
   }
 }
 

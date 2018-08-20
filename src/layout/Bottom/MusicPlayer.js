@@ -12,9 +12,8 @@ import {
 import { connect } from 'react-redux'
 import { showBottomPlayList } from '../../redux/actions/ViewActions.js'
 
-import { goOpenPage } from '../../utils/router/router.js'
-
 import {common} from '../../assets/styles/common.js'
+import {changeMusicPlayStatus} from "../../redux/actions/MusicActions";
 
 
 class MusicPlayer extends React.Component {
@@ -40,8 +39,12 @@ class MusicPlayer extends React.Component {
             </View>
           </TouchableOpacity>
           <View style={{width:80, flexDirection:'row', justifyContent:'center'}}>
-            <TouchableOpacity style={{paddingLeft:6, paddingRight:8, flexDirection:'column', justifyContent:'center'}}>
-              <Text style={[common.icon,  {fontSize:28, color:'#CCC'}]}>&#xe6b4;</Text>
+            <TouchableOpacity onPress={this.changePlayStatus} style={{paddingLeft:6, paddingRight:8, flexDirection:'column', justifyContent:'center'}}>
+              {
+                this.props.music.playStatus === false ?
+                  <Text style={[common.icon,  {fontSize:28, color:'#CCC'}]}>&#xe6b4;</Text> :
+                    <Text style={[common.icon,  {fontSize:28, color:'#CCC'}]}>&#xe8c8;</Text>
+              }
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {this.props.dispatch(showBottomPlayList())}} style={{paddingLeft:8, paddingRight:18, flexDirection:'column', justifyContent:'center'}}>
               <Text style={[common.icon, {fontSize:26, color:'#CCC'}]}>&#xe654;</Text>
@@ -52,6 +55,12 @@ class MusicPlayer extends React.Component {
     )
   }
 
+  /**
+   * 修改播放状态
+   */
+  changePlayStatus = () => {
+    this.props.dispatch(changeMusicPlayStatus());
+  }
 }
 
 const styles = StyleSheet.create({
