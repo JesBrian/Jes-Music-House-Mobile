@@ -25,12 +25,12 @@ export default class NormalNavbar extends React.Component {
         <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
           <TouchableWithoutFeedback onPress={() => {this.props.navigation.goBack()}}>
             <View style={{width:50, flexDirection:'row', justifyContent:'center'}}>
-              <Text style={[common.icon, {fontSize:31, color:'#AAA'}]}>&#xe8ca;</Text>
+              <Text style={[common.icon, {fontSize:31, color:'#BBB'}]}>&#xe8ca;</Text>
             </View>
           </TouchableWithoutFeedback>
 
           <View style={{flex:1}}>
-            <Text style={{fontSize:22}}>{ this.props.label }</Text>
+            <Text style={{fontSize:22, color:'#DDD'}}>{ this.props.label }</Text>
           </View>
         </View>
 

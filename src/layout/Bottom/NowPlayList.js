@@ -40,23 +40,23 @@ class NowPlayList extends React.Component {
                 this.props.music.playModel === 'loop' ?
                   <View style={{width:138, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
                     <Text style={[common.icon, {marginRight:4, fontSize:18, color:'#FFF'}]}>&#xe66c;</Text>
-                    <Text style={{fontSize:16, color:'#FFF'}}>循环列表[88]</Text>
+                    <Text style={{fontSize:16, color:'#FFF'}}>循环列表 [88]</Text>
                   </View>
                   : this.props.music.playModel === 'single-loop' ?
                   <View style={{width:138, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
                     <Text style={[common.icon, {marginRight:4, fontSize:18, color:'#FFF'}]}>&#xe66b;</Text>
-                    <Text style={{fontSize:16, color:'#FFF'}}>单曲循环[88]</Text>
+                    <Text style={{fontSize:16, color:'#FFF'}}>单曲循环 [88]</Text>
                   </View>
                   :
                   <View style={{width:138, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
                     <Text style={[common.icon, {marginRight:4, fontSize:18, color:'#FFF'}]}>&#xe607;</Text>
-                    <Text style={{fontSize:16, color:'#FFF'}}>随机播放[88]</Text>
+                    <Text style={{fontSize:16, color:'#FFF'}}>随机播放 [88]</Text>
                   </View>
               }
             </TouchableOpacity>
-            <View style={{flex:1, flexDirection:'row', justifyContent:'flex-end'}}>
+            <View style={{flex:1, flexDirection:'row', justifyContent:'flex-end', alignItems:'center'}}>
               <TouchableOpacity>
-                <View style={{width:108, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+                <View style={{width:108, height:'55%', flexDirection:'row', justifyContent:'center', alignItems:'center', borderRightWidth:1, borderRightColor:'#686868'}}>
                   <Text style={[common.icon, {fontSize:18, color:'#FFF'}]}>&#xe80d;</Text>
                   <Text style={{fontSize:16, color:'#FFF'}}> 收藏全部</Text>
                 </View>

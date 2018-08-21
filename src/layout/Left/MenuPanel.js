@@ -12,7 +12,11 @@ import {
 } from 'react-native';
 
 import { BoxShadow }  from 'react-native-shadow'
-import SuperButton from "../../components/SuperButton";
+import SuperButton from '../../components/SuperButton.js'
+
+import { common } from '../../assets/styles/common.js'
+
+
 
 export default class MenuPanel extends React.Component {
   constructor (props) {
@@ -46,12 +50,14 @@ export default class MenuPanel extends React.Component {
         <View style={{width:'100%', height:38, flexDirection:'row', backgroundColor:'#444'}}>
           <TouchableWithoutFeedback style={{flex:1}}>
             <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-              <Text>设置</Text>
+              <Text style={[common.icon, {marginRight:8, fontSize:20, color:'#DDD'}]}>&#xe672;</Text>
+              <Text style={{fontSize:18, color:'#DDD'}}>设置</Text>
             </View>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback style={{flex:1}}>
             <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-              <Text>退出</Text>
+              <Text style={[common.icon, {marginRight:8, fontSize:20, color:'#DDD'}]}>&#xe622;</Text>
+              <Text style={{fontSize:18, color:'#DDD'}}>退出</Text>
             </View>
           </TouchableWithoutFeedback>
         </View>
