@@ -30,7 +30,7 @@ export default class NormalNavbar extends React.Component {
           </TouchableWithoutFeedback>
 
           <View style={{flex:1}}>
-            <Text style={{fontSize:22, color:'#DDD'}}>{ this.props.label }</Text>
+            <Text style={{fontSize:21, color:'#DDD'}}>{ this.props.label }</Text>
           </View>
         </View>
 

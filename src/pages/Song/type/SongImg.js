@@ -7,9 +7,13 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
-import {common} from '../../../assets/styles/common.js'
 
-export default class SongImg extends React.Component {
+import { connect } from 'react-redux'
+
+import { common } from '../../../assets/styles/common.js'
+
+
+class SongImg extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -27,9 +31,11 @@ export default class SongImg extends React.Component {
           <View style={{flex:1, flexDirection:'row', justifyContent:'center'}}>
             <Text style={[common.icon, {fontSize:28}]}>&#xe63c;</Text>
           </View>
-          <View style={{flex:1, flexDirection:'row', justifyContent:'center'}}>
-            <Text style={[common.icon, {fontSize:28}]}>&#xe638;</Text>
-          </View>
+          <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('Comment')}}>
+            <View style={{flex:1, flexDirection:'row', justifyContent:'center'}}>
+              <Text style={[common.icon, {fontSize:28}]}>&#xe638;</Text>
+            </View>
+          </TouchableWithoutFeedback>
           <View style={{flex:1, flexDirection:'row', justifyContent:'center'}}>
             <Text style={[common.icon, {fontSize:28}]}>&#xe618;</Text>
           </View>
@@ -43,3 +49,13 @@ export default class SongImg extends React.Component {
 }
 
 const styles = StyleSheet.create({});
+
+
+function reduxState(store) {
+  return {
+    config: store.config,
+    music: store.music
+  }
+}
+
+export default connect(reduxState)(SongImg);
