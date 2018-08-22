@@ -12,10 +12,11 @@ import {
 
 import { connect } from 'react-redux'
 import { changeMusicPlayModel } from '../../redux/actions/MusicActions.js'
+import { hiddenBottomPlayList } from '../../redux/actions/ViewActions.js'
 
 import { common } from '../../assets/styles/common.js'
-import {hiddenBottomPlayList} from "../../redux/actions/ViewActions";
 
+import Ripple from 'react-native-material-ripple'
 
 class NowPlayList extends React.Component {
   constructor (props) {
@@ -35,38 +36,40 @@ class NowPlayList extends React.Component {
         </TouchableOpacity>
         <View style={{height:338, position:'relative', flex:1, flexDirection:'column'}}>
           <View style={{width:'100%', height:48, flexDirection:'row', borderTopLeftRadius:12, borderTopRightRadius:12, backgroundColor:'#444'}}>
-            <TouchableOpacity onPress={this.changePlayModel.bind(this)}>
+            <Ripple onPress={this.changePlayModel.bind(this)}>
               {
                 this.props.music.playModel === 'loop' ?
-                  <View style={{width:138, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
+                  <View style={{height:'100%', padding:15, flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
                     <Text style={[common.icon, {marginRight:4, fontSize:18, color:'#FFF'}]}>&#xe66c;</Text>
-                    <Text style={{fontSize:16, color:'#FFF'}}>循环列表 [88]</Text>
+                    <Text style={{fontSize:16, color:'#FFF'}}>循环列表 [888]</Text>
                   </View>
                   : this.props.music.playModel === 'single-loop' ?
-                  <View style={{width:138, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
+                  <View style={{height:'100%', padding:15, flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
                     <Text style={[common.icon, {marginRight:4, fontSize:18, color:'#FFF'}]}>&#xe66b;</Text>
-                    <Text style={{fontSize:16, color:'#FFF'}}>单曲循环 [88]</Text>
+                    <Text style={{fontSize:16, color:'#FFF'}}>单曲循环 [888]</Text>
                   </View>
                   :
-                  <View style={{width:138, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
+                  <View style={{height:'100%', padding:15, flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
                     <Text style={[common.icon, {marginRight:4, fontSize:18, color:'#FFF'}]}>&#xe607;</Text>
-                    <Text style={{fontSize:16, color:'#FFF'}}>随机播放 [88]</Text>
+                    <Text style={{fontSize:16, color:'#FFF'}}>随机播放 [888]</Text>
                   </View>
               }
-            </TouchableOpacity>
+            </Ripple>
             <View style={{flex:1, flexDirection:'row', justifyContent:'flex-end', alignItems:'center'}}>
-              <TouchableOpacity>
-                <View style={{width:108, height:'55%', flexDirection:'row', justifyContent:'center', alignItems:'center', borderRightWidth:1, borderRightColor:'#686868'}}>
-                  <Text style={[common.icon, {fontSize:18, color:'#FFF'}]}>&#xe80d;</Text>
-                  <Text style={{fontSize:16, color:'#FFF'}}> 收藏全部</Text>
+              <Ripple>
+                <View style={{flex:1, flexDirection:'row', justifyContent:'flex-end', alignItems:'center'}}>
+                  <View style={{width:108, height:'55%', flexDirection:'row', justifyContent:'center', alignItems:'center', borderRightWidth:1, borderRightColor:'#686868'}}>
+                    <Text style={[common.icon, {fontSize:18, color:'#FFF'}]}>&#xe80d;</Text>
+                    <Text style={{fontSize:16, color:'#FFF'}}> 收藏全部</Text>
+                  </View>
                 </View>
-              </TouchableOpacity>
+              </Ripple>
             </View>
-            <TouchableOpacity>
+            <Ripple>
               <View style={{width:46, height:'100%', justifyContent:'center', alignItems:'center'}}>
                 <Text style={[common.icon, {fontSize:20, color:'#FFF'}]}>&#xe61f;</Text>
               </View>
-            </TouchableOpacity>
+            </Ripple>
           </View>
           <ScrollView style={{flex:1, backgroundColor:'#FFF'}}>
           </ScrollView>

@@ -11,10 +11,11 @@ import {
 
 import { connect } from 'react-redux'
 import { showBottomPlayList } from '../../redux/actions/ViewActions.js'
+import { changeMusicPlayStatus } from '../../redux/actions/MusicActions.js'
 
-import {common} from '../../assets/styles/common.js'
-import {changeMusicPlayStatus} from "../../redux/actions/MusicActions";
+import { common } from '../../assets/styles/common.js'
 
+import Ripple from 'react-native-material-ripple'
 
 class MusicPlayer extends React.Component {
   constructor (props) {
@@ -39,13 +40,13 @@ class MusicPlayer extends React.Component {
             </View>
           </TouchableOpacity>
           <View style={{width:80, flexDirection:'row', justifyContent:'center'}}>
-            <TouchableOpacity onPress={this.changePlayStatus} style={{paddingLeft:6, paddingRight:8, flexDirection:'column', justifyContent:'center'}}>
+            <Ripple onPress={this.changePlayStatus} style={{paddingTop:2, paddingLeft:6, paddingRight:8, flexDirection:'column', justifyContent:'center'}}>
               {
                 this.props.music.playStatus === false ?
                   <Text style={[common.icon,  {fontSize:28, color:'#CCC'}]}>&#xe6b4;</Text> :
                     <Text style={[common.icon,  {fontSize:28, color:'#CCC'}]}>&#xe8c8;</Text>
               }
-            </TouchableOpacity>
+            </Ripple>
             <TouchableOpacity onPress={() => {this.props.dispatch(showBottomPlayList())}} style={{paddingLeft:8, paddingRight:18, flexDirection:'column', justifyContent:'center'}}>
               <Text style={[common.icon, {fontSize:26, color:'#CCC'}]}>&#xe654;</Text>
             </TouchableOpacity>
