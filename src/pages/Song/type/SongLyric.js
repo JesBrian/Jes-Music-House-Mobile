@@ -7,7 +7,8 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
-import {common} from '../../../assets/styles/common.js'
+import { common } from '../../../assets/styles/common.js'
+import SuperSlider from '../../../components/SuperSlider.js'
 
 export default class SongLyric extends React.Component {
   constructor (props) {
@@ -33,15 +34,15 @@ export default class SongLyric extends React.Component {
               </TouchableWithoutFeedback>
             </View>
             <View style={{flex: 1, justifyContent: 'center'}}>
-              <TouchableWithoutFeedback>
-                <View style={{width: '95%', height: 4, borderRadius:4, backgroundColor: 'green'}}/>
-              </TouchableWithoutFeedback>
+              <View style={{width:'95%', paddingTop:10, paddingLeft:8, borderRadius:4}}>
+                <SuperSlider />
+              </View>
             </View>
           </View>
         </View>
 
         <TouchableWithoutFeedback onPress={() => this.props.changeSongContentType('img')}>
-          <View style={{flex: 1, backgroundColor: 'yellow'}}>
+          <View style={{flex:1}}>
             <Text>歌曲页面播放[歌曲歌词]</Text>
           </View>
         </TouchableWithoutFeedback>
