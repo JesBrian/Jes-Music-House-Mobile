@@ -2,8 +2,7 @@ import React  from 'react';
 
 import {
   StatusBar,
-  View,
-  Text
+  View
 } from 'react-native';
 
 
@@ -26,7 +25,6 @@ class Root extends React.Component {
     return (
       <View style={{flex:1, position:'relative'}}>
         <StatusBar barStyle="light-content" />
-        <Text>{ this.props.showView.bottom }</Text>
         <PageRouter/>
         {
           this.props.showView.bottomMusic === true ? <MusicPlayer/> : null
@@ -41,7 +39,8 @@ class Root extends React.Component {
 
 function reduxState(store) {
   return {
-    showView: store.showView,
+    config: store.config,
+    showView: store.showView
   }
 }
 

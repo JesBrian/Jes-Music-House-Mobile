@@ -26,7 +26,6 @@ class Index extends React.Component {
   }
 
   componentDidMount () {
-    // alert(this.props.navigation)
     this.props.dispatch(setNavigation(this.props.navigation))
   }
 

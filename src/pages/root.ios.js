@@ -21,10 +21,6 @@ class Root extends React.Component {
     };
   }
 
-  componentDidMount () {
-    // alert(this.props.config.navigatorObj)
-  }
-
   render() {
     return (
       <View style={{flex:1, position:'relative'}}>

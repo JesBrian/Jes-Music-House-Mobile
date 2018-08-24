@@ -10,12 +10,26 @@ import {
   Button
 } from 'react-native';
 
+
+import {connect} from 'react-redux'
+import { setNavigation } from '../../redux/actions/ConfigActions.js'
+
 import IndexNavbar from '../../layout/Top/type/IndexNavbar.js'
 import MenuPanel from '../../layout/Left/MenuPanel.js'
 import SuperButton from '../../components/SuperButton.js'
 
 
-export default class Index extends React.Component {
+class Index extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+    }
+  }
+
+  componentDidMount () {
+    this.props.dispatch(setNavigation(this.props.navigation))
+  }
+
   render() {
     return (
       <DrawerLayoutAndroid
@@ -58,3 +72,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
 });
+
+function reduxState(store) {
+  return {
+    config: store.config,
+    music: store.music
+  }
+}
+
+export default connect(reduxState)(Index);
