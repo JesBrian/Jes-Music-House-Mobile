@@ -27,8 +27,6 @@ class NowPlayList extends React.Component {
   }
 
   render () {
-    let temp = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
-
     return (
       <View style={{width:'100%', height:'100%', bottom:0, left:0, flex:1, position:'absolute', backgroundColor:'rgba(0, 0, 0, 0.5)', zIndex:5}}>
         <TouchableOpacity onPress={() => {this.props.dispatch(hiddenBottomPlayList())}} style={{flex:1}}>

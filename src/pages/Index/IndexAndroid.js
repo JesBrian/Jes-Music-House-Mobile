@@ -50,6 +50,7 @@ class Index extends React.Component {
               <Button title='跳转到登录' onPress={() => this.props.navigation.navigate('Home')}/>
               <Button title='跳转到歌单' onPress={() => this.props.navigation.navigate('PlayList')}/>
               <Button title='跳转到歌手' onPress={() => this.props.navigation.navigate('Singer')}/>
+              <Button title='跳转到歌单详情' onPress={()=>this.props.navigation.navigate('PlayList')} />
             </View>
           </ScrollView>
         </View>
