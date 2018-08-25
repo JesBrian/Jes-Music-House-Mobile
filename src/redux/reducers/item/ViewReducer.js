@@ -7,7 +7,8 @@ import * as types from '../../constants/ViewTypes.js';
  */
 const initialState = {
   bottomMusic: true,
-  bottomPlayList: false
+  bottomPlayList: false,
+  bottomSongMenu: false
 }
 
 /**
@@ -34,6 +35,16 @@ export default function showView(state = initialState, action) {
     case types.VIEW_BOTTOM_HIDDEN_PLAYLIST: {
       return {
         ...state, bottomPlayList: false
+      };
+    }
+    case types.VIEW_BOTTOM_SHOW_SONGMENU: {
+      return {
+        ...state, bottomSongMenu: true
+      };
+    }
+    case types.VIEW_BOTTOM_HIDDEN_SONGMENU: {
+      return {
+        ...state, bottomSongMenu: false
       };
     }
     default:

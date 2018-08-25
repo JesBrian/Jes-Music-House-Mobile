@@ -10,6 +10,7 @@ import {
 
 
 import { connect } from 'react-redux'
+import { showBottomSongMenu } from '../../redux/actions/ViewActions.js'
 
 import PlayListNavbar from '../../layout/Top/type/PlayListNavbar.js'
 
@@ -102,6 +103,7 @@ class PlayList extends React.Component {
   }
 
   showSongMenu () {
+    this.props.dispatch(showBottomSongMenu())
   }
 }
 

@@ -5,7 +5,6 @@ import {
   View,
   ScrollView,
   Text,
-  TouchableOpacity,
   TouchableWithoutFeedback
 } from 'react-native';
 
@@ -28,10 +27,10 @@ class NowPlayList extends React.Component {
 
   render () {
     return (
-      <View style={{width:'100%', height:'100%', bottom:0, left:0, flex:1, position:'absolute', backgroundColor:'rgba(0, 0, 0, 0.5)', zIndex:5}}>
-        <TouchableOpacity onPress={() => {this.props.dispatch(hiddenBottomPlayList())}} style={{flex:1}}>
-          <View />
-        </TouchableOpacity>
+      <View style={{width:'100%', height:'100%', bottom:0, left:0, flex:1, position:'absolute', backgroundColor:'rgba(0, 0, 0, 0.8)', zIndex:5}}>
+        <TouchableWithoutFeedback onPress={() => {this.props.dispatch(hiddenBottomPlayList())}}>
+          <View style={{flex:1}}/>
+        </TouchableWithoutFeedback>
         <View style={{height:338, position:'relative', flex:1, flexDirection:'column'}}>
           <View style={{width:'100%', height:48, flexDirection:'row', borderTopLeftRadius:12, borderTopRightRadius:12, backgroundColor:'#444'}}>
             <Ripple onPress={this.changePlayModel.bind(this)}>

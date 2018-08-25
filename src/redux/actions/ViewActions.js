@@ -17,3 +17,11 @@ export function showBottomPlayList() {
 export function hiddenBottomPlayList() {
   return {type: types.VIEW_BOTTOM_HIDDEN_PLAYLIST}
 }
+
+export function showBottomSongMenu() {
+  return {type: types.VIEW_BOTTOM_SHOW_SONGMENU}
+}
+
+export function hiddenBottomSongMenu() {
+  return {type: types.VIEW_BOTTOM_HIDDEN_SONGMENU}
+}
