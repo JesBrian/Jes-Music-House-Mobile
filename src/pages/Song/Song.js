@@ -43,8 +43,8 @@ class Song extends React.Component {
 
         {
           this.state.showSongContentType === 'img' ?
-            (<SongImg changeSongContentType={showSongContentType => this.changeShowContentType(showSongContentType)} />) :
-            (<SongLyric changeSongContentType={showSongContentType => this.changeShowContentType(showSongContentType)} />)
+            <SongImg changeSongContentType={showSongContentType => this.changeShowContentType(showSongContentType)} /> :
+            <SongLyric changeSongContentType={showSongContentType => this.changeShowContentType(showSongContentType)} />
         }
 
         <View style={{width: '100%', height: 98}}>

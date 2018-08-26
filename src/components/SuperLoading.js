@@ -1,13 +1,12 @@
 import React  from 'react';
 
 import {
-  StyleSheet,
-  View
+  StyleSheet
 } from 'react-native';
 
 import Spinner from 'react-native-spinkit'
 
-export default class Loading extends React.Component {
+export default class SuperLoading extends React.Component {
   static defaultProps = {
     seconds: 35,
     size: 100,

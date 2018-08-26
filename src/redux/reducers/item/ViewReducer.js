@@ -8,7 +8,10 @@ import * as types from '../../constants/ViewTypes.js';
 const initialState = {
   bottomMusic: true,
   bottomPlayList: false,
-  bottomSongMenu: false
+  bottomSongMenu: false,
+
+  showModal: false,
+  modalType: ''
 }
 
 /**
@@ -27,6 +30,7 @@ export default function showView(state = initialState, action) {
         ...state, bottomMusic: false
       };
     }
+
     case types.VIEW_BOTTOM_SHOW_PLAYLIST: {
       return {
         ...state, bottomPlayList: true
@@ -37,6 +41,7 @@ export default function showView(state = initialState, action) {
         ...state, bottomPlayList: false
       };
     }
+
     case types.VIEW_BOTTOM_SHOW_SONGMENU: {
       return {
         ...state, bottomSongMenu: true
@@ -47,6 +52,18 @@ export default function showView(state = initialState, action) {
         ...state, bottomSongMenu: false
       };
     }
+
+    case types.VIEW_MODAL_SHOW: {
+      return {
+        ...state, showModal: true, modalType: action.modalType
+      };
+    }
+    case types.VIEW_MODAL_HIDDEN: {
+      return {
+        ...state, showModal: false
+      };
+    }
+
     default:
       return state;
   }

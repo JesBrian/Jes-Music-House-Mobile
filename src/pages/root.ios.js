@@ -12,6 +12,7 @@ import PageRouter from '../router/IosPageRouter.js'
 
 import MusicPlayer from '../layout/Bottom/MusicPlayer.js'
 import NowPlayList from '../layout/Bottom/NowPlayList.js'
+import SongMenu from '../layout/Bottom/SongMenu.js'
 
 
 class Root extends React.Component {
@@ -32,6 +33,11 @@ class Root extends React.Component {
         {
           this.props.showView.bottomPlayList === true ?  <NowPlayList/> : null
         }
+        {
+          this.props.showView.bottomSongMenu === true ?  <SongMenu/> : null
+        }
+
+        {}
       </View>
     );
   }

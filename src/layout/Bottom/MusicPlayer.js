@@ -1,6 +1,7 @@
 import React  from 'react';
 
 import {
+  Dimensions,
   StyleSheet,
   View,
   Text,
@@ -26,8 +27,8 @@ class MusicPlayer extends React.Component {
 
   render () {
     return (
-      <View style={{width:'100%', height:53, backgroundColor:'#333'}}>
-        <View style={{flex:1, position:'relative', flexDirection:'row'}}>
+      <View style={{width:'100%', height:53, top:Dimensions.get('window').height - 73, left:0, position:'absolute', zIndex:5, backgroundColor:'#333'}}>
+        <View style={{flex:1, flexDirection:'row'}}>
           <TouchableOpacity onPress={() => {this.props.config.navigation.navigate('Song')}} style={{flex:1, flexDirection:'row', justifyContent:'flex-start'}}>
             <View style={{width:58, flexDirection:'row', alignItems:'center', justifyContent:'center' }}>
               <TouchableOpacity onPress={() => {this.props.config.navigation.navigate('Song')}} style={{width:'76%', height:'76%', marginLeft:2}}>

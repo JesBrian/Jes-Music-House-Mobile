@@ -19,7 +19,7 @@ class SongMenu extends React.Component {
 
   render () {
     return (
-      <View style={{width:'100%', height:'100%', bottom:0, left:0, flex:1, position:'absolute', backgroundColor:'rgba(0, 0, 0, 0.8)', zIndex:5}}>
+      <View style={{width:'100%', height:'100%', bottom:0, left:0, flex:1, position:'absolute', backgroundColor:'rgba(0, 0, 0, 0.68)', zIndex:8}}>
         <TouchableWithoutFeedback onPress={() => {this.props.dispatch(hiddenBottomSongMenu())}}>
           <View style={{flex:1}}/>
         </TouchableWithoutFeedback>

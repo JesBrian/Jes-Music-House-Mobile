@@ -13,6 +13,7 @@ import PageRouter from '../router/AndroidPageRouter.js'
 import MusicPlayer from '../layout/Bottom/MusicPlayer.js'
 import NowPlayList from '../layout/Bottom/NowPlayList.js'
 import SongMenu from '../layout/Bottom/SongMenu.js'
+import SuperModal from '../layout/modal/SuperModal.js'
 
 
 class Root extends React.Component {
@@ -35,6 +36,10 @@ class Root extends React.Component {
         }
         {
           this.props.showView.bottomSongMenu === true ?  <SongMenu/> : null
+        }
+
+        {
+          this.props.showView.showModal === true ? <SuperModal /> : null
         }
       </View>
     );
