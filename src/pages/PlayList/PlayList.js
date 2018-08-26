@@ -38,7 +38,7 @@ class PlayList extends React.Component {
           <TouchableWithoutFeedback>
             <View style={{height:108, flexDirection:'row', alignItems:'center', backgroundColor:'#666'}}>
               <Image style={{width:70, height:70, margin:16, borderWidth:1, borderRadius:6, borderColor:'#FFF'}} source={{uri:'http://www.chuanke.com/upload/courseware/f/31/3312428/image/09c68fe797fa58d78a1de4f34e0ea40f.gif'}} />
-              <View style={{height:'100%', flex:1, backgroundColor:'#00d8ff'}}>
+              <View style={{height:'100%', marginLeft:3, flex:1}}>
                 <Text>rfgyhji</Text>
                 <Ripple>
                   <Text>JesBrian</Text>
@@ -85,7 +85,8 @@ class PlayList extends React.Component {
           <View style={{height:53, flexDirection:'row', backgroundColor:'lightgreen'}}>
             <Ripple style={{flex:1, flexDirection:'row'}}>
               <View style={{width:48, height:'100%', justifyContent:'center', alignItems:'center'}}>
-                <Text style={{fontSize:20}}>1</Text>
+                <Text style={[common.icon, {fontSize:26}]}>&#xe6b4;</Text>
+                {/*<Text style={{fontSize:20}}>1</Text>*/}
               </View>
               <View style={{flex:1, flexDirection:'column', justifyContent:'center'}}>
                 <Text style={{fontSize:17}}>The name of the Song 歌名</Text>

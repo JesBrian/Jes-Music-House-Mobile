@@ -71,8 +71,10 @@ class NowPlayList extends React.Component {
           <ScrollView style={{flex:1, backgroundColor:'#FFF'}}>
             <View style={{height:40, flexDirection:'row', backgroundColor:'lightgreen'}}>
               <Ripple style={{height:'100%', flex:1, flexDirection:'row', alignItems:'center'}}>
-                <Text>
-                  555
+                <Text style={[common.icon, {margin:5, fontSize:21}]}>&#xe6b4;</Text>
+                <Text style={{fontSize:17}}>
+                  555长cjk沙健id45康
+                  <Text style={{fontSize:13}}> - JesBrian</Text>
                 </Text>
               </Ripple>
 
