@@ -17,6 +17,7 @@ import { setNavigation } from '../../redux/actions/ConfigActions.js'
 import IndexNavbar from '../../layout/Top/type/IndexNavbar.js'
 import MenuPanel from '../../layout/Left/MenuPanel.js'
 import SuperButton from '../../components/SuperButton.js'
+import Loading from '../../components/Loading.js'
 
 
 class Index extends React.Component {
@@ -51,6 +52,9 @@ class Index extends React.Component {
               <Button title='跳转到歌单' onPress={() => this.props.navigation.navigate('PlayList')}/>
               <Button title='跳转到歌手' onPress={() => this.props.navigation.navigate('Singer')}/>
               <Button title='跳转到歌单详情' onPress={()=>this.props.navigation.navigate('PlayList')} />
+
+              <Loading />
+
             </View>
           </ScrollView>
         </View>
