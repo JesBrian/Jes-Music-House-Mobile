@@ -31,7 +31,7 @@ class NowPlayList extends React.Component {
         <TouchableWithoutFeedback onPress={() => {this.props.dispatch(hiddenBottomPlayList())}}>
           <View style={{flex:1}}/>
         </TouchableWithoutFeedback>
-        <View style={{height:338, position:'relative', flex:1, flexDirection:'column'}}>
+        <View style={{width:'100%', height:388, position:'relative', flexDirection:'column'}}>
           <View style={{width:'100%', height:48, flexDirection:'row', borderTopLeftRadius:12, borderTopRightRadius:12, backgroundColor:'#444'}}>
             <Ripple onPress={this.changePlayModel.bind(this)}>
               {
@@ -69,6 +69,25 @@ class NowPlayList extends React.Component {
             </Ripple>
           </View>
           <ScrollView style={{flex:1, backgroundColor:'#FFF'}}>
+            <View style={{height:40, flexDirection:'row', backgroundColor:'lightgreen'}}>
+              <Ripple style={{height:'100%', flex:1, flexDirection:'row', alignItems:'center'}}>
+                <Text>
+                  555
+                </Text>
+              </Ripple>
+
+              <TouchableWithoutFeedback>
+                <View style={{width:38, height:'100%', justifyContent:'center', alignItems:'center'}}>
+                  <Text style={[common.icon, {fontSize:24}]}>&#xe627;</Text>
+                </View>
+              </TouchableWithoutFeedback>
+
+              <TouchableWithoutFeedback>
+                <View style={{width:35, height:'100%', justifyContent:'center', alignItems:'center'}}>
+                  <Text style={[common.icon, {fontSize:23}]}>&#xe622;</Text>
+                </View>
+              </TouchableWithoutFeedback>
+            </View>
           </ScrollView>
         </View>
       </View>
