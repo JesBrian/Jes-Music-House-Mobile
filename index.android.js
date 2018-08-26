@@ -12,13 +12,10 @@ import {
 
 
 import { Provider } from 'react-redux'
-
 import ConfigureStore from './src/redux/store/ConfigureStore.js'
-
-import Root from './src/pages/root.android.js'
-
 const store = ConfigureStore();
 
+import Root from './src/pages/root.android.js'
 
 export default class MusicHouseApp extends React.Component {
   constructor (props) {
