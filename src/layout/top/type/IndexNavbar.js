@@ -21,12 +21,17 @@ export default class IndexNavbar extends React.Component {
   render() {
     return (
       <NavbarFrame navbarContent={(
-
         <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-          <SuperButton onPressEvent={this.props.openControlPanel} style={{}} label={<Text style={[common.icon]}>&#xe654;</Text>} />
+          <View style={{marginLeft:13}}>
+            <SuperButton style={{marginLeft:13}} onPressEvent={this.props.openControlPanel} label={<Text style={[common.icon]}>&#xe654;</Text>} />
+          </View>
+
           <View style={{flex:1}}>
           </View>
-          <SuperButton onPressEvent={() => {this.props.navigation.navigate('Search')}} label={<Text style={[common.icon]}>&#xe65a;</Text>} />
+
+          <View style={{marginRight:13}}>
+            <SuperButton onPressEvent={() => {this.props.navigation.navigate('Search')}} label={<Text style={[common.icon]}>&#xe65a;</Text>} />
+          </View>
         </View>
 
       )}/>

@@ -21,7 +21,7 @@ export default class Loading extends React.Component {
     return (
       <Slider
         value={this.state.value}
-        maximumTrackTintColor={'#383838'}
+        maximumTrackTintColor={'#686868'}
         minimumTrackTintColor={'#38daf0'}
         thumbStyle={{width:16, height:16, paddingTop:1}}
         thumbTintColor={'#222'}

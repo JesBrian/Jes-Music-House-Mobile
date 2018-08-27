@@ -39,11 +39,11 @@ class Song extends React.Component {
             <SongLyric changeSongContentType={showSongContentType => this.changeShowContentType(showSongContentType)} />
         }
 
-        <View style={{width: '100%', height: 98}}>
+        <View style={{width:'100%', height:98, backgroundColor:'#333'}}>
           <View style={{flexDirection:'row', justifyContent:'center'}}>
             <View style={{width:'90%', height:28, flexDirection:'row'}}>
               <View style={{width:68, justifyContent:'center', alignItems:'center'}}>
-                <Text style={{fontSize:12,}}>00:00</Text>
+                <Text style={{fontSize:12,  color:'#AAA'}}>00:00</Text>
               </View>
               <View style={{flex:1, justifyContent:'center'}}>
                 <View style={{width:'100%', marginTop:1}} >
@@ -51,7 +51,7 @@ class Song extends React.Component {
                 </View>
               </View>
               <View style={{width:68, justifyContent:'center', alignItems:'center'}}>
-                <Text style={{fontSize:12,}}>00:00</Text>
+                <Text style={{fontSize:12,  color:'#AAA'}}>00:00</Text>
               </View>
             </View>
           </View>
@@ -62,30 +62,30 @@ class Song extends React.Component {
                 <View>
                   {
                     this.props.music.playModel === 'loop' ?
-                      <Text style={[common.icon, {fontSize:24}]}>&#xe66c;</Text>
+                      <Text style={[common.icon, {fontSize:24,  color:'#AAA'}]}>&#xe66c;</Text>
                         : this.props.music.playModel === 'single-loop' ?
-                          <Text style={[common.icon, {fontSize:24}]}>&#xe66b;</Text> :
-                            <Text style={[common.icon, {fontSize:24}]}>&#xe607;</Text>
+                          <Text style={[common.icon, {fontSize:24,  color:'#AAA'}]}>&#xe66b;</Text> :
+                            <Text style={[common.icon, {fontSize:24,  color:'#AAA'}]}>&#xe607;</Text>
                   }
                 </View>
               </TouchableWithoutFeedback>
             </View>
             <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-              <Text style={[common.icon, {fontSize:28}]}>&#xe602;</Text>
+              <Text style={[common.icon, {fontSize:28,  color:'#AAA'}]}>&#xe602;</Text>
               <TouchableWithoutFeedback onPress={this.changePlayStatus}>
                 <View style={{margin:28}}>
                   {
                     this.props.music.playStatus === false ?
-                      <Text style={[common.icon, {fontSize:48}]}>&#xe6b4;</Text> :
-                        <Text style={[common.icon, {fontSize:48}]}>&#xe8c8;</Text>
+                      <Text style={[common.icon, {fontSize:48,  color:'#AAA'}]}>&#xe6b4;</Text> :
+                        <Text style={[common.icon, {fontSize:48,  color:'#AAA'}]}>&#xe8c8;</Text>
                   }
                 </View>
               </TouchableWithoutFeedback>
-              <Text style={[common.icon, {fontSize:28}]}>&#xe604;</Text>
+              <Text style={[common.icon, {fontSize:28,  color:'#AAA'}]}>&#xe604;</Text>
             </View>
             <TouchableWithoutFeedback onPress={() => {this.props.dispatch(showBottomPlayList());}}>
               <View style={{width:68, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-                <Text style={[common.icon, {fontSize:24}]}>&#xe654;</Text>
+                <Text style={[common.icon, {fontSize:24,  color:'#AAA'}]}>&#xe654;</Text>
               </View>
             </TouchableWithoutFeedback>
           </View>

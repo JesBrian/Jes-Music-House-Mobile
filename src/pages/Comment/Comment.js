@@ -6,11 +6,28 @@ import {
   Text
 } from 'react-native';
 
+import { connect } from 'react-redux'
+import { hiddenBottomMusic, showBottomMusic } from '../../redux/actions/ViewActions.js'
 
 import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
 
 
-export default class Comment extends React.Component {
+class Comment extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+    };
+  }
+
+  componentWillMount () {
+    this.props.dispatch(hiddenBottomMusic())
+  }
+
+  componentWillUnmount () {
+    this.props.dispatch(showBottomMusic())
+  }
+
+
   render() {
     return (
       <View style={styles.container}>
@@ -42,3 +59,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
 });
+
+
+function reduxState(store) {
+  return {
+    showView: store.showView
+  }
+}
+
+export default connect(reduxState)(Comment);

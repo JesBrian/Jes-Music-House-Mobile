@@ -20,16 +20,16 @@ export default class SongLyric extends React.Component {
 
   render() {
     return (
-      <View style={{flex: 1, flexDirection: 'column'}}>
-        <View style={{flexDirection: 'row', justifyContent: 'center',}}>
-          <View style={{width: '88%', height: 28, flexDirection: 'row', alignItems:'center'}}>
-            <View style={{width: 38, height: '100%', flexDirection: 'row', justifyContent:'center', alignItems:'center'}}>
+      <View style={{flex:1, flexDirection:'column'}}>
+        <View style={{flexDirection:'row', justifyContent:'center',}}>
+          <View style={{width:'88%', height: 28, flexDirection:'row', alignItems:'center'}}>
+            <View style={{width:38, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
               <TouchableWithoutFeedback onPress={this.changeVolumeStatus}>
                 <View style={{backgroundColor:'transparent'}}>
                   {
                     this.state.volumeStatus === true ?
-                      <Text style={[common.icon, {fontSize:21}]}>&#xe6ac;</Text> :
-                        <Text style={[common.icon, {fontSize:21}]}>&#xe6aa;</Text>
+                      <Text style={[common.icon, {fontSize:21, color:'#AAA'}]}>&#xe6ac;</Text> :
+                        <Text style={[common.icon, {fontSize:21, color:'#AAA'}]}>&#xe6aa;</Text>
                   }
                 </View>
               </TouchableWithoutFeedback>

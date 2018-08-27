@@ -10,6 +10,8 @@ import {
 
 import { connect } from 'react-redux'
 
+import Ripple from 'react-native-material-ripple'
+
 import { common } from '../../../../assets/styles/common.js'
 
 
@@ -21,27 +23,25 @@ class SongImg extends React.Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex:1, backgroundColor:'transparent'}}>
         <TouchableWithoutFeedback onPress={() => this.props.changeSongContentType('lyric')}>
-          <View style={{flex: 1}}>
+          <View style={{flex:1}}>
             <Text>歌曲页面播放[歌曲图片]</Text>
           </View>
         </TouchableWithoutFeedback>
-        <View style={{height: 48, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-          <View style={{flex:1, flexDirection:'row', justifyContent:'center'}}>
-            <Text style={[common.icon, {fontSize:28}]}>&#xe63c;</Text>
-          </View>
-          <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('Comment')}}>
-            <View style={{flex:1, flexDirection:'row', justifyContent:'center'}}>
-              <Text style={[common.icon, {fontSize:28}]}>&#xe638;</Text>
-            </View>
-          </TouchableWithoutFeedback>
-          <View style={{flex:1, flexDirection:'row', justifyContent:'center'}}>
-            <Text style={[common.icon, {fontSize:28}]}>&#xe618;</Text>
-          </View>
-          <View style={{flex:1, flexDirection:'row', justifyContent:'center'}}>
-            <Text style={[common.icon, {fontSize:28}]}>&#xe80d;</Text>
-          </View>
+        <View style={{height:48, flexDirection:'row', alignItems:'center', justifyContent:'center', backgroundColor:'#333'}}>
+          <Ripple style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+            <Text style={[common.icon, {fontSize:28, color:'#AAA'}]}>&#xe80d;</Text>
+          </Ripple>
+          <Ripple style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+            <Text style={[common.icon, {fontSize:28, color:'#AAA'}]}>&#xe63c;</Text>
+          </Ripple>
+          <Ripple  onPress={() => {this.props.config.navigation.navigate('Comment')}} style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+            <Text style={[common.icon, {fontSize:28, color:'#AAA'}]}>&#xe638;</Text>
+          </Ripple>
+          <Ripple style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+            <Text style={[common.icon, {fontSize:28, color:'#AAA'}]}>&#xe618;</Text>
+          </Ripple>
         </View>
       </View>
     );
