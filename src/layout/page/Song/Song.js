@@ -9,16 +9,16 @@ import {
 
 
 import { connect } from 'react-redux'
-import { hiddenBottomMusic, showBottomMusic, showBottomPlayList } from '../../redux/actions/ViewActions.js'
-import { changeMusicPlayStatus, changeMusicPlayModel } from '../../redux/actions/MusicActions.js'
+import { showBottomPlayList } from '../../../redux/actions/ViewActions.js'
+import { changeMusicPlayStatus, changeMusicPlayModel } from '../../../redux/actions/MusicActions.js'
 
-import SongNavbar from '../../layout/Top/type/SongNavbar.js'
+import SongNavbar from '../../top/type/SongNavbar.js'
 import SongImg from './type/SongImg.js'
 import SongLyric from './type/SongLyric.js'
 
 
-import { common } from '../../assets/styles/common.js'
-import SuperSlider from '../../components/SuperSlider.js'
+import { common } from '../../../assets/styles/common.js'
+import SuperSlider from '../../../components/SuperSlider.js'
 
 class Song extends React.Component {
   constructor (props) {
@@ -28,17 +28,9 @@ class Song extends React.Component {
     };
   }
 
-  componentWillMount () {
-    this.props.dispatch(hiddenBottomMusic())
-  }
-
-  componentWillUnmount () {
-    this.props.dispatch(showBottomMusic())
-  }
-
   render() {
     return (
-      <View style={styles.container}>
+      <View style={{width:'100%', height:'100%', bottom:0, left:0, flex:1, position:'absolute', backgroundColor:'#FFF', zIndex:13}}>
         <SongNavbar navigation={this.props.navigation}/>
 
         {
@@ -129,12 +121,6 @@ class Song extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    height: '100%',
-    position: 'relative',
-    flexDirection: 'column',
-    backgroundColor: 'transparent'
-  },
 });
 
 

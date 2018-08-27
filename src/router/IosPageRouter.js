@@ -9,7 +9,6 @@ import Search from '../pages/Search/Search.js'
 import Singer from '../pages/Singer/Singer.js'
 import User from '../pages/User/User.js'
 import PlayList from '../pages/PlayList/PlayList.js'
-import Song from '../pages/Song/Song.js'
 import Comment from '../pages/Comment/Comment.js'
 
 
@@ -23,7 +22,6 @@ const PageRouter = createStackNavigator({
   Singer: { screen: Singer },
   User: { screen: User },
   PlayList: { screen: PlayList },
-  Song: { screen: Song },
   Comment: { screen: Comment },
 }, {
   initialRouteName: 'Index', // 默认显示界面

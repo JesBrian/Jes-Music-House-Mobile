@@ -7,8 +7,8 @@ import {
   Text
 } from 'react-native';
 
-import SearchNavbar from '../../layout/Top/type/SearchNavbar.js'
-import MusicPlayer from '../../layout/Bottom/MusicPlayer.js'
+import SearchNavbar from '../../layout/top/type/SearchNavbar.js'
+import MusicPlayer from '../../layout/bottom/MusicPlayer.js'
 
 
 export default class Search extends React.Component {

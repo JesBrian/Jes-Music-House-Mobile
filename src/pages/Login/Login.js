@@ -8,7 +8,7 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
-import NormalNavbar from '../../layout/Top/type/NormalNavbar.js'
+import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
 import SuperButton from '../../components/SuperButton.js'
 
 import { phoneLogin } from '../../utils/http/request/login.js'

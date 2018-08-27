@@ -12,7 +12,7 @@ import {
 import { connect } from 'react-redux'
 import { showBottomSongMenu } from '../../redux/actions/ViewActions.js'
 
-import PlayListNavbar from '../../layout/Top/type/PlayListNavbar.js'
+import PlayListNavbar from '../../layout/top/type/PlayListNavbar.js'
 
 import Ripple from 'react-native-material-ripple'
 

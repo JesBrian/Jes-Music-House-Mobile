@@ -2,6 +2,7 @@ import React  from 'react';
 
 import {
   Dimensions,
+  Platform,
   StyleSheet,
   View,
   Text,
@@ -11,7 +12,7 @@ import {
 
 
 import { connect } from 'react-redux'
-import { showBottomPlayList } from '../../redux/actions/ViewActions.js'
+import { showBottomPlayList, showPageSong } from '../../redux/actions/ViewActions.js'
 import { changeMusicPlayStatus } from '../../redux/actions/MusicActions.js'
 
 import { common } from '../../assets/styles/common.js'
@@ -27,11 +28,11 @@ class MusicPlayer extends React.Component {
 
   render () {
     return (
-      <View style={{width:'100%', height:53, top:Dimensions.get('window').height - 73, left:0, position:'absolute', zIndex:5, backgroundColor:'#333'}}>
+      <View style={{width:'100%', height:53, top:Dimensions.get('window').height - (Platform.OS === 'ios' ? 53 : 73), left:0, position:'absolute', zIndex:5, backgroundColor:'#333'}}>
         <View style={{flex:1, flexDirection:'row'}}>
-          <TouchableOpacity onPress={() => {this.props.config.navigation.navigate('Song')}} style={{flex:1, flexDirection:'row', justifyContent:'flex-start'}}>
+          <TouchableOpacity onPress={() => {this.props.dispatch(showPageSong())}} style={{flex:1, flexDirection:'row', justifyContent:'flex-start'}}>
             <View style={{width:58, flexDirection:'row', alignItems:'center', justifyContent:'center' }}>
-              <TouchableOpacity onPress={() => {this.props.config.navigation.navigate('Song')}} style={{width:'76%', height:'76%', marginLeft:2}}>
+              <TouchableOpacity onPress={() => {this.props.dispatch(showPageSong())}} style={{width:'76%', height:'76%', marginLeft:2}}>
                 <Image style={{flex:1, marginLeft:2, borderWidth:1, borderRadius:4, borderColor:'#666'}} source={{uri:'http://www.chuanke.com/upload/courseware/f/31/3312428/image/09c68fe797fa58d78a1de4f34e0ea40f.gif'}} />
               </TouchableOpacity>
             </View>

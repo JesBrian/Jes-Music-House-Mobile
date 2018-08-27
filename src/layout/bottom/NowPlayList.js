@@ -27,7 +27,7 @@ class NowPlayList extends React.Component {
 
   render () {
     return (
-      <View style={{width:'100%', height:'100%', bottom:0, left:0, flex:1, position:'absolute', backgroundColor:'rgba(0, 0, 0, 0.68)', zIndex:8}}>
+      <View style={{width:'100%', height:'100%', bottom:0, left:0, flex:1, position:'absolute', backgroundColor:'rgba(0, 0, 0, 0.68)', zIndex:18}}>
         <TouchableWithoutFeedback onPress={() => {this.props.dispatch(hiddenBottomPlayList())}}>
           <View style={{flex:1}}/>
         </TouchableWithoutFeedback>

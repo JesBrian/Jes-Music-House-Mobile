@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 
-import NormalNavbar from '../../layout/Top/type/NormalNavbar.js'
+import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
 
 
 export default class Comment extends React.Component {

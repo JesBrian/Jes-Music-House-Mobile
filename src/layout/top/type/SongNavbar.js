@@ -7,10 +7,14 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
+import { connect } from "react-redux";
+import { hiddenPageSong } from '../../../redux/actions/ViewActions.js'
+
 import { common } from '../../../assets/styles/common.js'
 import NavbarFrame from '../NavbarFrame.js'
 
-export default class SearchNavbar extends React.Component {
+
+class SongNavbar extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -22,7 +26,7 @@ export default class SearchNavbar extends React.Component {
       <NavbarFrame navbarContent={(
 
         <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-          <TouchableWithoutFeedback onPress={() => {this.props.navigation.goBack()}}>
+          <TouchableWithoutFeedback onPress={() => {this.props.dispatch(hiddenPageSong())}}>
             <View style={{width:50, flexDirection:'row', justifyContent:'center'}}>
               <Text style={[common.icon, {fontSize:31, color:'#BBB'}]}>&#xe8ca;</Text>
             </View>
@@ -57,3 +61,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#444'
   },
 })
+
+
+function reduxState(store) {
+  return {
+    showView: store.showView
+  }
+}
+
+export default connect(reduxState)(SongNavbar);

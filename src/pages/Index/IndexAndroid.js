@@ -15,8 +15,8 @@ import {connect} from 'react-redux'
 import { setNavigation } from '../../redux/actions/ConfigActions.js'
 import { showModal } from '../../redux/actions/ViewActions.js'
 
-import IndexNavbar from '../../layout/Top/type/IndexNavbar.js'
-import MenuPanel from '../../layout/Left/MenuPanel.js'
+import IndexNavbar from '../../layout/top/type/IndexNavbar.js'
+import MenuPanel from '../../layout/left/MenuPanel.js'
 import SuperButton from '../../components/SuperButton.js'
 
 

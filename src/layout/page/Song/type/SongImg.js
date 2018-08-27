@@ -10,7 +10,7 @@ import {
 
 import { connect } from 'react-redux'
 
-import { common } from '../../../assets/styles/common.js'
+import { common } from '../../../../assets/styles/common.js'
 
 
 class SongImg extends React.Component {

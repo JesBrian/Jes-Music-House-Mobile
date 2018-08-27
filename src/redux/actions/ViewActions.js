@@ -23,6 +23,14 @@ export function hiddenBottomSongMenu() {
   return {type: types.VIEW_BOTTOM_HIDDEN_SONGMENU}
 }
 
+
+export function showPageSong() {
+  return {type: types.PAGE_SHOW_SONG}
+}
+export function hiddenPageSong() {
+  return {type: types.PAGE_HIDDEN_SONG}
+}
+
 export function showModal(modalType = '') {
   return {
     type: types.VIEW_MODAL_SHOW,

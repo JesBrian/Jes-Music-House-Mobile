@@ -12,10 +12,11 @@ import {
 import {connect} from 'react-redux'
 import { setNavigation } from '../../redux/actions/ConfigActions.js'
 
-import IndexNavbar from '../../layout/Top/type/IndexNavbar.js'
-import MenuPanel from '../../layout/Left/MenuPanel.js'
+import IndexNavbar from '../../layout/top/type/IndexNavbar.js'
+import MenuPanel from '../../layout/left/MenuPanel.js'
 import Drawer from 'react-native-drawer'
 import SuperButton from '../../components/SuperButton.js'
+import {showModal} from "../../redux/actions/ViewActions";
 
 
 class Index extends React.Component {
@@ -62,6 +63,7 @@ class Index extends React.Component {
             <Button title='跳转到歌单' onPress={()=>this.props.navigation.navigate('PlayList')} />
             <Button title='跳转到歌手' onPress={()=>this.props.navigation.navigate('Singer')} />
             <Button title='跳转到歌单详情' onPress={()=>this.props.navigation.navigate('PlayList')} />
+            <Button title='打开 Modal' onPress={() => {this.props.dispatch(showModal('loading'))}} />
           </ScrollView>
         </View>
 

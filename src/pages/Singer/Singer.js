@@ -6,7 +6,7 @@ import {
   Text
 } from 'react-native';
 
-import NormalNavbar from '../../layout/Top/type/NormalNavbar.js'
+import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
 import SuperButton from '../../components/SuperButton.js'
 
 import Video from 'react-native-video'

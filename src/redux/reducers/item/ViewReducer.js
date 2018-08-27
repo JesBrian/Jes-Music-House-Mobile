@@ -10,6 +10,8 @@ const initialState = {
   bottomPlayList: false,
   bottomSongMenu: false,
 
+  pageSong: false,
+
   showModal: false,
   modalType: ''
 }
@@ -50,6 +52,17 @@ export default function showView(state = initialState, action) {
     case types.VIEW_BOTTOM_HIDDEN_SONGMENU: {
       return {
         ...state, bottomSongMenu: false
+      };
+    }
+
+    case types.PAGE_SHOW_SONG: {
+      return {
+        ...state, pageSong: true
+      };
+    }
+    case types.PAGE_HIDDEN_SONG: {
+      return {
+        ...state, pageSong: false
       };
     }
 

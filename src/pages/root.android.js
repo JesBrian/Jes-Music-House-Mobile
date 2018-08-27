@@ -10,9 +10,11 @@ import { connect } from 'react-redux'
 
 import PageRouter from '../router/AndroidPageRouter.js'
 
-import MusicPlayer from '../layout/Bottom/MusicPlayer.js'
-import NowPlayList from '../layout/Bottom/NowPlayList.js'
-import SongMenu from '../layout/Bottom/SongMenu.js'
+import SongPage from '../layout/page/Song/Song.js'
+
+import MusicPlayer from '../layout/bottom/MusicPlayer.js'
+import NowPlayList from '../layout/bottom/NowPlayList.js'
+import SongMenu from '../layout/bottom/SongMenu.js'
 import SuperModal from '../layout/modal/SuperModal.js'
 
 
@@ -34,6 +36,9 @@ class Root extends React.Component {
 
         {
           this.props.showView.showModal === true ? <SuperModal /> : null
+        }
+        {
+          this.props.showView.pageSong === true ? <SongPage /> : null
         }
       </View>
     );

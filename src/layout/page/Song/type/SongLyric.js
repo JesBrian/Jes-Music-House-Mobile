@@ -7,8 +7,8 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
-import { common } from '../../../assets/styles/common.js'
-import SuperSlider from '../../../components/SuperSlider.js'
+import { common } from '../../../../assets/styles/common.js'
+import SuperSlider from '../../../../components/SuperSlider.js'
 
 export default class SongLyric extends React.Component {
   constructor (props) {
@@ -25,10 +25,11 @@ export default class SongLyric extends React.Component {
           <View style={{width: '88%', height: 28, flexDirection: 'row', alignItems:'center'}}>
             <View style={{width: 38, height: '100%', flexDirection: 'row', justifyContent:'center', alignItems:'center'}}>
               <TouchableWithoutFeedback onPress={this.changeVolumeStatus}>
-                <View>
+                <View style={{backgroundColor:'transparent'}}>
                   {
                     this.state.volumeStatus === true ?
-                      <Text style={[common.icon, {fontSize:21}]}>&#xe6ac;</Text> : <Text style={[common.icon, {fontSize:21}]}>&#xe6aa;</Text>
+                      <Text style={[common.icon, {fontSize:21}]}>&#xe6ac;</Text> :
+                        <Text style={[common.icon, {fontSize:21}]}>&#xe6aa;</Text>
                   }
                 </View>
               </TouchableWithoutFeedback>
