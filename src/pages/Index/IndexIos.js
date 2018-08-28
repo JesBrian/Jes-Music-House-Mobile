@@ -60,7 +60,7 @@ class Index extends React.Component {
         <View style={styles.container}>
           <IndexNavbar navigation={this.props.navigation} openControlPanel={this.openControlPanel} />
 
-          <View style={{height:46, flexDirection:'row', backgroundColor:'rgba(0,0,0,0.68)'}}>
+          <View style={{height:46, flexDirection:'row', backgroundColor:'rgba(0,0,0,0.8)'}}>
             <Ripple style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
               <Text style={[common.icon, {marginRight:5, color:'#38daf0', fontSize:18}]}>&#xe618;</Text>
               <Text style={{color:'#38daf0', fontSize:16}}>个人</Text>
@@ -75,7 +75,7 @@ class Index extends React.Component {
             </Ripple>
           </View>
 
-          <ScrollView style={{width:'100%', flex:1, backgroundColor:'rgba(0,0,0,0.68)'}}>
+          <ScrollView style={{width:'100%', flex:1, backgroundColor:'rgba(0,0,0,0.8)'}}>
             <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
             <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent} />
             <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Home')} />

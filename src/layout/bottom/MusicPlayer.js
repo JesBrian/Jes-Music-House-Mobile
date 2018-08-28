@@ -15,9 +15,11 @@ import { connect } from 'react-redux'
 import { showBottomPlayList, showPageSong } from '../../redux/actions/ViewActions.js'
 import { changeMusicPlayStatus } from '../../redux/actions/MusicActions.js'
 
+import Ripple from 'react-native-material-ripple'
+import { BoxShadow }  from 'react-native-shadow'
+
 import { common } from '../../assets/styles/common.js'
 
-import Ripple from 'react-native-material-ripple'
 
 class MusicPlayer extends React.Component {
   constructor (props) {
@@ -27,9 +29,16 @@ class MusicPlayer extends React.Component {
   }
 
   render () {
+    const shadowOpt = {
+      width:Dimensions.get('window').width,
+      height:53,
+      color:"#181818", border:12, opacity:0.8, x:0, y:-2,
+      style:{top:Dimensions.get('window').height - (Platform.OS === 'ios' ? 53 : 73), left:0, position:'absolute', zIndex:5}
+    }
+
     return (
-      <View style={{width:'100%', height:53, top:Dimensions.get('window').height - (Platform.OS === 'ios' ? 53 : 73), left:0, position:'absolute', zIndex:5, backgroundColor:'#333'}}>
-        <View style={{flex:1, flexDirection:'row'}}>
+      <BoxShadow setting={shadowOpt}>
+        <View style={{flex:1, flexDirection:'row', backgroundColor:'#333', zIndex:5}}>
           <TouchableOpacity onPress={() => {this.props.dispatch(showPageSong())}} style={{flex:1, flexDirection:'row', justifyContent:'flex-start'}}>
             <View style={{width:58, flexDirection:'row', alignItems:'center', justifyContent:'center' }}>
               <TouchableOpacity onPress={() => {this.props.dispatch(showPageSong())}} style={{width:'76%', height:'76%', marginLeft:2}}>
@@ -54,7 +63,7 @@ class MusicPlayer extends React.Component {
             </TouchableOpacity>
           </View>
         </View>
-      </View>
+      </BoxShadow>
     )
   }
 

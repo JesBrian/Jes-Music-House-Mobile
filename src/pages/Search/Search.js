@@ -18,7 +18,7 @@ export default class Search extends React.Component {
       <View style={styles.container}>
         <SearchNavbar navigation={this.props.navigation} />
 
-        <View>
+        <View style={{flex:1, backgroundColor:'rgba(0,0,0,0.8)'}}>
           <Text onPress={()=>{this.openControlPanel()}} >搜索</Text>
           <Text>555</Text>
         </View>

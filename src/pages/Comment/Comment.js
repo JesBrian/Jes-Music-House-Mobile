@@ -34,17 +34,19 @@ class Comment extends React.Component {
 
         <NormalNavbar label={'评论 [11111111]'} />
 
-        <View style={{width:'100%', height:68, backgroundColor:'lightgreen'}}>
-          <Text>hhh</Text>
-        </View>
+        <View style={{flex:1, backgroundColor:'rgba(0,0,0,0.8)'}}>
+          <View style={{width:'100%', height:68}}>
+            <Text>hhh</Text>
+          </View>
 
-        <View>
-          <Text>精彩评论</Text>
-        </View>
+          <View>
+            <Text>精彩评论</Text>
+          </View>
 
 
-        <View>
-          <Text>最新评论</Text>
+          <View>
+            <Text>最新评论</Text>
+          </View>
         </View>
       </View>
     );

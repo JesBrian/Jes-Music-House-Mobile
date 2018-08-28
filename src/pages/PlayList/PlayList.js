@@ -34,9 +34,9 @@ class PlayList extends React.Component {
       <View style={styles.container}>
         <PlayListNavbar />
 
-        <View style={{backgroundColor:'#666'}}>
+        <View style={{backgroundColor:'rgba(0,0,0,0.8)'}}>
           <TouchableWithoutFeedback>
-            <View style={{height:108, flexDirection:'row', alignItems:'center', backgroundColor:'#666'}}>
+            <View style={{height:108, flexDirection:'row', alignItems:'center'}}>
               <Image style={{width:70, height:70, margin:16, borderWidth:1, borderRadius:6, borderColor:'#FFF'}} source={{uri:'http://www.chuanke.com/upload/courseware/f/31/3312428/image/09c68fe797fa58d78a1de4f34e0ea40f.gif'}} />
               <View style={{height:'100%', marginLeft:3, flex:1}}>
                 <Text>rfgyhji</Text>
@@ -47,7 +47,7 @@ class PlayList extends React.Component {
             </View>
           </TouchableWithoutFeedback>
 
-          <View style={{height:58, flexDirection:'row', backgroundColor:'#666'}}>
+          <View style={{height:58, flexDirection:'row'}}>
             <Ripple onPress={() => {goRouter(this.props.config.navigation, 'Comment')}} style={{flex:1, flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
               <Text style={[common.icon, {marginBottom:5, fontSize:22, color:'#FFF'}]}>&#xe638;</Text>
               <Text style={{fontSize:13, color:'#DDD'}}>888</Text>
@@ -66,7 +66,7 @@ class PlayList extends React.Component {
             </Ripple>
           </View>
 
-          <View style={{width:'100%', height:48, flexDirection:'row', borderTopLeftRadius:12, borderTopRightRadius:12, backgroundColor:'#444'}}>
+          <View style={{width:'100%', height:48, flexDirection:'row', borderTopLeftRadius:12, borderTopRightRadius:12, backgroundColor:'#222'}}>
             <Ripple style={{flex:1}}>
               <View style={{height:'100%', padding:15, flex:1, flexDirection:'row', justifyContent:'flex-start', alignItems:'center', borderTopLeftRadius:12}}>
                 <Text style={[common.icon, {marginRight:4, fontSize:18, color:'#FFF'}]}>&#xe6b4;</Text>

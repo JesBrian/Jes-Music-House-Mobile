@@ -20,7 +20,7 @@ export default class SongLyric extends React.Component {
 
   render() {
     return (
-      <View style={{flex:1, flexDirection:'column'}}>
+      <View style={{flex:1, flexDirection:'column', backgroundColor:'rgba(0,0,0,0.8)'}}>
         <View style={{flexDirection:'row', justifyContent:'center',}}>
           <View style={{width:'88%', height: 28, flexDirection:'row', alignItems:'center'}}>
             <View style={{width:38, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>

@@ -23,13 +23,13 @@ class SongImg extends React.Component {
 
   render() {
     return (
-      <View style={{flex:1, backgroundColor:'transparent'}}>
+      <View style={{flex:1, backgroundColor:'rgba(0,0,0,0.8)'}}>
         <TouchableWithoutFeedback onPress={() => this.props.changeSongContentType('lyric')}>
           <View style={{flex:1}}>
             <Text>歌曲页面播放[歌曲图片]</Text>
           </View>
         </TouchableWithoutFeedback>
-        <View style={{height:48, flexDirection:'row', alignItems:'center', justifyContent:'center', backgroundColor:'#333'}}>
+        <View style={{height:48, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
           <Ripple style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
             <Text style={[common.icon, {fontSize:28, color:'#AAA'}]}>&#xe80d;</Text>
           </Ripple>

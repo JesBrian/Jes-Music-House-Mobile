@@ -28,6 +28,10 @@ class Song extends React.Component {
     };
   }
 
+  componentWillMount () {
+    alert(777)
+  }
+
   render() {
     return (
       <View style={{width:'100%', height:'100%', bottom:0, left:0, flex:1, position:'absolute', backgroundColor:'#FFF', zIndex:13}}>
@@ -36,10 +40,10 @@ class Song extends React.Component {
         {
           this.state.showSongContentType === 'img' ?
             <SongImg changeSongContentType={showSongContentType => this.changeShowContentType(showSongContentType)} /> :
-            <SongLyric changeSongContentType={showSongContentType => this.changeShowContentType(showSongContentType)} />
+              <SongLyric changeSongContentType={showSongContentType => this.changeShowContentType(showSongContentType)} />
         }
 
-        <View style={{width:'100%', height:98, backgroundColor:'#333'}}>
+        <View style={{width:'100%', height:98, backgroundColor:'rgba(0,0,0,0.8)'}}>
           <View style={{flexDirection:'row', justifyContent:'center'}}>
             <View style={{width:'90%', height:28, flexDirection:'row'}}>
               <View style={{width:68, justifyContent:'center', alignItems:'center'}}>
