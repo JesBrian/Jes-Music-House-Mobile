@@ -9,14 +9,18 @@ import {
 } from 'react-native';
 
 
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { setNavigation } from '../../redux/actions/ConfigActions.js'
+
+import Ripple from 'react-native-material-ripple'
 
 import IndexNavbar from '../../layout/top/type/IndexNavbar.js'
 import MenuPanel from '../../layout/left/MenuPanel.js'
 import Drawer from 'react-native-drawer'
 import SuperButton from '../../components/SuperButton.js'
-import {showModal} from "../../redux/actions/ViewActions";
+import { showModal } from '../../redux/actions/ViewActions.js'
+
+import { common } from '../../assets/styles/common.js'
 
 
 class Index extends React.Component {
@@ -56,7 +60,22 @@ class Index extends React.Component {
         <View style={styles.container}>
           <IndexNavbar navigation={this.props.navigation} openControlPanel={this.openControlPanel} />
 
-          <ScrollView style={{width:'100%', flex:1}}>
+          <View style={{height:46, flexDirection:'row', backgroundColor:'rgba(0,0,0,0.68)'}}>
+            <Ripple style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+              <Text style={[common.icon, {marginRight:5, color:'#38daf0', fontSize:18}]}>&#xe618;</Text>
+              <Text style={{color:'#38daf0', fontSize:16}}>个人</Text>
+            </Ripple>
+            <Ripple style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+              <Text style={[common.icon, {marginRight:6, color:'#38daf0', fontSize:18}]}>&#xe661;</Text>
+              <Text style={{color:'#38daf0', fontSize:16}}>推荐</Text>
+            </Ripple>
+            <Ripple style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+              <Text style={[common.icon, {marginRight:8, color:'#38daf0', fontSize:18}]}>&#xe671;</Text>
+              <Text style={{color:'#38daf0', fontSize:16}}>朋友</Text>
+            </Ripple>
+          </View>
+
+          <ScrollView style={{width:'100%', flex:1, backgroundColor:'rgba(0,0,0,0.68)'}}>
             <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
             <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent} />
             <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Home')} />
@@ -86,8 +105,7 @@ const styles = StyleSheet.create({
   container: {
     height:'100%',
     position:'relative',
-    flexDirection:'column',
-    backgroundColor:'transparent'
+    flexDirection:'column'
   },
 });
 
