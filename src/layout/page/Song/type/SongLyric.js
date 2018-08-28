@@ -22,7 +22,7 @@ export default class SongLyric extends React.Component {
     return (
       <View style={{flex:1, flexDirection:'column', backgroundColor:'rgba(0,0,0,0.8)'}}>
         <View style={{flexDirection:'row', justifyContent:'center',}}>
-          <View style={{width:'88%', height: 28, flexDirection:'row', alignItems:'center'}}>
+          <View style={{width:'88%', height:43, flexDirection:'row', alignItems:'center'}}>
             <View style={{width:38, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
               <TouchableWithoutFeedback onPress={this.changeVolumeStatus}>
                 <View style={{backgroundColor:'transparent'}}>
@@ -35,7 +35,7 @@ export default class SongLyric extends React.Component {
               </TouchableWithoutFeedback>
             </View>
             <View style={{flex: 1, justifyContent: 'center'}}>
-              <View style={{width:'95%', paddingTop:10, paddingLeft:8, borderRadius:4}}>
+              <View style={{width:'95%', top:-1, paddingLeft:8, borderRadius:4}}>
                 <SuperSlider />
               </View>
             </View>

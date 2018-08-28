@@ -51,6 +51,12 @@ export default class MenuPanel extends React.Component {
         <View style={{width:'100%', height:38, paddingBottom:6, flexDirection:'row', backgroundColor:'#444'}}>
           <Ripple style={{flex:1}}>
             <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+              <Text style={[common.icon, {marginRight:8, fontSize:20, color:'#DDD'}]}>&#xeaec;</Text>
+              <Text style={{fontSize:18, color:'#DDD'}}>主题</Text>
+            </View>
+          </Ripple>
+          <Ripple style={{flex:1}}>
+            <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
               <Text style={[common.icon, {marginRight:8, fontSize:20, color:'#DDD'}]}>&#xe672;</Text>
               <Text style={{fontSize:18, color:'#DDD'}}>设置</Text>
             </View>

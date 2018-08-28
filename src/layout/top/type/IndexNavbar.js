@@ -26,7 +26,8 @@ export default class IndexNavbar extends React.Component {
             <SuperButton style={{marginLeft:13}} onPressEvent={this.props.openControlPanel} label={<Text style={[common.icon]}>&#xe654;</Text>} />
           </View>
 
-          <View style={{flex:1}}>
+          <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+            <Text style={{fontSize:22, color:'#DDD'}}>Music House</Text>
           </View>
 
           <View style={{marginRight:13}}>

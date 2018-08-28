@@ -28,10 +28,6 @@ class Song extends React.Component {
     };
   }
 
-  componentWillMount () {
-    alert(777)
-  }
-
   render() {
     return (
       <View style={{width:'100%', height:'100%', bottom:0, left:0, flex:1, position:'absolute', backgroundColor:'#FFF', zIndex:13}}>
