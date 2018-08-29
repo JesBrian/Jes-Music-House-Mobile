@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { setNavigation } from '../../redux/actions/ConfigActions.js'
 import { showModal } from '../../redux/actions/ViewActions.js'
 

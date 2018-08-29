@@ -13,6 +13,8 @@ import { connect } from 'react-redux'
 import { setNavigation } from '../../redux/actions/ConfigActions.js'
 
 import Ripple from 'react-native-material-ripple'
+import Swiper from 'react-native-swiper'
+
 
 import IndexNavbar from '../../layout/top/type/IndexNavbar.js'
 import MenuPanel from '../../layout/left/MenuPanel.js'
@@ -76,6 +78,21 @@ class Index extends React.Component {
           </View>
 
           <ScrollView style={{width:'100%', flex:1, backgroundColor:'rgba(0,0,0,0.8)'}}>
+
+            <View style={{width:'100%', height:138, paddingLeft:18, paddingRight:18}}>
+              <Swiper style={styles.wrapper} showsButtons={true} autoplay={true}>
+                <View style={styles.slide1}>
+                  <Text style={styles.text}>Hello Swiper</Text>
+                </View>
+                <View style={styles.slide2}>
+                  <Text style={styles.text}>Beautiful</Text>
+                </View>
+                <View style={styles.slide3}>
+                  <Text style={styles.text}>And simple</Text>
+                </View>
+              </Swiper>
+            </View>
+
             <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
             <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent} />
             <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Home')} />
@@ -107,6 +124,32 @@ const styles = StyleSheet.create({
     position:'relative',
     flexDirection:'column'
   },
+
+  wrapper: {
+  },
+  slide1: {
+    flex:1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#9DD6EB',
+  },
+  slide2: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#97CAE5',
+  },
+  slide3: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#92BBD9',
+  },
+  text: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold',
+  }
 });
 
 const drawerStyles = {

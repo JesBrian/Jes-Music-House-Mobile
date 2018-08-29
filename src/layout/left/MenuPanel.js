@@ -28,7 +28,7 @@ export default class MenuPanel extends React.Component {
 
   render () {
     const shadowOpt = {
-      width:Dimensions.get('window').width * 0.82, height:Platform.OS === 'ios' ? 118 : 98, color:"#383838", border:12, opacity:0.8, x:0, y:1,
+      width:Dimensions.get('window').width * 0.82, height:Platform.OS === 'ios' ? 118 : 98, color:"#383838", border:12, opacity:0.8, x:-8, y:1,
 
       style: {
         paddingTop:Platform.OS === 'ios' ? 20 : 0, flexDirection:'row', backgroundColor:'#333'
@@ -43,7 +43,7 @@ export default class MenuPanel extends React.Component {
             <Image style={{width:48, height:48, borderWidth:1, borderRadius:4, borderColor:'#666'}} source={{uri:'http://www.chuanke.com/upload/courseware/f/31/3312428/image/09c68fe797fa58d78a1de4f34e0ea40f.gif'}} />
           </View>
           <View style={{flex:1, height:'100%'}}>
-            <Text style={{}}>JesBrian</Text>
+            <Text style={{backgroundColor:'transparent'}}>JesBrian</Text>
             <SuperButton/>
           </View>
         </BoxShadow>
