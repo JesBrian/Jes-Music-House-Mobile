@@ -1,11 +1,14 @@
 import React  from 'react';
 
 import {
+  Dimensions,
   StyleSheet,
   View,
   Text,
-  TouchableWithoutFeedback, Dimensions
+  TouchableWithoutFeedback
 } from 'react-native';
+
+import Ripple from 'react-native-material-ripple'
 
 import SuperButton from '../../components/SuperButton.js'
 
@@ -16,11 +19,9 @@ export default class Home extends React.Component {
     return (
       <View style={styles.container}>
 
-        <TouchableWithoutFeedback onPress={() => {this.props.navigation.goBack()}}>
-          <View style={{width:38, height:'100%', position:'absolute', zIndex:2, alignItems:'center', justifyContent:'center'}}>
-            <Text style={[common.icon, {marginLeft:-5, fontSize:25}]}>&#xe602;</Text>
-          </View>
-        </TouchableWithoutFeedback>
+        <Ripple onPress={() => {this.props.navigation.goBack()}} style={{width:38, height:'100%', position:'absolute', zIndex:2, alignItems:'center', justifyContent:'center'}}>
+          <Text style={[common.icon, {marginLeft:-5, fontSize:25, color:"#BBB"}]}>&#xe602;</Text>
+        </Ripple>
 
         <View style={{flex:1}}>
           <View style={{height:238, flexDirection:'column', alignItems:'center',}}>
@@ -65,6 +66,6 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     height: '100%',
-    backgroundColor: 'transparent'
+    backgroundColor: 'rgba(0,0,0,0.8)'
   },
 });

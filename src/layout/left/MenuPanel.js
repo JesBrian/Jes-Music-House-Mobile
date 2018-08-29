@@ -8,7 +8,7 @@ import {
   ScrollView,
   Image,
   Button,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback, Dimensions
 } from 'react-native';
 
 import Ripple from 'react-native-material-ripple'
@@ -27,9 +27,18 @@ export default class MenuPanel extends React.Component {
   }
 
   render () {
+    const shadowOpt = {
+      width:Dimensions.get('window').width * 0.82, height:Platform.OS === 'ios' ? 118 : 98, color:"#383838", border:12, opacity:0.8, x:0, y:1,
+
+      style: {
+        paddingTop:Platform.OS === 'ios' ? 20 : 0, flexDirection:'row', backgroundColor:'#333'
+      }
+    };
+
+
     return (
-      <View style={{height:'100%', paddingBottom:54, flex:1, backgroundColor:'rgba(0,0,0,0.8)'}}>
-        <View style={{width:'100%', height:Platform.OS === 'ios' ? 118 : 98, paddingTop:Platform.OS === 'ios' ? 20 : 0, flexDirection:'row', backgroundColor:'#444'}}>
+      <View style={{height:'100%', paddingBottom:53, flex:1}}>
+        <BoxShadow setting={shadowOpt}>
           <View style={{width:88, height:'100%', justifyContent:'center', alignItems:'center'}}>
             <Image style={{width:48, height:48, borderWidth:1, borderRadius:4, borderColor:'#666'}} source={{uri:'http://www.chuanke.com/upload/courseware/f/31/3312428/image/09c68fe797fa58d78a1de4f34e0ea40f.gif'}} />
           </View>
@@ -37,9 +46,9 @@ export default class MenuPanel extends React.Component {
             <Text style={{}}>JesBrian</Text>
             <SuperButton/>
           </View>
-        </View>
+        </BoxShadow>
 
-        <ScrollView style={{flex:1}}>
+        <ScrollView style={{flex:1, backgroundColor:'rgba(0,0,0,0.68)'}}>
           <View>
             <Text onPress={()=>this.props.navigation.navigate('Register')}>
               跳转注册页面
@@ -48,7 +57,7 @@ export default class MenuPanel extends React.Component {
           </View>
         </ScrollView>
 
-        <View style={{width:'100%', height:38, paddingBottom:6, flexDirection:'row', backgroundColor:'#444'}}>
+        <View style={{width:'100%', height:43, paddingBottom:6, flexDirection:'row', backgroundColor:'#333'}}>
           <Ripple style={{flex:1}}>
             <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
               <Text style={[common.icon, {marginRight:8, fontSize:20, color:'#DDD'}]}>&#xeaec;</Text>

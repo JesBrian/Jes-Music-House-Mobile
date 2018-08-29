@@ -28,16 +28,16 @@ export default class Register extends React.Component {
       <View style={styles.container}>
         <NormalNavbar navigation={this.props.navigation} label={'手机号注册'} />
 
-        <View style={{flex:1, flexDirection:'column', alignItems:'center'}}>
+        <View style={{flex:1, flexDirection:'column', alignItems:'center', backgroundColor:'rgba(0,0,0,0.8)'}}>
           <View style={{marginTop:38, justifyContent:'center',}}>
             <TextInput value={this.state.phone} onChangeText={(phone) => {this.setState({phone: phone})}}
                        selectionColor={'#38DAF0'} underlineColorAndroid='transparent'
-                       style={{width:Dimensions.get('window').width - 88, height:53, paddingLeft:18, paddingRight:18, borderRadius:26, borderWidth:3, borderColor:'#38daf0', fontSize:20}} />
+                       style={{width:Dimensions.get('window').width - 88, height:53, paddingLeft:18, paddingRight:18, borderRadius:26, borderWidth:3, borderColor:'#38daf0', color:'#38daf0', fontSize:20}} />
           </View>
           <View style={{marginTop:18, marginBottom:18, position:'relative', justifyContent:'center'}}>
             <TextInput value={this.state.passwd} secureTextEntry={this.state.isHiddenPasswd} onChangeText={(passwd) => {this.setState({passwd: passwd})}}
                        selectionColor={'#38DAF0'} underlineColorAndroid='transparent'
-                       style={{width:Dimensions.get('window').width - 88, height:53, paddingLeft:18, paddingRight:51, borderRadius:26, borderWidth:3, borderColor:'#38daf0', fontSize:20}} />
+                       style={{width:Dimensions.get('window').width - 88, height:53, paddingLeft:18, paddingRight:51, borderRadius:26, borderWidth:3, borderColor:'#38daf0', color:'#38daf0', fontSize:20}} />
             {
               this.state.passwd === '' ? null :
                 <TouchableWithoutFeedback onPressIn={() => {this.setState({isHiddenPasswd: false})}} onPressOut={() => {this.setState({isHiddenPasswd: true})}}>
@@ -49,7 +49,7 @@ export default class Register extends React.Component {
           <SuperButton onPressEvent={this.userRegister.bind(this)} label="注册" width={Dimensions.get('window').width - 88} height={53} />
         </View>
 
-        <View style={{height:168, flexDirection:'column', alignItems:'center'}}>
+        <View style={{height:168, flexDirection:'column', alignItems:'center', backgroundColor:'rgba(0,0,0,0.8)'}}>
           <Text>其他登陆方式</Text>
           <View style={{flexDirection:'row'}}>
             <View style={{flex:1, alignItems:'center'}}>
