@@ -14,6 +14,7 @@ import { setNavigation } from '../../redux/actions/ConfigActions.js'
 
 import Ripple from 'react-native-material-ripple'
 import Swiper from 'react-native-swiper'
+import ScrollableTabView from 'react-native-scrollable-tab-view'
 
 
 import IndexNavbar from '../../layout/top/type/IndexNavbar.js'
@@ -23,6 +24,10 @@ import SuperButton from '../../components/SuperButton.js'
 import { showModal } from '../../redux/actions/ViewActions.js'
 
 import { common } from '../../assets/styles/common.js'
+
+import PlayList from '../PlayList/PlayList.js'
+import Search from '../Search/Search.js'
+import User from '../User/User.js'
 
 
 class Index extends React.Component {
@@ -100,6 +105,13 @@ class Index extends React.Component {
             <Button title='跳转到歌手' onPress={()=>this.props.navigation.navigate('Singer')} />
             <Button title='跳转到歌单详情' onPress={()=>this.props.navigation.navigate('PlayList')} />
             <Button title='打开 Modal' onPress={() => {this.props.dispatch(showModal('loading'))}} />
+
+
+            <ScrollableTabView>
+              <PlayList tabLabel="React" />
+              <Search tabLabel="Flow" />
+              <User tabLabel="Jest" />
+            </ScrollableTabView>
           </ScrollView>
         </View>
 
