@@ -1,18 +1,20 @@
 import React  from 'react';
 
 import {
+  Dimensions,
   Platform,
   StyleSheet,
   Text,
   View,
   ScrollView,
   Image,
-  Button,
-  TouchableWithoutFeedback, Dimensions
+  TouchableWithoutFeedback
 } from 'react-native';
 
 import Ripple from 'react-native-material-ripple'
 import { BoxShadow }  from 'react-native-shadow'
+
+import SuperIcon from '../../components/SuperIcon.js'
 import SuperButton from '../../components/SuperButton.js'
 
 import { common } from '../../assets/styles/common.js'
@@ -36,6 +38,12 @@ export default class MenuPanel extends React.Component {
     };
 
 
+    const menuData = [
+      {icon:'\ue638', name:'我的消息'},
+      {icon:'\ue671', name:'我的消息1'}
+    ];
+
+
     return (
       <View style={{height:'100%', paddingBottom:53, flex:1}}>
         <BoxShadow setting={shadowOpt}>
@@ -48,13 +56,17 @@ export default class MenuPanel extends React.Component {
           </View>
         </BoxShadow>
 
-        <ScrollView style={{flex:1, backgroundColor:'rgba(0,0,0,0.68)'}}>
-          <View>
-            <Text onPress={()=>this.props.navigation.navigate('Register')}>
-              跳转注册页面
-            </Text>
-            <Button title='跳转到详情' onPress={()=>this.props.navigation.navigate('Login')} />
-          </View>
+        <ScrollView style={{paddingTop:12, paddingBottom:12, flex:1, backgroundColor:'rgba(0,0,0,0.68)'}}>
+          {
+            menuData.map((item) => {
+              return (
+                <Ripple style={{width:'100%', height:38, flexDirection:'row', alignItems:'center', backgroundColor:'lightgreen'}}>
+                  <SuperIcon type={ item.icon } style={{margin:12}} />
+                  <Text>{ item.name }</Text>
+                </Ripple>
+              )
+            })
+          }
         </ScrollView>
 
         <View style={{width:'100%', height:43, paddingBottom:6, flexDirection:'row', backgroundColor:'#333'}}>

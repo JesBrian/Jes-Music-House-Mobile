@@ -106,7 +106,6 @@ class Index extends React.Component {
             <Button title='跳转到歌单详情' onPress={()=>this.props.navigation.navigate('PlayList')} />
             <Button title='打开 Modal' onPress={() => {this.props.dispatch(showModal('loading'))}} />
 
-
             <ScrollableTabView>
               <PlayList tabLabel="React" />
               <Search tabLabel="Flow" />
