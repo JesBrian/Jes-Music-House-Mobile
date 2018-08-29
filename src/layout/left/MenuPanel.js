@@ -20,7 +20,6 @@ import SuperButton from '../../components/SuperButton.js'
 import { common } from '../../assets/styles/common.js'
 
 
-
 export default class MenuPanel extends React.Component {
   constructor (props) {
     super(props);
@@ -58,9 +57,9 @@ export default class MenuPanel extends React.Component {
 
         <ScrollView style={{paddingTop:12, paddingBottom:12, flex:1, backgroundColor:'rgba(0,0,0,0.68)'}}>
           {
-            menuData.map((item) => {
+            menuData.map((item, index) => {
               return (
-                <Ripple style={{width:'100%', height:38, flexDirection:'row', alignItems:'center', backgroundColor:'lightgreen'}}>
+                <Ripple key={index} style={{width:'100%', height:38, flexDirection:'row', alignItems:'center', backgroundColor:'lightgreen'}}>
                   <SuperIcon type={ item.icon } style={{margin:12}} />
                   <Text>{ item.name }</Text>
                 </Ripple>
