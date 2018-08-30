@@ -2,6 +2,7 @@ import React  from 'react';
 
 import {
   StyleSheet,
+  ScrollView,
   View,
   Text
 } from 'react-native';
@@ -10,6 +11,7 @@ import { connect } from 'react-redux'
 import { hiddenBottomMusic, showBottomMusic } from '../../redux/actions/ViewActions.js'
 
 import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
+import SuperInput from '../../components/SuperInput/SuperInput.js'
 
 
 class Comment extends React.Component {
@@ -39,14 +41,16 @@ class Comment extends React.Component {
             <Text>hhh</Text>
           </View>
 
-          <View>
-            <Text>精彩评论</Text>
-          </View>
+          <ScrollView style={{flex:1}}>
+            <View>
+              <Text>精彩评论</Text>
+            </View>
+            <View>
+              <Text>最新评论</Text>
+            </View>
+          </ScrollView>
 
-
-          <View>
-            <Text>最新评论</Text>
-          </View>
+          <SuperInput />
         </View>
       </View>
     );

@@ -37,13 +37,10 @@ class IndexRecommend extends React.Component {
               </View>
             </Swiper>
           </View>
-
-          <Text style={{marginTop:45}} onPress={()=>{this.openControlPanel()}} >用户登录 88</Text>
-          <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent} />
-          <Button title='跳转到登录' onPress={()=>this.props.navigation.navigate('Home')} />
-          <Button title='跳转到歌单' onPress={()=>this.props.navigation.navigate('PlayList')} />
-          <Button title='跳转到歌手' onPress={()=>this.props.navigation.navigate('Singer')} />
-          <Button title='跳转到歌单详情' onPress={()=>this.props.navigation.navigate('PlayList')} />
+          <Button title='跳转到登录' onPress={()=>this.props.config.navigation.navigate('Home')} />
+          <Button title='跳转到歌单' onPress={()=>this.props.config.navigation.navigate('PlayList')} />
+          <Button title='跳转到歌手' onPress={()=>this.props.config.navigation.navigate('Singer')} />
+          <Button title='跳转到歌单详情' onPress={()=>this.props.config.navigation.navigate('PlayList')} />
           <Button title='打开 Modal' onPress={() => {this.props.dispatch(showModal('loading'))}} />
 
 
