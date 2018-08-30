@@ -17,7 +17,7 @@ export default class SuperIcon extends React.Component {
     const fontWeight = isTabActive ? 'bold' : 'normal';
 
     return <Ripple
-      style={{flex:1, justifyContent:'center', alignItems:'center'}}
+      style={{flex:1, justifyContent:'center', alignItems:'center', backgroundColor:'rgba(0,0,0,0.8)'}}
       key={name}
       accessible={true}
       accessibilityLabel={name}
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems:'center',
     justifyContent:'center',
-    paddingBottom:5,
+    paddingBottom:5
   },
   tabs: {
     height:38,
