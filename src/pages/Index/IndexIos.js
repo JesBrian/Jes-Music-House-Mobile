@@ -93,9 +93,9 @@ class Index extends React.Component {
             <Button title='打开 Modal' onPress={() => {this.props.dispatch(showModal('loading'))}} />
 
             <ScrollableTabView  renderTabBar={() => <SuperTabbar someProp={'here'} />}>
-              <PlayList tabLabel="React" />
-              <Search tabLabel="Flow" />
-              <User tabLabel="Jest" />
+              <PlayList tabLabel="个人" />
+              <Search tabLabel="推荐" />
+              <User tabLabel="朋友" />
             </ScrollableTabView>
           </ScrollView>
         </View>
