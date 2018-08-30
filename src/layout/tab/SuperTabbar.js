@@ -16,16 +16,16 @@ export default class SuperIcon extends React.Component {
     const textColor = isTabActive ? '#38daf0' : '#BBB';
     const fontWeight = isTabActive ? 'bold' : 'normal';
 
-    return <Ripple
-      style={{flex:1, justifyContent:'center', alignItems:'center', backgroundColor:'rgba(0,0,0,0.8)'}}
-      key={name}
-      accessible={true}
-      accessibilityLabel={name}
-      accessibilityTraits={'button'}
-      onPress={() => onPressHandler(page)}
-    >
-      <Text style={{color:textColor, fontSize:15, fontWeight:fontWeight}}>{name}</Text>
-    </Ripple>;
+    return (
+      <Ripple
+        style={{flex:1, justifyContent:'center', alignItems:'center'}}
+        key={name}
+        accessible={true}
+        accessibilityLabel={name}
+        onPress={() => onPressHandler(page)} >
+        <Text style={{color:textColor, fontSize:15, fontWeight:fontWeight}}>{name}</Text>
+      </Ripple>
+    );
   }
 
   render() {

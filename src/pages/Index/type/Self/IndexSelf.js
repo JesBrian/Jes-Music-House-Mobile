@@ -18,6 +18,6 @@ export default class IndexSelf extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'transparent'
+    flex:1
   },
 });

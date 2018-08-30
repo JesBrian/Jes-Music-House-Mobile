@@ -59,7 +59,12 @@ class Index extends React.Component {
         <View style={styles.container}>
           <IndexNavbar navigation={this.props.navigation} openControlPanel={this.openControlPanel} />
 
-          <ScrollableTabView  renderTabBar={() => <SuperTabbar someProp={'here'} />}>
+          <ScrollableTabView
+            initialPage={1}
+            renderTabBar={() => <SuperTabbar />}
+            style={{backgroundColor:'rgba(0,0,0,0.8)'}}
+          >
+
             <IndexSelf tabLabel="个人" />
             <IndexRecommend tabLabel="推荐" />
             <IndexFrined tabLabel="朋友" />

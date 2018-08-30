@@ -22,9 +22,9 @@ class IndexRecommend extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView style={{width:'100%', flex:1, backgroundColor:'rgba(0,0,0,0.8)'}}>
+        <ScrollView style={{width:'100%', flex:1}}>
 
-          <View style={{width:'100%', height:138, paddingLeft:18, paddingRight:18}}>
+          <View style={{width:'100%', height:138, marginTop:8, paddingLeft:18, paddingRight:18}}>
             <Swiper style={styles.wrapper} showsButtons={true} autoplay={true}>
               <View style={styles.slide1}>
                 <Text style={styles.text}>Hello Swiper</Text>
