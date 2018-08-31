@@ -13,7 +13,7 @@ import { common } from '../../assets/styles/common.js'
 
 export default class SuperIcon extends React.Component {
   renderTab(name, page, isTabActive, onPressHandler) {
-    const textColor = isTabActive ? '#38daf0' : '#BBB';
+    const textColor = isTabActive ? '#2DC9FF' : '#BBB';
     const fontWeight = isTabActive ? 'bold' : 'normal';
 
     return (
@@ -35,7 +35,7 @@ export default class SuperIcon extends React.Component {
       position:'absolute',
       width: containerWidth / numberOfTabs,
       height:2,
-      backgroundColor:'#38daf0',
+      backgroundColor:'#2DC9FF',
       borderRadius:2,
       bottom:0,
     };

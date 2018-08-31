@@ -22,7 +22,7 @@ export default class Loading extends React.Component {
       <Slider
         value={this.state.value}
         maximumTrackTintColor={'#686868'}
-        minimumTrackTintColor={'#38daf0'}
+        minimumTrackTintColor={'#2DC9FF'}
         thumbStyle={{width:16, height:16, paddingTop:1}}
         thumbTintColor={'#222'}
         thumbImage={require('../assets/images/default/slide-pointer.png')}

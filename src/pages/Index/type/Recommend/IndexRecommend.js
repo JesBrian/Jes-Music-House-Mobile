@@ -42,7 +42,7 @@ class IndexRecommend extends React.Component {
               {
                 this.state.testData.map((item, index) => {
                   return (
-                    <View style={styles.slide1}>
+                    <View key={index} style={styles.slide1}>
                       <Text style={styles.text}>{ item }</Text>
                     </View>
                   )
