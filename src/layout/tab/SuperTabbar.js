@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     paddingBottom:5
   },
   tabs: {
-    height:38,
+    height:36,
     flexDirection:'row',
     justifyContent:'space-around'
   },

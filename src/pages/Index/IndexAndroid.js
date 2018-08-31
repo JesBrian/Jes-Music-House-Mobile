@@ -4,20 +4,25 @@ import {
   StyleSheet,
   Dimensions,
   DrawerLayoutAndroid,
-  View,
-  ScrollView,
-  Text,
-  Button
+  View
 } from 'react-native';
 
 
 import { connect } from 'react-redux'
 import { setNavigation } from '../../redux/actions/ConfigActions.js'
-import { showModal } from '../../redux/actions/ViewActions.js'
+
+
+import ScrollableTabView from 'react-native-scrollable-tab-view'
+
 
 import IndexNavbar from '../../layout/top/type/IndexNavbar.js'
 import MenuPanel from '../../layout/left/MenuPanel.js'
-import SuperButton from '../../components/SuperButton.js'
+import SuperTabbar from '../../layout/tab/SuperTabbar.js'
+
+import IndexSelf from './type/Self/IndexSelf.js'
+import IndexRecommend from './type/Recommend/IndexRecommend.js'
+import IndexFrined from './type/Friend/IndexFriend.js'
+
 
 
 class Index extends React.Component {
@@ -42,21 +47,16 @@ class Index extends React.Component {
         <View style={styles.container}>
           <IndexNavbar openControlPanel={this.onPenLeftDrawable} navigation={this.props.navigation} />
 
-          <ScrollView style={{width: '100%', flex: 1}}>
-            <View>
-              <Text style={{marginTop: 45}} onPress={() => {
-                this.openControlPanel()
-              }}>用户登录 88</Text>
-              <SuperButton label="g3好gbg" onPressEvent={this.buttonClickEvent}/>
-              <Button title='跳转到登录' onPress={() => this.props.navigation.navigate('Home')}/>
-              <Button title='跳转到歌单' onPress={() => this.props.navigation.navigate('PlayList')}/>
-              <Button title='跳转到歌手' onPress={() => this.props.navigation.navigate('Singer')}/>
-              <Button title='跳转到歌单详情' onPress={()=>this.props.navigation.navigate('PlayList')} />
+          <ScrollableTabView
+            initialPage={1}
+            renderTabBar={() => <SuperTabbar />}
+            style={{paddingTop:6, backgroundColor:'rgba(0,0,0,0.8)'}}
+          >
 
-
-              <Button title='打开 Modal' onPress={() => {this.props.dispatch(showModal('loading'))}} />
-            </View>
-          </ScrollView>
+            <IndexSelf tabLabel="个人" />
+            <IndexRecommend tabLabel="推荐" />
+            <IndexFrined tabLabel="朋友" />
+          </ScrollableTabView>
         </View>
 
       </DrawerLayoutAndroid>
@@ -73,8 +73,7 @@ const styles = StyleSheet.create({
   container: {
     height: '100%',
     position: 'relative',
-    flexDirection: 'column',
-    backgroundColor: 'transparent'
+    flexDirection: 'column'
   },
 });
 

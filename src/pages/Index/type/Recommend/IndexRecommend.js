@@ -19,6 +19,19 @@ import SuperButton from '../../../../components/SuperButton.js'
 
 
 class IndexRecommend extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      testData: []
+    }
+  }
+
+  componentWillMount () {
+    this.setState({
+      testData: ['Hello Swiper', 'Beautiful', 'And simple']
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -26,17 +39,18 @@ class IndexRecommend extends React.Component {
 
           <View style={{width:'100%', height:138, marginTop:8, paddingLeft:18, paddingRight:18}}>
             <Swiper style={styles.wrapper} showsButtons={true} autoplay={true}>
-              <View style={styles.slide1}>
-                <Text style={styles.text}>Hello Swiper</Text>
-              </View>
-              <View style={styles.slide2}>
-                <Text style={styles.text}>Beautiful</Text>
-              </View>
-              <View style={styles.slide3}>
-                <Text style={styles.text}>And simple</Text>
-              </View>
+              {
+                this.state.testData.map((item, index) => {
+                  return (
+                    <View style={styles.slide1}>
+                      <Text style={styles.text}>{ item }</Text>
+                    </View>
+                  )
+                })
+              }
             </Swiper>
           </View>
+
           <Button title='跳转到登录' onPress={()=>this.props.config.navigation.navigate('Home')} />
           <Button title='跳转到歌单' onPress={()=>this.props.config.navigation.navigate('PlayList')} />
           <Button title='跳转到歌手' onPress={()=>this.props.config.navigation.navigate('Singer')} />
@@ -67,13 +81,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#97CAE5',
+    backgroundColor: '#77ffac',
   },
   slide3: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#92BBD9',
+    backgroundColor: '#ff8dcd',
   },
   text: {
     color: '#fff',
