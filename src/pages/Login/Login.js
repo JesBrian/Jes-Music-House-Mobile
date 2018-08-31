@@ -28,7 +28,7 @@ export default class Login extends React.Component {
       <View style={styles.container}>
         <NormalNavbar navigation={this.props.navigation} label={'手机号登录'} />
 
-        <View style={{flex:1, flexDirection:'column', alignItems:'center', backgroundColor:'rgba(0,0,0,0.8)'}}>
+        <View style={{flex:1, flexDirection:'column', alignItems:'center', backgroundColor:'rgba(0,0,0,0.73)'}}>
           <View style={{marginTop:38, justifyContent:'center',}}>
             <TextInput value={this.state.phone} onChangeText={(phone) => {this.setState({phone: phone})}}
                        selectionColor={'#2DC9FF'} underlineColorAndroid='transparent'

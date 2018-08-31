@@ -34,7 +34,7 @@ class PlayList extends React.Component {
       <View style={styles.container}>
         <PlayListNavbar />
 
-        <View style={{backgroundColor:'rgba(0,0,0,0.8)'}}>
+        <View style={{backgroundColor:'rgba(0,0,0,0.73)'}}>
           <TouchableWithoutFeedback>
             <View style={{height:108, flexDirection:'row', alignItems:'center'}}>
               <Image style={{width:70, height:70, margin:16, borderWidth:1, borderRadius:6, borderColor:'#FFF'}} source={{uri:'http://www.chuanke.com/upload/courseware/f/31/3312428/image/09c68fe797fa58d78a1de4f34e0ea40f.gif'}} />

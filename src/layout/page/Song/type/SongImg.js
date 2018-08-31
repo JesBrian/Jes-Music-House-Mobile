@@ -23,7 +23,7 @@ class SongImg extends React.Component {
 
   render() {
     return (
-      <View style={{flex:1, backgroundColor:'rgba(0,0,0,0.8)'}}>
+      <View style={{flex:1}}>
         <TouchableWithoutFeedback onPress={() => this.props.changeSongContentType('lyric')}>
           <View style={{flex:1}}>
             <Text>歌曲页面播放[歌曲图片]</Text>

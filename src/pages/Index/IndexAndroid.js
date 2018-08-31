@@ -49,7 +49,7 @@ class Index extends React.Component {
 
           <ScrollableTabView
             renderTabBar={() => <SuperTabbar />}
-            style={{paddingTop:6, backgroundColor:'rgba(0,0,0,0.8)'}}>
+            style={{paddingTop:6, backgroundColor:'rgba(0,0,0,0.73)'}}>
 
             <IndexSelf tabLabel="个人" />
             <IndexRecommend tabLabel="推荐" />

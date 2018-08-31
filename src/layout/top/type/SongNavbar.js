@@ -25,9 +25,9 @@ class SongNavbar extends React.Component {
     return (
       <NavbarFrame navbarContent={(
 
-        <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+        <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
           <TouchableWithoutFeedback onPress={() => {this.props.dispatch(hiddenPageSong())}}>
-            <View style={{width:50, flexDirection:'row', justifyContent:'center'}}>
+            <View style={{width:45, flexDirection:'row', justifyContent:'center'}}>
               <Text style={[common.icon, {fontSize:31, color:'#BBB'}]}>&#xe8ca;</Text>
             </View>
           </TouchableWithoutFeedback>
@@ -52,14 +52,6 @@ class SongNavbar extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    width:'100%',
-    height:55,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#444'
-  },
 })
 
 

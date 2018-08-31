@@ -66,6 +66,6 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     height: '100%',
-    backgroundColor: 'rgba(0,0,0,0.8)'
+    backgroundColor: 'rgba(0,0,0,0.73)'
   },
 });
