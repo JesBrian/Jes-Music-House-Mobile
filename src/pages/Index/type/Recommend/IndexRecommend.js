@@ -16,6 +16,7 @@ import Ripple from 'react-native-material-ripple'
 import Swiper from 'react-native-swiper'
 
 import SuperButton from '../../../../components/SuperButton.js'
+import SuperIcon from '../../../../components/SuperIcon.js'
 
 
 class IndexRecommend extends React.Component {
@@ -37,12 +38,12 @@ class IndexRecommend extends React.Component {
       <View style={styles.container}>
         <ScrollView style={{width:'100%', flex:1}}>
 
-          <View style={{width:'100%', height:138, marginTop:8, paddingLeft:18, paddingRight:18}}>
+          <View style={{width:'100%', height:138, marginTop:18, paddingLeft:18, paddingRight:18}}>
             <Swiper style={styles.wrapper} showsButtons={true} autoplay={true}>
               {
                 this.state.testData.map((item, index) => {
                   return (
-                    <View key={index} style={styles.slide1}>
+                    <View key={index} style={styles.slide}>
                       <Text style={styles.text}>{ item }</Text>
                     </View>
                   )
@@ -51,11 +52,40 @@ class IndexRecommend extends React.Component {
             </Swiper>
           </View>
 
-          <Button title='跳转到登录' onPress={()=>this.props.config.navigation.navigate('Home')} />
-          <Button title='跳转到歌单' onPress={()=>this.props.config.navigation.navigate('PlayList')} />
-          <Button title='跳转到歌手' onPress={()=>this.props.config.navigation.navigate('Singer')} />
-          <Button title='跳转到歌单详情' onPress={()=>this.props.config.navigation.navigate('PlayList')} />
-          <Button title='打开 Modal' onPress={() => {this.props.dispatch(showModal('loading'))}} />
+          <View style={{width:'100%', height:68, marginTop:18, paddingLeft:8, paddingRight:8, flexDirection:'row'}}>
+            <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+              <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
+                <SuperIcon type={'\ue640'} style={{paddingTop:3, fontSize:32, color:'#BBB', backgroundColor:'transparent'}} />
+              </View>
+              <Text style={{color:'#BBB'}}>每日推荐</Text>
+            </View>
+            <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+              <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
+                <SuperIcon type={'\ue646'} style={{paddingTop:3, fontSize:32, color:'#BBB', backgroundColor:'transparent'}} />
+              </View>
+              <Text style={{color:'#BBB'}}>歌单</Text>
+            </View>
+            <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+              <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
+                <SuperIcon type={'\ue624'} style={{paddingTop:3, fontSize:32, color:'#BBB', backgroundColor:'transparent'}} />
+              </View>
+              <Text style={{color:'#BBB'}}>歌手</Text>
+            </View>
+            <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+              <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
+                <SuperIcon type={'\ue62c'} style={{paddingTop:3, fontSize:32, color:'#BBB', backgroundColor:'transparent'}} />
+              </View>
+              <Text style={{color:'#BBB'}}>排行榜</Text>
+            </View>
+          </View>
+
+
+
+          {/*<Button title='跳转到登录' onPress={()=>this.props.config.navigation.navigate('Home')} />*/}
+          {/*<Button title='跳转到歌单' onPress={()=>this.props.config.navigation.navigate('PlayList')} />*/}
+          {/*<Button title='跳转到歌手' onPress={()=>this.props.config.navigation.navigate('Singer')} />*/}
+          {/*<Button title='跳转到歌单详情' onPress={()=>this.props.config.navigation.navigate('PlayList')} />*/}
+          {/*<Button title='打开 Modal' onPress={() => {this.props.dispatch(showModal('loading'))}} />*/}
 
 
         </ScrollView>
@@ -71,23 +101,11 @@ const styles = StyleSheet.create({
   },
   wrapper: {
   },
-  slide1: {
+  slide: {
     flex:1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#9DD6EB',
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#77ffac',
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ff8dcd',
   },
   text: {
     color: '#fff',
