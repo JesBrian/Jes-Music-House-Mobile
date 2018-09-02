@@ -8,7 +8,7 @@ import Index from '../pages/Index/IndexAndroid.js'
 import Search from '../pages/Search/Search.js'
 import Singer from '../pages/Singer/Singer.js'
 import User from '../pages/User/User.js'
-import PlayList from '../pages/PlayList/PlayList.js'
+import PlayList from '../pages/PlayListDetail/PlayListDetail.js'
 import Comment from '../pages/Comment/Comment.js'
 
 

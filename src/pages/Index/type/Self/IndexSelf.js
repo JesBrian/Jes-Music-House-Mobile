@@ -27,9 +27,11 @@ export default class IndexSelf extends React.Component {
           {
             selfBaseMenu.map((item, index) => {
               return (
-                <Ripple key={index} style={{height:38, flexDirection:'row', alignItems:'center', backgroundColor:'rgba(255,255,255,0.038)'}}>
-                  <SuperIcon type={item.icon} />
-                  <Text>{ item.label }</Text>
+                <Ripple key={index} style={{height:38, flexDirection:'row', alignItems:'center', backgroundColor:'rgba(0,0,0,0.18)'}}>
+                  <SuperIcon type={item.icon} style={{marginLeft:12, marginRight:5, color:'#05daf0', fontSize:23}} />
+                  <View style={{height:'100%', paddingLeft:8, flex:1, flexDirection:'row', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
+                    <Text style={{color:'#BBB', fontSize:16}}>{ item.label }</Text>
+                  </View>
                 </Ripple>
               )
             })
