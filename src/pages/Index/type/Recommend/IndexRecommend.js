@@ -79,6 +79,27 @@ class IndexRecommend extends React.Component {
             </View>
           </View>
 
+          <View style={{width:'100%', marginTop:18, paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
+            <View style={{width:'32%', height:88, backgroundColor:'lightgreen'}}>
+              <Text>1</Text>
+            </View>
+            <View style={{width:'32%', height:88, backgroundColor:'lightgreen'}}>
+              <Text>2</Text>
+            </View>
+            <View style={{width:'32%', height:88, backgroundColor:'lightgreen'}}>
+              <Text>3</Text>
+            </View>
+            <View style={{width:'32%', height:88, backgroundColor:'lightgreen'}}>
+              <Text>4</Text>
+            </View>
+            <View style={{width:'32%', height:88, backgroundColor:'lightgreen'}}>
+              <Text>5</Text>
+            </View>
+            <View style={{width:'32%', height:88, backgroundColor:'lightgreen'}}>
+              <Text>6</Text>
+            </View>
+          </View>
+
 
 
           {/*<Button title='跳转到登录' onPress={()=>this.props.config.navigation.navigate('Home')} />*/}
