@@ -27,7 +27,7 @@ class Root extends React.Component {
 
   render() {
     return (
-      <View style={{flex:1, position:'relative'}}>
+      <View style={{flex:1, position:'relative', paddingBottom:this.props.showView.bottomMusic === true ? 53 : 0}}>
         <StatusBar barStyle="light-content" />
         <PageRouter/>
         { this.props.showView.bottomMusic === true ? <MusicPlayer/> : null }

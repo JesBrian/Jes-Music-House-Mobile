@@ -1,6 +1,7 @@
 import React  from 'react';
 
 import {
+  Dimensions,
   StyleSheet,
   ScrollView,
   Button,
@@ -23,13 +24,15 @@ class IndexRecommend extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      testData: []
+      testData: [],
+      playListSize: 0
     }
   }
 
   componentWillMount () {
     this.setState({
-      testData: ['Hello Swiper', 'Beautiful', 'And simple']
+      testData: ['Hello Swiper', 'Beautiful', 'And simple'],
+      playListSize: (Dimensions.get('window').width - 30) * 0.31
     });
   }
 
@@ -79,23 +82,41 @@ class IndexRecommend extends React.Component {
             </View>
           </View>
 
-          <View style={{width:'100%', marginTop:18, paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
-            <View style={{width:'32%', height:88, backgroundColor:'lightgreen'}}>
-              <Text>1</Text>
+          <View style={{marginTop:18, flexDirection:'row'}}>
+            <Text>推荐歌单</Text>
+            <SuperIcon type={'\ue604'}/>
+          </View>
+          <View style={{width:'100%', paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
+            <View style={{width:'31%'}}>
+              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
+              </View>
+              <View style={{width:'100%', height:38, backgroundColor:'#38daf0'}}>
+                <Text>1</Text>
+              </View>
             </View>
-            <View style={{width:'32%', height:88, backgroundColor:'lightgreen'}}>
+            <View style={{width:'31%'}}>
+              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
+              </View>
               <Text>2</Text>
             </View>
-            <View style={{width:'32%', height:88, backgroundColor:'lightgreen'}}>
+            <View style={{width:'31%'}}>
+              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
+              </View>
               <Text>3</Text>
             </View>
-            <View style={{width:'32%', height:88, backgroundColor:'lightgreen'}}>
+            <View style={{width:'31%'}}>
+              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
+              </View>
               <Text>4</Text>
             </View>
-            <View style={{width:'32%', height:88, backgroundColor:'lightgreen'}}>
+            <View style={{width:'31%'}}>
+              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
+              </View>
               <Text>5</Text>
             </View>
-            <View style={{width:'32%', height:88, backgroundColor:'lightgreen'}}>
+            <View style={{width:'31%'}}>
+              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
+              </View>
               <Text>6</Text>
             </View>
           </View>
