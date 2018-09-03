@@ -58,7 +58,6 @@ class Index extends React.Component {
 
         <View style={styles.container}>
           <IndexNavbar navigation={this.props.navigation} openControlPanel={this.openControlPanel} />
-
           <ScrollableTabView
             initialPage={1}
             renderTabBar={() => <SuperTabbar />}
@@ -106,8 +105,6 @@ const drawerStyles = {
 
 function reduxState(store) {
   return {
-    config: store.config,
-    music: store.music
   }
 }
 

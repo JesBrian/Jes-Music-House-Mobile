@@ -14,7 +14,8 @@ export default class SongLyric extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      volumeStatus: true
+      volumeStatus: true,
+      volumeRace: 0.68
     }
   };
 
@@ -23,21 +24,17 @@ export default class SongLyric extends React.Component {
       <View style={{flex:1, flexDirection:'column'}}>
         <View style={{flexDirection:'row', justifyContent:'center',}}>
           <View style={{width:'88%', height:43, flexDirection:'row', alignItems:'center'}}>
-            <View style={{width:38, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-              <TouchableWithoutFeedback onPress={this.changeVolumeStatus}>
-                <View style={{backgroundColor:'transparent'}}>
-                  {
-                    this.state.volumeStatus === true ?
-                      <Text style={[common.icon, {fontSize:21, color:'#AAA'}]}>&#xe6ac;</Text> :
-                        <Text style={[common.icon, {fontSize:21, color:'#AAA'}]}>&#xe6aa;</Text>
-                  }
-                </View>
-              </TouchableWithoutFeedback>
-            </View>
-            <View style={{flex: 1, justifyContent: 'center'}}>
-              <View style={{width:'95%', top:-1, paddingLeft:8, borderRadius:4}}>
-                <SuperSlider />
+            <TouchableWithoutFeedback onPress={this.changeVolumeStatus}>
+              <View style={{width:38, height:'100%', justifyContent:'center', alignItems:'center', backgroundColor:'transparent'}}>
+                {
+                  this.state.volumeStatus === true ?
+                    <Text style={[common.icon, {fontSize:21, color:'#AAA'}]}>&#xe6ac;</Text> :
+                    <Text style={[common.icon, {fontSize:21, color:'#AAA'}]}>&#xe6aa;</Text>
+                }
               </View>
+            </TouchableWithoutFeedback>
+            <View style={{top:-1, flex:1, justifyContent:'center'}}>
+              <SuperSlider setPropsValue={value => {this.setState({volumeRace: value})}} value={this.state.volumeRace} />
             </View>
           </View>
         </View>

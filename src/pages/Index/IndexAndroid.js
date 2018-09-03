@@ -77,8 +77,6 @@ const styles = StyleSheet.create({
 
 function reduxState(store) {
   return {
-    config: store.config,
-    music: store.music
   }
 }
 

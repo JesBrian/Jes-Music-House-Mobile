@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  PixelRatio,
   StyleSheet,
   View,
   Text,
@@ -25,6 +26,7 @@ class Song extends React.Component {
     super(props);
     this.state = {
       showSongContentType: 'img', // [ img/lyric ]
+      nowPlayRace: 0
     };
   }
 
@@ -41,24 +43,20 @@ class Song extends React.Component {
               <SongLyric changeSongContentType={showSongContentType => this.changeShowContentType(showSongContentType)} />
           }
 
-          <View style={{width:'100%', height:98}}>
-            <View style={{flexDirection:'row', justifyContent:'center'}}>
-              <View style={{width:'90%', height:28, flexDirection:'row'}}>
-                <View style={{width:68, justifyContent:'center', alignItems:'center'}}>
-                  <Text style={{fontSize:12,  color:'#AAA'}}>00:00</Text>
-                </View>
-                <View style={{flex:1, justifyContent:'center'}}>
-                  <View style={{width:'100%', marginTop:1}} >
-                    <SuperSlider />
-                  </View>
-                </View>
-                <View style={{width:68, justifyContent:'center', alignItems:'center'}}>
-                  <Text style={{fontSize:12,  color:'#AAA'}}>00:00</Text>
-                </View>
+          <View style={{width:'100%', height:98, alignItems:'center'}}>
+            <View style={{width:'90%', height:28, flexDirection:'row', justifyContent:'center'}}>
+              <View style={{width:68, justifyContent:'center', alignItems:'center'}}>
+                <Text style={{fontSize:12,  color:'#AAA'}}>00:00</Text>
+              </View>
+
+              <SuperSlider setPropsValue={value => {this.setState({nowPlayRace: value})}} value={this.state.nowPlayRace} />
+
+              <View style={{width:68, justifyContent:'center', alignItems:'center'}}>
+                <Text style={{fontSize:12,  color:'#AAA'}}>00:00</Text>
               </View>
             </View>
 
-            <View style={{flex:1, flexDirection:'row'}}>
+            <View style={{width:'96%', flex:1, flexDirection:'row'}}>
               <View style={{width:68, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
                 <TouchableWithoutFeedback onPress={this.changePlayModel} >
                   <View>
