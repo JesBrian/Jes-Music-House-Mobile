@@ -38,7 +38,8 @@ class MenuPanel extends React.Component {
 
     const menuData = [
       {icon:'\ue638', name:'我的消息'},
-      {icon:'\ue671', name:'我的消息1'}
+      {icon:'\ue671', name:'我的消息1'},
+      {icon:'\ueaec', name:'个性彩色'}
     ];
 
 
@@ -57,16 +58,10 @@ class MenuPanel extends React.Component {
         </BoxShadow>
 
         <ScrollView style={{paddingTop:12, paddingBottom:12, flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
-          {
-            menuData.map((item, index) => {
-              return (
-                <Ripple onPress={() => {alert(66)}} key={index} style={{width:'100%', height:38, flexDirection:'row', alignItems:'center', backgroundColor:'lightgreen'}}>
-                  <SuperIcon type={ item.icon } style={{margin:12}} />
-                  <Text>{ item.name }</Text>
-                </Ripple>
-              )
-            })
-          }
+          <Ripple onPress={() => {this.props.config.navigation.navigate('AppTheme')}} style={{width:'100%', height:38, flexDirection:'row', alignItems:'center', backgroundColor:'lightgreen'}}>
+            <SuperIcon type={'\ueaec'} style={{margin:12}} />
+            <Text>个性彩色</Text>
+          </Ripple>
         </ScrollView>
 
         <View style={{width:'100%', height:43, paddingBottom:6, flexDirection:'row', backgroundColor:'#333'}}>

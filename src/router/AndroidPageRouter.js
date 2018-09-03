@@ -10,6 +10,7 @@ import Singer from '../pages/Singer/Singer.js'
 import User from '../pages/User/User.js'
 import PlayList from '../pages/PlayListDetail/PlayListDetail.js'
 import Comment from '../pages/Comment/Comment.js'
+import AppTheme from '../pages/AppTheme/AppTheme.js'
 
 
 // 注册导航
@@ -23,6 +24,7 @@ const PageRouter = createStackNavigator({
   User: { screen: User },
   PlayList: { screen: PlayList },
   Comment: { screen: Comment },
+  AppTheme: {screen: AppTheme}
 }, {
   initialRouteName: 'Index', // 默认显示界面
   headerMode: 'none', // 导航栏的显示模式, screen: 有渐变透明效果, float: 无透明效果, none: 隐藏导航栏
