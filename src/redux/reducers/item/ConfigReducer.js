@@ -6,7 +6,8 @@ import * as types from '../../constants/ConfigTypes.js';
  * 这里可以初始化一个默认的实体类
  */
 const initialState = {
-  navigation: null
+  navigation: null,
+  theme: 'light'
 }
 
 /**
@@ -18,6 +19,11 @@ export default function showView(state = initialState, action) {
     case types.SET_NAVIGATION: {
       return {
         ...state, navigation: action.obj
+      };
+    }
+    case types.SET_THEME: {
+      return {
+        ...state, theme: state.theme === 'light' ? 'dark' : 'light'
       };
     }
     default:

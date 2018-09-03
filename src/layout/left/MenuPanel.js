@@ -11,6 +11,9 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
+import { connect } from 'react-redux'
+import { setTheme } from '../../redux/actions/ConfigActions.js'
+
 import Ripple from 'react-native-material-ripple'
 import { BoxShadow }  from 'react-native-shadow'
 
@@ -20,7 +23,7 @@ import SuperButton from '../../components/SuperButton.js'
 import { common } from '../../assets/styles/common.js'
 
 
-export default class MenuPanel extends React.Component {
+class MenuPanel extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -57,7 +60,7 @@ export default class MenuPanel extends React.Component {
           {
             menuData.map((item, index) => {
               return (
-                <Ripple key={index} style={{width:'100%', height:38, flexDirection:'row', alignItems:'center', backgroundColor:'lightgreen'}}>
+                <Ripple onPress={() => {alert(66)}} key={index} style={{width:'100%', height:38, flexDirection:'row', alignItems:'center', backgroundColor:'lightgreen'}}>
                   <SuperIcon type={ item.icon } style={{margin:12}} />
                   <Text>{ item.name }</Text>
                 </Ripple>
@@ -67,23 +70,28 @@ export default class MenuPanel extends React.Component {
         </ScrollView>
 
         <View style={{width:'100%', height:43, paddingBottom:6, flexDirection:'row', backgroundColor:'#333'}}>
-          <Ripple style={{flex:1}}>
-            <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-              <Text style={[common.icon, {marginRight:8, fontSize:20, color:'#DDD'}]}>&#xeaec;</Text>
-              <Text style={{fontSize:18, color:'#DDD'}}>主题</Text>
-            </View>
+          <Ripple onPress={() => {this.props.dispatch(setTheme())}} style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+            {
+              this.props.config.theme === 'light' ? (
+                <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+                  <SuperIcon type={'\ue650'} style={{marginRight:8, fontSize:20, color:'#DDD'}} />
+                  <Text style={{fontSize:18, color:'#DDD'}}>夜间</Text>
+                </View>
+              ) : (
+                <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+                  <SuperIcon type={'\ue6c7'} style={{marginRight:8, fontSize:20, color:'#DDD'}} />
+                  <Text style={{fontSize:18, color:'#DDD'}}>日间</Text>
+                </View>
+              )
+            }
           </Ripple>
-          <Ripple style={{flex:1}}>
-            <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-              <Text style={[common.icon, {marginRight:8, fontSize:20, color:'#DDD'}]}>&#xe672;</Text>
-              <Text style={{fontSize:18, color:'#DDD'}}>设置</Text>
-            </View>
+          <Ripple onPress={() => {}} style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+            <Text style={[common.icon, {marginRight:8, fontSize:20, color:'#DDD'}]}>&#xe672;</Text>
+            <Text style={{fontSize:18, color:'#DDD'}}>设置</Text>
           </Ripple>
-          <Ripple style={{flex:1}}>
-            <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-              <Text style={[common.icon, {marginRight:8, fontSize:20, color:'#DDD'}]}>&#xe622;</Text>
-              <Text style={{fontSize:18, color:'#DDD'}}>退出</Text>
-            </View>
+          <Ripple onPress={() => {}} style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+            <Text style={[common.icon, {marginRight:8, fontSize:20, color:'#DDD'}]}>&#xe622;</Text>
+            <Text style={{fontSize:18, color:'#DDD'}}>退出</Text>
           </Ripple>
         </View>
       </View>
@@ -97,3 +105,12 @@ export default class MenuPanel extends React.Component {
 
 const styles = StyleSheet.create({
 })
+
+
+function reduxState(store) {
+  return {
+    config: store.config
+  }
+}
+
+export default connect(reduxState)(MenuPanel);

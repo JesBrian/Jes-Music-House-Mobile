@@ -8,3 +8,7 @@ export function setNavigation(obj = {}) {
     obj: obj
   }
 }
+
+export function setTheme() {
+  return {type: types.SET_THEME}
+}
