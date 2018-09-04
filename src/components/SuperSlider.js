@@ -9,7 +9,7 @@ import {
 
 import Slider from 'react-native-slider'
 
-export default class Loading extends React.Component {
+export default class SuperSlider extends React.Component {
   static defaultProps = {
     value: 0
   };
