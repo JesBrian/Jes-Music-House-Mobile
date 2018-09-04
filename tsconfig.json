@@ -3,11 +3,12 @@
     "target": "es6",
     "allowJs": true,
     "jsx": "react",
-    "outDir": "./dist",
-    "sourceMap": true,
+    //"outDir": "artifacts",
+    //"rootDir": "src",
+    "sourceMap": false,
     "noImplicitAny": false
   },
-  "include": [
+  "filesGlob": [
     "typings/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.tsx"

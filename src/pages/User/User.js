@@ -1,27 +1,15 @@
-import React  from 'react';
-
-import {
-  StyleSheet,
-  View,
-  Text
-} from 'react-native';
-
-import SuperButton from '../../components/SuperButton.js'
-
-
+import React from 'react';
+import { StyleSheet, View, Text } from 'react-native';
+import SuperButton from '../../components/SuperButton.js';
 export default class User extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text onPress={()=>{this.openControlPanel()}} >用户注册 88</Text>
-        <SuperButton label="注册" />
-      </View>
-    );
-  }
+    render() {
+        return (React.createElement(View, { style: styles.container },
+            React.createElement(Text, { onPress: () => { this.openControlPanel(); } }, "\u7528\u6237\u6CE8\u518C 88"),
+            React.createElement(SuperButton, { label: "\u6CE8\u518C" })));
+    }
 }
-
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'transparent'
-  },
+    container: {
+        backgroundColor: 'transparent'
+    },
 });

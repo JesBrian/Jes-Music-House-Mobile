@@ -1,40 +1,21 @@
-import React  from 'react';
-
-import {
-  StyleSheet,
-  View,
-  Text
-} from 'react-native';
-
-import { connect } from 'react-redux'
-
-
-import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
-import SuperButton from '../../components/SuperButton.js'
-
-
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import { connect } from 'react-redux';
+import NormalNavbar from '../../layout/top/type/NormalNavbar.js';
 class WriteTrend extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <NormalNavbar label={'发布动态'} />
-
-      </View>
-    );
-  }
+    render() {
+        return (React.createElement(View, { style: styles.container },
+            React.createElement(NormalNavbar, { label: '发布动态' })));
+    }
 }
-
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'transparent'
-  },
+    container: {
+        backgroundColor: 'transparent'
+    },
 });
-
-
 function reduxState(store) {
-  return {
-    config: store.config
-  }
+    return {
+        config: store.config
+    };
 }
-
 export default connect(reduxState)(WriteTrend);
