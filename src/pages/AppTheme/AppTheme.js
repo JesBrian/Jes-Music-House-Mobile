@@ -52,7 +52,7 @@ class AppTheme extends React.Component {
 
             <View style={{width:'90%', height:this.state.colorSize * 2 + 38, marginTop:28}}>
               <Text>预设主题色</Text>
-              <View style={{flex:1, flexDirection:'row', justifyContent:'space-between', flexWrap:'wrap'}}>
+              <View style={{marginTop:8, flex:1, flexDirection:'row', justifyContent:'space-between', flexWrap:'wrap'}}>
                 {
                   themeColorArr.map((item, index) => {
                     return (
