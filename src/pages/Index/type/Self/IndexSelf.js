@@ -8,12 +8,23 @@ import {
   Text
 } from 'react-native';
 
+import { connect } from 'react-redux'
+
 import Ripple from 'react-native-material-ripple'
 
 import SuperIcon from '../../../../components/SuperIcon.js'
 
 
-export default class IndexSelf extends React.Component {
+import { goRouter } from '../../../../utils/router/router.js'
+
+
+class IndexSelf extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+    }
+  }
+
   render() {
     const selfBaseMenu = [
       {icon:'\ue661', label:'本地音乐'},
@@ -45,7 +56,7 @@ export default class IndexSelf extends React.Component {
         </View>
         <View>
           <View style={{height:53, flexDirection:'row', backgroundColor:'rgba(0,0,0,0.18)'}}>
-            <Ripple style={{flex:1, flexDirection:'row', alignItems:'center'}}>
+            <Ripple onPress={() => {goRouter(this.props.navigation, 'PlayListDetail')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
               <Image style={{width:42.5, height:42.5, marginLeft:6, marginRight:8, borderRadius:3}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
               <View style={{height:'100%', flex:1, justifyContent:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
                 <Text style={{marginTop:5, marginBottom:3, fontSize:16, color:'#EEE'}}>我喜欢的音乐</Text>
@@ -65,7 +76,7 @@ export default class IndexSelf extends React.Component {
         </View>
         <View>
           <View style={{height:53, flexDirection:'row', backgroundColor:'rgba(0,0,0,0.18)'}}>
-            <Ripple style={{flex:1, flexDirection:'row', alignItems:'center'}}>
+            <Ripple onPress={() => {goRouter(this.props.navigation, 'PlayListDetail')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
               <Image style={{width:42.5, height:42.5, marginLeft:6, marginRight:8, borderRadius:3}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
               <View style={{height:'100%', flex:1, justifyContent:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
                 <Text style={{marginTop:5, marginBottom:3, fontSize:16, color:'#EEE'}}>我喜欢的音乐</Text>
@@ -88,3 +99,12 @@ const styles = StyleSheet.create({
     flex:1
   },
 });
+
+
+function reduxState(store) {
+  return {
+    navigation: store.config.navigation
+  }
+}
+
+export default connect(reduxState)(IndexSelf);
