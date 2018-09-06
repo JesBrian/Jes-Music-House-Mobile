@@ -12,6 +12,11 @@ import NavbarFrame from '../NavbarFrame.js'
 import { common } from '../../../assets/styles/common.js'
 
 export default class NormalNavbar extends React.Component {
+  static defaultProps = {
+    label: '',
+    right: null
+  };
+
   constructor (props) {
     super(props);
     this.state = {
@@ -32,6 +37,8 @@ export default class NormalNavbar extends React.Component {
           <View style={{flex:1}}>
             <Text style={{fontSize:21, color:'#DDD'}}>{ this.props.label }</Text>
           </View>
+
+          { this.props.right }
         </View>
 
       )} />

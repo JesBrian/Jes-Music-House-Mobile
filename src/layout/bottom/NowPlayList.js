@@ -13,9 +13,11 @@ import { connect } from 'react-redux'
 import { changeMusicPlayModel } from '../../redux/actions/MusicActions.js'
 import { hiddenBottomPlayList } from '../../redux/actions/ViewActions.js'
 
-import { common } from '../../assets/styles/common.js'
-
 import Ripple from 'react-native-material-ripple'
+
+import { common } from '../../assets/styles/common.js'
+import SuperIcon from '../../components/SuperIcon.js'
+
 
 class NowPlayList extends React.Component {
   constructor (props) {
@@ -69,24 +71,24 @@ class NowPlayList extends React.Component {
                 </View>
               </Ripple>
             </View>
-            <ScrollView style={{flex:1, backgroundColor:'#FFF'}}>
-              <View style={{height:40, flexDirection:'row', backgroundColor:'lightgreen'}}>
-                <Ripple style={{height:'100%', flex:1, flexDirection:'row', alignItems:'center'}}>
-                  <Text style={[common.icon, {margin:5, fontSize:21}]}>&#xe6b4;</Text>
-                  <Text style={{fontSize:17}}>
+            <ScrollView style={{paddingBottom:3, flex:1, backgroundColor:'#282828'}}>
+              <View style={{height:40, flexDirection:'row'}}>
+                <Ripple style={{height:'100%', marginLeft:8, paddingLeft:3, flex:1, flexDirection:'row', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
+                  <SuperIcon type={'\ue6b4'} style={{fontSize:21, color:'#05daf0'}} />
+                  <Text style={{marginLeft:5, fontSize:17}}>
                     555长cjk沙健id45康
                     <Text style={{fontSize:13}}> - JesBrian</Text>
                   </Text>
                 </Ripple>
 
                 <TouchableWithoutFeedback>
-                  <View style={{width:38, height:'100%', justifyContent:'center', alignItems:'center'}}>
+                  <View style={{width:38, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
                     <Text style={[common.icon, {fontSize:24}]}>&#xe627;</Text>
                   </View>
                 </TouchableWithoutFeedback>
 
                 <TouchableWithoutFeedback>
-                  <View style={{width:35, height:'100%', justifyContent:'center', alignItems:'center'}}>
+                  <View style={{width:35, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
                     <Text style={[common.icon, {fontSize:23}]}>&#xe622;</Text>
                   </View>
                 </TouchableWithoutFeedback>

@@ -13,7 +13,7 @@ import {
 import { connect } from 'react-redux'
 import { showBottomSongMenu } from '../../redux/actions/ViewActions.js'
 
-import PlayListNavbar from '../../layout/top/type/PlayListNavbar.js'
+import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
 
 import Ripple from 'react-native-material-ripple'
 
@@ -33,7 +33,7 @@ class PlayListDetail extends React.Component {
   render () {
     return (
       <View style={styles.container}>
-        <PlayListNavbar />
+        <NormalNavbar label={'歌单详情'} />
 
         <ScrollView style={{flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
           <TouchableWithoutFeedback>

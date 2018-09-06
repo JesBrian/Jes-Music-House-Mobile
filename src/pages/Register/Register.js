@@ -46,31 +46,31 @@ export default class Register extends React.Component {
                 </TouchableWithoutFeedback>
             }
           </View>
-          <SuperButton onPressEvent={this.userRegister.bind(this)} label="注册" width={Dimensions.get('window').width - 88} height={53} />
+          <SuperButton onPress={this.userRegister.bind(this)} label="注册" width={Dimensions.get('window').width - 88} height={53} />
         </View>
 
         <View style={{height:168, flexDirection:'column', alignItems:'center', backgroundColor:'rgba(0,0,0,0.73)'}}>
           <Text>其他登陆方式</Text>
           <View style={{flexDirection:'row'}}>
             <View style={{flex:1, alignItems:'center'}}>
-              <SuperButton label="登录" onPressEvent={() => this.props.navigation.navigate('Login')}/>
+              <SuperButton label="登录" onPress={() => this.props.navigation.navigate('Login')}/>
             </View>
             <View style={{flex:1, alignItems:'center'}}>
-              <SuperButton label="登录" onPressEvent={() => this.props.navigation.navigate('Login')}/>
+              <SuperButton label="登录" onPress={() => this.props.navigation.navigate('Login')}/>
             </View>
             <View style={{flex:1, alignItems:'center'}}>
-              <SuperButton label="登录" onPressEvent={() => this.props.navigation.navigate('Login')}/>
+              <SuperButton label="登录" onPress={() => this.props.navigation.navigate('Login')}/>
             </View>
           </View>
           <View style={{flexDirection:'row'}}>
             <View style={{flex:1, alignItems:'center'}}>
-              <SuperButton style={{marginLeft:18}} label="登录" onPressEvent={() => this.props.navigation.navigate('Login')}/>
+              <SuperButton style={{marginLeft:18}} label="登录" onPress={() => this.props.navigation.navigate('Login')}/>
             </View>
             <View style={{flex:1, alignItems:'center'}}>
-              <SuperButton style={{marginLeft:18}} label="登录" onPressEvent={() => this.props.navigation.navigate('Login')}/>
+              <SuperButton style={{marginLeft:18}} label="登录" onPress={() => this.props.navigation.navigate('Login')}/>
             </View>
             <View style={{flex:1, alignItems:'center'}}>
-              <SuperButton style={{marginLeft:18}} label="登录" onPressEvent={() => this.props.navigation.navigate('Login')}/>
+              <SuperButton style={{marginLeft:18}} label="登录" onPress={() => this.props.navigation.navigate('Login')}/>
             </View>
           </View>
         </View>

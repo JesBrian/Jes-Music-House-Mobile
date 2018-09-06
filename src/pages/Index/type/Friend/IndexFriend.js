@@ -25,7 +25,7 @@ class IndexFriend extends React.Component {
         <Text>Index Friend</Text>
 
         <View style={{width:43, height:43, right:18, bottom:76, position:'absolute', zIndex:5}}>
-          <SuperButton onPressEvent={() => {goRouter(this.props.config.navigation, 'WriteTrend')}} width={43} height={43} label={<SuperIcon type={'\ue638'} style={{fontSize:28}} />} />
+          <SuperButton onPress={() => {goRouter(this.props.config.navigation, 'WriteTrend')}} width={43} height={43} label={<SuperIcon type={'\ue638'} style={{fontSize:28}} />} />
         </View>
       </View>
     );

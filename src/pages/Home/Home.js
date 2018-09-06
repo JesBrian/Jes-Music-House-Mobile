@@ -28,32 +28,32 @@ export default class Home extends React.Component {
           </View>
 
           <View style={{flex:1, flexDirection:'column', alignItems:'center',}}>
-            <SuperButton label="手机号登录" width={Dimensions.get('window').width - 99} height={53} onPressEvent={() => this.props.navigation.navigate('Login')}/>
-            <SuperButton label="注册" width={Dimensions.get('window').width - 99} height={53} onPressEvent={() => this.props.navigation.navigate('Register')}/>
+            <SuperButton label="手机号登录" width={Dimensions.get('window').width - 99} height={53} onPress={() => this.props.navigation.navigate('Login')}/>
+            <SuperButton label="注册" width={Dimensions.get('window').width - 99} height={53} onPress={() => this.props.navigation.navigate('Register')}/>
           </View>
 
           <View style={{height:168, flexDirection:'column', alignItems:'center'}}>
             <Text>其他登陆方式</Text>
             <View style={{flexDirection:'row'}}>
               <View style={{flex:1, alignItems:'center'}}>
-                <SuperButton label="登录" onPressEvent={() => this.props.navigation.navigate('Login')}/>
+                <SuperButton label="登录" onPress={() => this.props.navigation.navigate('Login')}/>
               </View>
               <View style={{flex:1, alignItems:'center'}}>
-                <SuperButton label="登录" onPressEvent={() => this.props.navigation.navigate('Login')}/>
+                <SuperButton label="登录" onPress={() => this.props.navigation.navigate('Login')}/>
               </View>
               <View style={{flex:1, alignItems:'center'}}>
-                <SuperButton label="登录" onPressEvent={() => this.props.navigation.navigate('Login')}/>
+                <SuperButton label="登录" onPress={() => this.props.navigation.navigate('Login')}/>
               </View>
             </View>
             <View style={{flexDirection:'row'}}>
               <View style={{flex:1, alignItems:'center'}}>
-                <SuperButton style={{marginLeft:18}} label="登录" onPressEvent={() => this.props.navigation.navigate('Login')}/>
+                <SuperButton style={{marginLeft:18}} label="登录" onPress={() => this.props.navigation.navigate('Login')}/>
               </View>
               <View style={{flex:1, alignItems:'center'}}>
-                <SuperButton style={{marginLeft:18}} label="登录" onPressEvent={() => this.props.navigation.navigate('Login')}/>
+                <SuperButton style={{marginLeft:18}} label="登录" onPress={() => this.props.navigation.navigate('Login')}/>
               </View>
               <View style={{flex:1, alignItems:'center'}}>
-                <SuperButton style={{marginLeft:18}} label="登录" onPressEvent={() => this.props.navigation.navigate('Login')}/>
+                <SuperButton style={{marginLeft:18}} label="登录" onPress={() => this.props.navigation.navigate('Login')}/>
               </View>
             </View>
           </View>

@@ -46,7 +46,7 @@ export default class Login extends React.Component {
                 </TouchableWithoutFeedback>
             }
           </View>
-          <SuperButton label="登录" width={Dimensions.get('window').width - 88} height={53} onPressEvent={this.phoneLogin.bind(this)} />
+          <SuperButton label="登录" width={Dimensions.get('window').width - 88} height={53} onPress={this.phoneLogin.bind(this)} />
         </View>
       </View>
     );
