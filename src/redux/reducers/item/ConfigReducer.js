@@ -7,7 +7,8 @@ import * as types from '../../constants/ConfigTypes.js';
  */
 const initialState = {
   navigation: null,
-  theme: 'light'
+  theme: 'light',
+  color: '#000',
 }
 
 /**
@@ -24,6 +25,11 @@ export default function showView(state = initialState, action) {
     case types.SET_THEME: {
       return {
         ...state, theme: state.theme === 'light' ? 'dark' : 'light'
+      };
+    }
+    case types.SET_COLOR: {
+      return {
+        ...state, color: action.color
       };
     }
     default:

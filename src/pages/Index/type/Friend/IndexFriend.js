@@ -15,6 +15,8 @@ import Ripple from 'react-native-material-ripple'
 import SuperButton from '../../../../components/SuperButton.js'
 import SuperIcon from '../../../../components/SuperIcon.js'
 
+import { goRouter } from '../../../../utils/router/router.js'
+
 
 class IndexFriend extends React.Component {
   render() {
@@ -23,7 +25,7 @@ class IndexFriend extends React.Component {
         <Text>Index Friend</Text>
 
         <View style={{width:43, height:43, right:18, bottom:76, position:'absolute', zIndex:5}}>
-          <SuperButton width={43} height={43} label={<SuperIcon type={'\ue638'} style={{fontSize:28}} />} />
+          <SuperButton onPressEvent={() => {goRouter(this.props.config.navigation, 'WriteTrend')}} width={43} height={43} label={<SuperIcon type={'\ue638'} style={{fontSize:28}} />} />
         </View>
       </View>
     );
@@ -39,8 +41,7 @@ const styles = StyleSheet.create({
 
 function reduxState(store) {
   return {
-    config: store.config,
-    music: store.music
+    config: store.config
   }
 }
 

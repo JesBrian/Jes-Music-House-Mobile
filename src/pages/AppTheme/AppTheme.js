@@ -9,13 +9,13 @@ import {
 } from 'react-native';
 
 import { connect } from 'react-redux'
+import { setColor } from '../../redux/actions/ConfigActions.js'
 
 
 import Ripple from 'react-native-material-ripple'
 import LinearGradient from 'react-native-linear-gradient'
 
 import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
-import SuperSlider from '../../components/SuperSlider.js'
 
 
 class AppTheme extends React.Component {
@@ -27,17 +27,10 @@ class AppTheme extends React.Component {
     };
   }
 
-  componentWillMount () {
-    setTimeout(() => {
-      this.setState({
-        nowChooseColor: '#4cf0ab'
-      })
-    }, 5000)
-    setTimeout(() => {
-      this.setState({
-        nowChooseColor: '#ce7df0'
-      })
-    }, 10000)
+  componentWillReceiveProps (nextProps) {
+    this.setState({
+      nowChooseColor: nextProps.config.color
+    })
   }
 
   render() {
@@ -65,13 +58,16 @@ class AppTheme extends React.Component {
               </View>
             </View>
 
-            <View style={{width:'90%', marginTop:38}}>
+            <View style={{width:'90%', marginTop:38, position:'relative'}}>
               <Text>调色盘</Text>
+              <Ripple onPress={() => {this.props.dispatch(setColor('#38DAF0'))}} style={{width:68, height:28, top:3, right:12, position:'absolute', justifyContent:'center', alignItems:'center', borderRadius:3, backgroundColor:'lightblue'}}>
+                <Text>应用</Text>
+              </Ripple>
               <View style={{height:53, marginTop:8, flexDirection:'row'}}>
-                <View style={{width:53, height:53, marginRight:15, marginBottom:9, position:'relative',borderRadius:8, backgroundColor:'lightgreen'}} />
-                <View style={{flex:1, justifyContent:'center'}}>
-                  <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#00FFFF', '#0000FF', '#8B00FF']} style={{width:'100%', height:10, marginTop:10, marginBottom:10, borderRadius:10}} />
-                  <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#FFF', this.state.nowChooseColor, '#000']} style={{width:'100%', height:10, marginTop:10, marginBottom:10, borderRadius:10}} />
+                <View style={{width:53, height:53, marginRight:15, marginBottom:5, position:'relative',borderRadius:8, backgroundColor:this.state.nowChooseColor}} />
+                <View style={{paddingTop:20, flex:1, justifyContent:'center'}}>
+                  <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#00FFFF', '#0000FF', '#8B00FF']} style={{width:'100%', height:10, marginTop:5, marginBottom:5, borderRadius:10}} />
+                  <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#FFF', this.state.nowChooseColor, '#000']} style={{width:'100%', height:10, marginTop:5, marginBottom:5, borderRadius:10}} />
                 </View>
               </View>
             </View>

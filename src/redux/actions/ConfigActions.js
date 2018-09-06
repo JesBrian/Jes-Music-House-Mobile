@@ -12,3 +12,10 @@ export function setNavigation(obj = {}) {
 export function setTheme() {
   return {type: types.SET_THEME}
 }
+
+export function setColor(color = '#000') {
+  return {
+    type: types.SET_COLOR,
+    color: color
+  }
+}
