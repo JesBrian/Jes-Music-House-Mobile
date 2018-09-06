@@ -17,10 +17,12 @@ class WriteTrend extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <NormalNavbar label={'发布动态'} right={<View style={{marginTop:3, marginRight:18}}>
+        <NormalNavbar navigation={this.props.navigation} label={'发布动态'} right={<View style={{marginTop:3, marginRight:18}}>
           <SuperButton onPress={() => {}} width={68} height={31} label={'发送'} />
         </View>} />
 
+        <View style={{flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
+        </View>
       </View>
     );
   }
@@ -28,7 +30,7 @@ class WriteTrend extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'transparent'
+    flex:1
   },
 });
 

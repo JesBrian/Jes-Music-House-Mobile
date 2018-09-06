@@ -7,11 +7,14 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
+import { connect } from 'react-redux'
+
 import NavbarFrame from '../NavbarFrame.js'
 
 import { common } from '../../../assets/styles/common.js'
 
-export default class NormalNavbar extends React.Component {
+
+class NormalNavbar extends React.Component {
   static defaultProps = {
     label: '',
     right: null
@@ -29,7 +32,7 @@ export default class NormalNavbar extends React.Component {
 
         <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
           <TouchableWithoutFeedback onPress={() => {this.props.navigation.goBack()}}>
-            <View style={{width:50, flexDirection:'row', justifyContent:'center'}}>
+            <View style={{width:50, height:'100%', flexDirection:'row', justifyContent:'center'}}>
               <Text style={[common.icon, {fontSize:31, color:'#BBB'}]}>&#xe8ca;</Text>
             </View>
           </TouchableWithoutFeedback>
@@ -45,3 +48,11 @@ export default class NormalNavbar extends React.Component {
     )
   }
 }
+
+function reduxState(store) {
+  return {
+    config: store.config
+  }
+}
+
+export default connect(reduxState)(NormalNavbar);
