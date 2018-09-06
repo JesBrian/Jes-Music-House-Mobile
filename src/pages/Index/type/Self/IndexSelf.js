@@ -5,7 +5,8 @@ import {
   ScrollView,
   View,
   Image,
-  Text
+  Text,
+  TouchableWithoutFeedback
 } from 'react-native';
 
 import { connect } from 'react-redux'
@@ -22,6 +23,8 @@ class IndexSelf extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
+      isShowCreatePlayList: true,
+      isShowCollectionPlayList: true
     }
   }
 
@@ -39,7 +42,7 @@ class IndexSelf extends React.Component {
           {
             selfBaseMenu.map((item, index) => {
               return (
-                <Ripple key={index} style={{height:38, flexDirection:'row', alignItems:'center', backgroundColor:'rgba(0,0,0,0.18)'}}>
+                <Ripple key={index} style={{height:38, flexDirection:'row', alignItems:'center'}}>
                   <SuperIcon type={item.icon} style={{marginLeft:12, marginRight:5, color:'#05daf0', fontSize:23}} />
                   <View style={{height:'100%', paddingLeft:8, flex:1, flexDirection:'row', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
                     <Text style={{color:'#DDD', fontSize:16}}>{ item.label }</Text>
@@ -49,45 +52,95 @@ class IndexSelf extends React.Component {
             })
           }
         </View>
-        <View style={{height:28, flexDirection:'row', alignItems:'center'}}>
-          <SuperIcon type={'\ue600'} style={{margin:8, color:'#BBB'}}/>
-          <Text style={{flex:1, color:'#BBB'}}>创建的歌单</Text>
-          <SuperIcon type={'\ue672'} style={{marginRight:12, fontSize:20, color:'#BBB'}}/>
-        </View>
-        <View>
-          <View style={{height:53, flexDirection:'row', backgroundColor:'rgba(0,0,0,0.18)'}}>
-            <Ripple onPress={() => {goRouter(this.props.navigation, 'PlayListDetail')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
-              <Image style={{width:42.5, height:42.5, marginLeft:6, marginRight:8, borderRadius:3}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
-              <View style={{height:'100%', flex:1, justifyContent:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
-                <Text style={{marginTop:5, marginBottom:3, fontSize:16, color:'#EEE'}}>我喜欢的音乐</Text>
-                <Text style={{fontSize:13, color:'#AAA'}}>180 首</Text>
-              </View>
-            </Ripple>
-            <Ripple style={{width:43, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
-              <SuperIcon type={'\ue653'} style={{fontSize:23, color:'#BBB'}} />
-            </Ripple>
-          </View>
-        </View>
 
-        <View style={{height:28, flexDirection:'row', alignItems:'center'}}>
-          <SuperIcon type={'\ue600'} style={{margin:8, color:'#BBB'}}/>
-          <Text style={{flex:1, color:'#BBB'}}>收藏的歌单</Text>
-          <SuperIcon type={'\ue672'} style={{marginRight:12, fontSize:20, color:'#BBB'}}/>
+        <View style={{height:28, flexDirection:'row', alignItems:'center', backgroundColor:'rgba(255,255,255,0.12)'}}>
+          <TouchableWithoutFeedback onPress={() => {this.setState({isShowCreatePlayList: !this.state.isShowCreatePlayList})}}>
+            <View style={{flex:1, flexDirection:'row', alignItems:'center'}}>
+              <SuperIcon type={'\ue600'} style={{margin:8, color:'#BBB'}}/>
+              <Text style={{color:'#BBB'}}>创建的歌单</Text>
+            </View>
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback>
+            <View>
+              <SuperIcon type={'\ue672'} style={{marginRight:12, fontSize:20, color:'#BBB'}}/>
+            </View>
+          </TouchableWithoutFeedback>
         </View>
-        <View>
-          <View style={{height:53, flexDirection:'row', backgroundColor:'rgba(0,0,0,0.18)'}}>
-            <Ripple onPress={() => {goRouter(this.props.navigation, 'PlayListDetail')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
-              <Image style={{width:42.5, height:42.5, marginLeft:6, marginRight:8, borderRadius:3}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
-              <View style={{height:'100%', flex:1, justifyContent:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
-                <Text style={{marginTop:5, marginBottom:3, fontSize:16, color:'#EEE'}}>我喜欢的音乐</Text>
-                <Text style={{fontSize:13, color:'#AAA'}}>180 首</Text>
+        {
+          this.state.isShowCreatePlayList === false ? (<View style={{width:'100%', height:0.28}} />) : (
+            <View>
+              <View style={{height:53, flexDirection:'row'}}>
+                <Ripple onPress={() => {goRouter(this.props.navigation, 'PlayListDetail')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
+                  <Image style={{width:42.5, height:42.5, marginLeft:6, marginRight:8, borderRadius:3}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
+                  <View style={{height:'100%', flex:1, justifyContent:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
+                    <Text style={{marginTop:5, marginBottom:3, fontSize:16, color:'#EEE'}}>我喜欢的音乐</Text>
+                    <Text style={{fontSize:13, color:'#AAA'}}>180 首</Text>
+                  </View>
+                </Ripple>
+                <Ripple style={{width:43, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
+                  <SuperIcon type={'\ue653'} style={{fontSize:23, color:'#BBB'}} />
+                </Ripple>
               </View>
-            </Ripple>
-            <Ripple style={{width:43, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
-              <SuperIcon type={'\ue653'} style={{fontSize:23, color:'#BBB'}} />
-            </Ripple>
-          </View>
+              <View style={{height:53, flexDirection:'row'}}>
+                <Ripple onPress={() => {goRouter(this.props.navigation, 'PlayListDetail')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
+                  <Image style={{width:42.5, height:42.5, marginLeft:6, marginRight:8, borderRadius:3}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
+                  <View style={{height:'100%', flex:1, justifyContent:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
+                    <Text style={{marginTop:5, marginBottom:3, fontSize:16, color:'#EEE'}}>我喜欢的音乐</Text>
+                    <Text style={{fontSize:13, color:'#AAA'}}>180 首</Text>
+                  </View>
+                </Ripple>
+                <Ripple style={{width:43, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
+                  <SuperIcon type={'\ue653'} style={{fontSize:23, color:'#BBB'}} />
+                </Ripple>
+              </View>
+            </View>
+          )
+        }
+
+
+        <View style={{height:28, flexDirection:'row', alignItems:'center', backgroundColor:'rgba(255,255,255,0.12)'}}>
+          <TouchableWithoutFeedback onPress={() => {this.setState({isShowCollectionPlayList: !this.state.isShowCollectionPlayList})}}>
+            <View style={{flex:1, flexDirection:'row', alignItems:'center'}}>
+              <SuperIcon type={'\ue600'} style={{margin:8, color:'#BBB'}}/>
+              <Text style={{color:'#BBB'}}>收藏的歌单</Text>
+            </View>
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback>
+            <View>
+              <SuperIcon type={'\ue672'} style={{marginRight:12, fontSize:20, color:'#BBB'}}/>
+            </View>
+          </TouchableWithoutFeedback>
         </View>
+        {
+          this.state.isShowCollectionPlayList === false ? (null) : (
+            <View>
+              <View style={{height:53, flexDirection:'row'}}>
+                <Ripple onPress={() => {goRouter(this.props.navigation, 'PlayListDetail')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
+                  <Image style={{width:42.5, height:42.5, marginLeft:6, marginRight:8, borderRadius:3}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
+                  <View style={{height:'100%', flex:1, justifyContent:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
+                    <Text style={{marginTop:5, marginBottom:3, fontSize:16, color:'#EEE'}}>我喜欢的音乐</Text>
+                    <Text style={{fontSize:13, color:'#AAA'}}>180 首</Text>
+                  </View>
+                </Ripple>
+                <Ripple style={{width:43, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
+                  <SuperIcon type={'\ue653'} style={{fontSize:23, color:'#BBB'}} />
+                </Ripple>
+              </View>
+              <View style={{height:53, flexDirection:'row'}}>
+                <Ripple onPress={() => {goRouter(this.props.navigation, 'PlayListDetail')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
+                  <Image style={{width:42.5, height:42.5, marginLeft:6, marginRight:8, borderRadius:3}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
+                  <View style={{height:'100%', flex:1, justifyContent:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
+                    <Text style={{marginTop:5, marginBottom:3, fontSize:16, color:'#EEE'}}>我喜欢的音乐</Text>
+                    <Text style={{fontSize:13, color:'#AAA'}}>180 首</Text>
+                  </View>
+                </Ripple>
+                <Ripple style={{width:43, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
+                  <SuperIcon type={'\ue653'} style={{fontSize:23, color:'#BBB'}} />
+                </Ripple>
+              </View>
+            </View>
+          )
+        }
 
       </ScrollView>
     );
@@ -96,7 +149,8 @@ class IndexSelf extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1
+    flex:1,
+    backgroundColor:'rgba(0,0,0,0.28)'
   },
 });
 

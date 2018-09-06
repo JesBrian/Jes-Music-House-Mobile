@@ -83,7 +83,6 @@ export default class Register extends React.Component {
       phone: this.state.phone,
       passwd: this.state.passwd
     }
-    alert(data)
   }
 }
 
