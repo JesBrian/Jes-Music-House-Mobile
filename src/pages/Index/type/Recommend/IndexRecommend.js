@@ -55,36 +55,36 @@ class IndexRecommend extends React.Component {
             </Swiper>
           </View>
 
-          <View style={{width:'100%', height:68, marginTop:18, paddingLeft:8, paddingRight:8, flexDirection:'row'}}>
+          <View style={{width:'100%', height:68, marginTop:28, paddingLeft:8, paddingRight:8, flexDirection:'row'}}>
             <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
               <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
-                <SuperIcon type={'\ue640'} style={{paddingTop:3, fontSize:32, color:'#BBB', backgroundColor:'transparent'}} />
+                <SuperIcon type={'\ue640'} style={{paddingTop:3, fontSize:32, color:this.props.config.color, backgroundColor:'transparent'}} />
               </View>
               <Text style={{color:'#BBB'}}>每日推荐</Text>
             </View>
             <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
               <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
-                <SuperIcon type={'\ue646'} style={{paddingTop:3, fontSize:32, color:'#BBB', backgroundColor:'transparent'}} />
+                <SuperIcon type={'\ue646'} style={{fontSize:32, color:this.props.config.color, backgroundColor:'transparent'}} />
               </View>
               <Text style={{color:'#BBB'}}>歌单</Text>
             </View>
             <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
               <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
-                <SuperIcon type={'\ue624'} style={{paddingTop:3, fontSize:32, color:'#BBB', backgroundColor:'transparent'}} />
+                <SuperIcon type={'\ue624'} style={{fontSize:32, color:this.props.config.color, backgroundColor:'transparent'}} />
               </View>
               <Text style={{color:'#BBB'}}>歌手</Text>
             </View>
             <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
               <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
-                <SuperIcon type={'\ue62c'} style={{paddingTop:3, fontSize:32, color:'#BBB', backgroundColor:'transparent'}} />
+                <SuperIcon type={'\ue62c'} style={{fontSize:32, color:this.props.config.color, backgroundColor:'transparent'}} />
               </View>
               <Text style={{color:'#BBB'}}>排行榜</Text>
             </View>
           </View>
 
-          <View style={{marginTop:18, flexDirection:'row'}}>
-            <Text>推荐歌单</Text>
-            <SuperIcon type={'\ue604'}/>
+          <View style={{marginTop:25, marginLeft:8, marginBottom:6, flexDirection:'row', alignItems:'center'}}>
+            <SuperIcon type={'\ue604'} style={{marginRight:10, fontSize:20, color:this.props.config.color}} />
+            <Text style={{fontSize:16, color:'#DDD'}}>推荐歌单</Text>
           </View>
           <View style={{width:'100%', paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
             <View style={{width:'31%'}}>
@@ -121,15 +121,18 @@ class IndexRecommend extends React.Component {
             </View>
           </View>
 
-
-
-          {/*<Button title='跳转到登录' onPress={()=>this.props.config.navigation.navigate('Home')} />*/}
-          {/*<Button title='跳转到歌单' onPress={()=>this.props.config.navigation.navigate('PlayList')} />*/}
-          {/*<Button title='跳转到歌手' onPress={()=>this.props.config.navigation.navigate('Singer')} />*/}
-          {/*<Button title='跳转到歌单详情' onPress={()=>this.props.config.navigation.navigate('PlayList')} />*/}
-          {/*<Button title='打开 Modal' onPress={() => {this.props.dispatch(showModal('loading'))}} />*/}
-
-
+          <View style={{marginTop:25, marginLeft:8, marginBottom:6, flexDirection:'row', alignItems:'center'}}>
+            <SuperIcon type={'\ue604'} style={{marginRight:10, fontSize:20, color:this.props.config.color}} />
+            <Text style={{fontSize:16, color:'#DDD'}}>歌曲排行榜</Text>
+          </View>
+          <View>
+            <Ripple style={{height:58, flexDirection:'row', backgroundColor:'lightgreen'}}>
+              <Text>8</Text>
+            </Ripple>
+            <Ripple style={{height:58, flexDirection:'row', backgroundColor:'lightblue'}}>
+              <Text>8</Text>
+            </Ripple>
+          </View>
         </ScrollView>
       </View>
     );
@@ -139,6 +142,7 @@ class IndexRecommend extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex:1,
+    paddingBottom:53,
     backgroundColor: 'transparent'
   },
   wrapper: {

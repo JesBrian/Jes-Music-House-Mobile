@@ -34,7 +34,6 @@ class Root extends React.Component {
         { this.props.showView.bottomPlayList === true ?  <NowPlayList/> : null }
         { this.props.showView.bottomSongMenu === true ?  <SongMenu/> : null }
 
-
         {
           this.props.showView.showModal === true ? <SuperModal /> : null
         }

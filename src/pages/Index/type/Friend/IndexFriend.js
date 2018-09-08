@@ -24,7 +24,7 @@ class IndexFriend extends React.Component {
       <View style={styles.container}>
         <Text>Index Friend</Text>
 
-        <View style={{width:43, height:43, right:18, bottom:76, position:'absolute', zIndex:5}}>
+        <View style={{width:50, height:50, right:18, bottom:76, position:'absolute',justifyContent:'center', alignItems:'center', zIndex:5}}>
           <SuperButton onPress={() => {goRouter(this.props.config.navigation, 'WriteTrend')}} width={43} height={43} label={<SuperIcon type={'\ue638'} style={{fontSize:28}} />} />
         </View>
       </View>

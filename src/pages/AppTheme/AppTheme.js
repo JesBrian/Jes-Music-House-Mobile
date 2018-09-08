@@ -67,8 +67,8 @@ class AppTheme extends React.Component {
                 <SuperIcon type={'\ue604'} style={{marginRight:10, fontSize:20, color:this.state.nowChooseColor}} />
                 <Text style={{fontSize:16, color:'#DDD'}}>调色盘</Text>
               </View>
-              <Ripple onPress={this.changeAppColor.bind(this, '#4cf0ab')} style={{width:68, height:28, top:3, right:12, position:'absolute', justifyContent:'center', alignItems:'center', borderRadius:3, backgroundColor:'lightblue'}}>
-                <Text>应用</Text>
+              <Ripple onPress={this.changeAppColor.bind(this, '#4cf0ab')} style={{width:68, height:28, top:3, right:12, position:'absolute', justifyContent:'center', alignItems:'center', borderRadius:3, borderWidth:1, borderColor:this.state.nowChooseColor, backgroundColor:'rgba(0,0,0,0.28)'}}>
+                <Text style={{color:this.state.nowChooseColor}}>应用</Text>
               </Ripple>
               <View style={{height:68, marginTop:8, flexDirection:'row'}}>
                 <View style={{width:53, height:68, marginRight:15, marginBottom:5, position:'relative',borderRadius:8, backgroundColor:this.state.nowChooseColor}} />
@@ -85,11 +85,13 @@ class AppTheme extends React.Component {
                 <Text style={{fontSize:16, color:'#DDD'}}>模式切换</Text>
               </View>
               <View style={{marginTop:8, flexDirection:'row', justifyContent:'space-between'}}>
-                <Ripple style={{width:'45%', height:38, justifyContent:'center', alignItems:'center', borderRadius:5, backgroundColor:'lightgreen'}}>
-                  <Text>日间模式</Text>
+                <Ripple style={{width:'45%', height:43, marginTop:3, flexDirection:'row', justifyContent:'center', alignItems:'center', borderRadius:5, borderWidth:1, borderColor:this.state.nowChooseColor, backgroundColor:'rgba(0,0,0,0.28)'}}>
+                  <SuperIcon type={'\ue6c7'} style={{marginRight:8, fontSize:23, color:this.state.nowChooseColor}}/>
+                  <Text style={{fontSize:16, color:this.state.nowChooseColor}}>日间模式</Text>
                 </Ripple>
-                <Ripple style={{width:'45%', height:38, justifyContent:'center', alignItems:'center', borderRadius:5, backgroundColor:'lightgreen'}}>
-                  <Text>夜间模式</Text>
+                <Ripple style={{width:'45%', height:43, marginTop:3, flexDirection:'row', justifyContent:'center', alignItems:'center', borderRadius:5, borderWidth:1, borderColor:this.state.nowChooseColor, backgroundColor:'rgba(0,0,0,0.28)'}}>
+                  <SuperIcon type={'\ue650'} style={{marginRight:8, fontSize:23, color:this.state.nowChooseColor}}/>
+                  <Text style={{fontSize:16, color:this.state.nowChooseColor}}>夜间模式</Text>
                 </Ripple>
               </View>
             </View>
