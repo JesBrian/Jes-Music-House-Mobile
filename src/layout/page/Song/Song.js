@@ -3,6 +3,7 @@ import React from 'react';
 import {
   PixelRatio,
   StyleSheet,
+  Modal,
   View,
   Text,
   TouchableWithoutFeedback
@@ -16,10 +17,9 @@ import { changeMusicPlayStatus, changeMusicPlayModel } from '../../../redux/acti
 import SongNavbar from '../../top/type/SongNavbar.js'
 import SongImg from './type/SongImg.js'
 import SongLyric from './type/SongLyric.js'
-
-
-import { common } from '../../../assets/styles/common.js'
 import SuperSlider from '../../../components/SuperSlider.js'
+import SuperIcon from '../../../components/SuperIcon.js'
+
 
 class Song extends React.Component {
   constructor (props) {
@@ -62,30 +62,30 @@ class Song extends React.Component {
                   <View>
                     {
                       this.props.music.playModel === 'loop' ?
-                        <Text style={[common.icon, {fontSize:24,  color:'#AAA'}]}>&#xe66c;</Text>
-                        : this.props.music.playModel === 'single-loop' ?
-                        <Text style={[common.icon, {fontSize:24,  color:'#AAA'}]}>&#xe66b;</Text> :
-                        <Text style={[common.icon, {fontSize:24,  color:'#AAA'}]}>&#xe607;</Text>
+                        <SuperIcon type={'\ue66c'} style={{fontSize:24,  color:'#AAA'}}/>
+                          : this.props.music.playModel === 'single-loop' ?
+                            <SuperIcon type={'\ue66b'} style={{fontSize:24,  color:'#AAA'}}/> :
+                              <SuperIcon type={'\ue607'} style={{fontSize:24,  color:'#AAA'}}/>
                     }
                   </View>
                 </TouchableWithoutFeedback>
               </View>
               <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-                <Text style={[common.icon, {fontSize:28,  color:'#AAA'}]}>&#xe602;</Text>
+                <SuperIcon type={'\ue602'} style={{fontSize:28,  color:'#AAA'}}/>
                 <TouchableWithoutFeedback onPress={this.changePlayStatus}>
                   <View style={{margin:28}}>
                     {
                       this.props.music.playStatus === false ?
-                        <Text style={[common.icon, {fontSize:48,  color:'#AAA'}]}>&#xe6b4;</Text> :
-                        <Text style={[common.icon, {fontSize:48,  color:'#AAA'}]}>&#xe8c8;</Text>
+                        <SuperIcon type={'\ue6b4'} style={{fontSize:48,  color:'#AAA'}}/> :
+                          <SuperIcon type={'\ue8c8'} style={{fontSize:48,  color:'#AAA'}}/>
                     }
                   </View>
                 </TouchableWithoutFeedback>
-                <Text style={[common.icon, {fontSize:28,  color:'#AAA'}]}>&#xe604;</Text>
+                <SuperIcon type={'\ue604'} style={{fontSize:28,  color:'#AAA'}}/>
               </View>
               <TouchableWithoutFeedback onPress={() => {this.props.dispatch(showBottomPlayList());}}>
                 <View style={{width:68, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-                  <Text style={[common.icon, {fontSize:24,  color:'#AAA'}]}>&#xe654;</Text>
+                  <SuperIcon type={'\ue618'} style={{fontSize:24, color:'#AAA'}}/>
                 </View>
               </TouchableWithoutFeedback>
             </View>

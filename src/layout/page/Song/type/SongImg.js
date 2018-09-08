@@ -40,7 +40,7 @@ class SongImg extends React.Component {
             <Text style={[common.icon, {fontSize:28, color:'#AAA'}]}>&#xe638;</Text>
           </Ripple>
           <Ripple style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-            <Text style={[common.icon, {fontSize:28, color:'#AAA'}]}>&#xe618;</Text>
+            <Text style={[common.icon, {fontSize:28, color:'#AAA'}]}>&#xe653;</Text>
           </Ripple>
         </View>
       </View>

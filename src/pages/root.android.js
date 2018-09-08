@@ -30,15 +30,15 @@ class Root extends React.Component {
       <View style={{flex:1, position:'relative'}}>
         <StatusBar barStyle="light-content" />
         <PageRouter/>
-        { this.props.showView.bottomMusic === true ? <MusicPlayer/> : null }
-        { this.props.showView.bottomPlayList === true ?  <NowPlayList/> : null }
-        { this.props.showView.bottomSongMenu === true ?  <SongMenu/> : null }
+        { this.props.bottomMusic === true ? <MusicPlayer/> : null }
+        { this.props.bottomPlayList === true ?  <NowPlayList/> : null }
+        { this.props.bottomSongMenu === true ?  <SongMenu/> : null }
 
         {
-          this.props.showView.showModal === true ? <SuperModal /> : null
+          this.props.showModal === true ? <SuperModal /> : null
         }
         {
-          this.props.showView.pageSong === true ? <SongPage /> : null
+          this.props.pageSong === true ? <SongPage /> : null
         }
       </View>
     );
@@ -48,7 +48,11 @@ class Root extends React.Component {
 function reduxState(store) {
   return {
     config: store.config,
-    showView: store.showView
+    showModal: store.showView.showModal,
+    bottomMusic: store.showView.bottomMusic,
+    bottomPlayList: store.showView.bottomPlayList,
+    bottomSongMenu: store.showView.bottomSongMenu,
+    pageSong: store.showView.pageSong,
   }
 }
 
