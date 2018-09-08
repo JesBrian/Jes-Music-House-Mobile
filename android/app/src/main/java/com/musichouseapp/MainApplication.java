@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import com.brentvatne.react.ReactVideoPackage;
+import org.pgsqlite.SQLitePluginPackage;
 import com.horcrux.svg.SvgPackage;
 import com.react.rnspinkit.RNSpinkitPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
@@ -30,7 +31,8 @@ public class MainApplication extends Application implements ReactApplication {
 		new RNSpinkitPackage(),
 		new ReactVideoPackage(),
 		new SvgPackage(),
-		new LinearGradientPackage()
+		new LinearGradientPackage(),
+		new SQLitePluginPackage()
       );
     }
   };
