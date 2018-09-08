@@ -1,9 +1,7 @@
 import React from 'react';
 
 import {
-  PixelRatio,
   StyleSheet,
-  Modal,
   View,
   Text,
   TouchableWithoutFeedback
@@ -11,14 +9,15 @@ import {
 
 
 import { connect } from 'react-redux'
-import { showBottomPlayList } from '../../../redux/actions/ViewActions.js'
-import { changeMusicPlayStatus, changeMusicPlayModel } from '../../../redux/actions/MusicActions.js'
+import { showBottomPlayList } from '../../redux/actions/ViewActions.js'
+import { changeMusicPlayStatus, changeMusicPlayModel } from '../../redux/actions/MusicActions.js'
 
-import SongNavbar from '../../top/type/SongNavbar.js'
+import SongNavbar from '../../layout/top/type/SongNavbar.js'
 import SongImg from './type/SongImg.js'
 import SongLyric from './type/SongLyric.js'
-import SuperSlider from '../../../components/SuperSlider.js'
-import SuperIcon from '../../../components/SuperIcon.js'
+import SuperSlider from '../../components/SuperSlider.js'
+import SuperIcon from '../../components/SuperIcon.js'
+import {hiddenBottomMusic, showBottomMusic} from "../../redux/actions/ViewActions";
 
 
 class Song extends React.Component {
@@ -30,9 +29,17 @@ class Song extends React.Component {
     };
   }
 
+  componentWillMount () {
+    this.props.dispatch(hiddenBottomMusic())
+  }
+
+  componentWillUnmount () {
+    this.props.dispatch(showBottomMusic())
+  }
+
   render() {
     return (
-      <View style={{width:'100%', height:'100%', top:0, left:0, flex:1, position:'absolute', backgroundColor:'#FFF', zIndex:13}}>
+      <View style={{width:'100%', height:'100%', top:0, left:0, flex:1, backgroundColor:'#FFF'}}>
         <SongNavbar navigation={this.props.navigation}/>
 
         <View style={{flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
@@ -40,7 +47,7 @@ class Song extends React.Component {
           {
             this.state.showSongContentType === 'img' ?
               <SongImg changeSongContentType={showSongContentType => this.changeShowContentType(showSongContentType)} /> :
-              <SongLyric changeSongContentType={showSongContentType => this.changeShowContentType(showSongContentType)} />
+                <SongLyric changeSongContentType={showSongContentType => this.changeShowContentType(showSongContentType)} />
           }
 
           <View style={{width:'100%', height:98, alignItems:'center'}}>

@@ -12,7 +12,7 @@ import { connect } from 'react-redux'
 
 import Ripple from 'react-native-material-ripple'
 
-import { common } from '../../../../assets/styles/common.js'
+import { common } from '../../../assets/styles/common.js'
 
 
 class SongImg extends React.Component {

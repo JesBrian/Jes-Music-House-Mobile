@@ -10,8 +10,6 @@ import { connect } from 'react-redux'
 
 import PageRouter from '../router/IosPageRouter.js'
 
-import SongPage from '../layout/page/Song/Song.js'
-
 import MusicPlayer from '../layout/bottom/MusicPlayer.js'
 import NowPlayList from '../layout/bottom/NowPlayList.js'
 import SongMenu from '../layout/bottom/SongMenu.js'
@@ -25,21 +23,15 @@ class Root extends React.Component {
     };
   }
 
-  render() {
+  render () {
     return (
       <View style={{flex:1, position:'relative'}}>
         <StatusBar barStyle="light-content" />
         <PageRouter style={{paddingBottom:this.props.showView.bottomMusic === true ? 53 : 0}} />
-        { this.props.showView.bottomMusic === true ? <MusicPlayer/> : null }
+        <MusicPlayer/>
         { this.props.showView.bottomPlayList === true ?  <NowPlayList/> : null }
         { this.props.showView.bottomSongMenu === true ?  <SongMenu/> : null }
-
-        {
-          this.props.showView.showModal === true ? <SuperModal /> : null
-        }
-        {
-          this.props.showView.pageSong === true ? <SongPage /> : null
-        }
+        { this.props.showView.showModal === true ? <SuperModal /> : null }
       </View>
     );
   }

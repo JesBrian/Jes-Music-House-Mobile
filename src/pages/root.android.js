@@ -10,8 +10,6 @@ import { connect } from 'react-redux'
 
 import PageRouter from '../router/AndroidPageRouter.js'
 
-import SongPage from '../layout/page/Song/Song.js'
-
 import MusicPlayer from '../layout/bottom/MusicPlayer.js'
 import NowPlayList from '../layout/bottom/NowPlayList.js'
 import SongMenu from '../layout/bottom/SongMenu.js'
@@ -25,21 +23,15 @@ class Root extends React.Component {
     };
   }
 
-  render() {
+  render () {
     return (
       <View style={{flex:1, position:'relative'}}>
         <StatusBar barStyle="light-content" />
         <PageRouter/>
-        { this.props.bottomMusic === true ? <MusicPlayer/> : null }
-        { this.props.bottomPlayList === true ?  <NowPlayList/> : null }
-        { this.props.bottomSongMenu === true ?  <SongMenu/> : null }
-
-        {
-          this.props.showModal === true ? <SuperModal /> : null
-        }
-        {
-          this.props.pageSong === true ? <SongPage /> : null
-        }
+        <MusicPlayer/>
+        { this.props.showView.bottomPlayList === true ?  <NowPlayList/> : null }
+        { this.props.showView.bottomSongMenu === true ?  <SongMenu/> : null }
+        { this.props.showView.showModal === true ? <SuperModal /> : null }
       </View>
     );
   }
@@ -48,11 +40,7 @@ class Root extends React.Component {
 function reduxState(store) {
   return {
     config: store.config,
-    showModal: store.showView.showModal,
-    bottomMusic: store.showView.bottomMusic,
-    bottomPlayList: store.showView.bottomPlayList,
-    bottomSongMenu: store.showView.bottomSongMenu,
-    pageSong: store.showView.pageSong,
+    showView: store.showView,
   }
 }
 

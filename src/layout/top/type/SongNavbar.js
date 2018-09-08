@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 
 import { connect } from "react-redux";
-import { hiddenPageSong } from '../../../redux/actions/ViewActions.js'
 
 import { common } from '../../../assets/styles/common.js'
 import NavbarFrame from '../NavbarFrame.js'
@@ -26,7 +25,7 @@ class SongNavbar extends React.Component {
       <NavbarFrame navbarContent={(
 
         <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-          <TouchableWithoutFeedback onPress={() => {this.props.dispatch(hiddenPageSong())}}>
+          <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.goBack()}}>
             <View style={{width:45, flexDirection:'row', justifyContent:'center'}}>
               <Text style={[common.icon, {fontSize:31, color:'#BBB'}]}>&#xe8ca;</Text>
             </View>
@@ -57,6 +56,7 @@ const styles = StyleSheet.create({
 
 function reduxState(store) {
   return {
+    config: store.config,
     showView: store.showView
   }
 }

@@ -12,7 +12,7 @@ import {
 
 
 import { connect } from 'react-redux'
-import { showBottomPlayList, showPageSong } from '../../redux/actions/ViewActions.js'
+import { showBottomPlayList } from '../../redux/actions/ViewActions.js'
 import { changeMusicPlayStatus } from '../../redux/actions/MusicActions.js'
 
 import Ripple from 'react-native-material-ripple'
@@ -36,12 +36,12 @@ class MusicPlayer extends React.Component {
     }
 
     return (
-      <View style={{width:Dimensions.get('window').width, height:65, top:Dimensions.get('window').height - (Platform.OS === 'ios' ? 65 : 85), left:0, paddingTop:12, position:'absolute', zIndex:5}}>
+      <View style={{width:Dimensions.get('window').width, height:65, top:Dimensions.get('window').height - (this.props.showView.bottomMusic === false ? 0 : Platform.OS === 'ios' ? 65 : 85), left:0, paddingTop:12, position:'absolute', zIndex:5}}>
         <BoxShadow setting={shadowOpt}>
           <View style={{flex:1, flexDirection:'row', backgroundColor:'#282828'}}>
-            <TouchableOpacity onPress={() => {this.props.dispatch(showPageSong())}} style={{flex:1, flexDirection:'row', justifyContent:'flex-start'}}>
+            <TouchableOpacity onPress={() => {this.props.config.navigation.navigate('Song');}} style={{flex:1, flexDirection:'row', justifyContent:'flex-start'}}>
               <View style={{width:58, flexDirection:'row', alignItems:'center', justifyContent:'center' }}>
-                <TouchableOpacity onPress={() => {this.props.dispatch(showPageSong())}} style={{width:'76%', height:'76%', marginLeft:2}}>
+                <TouchableOpacity onPress={() => {this.props.config.navigation.navigate('Song');}} style={{width:'76%', height:'76%', marginLeft:2}}>
                   <Image style={{flex:1, marginLeft:2, borderWidth:1, borderRadius:4, borderColor:'#666'}} source={{uri:'http://www.chuanke.com/upload/courseware/f/31/3312428/image/09c68fe797fa58d78a1de4f34e0ea40f.gif'}} />
                 </TouchableOpacity>
               </View>
@@ -55,7 +55,7 @@ class MusicPlayer extends React.Component {
                 {
                   this.props.music.playStatus === false ?
                     <Text style={[common.icon,  {fontSize:28, color:'#CCC'}]}>&#xe6b4;</Text> :
-                    <Text style={[common.icon,  {fontSize:28, color:'#CCC'}]}>&#xe8c8;</Text>
+                      <Text style={[common.icon,  {fontSize:28, color:'#CCC'}]}>&#xe8c8;</Text>
                 }
               </Ripple>
               <TouchableOpacity onPress={() => {this.props.dispatch(showBottomPlayList())}} style={{paddingLeft:8, paddingRight:18, flexDirection:'column', justifyContent:'center'}}>

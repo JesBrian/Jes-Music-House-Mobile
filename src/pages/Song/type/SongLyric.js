@@ -7,8 +7,8 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
-import { common } from '../../../../assets/styles/common.js'
-import SuperSlider from '../../../../components/SuperSlider.js'
+import { common } from '../../../assets/styles/common.js'
+import SuperSlider from '../../../components/SuperSlider.js'
 
 export default class SongLyric extends React.Component {
   constructor (props) {

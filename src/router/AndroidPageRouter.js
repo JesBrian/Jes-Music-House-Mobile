@@ -7,6 +7,7 @@ import Register from '../pages/Register/Register.js'
 import Index from '../pages/Index/IndexAndroid.js'
 import Search from '../pages/Search/Search.js'
 import Singer from '../pages/Singer/Singer.js'
+import Song from '../pages/Song/Song.js'
 import User from '../pages/User/User.js'
 import PlayList from '../pages/PlayList/PlayList.js'
 import PlayListDetail from '../pages/PlayListDetail/PlayListDetail.js'
@@ -25,6 +26,7 @@ const PageRouter = createStackNavigator({
   Index: { screen: Index },
   Search: { screen: Search },
   Singer: { screen: Singer },
+  Song: { screen: Song },
   User: { screen: User },
   PlayList: { screen: PlayList },
   PlayListDetail: { screen: PlayListDetail },
