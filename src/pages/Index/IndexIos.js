@@ -9,17 +9,11 @@ import {
 import { connect } from 'react-redux'
 import { setNavigation } from '../../redux/actions/ConfigActions.js'
 
-import ScrollableTabView from 'react-native-scrollable-tab-view'
-
+import Drawer from 'react-native-drawer'
 
 import IndexNavbar from '../../layout/top/type/IndexNavbar.js'
 import MenuPanel from '../../layout/left/MenuPanel.js'
-import Drawer from 'react-native-drawer'
-import SuperTabbar from '../../layout/tab/SuperTabbar.js'
-
-import IndexSelf from './type/Self/IndexSelf.js'
-import IndexRecommend from './type/Recommend/IndexRecommend.js'
-import IndexFrined from './type/Friend/IndexFriend.js'
+import SuperIndexTab from './SuperIndexTab.js'
 
 
 class Index extends React.Component {
@@ -58,16 +52,8 @@ class Index extends React.Component {
 
         <View style={styles.container}>
           <IndexNavbar navigation={this.props.navigation} openControlPanel={this.openControlPanel} />
-          <ScrollableTabView
-            initialPage={1}
-            renderTabBar={() => <SuperTabbar />}
-            style={{paddingTop:6, backgroundColor:'rgba(0,0,0,0.73)'}}
-          >
 
-            <IndexSelf tabLabel="个人" />
-            <IndexRecommend tabLabel="推荐" />
-            <IndexFrined tabLabel="朋友" />
-          </ScrollableTabView>
+          <SuperIndexTab />
         </View>
 
       </Drawer>
