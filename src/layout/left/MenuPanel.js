@@ -2,7 +2,6 @@ import React  from 'react';
 
 import {
   Dimensions,
-  Platform,
   StyleSheet,
   Text,
   View,
@@ -32,7 +31,7 @@ class MenuPanel extends React.Component {
 
   render () {
     const shadowOpt = {
-      width:Dimensions.get('window').width * 0.82, height:Platform.OS === 'ios' ? 118 : 98, color:"#383838", border:12, opacity:0.8, x:0, y:1,
+      width:Dimensions.get('window').width * 0.82, height:118, color:"#383838", border:12, opacity:0.8, x:0, y:1,
     };
 
 
@@ -46,11 +45,11 @@ class MenuPanel extends React.Component {
     return (
       <View style={{height:'100%', paddingBottom:53, flex:1}}>
         <BoxShadow setting={shadowOpt}>
-          <View style={{flex:1, flexDirection:'row', backgroundColor:'#282828'}}>
+          <View style={{paddingTop:20, flex:1, flexDirection:'row', backgroundColor:'#282828'}}>
             <View style={{width:88, height:'100%', justifyContent:'center', alignItems:'center'}}>
               <Image style={{width:48, height:48, borderWidth:1, borderRadius:4, borderColor:'#666'}} source={{uri:'http://www.chuanke.com/upload/courseware/f/31/3312428/image/09c68fe797fa58d78a1de4f34e0ea40f.gif'}} />
             </View>
-            <View style={{flex:1, height:'100%'}}>
+            <View style={{flex:1}}>
               <Text style={{backgroundColor:'transparent'}}>JesBrian</Text>
               <SuperButton/>
             </View>
