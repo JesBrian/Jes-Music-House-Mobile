@@ -23,7 +23,7 @@ export default class SuperInput extends React.Component {
 
   render () {
     return (
-      <View style={{width:'100%', height:38, flexDirection:'row', backgroundColor:'#282828'}}>
+      <View style={{width:'100%', height:43, flexDirection:'row', backgroundColor:'#282828'}}>
         <View style={{flex:1, paddingLeft:12, paddingRight:3}}>
           <TextInput selectionColor={'#2DC9FF'} underlineColorAndroid='transparent' style={{height:'100%', flex:1, padding:0, color:'#2DC9FF', fontSize:16}} />
         </View>

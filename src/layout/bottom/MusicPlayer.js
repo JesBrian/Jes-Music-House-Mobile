@@ -36,7 +36,7 @@ class MusicPlayer extends React.Component {
     }
 
     return (
-      <View style={{width:Dimensions.get('window').width, height:65, top:Dimensions.get('window').height - (this.props.showView.bottomMusic === false ? 0 : Platform.OS === 'ios' ? 65 : 85), left:0, paddingTop:12, position:'absolute', zIndex:5}}>
+      <View style={{width:Dimensions.get('window').width, height:65, top:Dimensions.get('window').height - (this.props.showView.bottomMusic === false ? 0 : 65), left:0, paddingTop:12, position:'absolute', zIndex:5}}>
         <BoxShadow setting={shadowOpt}>
           <View style={{flex:1, flexDirection:'row', backgroundColor:'#282828'}}>
             <TouchableOpacity onPress={() => {this.props.config.navigation.navigate('Song');}} style={{flex:1, flexDirection:'row', justifyContent:'flex-start'}}>

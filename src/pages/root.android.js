@@ -26,7 +26,7 @@ class Root extends React.Component {
   render () {
     return (
       <View style={{flex:1, position:'relative'}}>
-        <StatusBar barStyle="light-content" />
+        <StatusBar translucent={true} backgroundColor={this.props.config.theme === 'light' ? '#DDD' : '#282828'} />
         <PageRouter/>
         <MusicPlayer/>
         { this.props.showView.bottomPlayList === true ?  <NowPlayList/> : null }

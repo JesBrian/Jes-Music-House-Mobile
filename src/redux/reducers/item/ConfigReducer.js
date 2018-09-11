@@ -7,7 +7,7 @@ import * as types from '../../constants/ConfigTypes.js';
  */
 const initialState = {
   navigation: null,
-  theme: 'light',
+  theme: 'dark',
   color: '#000',
 }
 
