@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 import { common } from '../../../assets/styles/common.js'
+import SuperIcon from '../../../components/SuperIcon.js'
 import SuperSlider from '../../../components/SuperSlider.js'
 
 export default class SongLyric extends React.Component {
@@ -28,8 +29,8 @@ export default class SongLyric extends React.Component {
               <View style={{width:38, height:'100%', justifyContent:'center', alignItems:'center', backgroundColor:'transparent'}}>
                 {
                   this.state.volumeStatus === true ?
-                    <Text style={[common.icon, {fontSize:21, color:'#AAA'}]}>&#xe6ac;</Text> :
-                    <Text style={[common.icon, {fontSize:21, color:'#AAA'}]}>&#xe6aa;</Text>
+                    <SuperIcon type={'\ue6ac'} style={{fontSize:21, color:'#AAA'}} /> :
+                      <SuperIcon type={'\ue6aa'} style={{fontSize:21, color:'#AAA'}} />
                 }
               </View>
             </TouchableWithoutFeedback>

@@ -10,7 +10,8 @@ import {
 import NavbarFrame from '../NavbarFrame.js'
 import SuperButton from '../../../components/SuperButton.js'
 
-import {common} from '../../../assets/styles/common.js'
+import { common } from '../../../assets/styles/common.js'
+import SuperIcon from '../../../components/SuperIcon.js'
 
 export default class IndexNavbar extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ export default class IndexNavbar extends React.Component {
       <NavbarFrame navbarContent={(
         <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
           <View style={{marginLeft:13}}>
-            <SuperButton style={{marginLeft:13}} onPress={this.props.openControlPanel} label={<Text style={[common.icon]}>&#xe654;</Text>} />
+            <SuperButton style={{marginLeft:13}} onPress={this.props.openControlPanel} label={<SuperIcon type={'\ue654'} />} />
           </View>
 
           <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
@@ -31,7 +32,7 @@ export default class IndexNavbar extends React.Component {
           </View>
 
           <View style={{marginRight:13}}>
-            <SuperButton onPress={() => {this.props.navigation.navigate('Search')}} label={<Text style={[common.icon]}>&#xe65a;</Text>} />
+            <SuperButton onPress={() => {this.props.navigation.navigate('Search')}} label={<SuperIcon type={'\ue65a'} />} />
           </View>
         </View>
 

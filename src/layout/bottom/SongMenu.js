@@ -15,6 +15,7 @@ import { hiddenBottomSongMenu } from '../../redux/actions/ViewActions.js'
 import Ripple from 'react-native-material-ripple'
 
 import { common } from '../../assets/styles/common.js'
+import SuperIcon from '../../components/SuperIcon.js'
 
 
 class SongMenu extends React.Component {
@@ -40,7 +41,7 @@ class SongMenu extends React.Component {
             <ScrollView style={{flex:1, backgroundColor:'#FFF'}}>
               <Ripple style={{height:33, flexDirection:'row', backgroundColor:'lightgreen'}}>
                 <View style={{width:38, justifyContent:'center', alignItems:'center'}}>
-                  <Text style={[common.icon, {fontSize:21}]}>&#xe6b4;</Text>
+                  <SuperIcon type={'\ue6b4'} style={{fontSize:21}} />
                 </View>
                 <View style={{justifyContent:'center'}}>
                   <Text style={{fontSize:15}}>下一首播放</Text>

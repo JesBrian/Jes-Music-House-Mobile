@@ -13,6 +13,7 @@ import Ripple from 'react-native-material-ripple'
 import SuperButton from '../../components/SuperButton.js'
 
 import { common } from '../../assets/styles/common.js'
+import SuperIcon from '../../components/SuperIcon.js'
 
 export default class Home extends React.Component {
   render() {
@@ -20,7 +21,7 @@ export default class Home extends React.Component {
       <View style={styles.container}>
 
         <Ripple onPress={() => {this.props.navigation.goBack()}} style={{width:38, height:'100%', position:'absolute', zIndex:2, alignItems:'center', justifyContent:'center'}}>
-          <Text style={[common.icon, {marginLeft:-5, fontSize:25, color:"#BBB"}]}>&#xe602;</Text>
+          <SuperIcon type={'\ue602'} style={{marginLeft:-5, fontSize:25, color:"#BBB"}} />
         </Ripple>
 
         <View style={{flex:1}}>

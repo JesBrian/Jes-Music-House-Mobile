@@ -40,17 +40,17 @@ class NowPlayList extends React.Component {
                 {
                   this.props.music.playModel === 'loop' ?
                     <View style={{height:'100%', padding:15, flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
-                      <Text style={[common.icon, {marginRight:4, fontSize:18, color:'#FFF'}]}>&#xe66c;</Text>
+                      <SuperIcon type={'\ue66c'} style={{marginRight:4, fontSize:18, color:'#FFF'}} />
                       <Text style={{fontSize:16, color:'#FFF'}}>循环列表 [888]</Text>
                     </View>
                     : this.props.music.playModel === 'single-loop' ?
                     <View style={{height:'100%', padding:15, flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
-                      <Text style={[common.icon, {marginRight:4, fontSize:18, color:'#FFF'}]}>&#xe66b;</Text>
+                      <SuperIcon type={'\ue66b'} style={{marginRight:4, fontSize:18, color:'#FFF'}} />
                       <Text style={{fontSize:16, color:'#FFF'}}>单曲循环 [888]</Text>
                     </View>
                     :
                     <View style={{height:'100%', padding:15, flexDirection:'row', justifyContent:'center', alignItems:'center', borderTopLeftRadius:12}}>
-                      <Text style={[common.icon, {marginRight:4, fontSize:18, color:'#FFF'}]}>&#xe607;</Text>
+                      <SuperIcon type={'\ue607'} style={{marginRight:4, fontSize:18, color:'#FFF'}} />
                       <Text style={{fontSize:16, color:'#FFF'}}>随机播放 [888]</Text>
                     </View>
                 }
@@ -59,7 +59,7 @@ class NowPlayList extends React.Component {
                 <Ripple>
                   <View style={{flex:1, flexDirection:'row', justifyContent:'flex-end', alignItems:'center'}}>
                     <View style={{width:108, height:'55%', flexDirection:'row', justifyContent:'center', alignItems:'center', borderRightWidth:1, borderRightColor:'#686868'}}>
-                      <Text style={[common.icon, {fontSize:18, color:'#FFF'}]}>&#xe80d;</Text>
+                      <SuperIcon type={'\ue80d'} style={{fontSize:18, color:'#FFF'}} />
                       <Text style={{fontSize:16, color:'#FFF'}}> 收藏全部</Text>
                     </View>
                   </View>
@@ -67,7 +67,7 @@ class NowPlayList extends React.Component {
               </View>
               <Ripple>
                 <View style={{width:46, height:'100%', justifyContent:'center', alignItems:'center'}}>
-                  <Text style={[common.icon, {fontSize:20, color:'#FFF'}]}>&#xe61f;</Text>
+                  <SuperIcon type={'\ue61f'} style={{fontSize:20, color:'#FFF'}} />
                 </View>
               </Ripple>
             </View>
@@ -83,13 +83,13 @@ class NowPlayList extends React.Component {
 
                 <TouchableWithoutFeedback>
                   <View style={{width:38, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
-                    <Text style={[common.icon, {fontSize:24}]}>&#xe627;</Text>
+                    <SuperIcon type={'\ue627'} style={{fontSize:24}} />
                   </View>
                 </TouchableWithoutFeedback>
 
                 <TouchableWithoutFeedback>
                   <View style={{width:35, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
-                    <Text style={[common.icon, {fontSize:23}]}>&#xe622;</Text>
+                    <SuperIcon type={'\ue622'} style={{fontSize:23}} />
                   </View>
                 </TouchableWithoutFeedback>
               </View>

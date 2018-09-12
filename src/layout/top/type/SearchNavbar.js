@@ -10,7 +10,10 @@ import {
 
 import NavbarFrame from '../NavbarFrame.js'
 
+import SuperIcon from '../../../components/SuperIcon.js'
+
 import { common } from '../../../assets/styles/common.js'
+
 
 export default class SearchNavbar extends React.Component {
   constructor (props) {
@@ -27,11 +30,11 @@ export default class SearchNavbar extends React.Component {
         <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
           <TouchableWithoutFeedback onPress={() => {this.props.navigation.goBack()}}>
             <View style={{width:45, flexDirection:'row', justifyContent:'center'}}>
-              <Text style={[common.icon, {fontSize:31, color:'#BBB'}]}>&#xe8ca;</Text>
+              <SuperIcon type={'\ue8ca'} style={{fontSize:31, color:'#BBB'}} />
             </View>
           </TouchableWithoutFeedback>
 
-          <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center', position:'relative'}}>
+          <View style={{marginLeft:8, marginRight:8, flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center', position:'relative', borderBottomWidth:1, borderBottomColor:'#888'}}>
             <TextInput onChangeText={(text) => {this.setState({searchKey: text})}} value={this.state.searchKey}
                        selectionColor={'#2DC9FF'} underlineColorAndroid='transparent'
                        style={{width:'100%', height:38, padding:6, paddingLeft:8, paddingRight:28, borderRadius:6, backgroundColor:'#282828', color:'#2DC9FF', fontSize:18}} />
@@ -46,7 +49,7 @@ export default class SearchNavbar extends React.Component {
 
           <TouchableWithoutFeedback>
             <View style={{width:50, flexDirection:'row', justifyContent:'center'}}>
-              <Text style={[common.icon, {fontSize:31, color:'#BBB'}]}>&#xe65a;</Text>
+              <SuperIcon type={'\ue65a'} style={{fontSize:31, color:'#BBB'}} />
             </View>
           </TouchableWithoutFeedback>
         </View>

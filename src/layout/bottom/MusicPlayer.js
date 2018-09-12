@@ -2,7 +2,6 @@ import React  from 'react';
 
 import {
   Dimensions,
-  Platform,
   StyleSheet,
   View,
   Text,
@@ -19,6 +18,7 @@ import Ripple from 'react-native-material-ripple'
 import { BoxShadow }  from 'react-native-shadow'
 
 import { common } from '../../assets/styles/common.js'
+import SuperIcon from "../../components/SuperIcon";
 
 
 class MusicPlayer extends React.Component {
@@ -54,12 +54,12 @@ class MusicPlayer extends React.Component {
               <Ripple onPress={this.changePlayStatus} style={{paddingTop:2, paddingLeft:6, paddingRight:8, flexDirection:'column', justifyContent:'center'}}>
                 {
                   this.props.music.playStatus === false ?
-                    <Text style={[common.icon,  {fontSize:28, color:'#CCC'}]}>&#xe6b4;</Text> :
-                      <Text style={[common.icon,  {fontSize:28, color:'#CCC'}]}>&#xe8c8;</Text>
+                    <SuperIcon type={'\ue6b4'} style={{fontSize:28, color:'#CCC'}} /> :
+                      <SuperIcon type={'\ue8c8'} style={{fontSize:28, color:'#CCC'}} />
                 }
               </Ripple>
               <TouchableOpacity onPress={() => {this.props.dispatch(showBottomPlayList())}} style={{paddingLeft:8, paddingRight:18, flexDirection:'column', justifyContent:'center'}}>
-                <Text style={[common.icon, {fontSize:26, color:'#CCC'}]}>&#xe654;</Text>
+                <SuperIcon type={'\ue654'} style={{fontSize:26, color:'#CCC'}} />
               </TouchableOpacity>
             </View>
           </View>

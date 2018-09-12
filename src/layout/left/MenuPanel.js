@@ -80,11 +80,11 @@ class MenuPanel extends React.Component {
             }
           </Ripple>
           <Ripple onPress={() => {}} style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-            <Text style={[common.icon, {marginRight:8, fontSize:20, color:'#DDD'}]}>&#xe672;</Text>
+            <SuperIcon type={'\ue672'} style={{marginRight:8, fontSize:20, color:'#DDD'}} />
             <Text style={{fontSize:18, color:'#DDD'}}>设置</Text>
           </Ripple>
           <Ripple onPress={() => {}} style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-            <Text style={[common.icon, {marginRight:8, fontSize:20, color:'#DDD'}]}>&#xe622;</Text>
+            <SuperIcon type={'\ue622'} style={{marginRight:8, fontSize:20, color:'#DDD'}} />
             <Text style={{fontSize:18, color:'#DDD'}}>退出</Text>
           </Ripple>
         </View>

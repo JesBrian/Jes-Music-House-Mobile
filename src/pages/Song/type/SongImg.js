@@ -13,6 +13,7 @@ import { connect } from 'react-redux'
 import Ripple from 'react-native-material-ripple'
 
 import { common } from '../../../assets/styles/common.js'
+import SuperIcon from '../../../components/SuperIcon.js'
 
 
 class SongImg extends React.Component {
@@ -31,16 +32,16 @@ class SongImg extends React.Component {
         </TouchableWithoutFeedback>
         <View style={{height:48, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
           <Ripple style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-            <Text style={[common.icon, {fontSize:28, color:'#AAA'}]}>&#xe80d;</Text>
+            <SuperIcon type={'\ue80d'} style={{fontSize:28, color:'#AAA'}} />
           </Ripple>
           <Ripple style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-            <Text style={[common.icon, {fontSize:28, color:'#AAA'}]}>&#xe63c;</Text>
+            <SuperIcon type={'\ue63c'} style={{fontSize:28, color:'#AAA'}} />
           </Ripple>
           <Ripple  onPress={() => {this.props.config.navigation.navigate('Comment')}} style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-            <Text style={[common.icon, {fontSize:28, color:'#AAA'}]}>&#xe638;</Text>
+            <SuperIcon type={'\ue638'} style={{fontSize:28, color:'#AAA'}} />
           </Ripple>
           <Ripple style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-            <Text style={[common.icon, {fontSize:28, color:'#AAA'}]}>&#xe653;</Text>
+            <SuperIcon type={'\ue653'} style={{fontSize:28, color:'#AAA'}} />
           </Ripple>
         </View>
       </View>
