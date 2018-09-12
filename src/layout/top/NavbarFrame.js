@@ -6,9 +6,12 @@ import {
   View
 } from 'react-native';
 
+import { connect } from 'react-redux'
 import { BoxShadow }  from 'react-native-shadow'
+import {common} from "../../assets/styles/common";
 
-export default class NavbarFrame extends React.Component {
+
+class NavbarFrame extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -21,7 +24,7 @@ export default class NavbarFrame extends React.Component {
 
     return (
       <BoxShadow setting={shadowOpt}>
-        <View style={styles.container}>
+        <View style={[common.navbarFrame, this.props.theme === 'light' ? common.lightBg : common.darkBg]}>
           { this.props.navbarContent }
         </View>
       </BoxShadow>
@@ -29,15 +32,12 @@ export default class NavbarFrame extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    width:'100%',
-    height:'100%',
-    paddingTop:20,
-    flexDirection:'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#282828',
-    zIndex:5
-  },
-})
+
+function reduxState(store) {
+  return {
+    theme: store.config.theme,
+    color: store.config.color
+  }
+}
+
+export default connect(reduxState)(NavbarFrame);

@@ -16,7 +16,7 @@ export default class SuperIcon extends React.Component {
 
 
   render () {
-    return <Text style={[common.icon, this.props.style]}>{this.props.type}</Text>
+    return <Text style={[{fontFamily: 'iconfont'}, this.props.style]}>{this.props.type}</Text>
   }
 }
 

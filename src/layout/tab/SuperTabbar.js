@@ -9,11 +9,14 @@ import {
 
 import Ripple from 'react-native-material-ripple'
 
+import { connect } from 'react-redux'
+
 import { common } from '../../assets/styles/common.js'
 
-export default class SuperIcon extends React.Component {
-  renderTab(name, page, isTabActive, onPressHandler) {
-    const textColor = isTabActive ? '#2DC9FF' : '#BBB';
+
+class SuperTabbar extends React.Component {
+  renderTab(name, page, isTabActive, onPressHandler, color) {
+    const textColor = isTabActive ? color : '#BBB';
     const fontWeight = isTabActive ? 'bold' : 'normal';
 
     return (
@@ -35,7 +38,7 @@ export default class SuperIcon extends React.Component {
       position:'absolute',
       width: containerWidth / numberOfTabs,
       height:2,
-      backgroundColor:'#2DC9FF',
+      backgroundColor:this.props.color,
       borderRadius:2,
       bottom:0,
     };
@@ -49,7 +52,7 @@ export default class SuperIcon extends React.Component {
         {this.props.tabs.map((name, page) => {
           const isTabActive = this.props.activeTab === page;
           const renderTab = this.props.renderTab || this.renderTab;
-          return renderTab(name, page, isTabActive, this.props.goToPage);
+          return renderTab(name, page, isTabActive, this.props.goToPage, this.props.color);
         })}
         <Animated.View
           style={[
@@ -80,3 +83,13 @@ const styles = StyleSheet.create({
     justifyContent:'space-around'
   },
 });
+
+
+function reduxState(store) {
+  return {
+    theme: store.config.theme,
+    color: store.config.color
+  }
+}
+
+export default connect(reduxState)(SuperTabbar);

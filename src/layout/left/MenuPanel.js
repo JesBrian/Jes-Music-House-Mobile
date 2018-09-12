@@ -31,7 +31,7 @@ class MenuPanel extends React.Component {
 
   render () {
     const shadowOpt = {
-      width:Dimensions.get('window').width * 0.82, height:118, color:"#383838", border:12, opacity:0.8, x:0, y:1,
+      width:Dimensions.get('window').width * 0.82, height:118, color:"#383838", border:12, opacity:0.8, x:-8, y:1,
     };
 
 
@@ -45,7 +45,7 @@ class MenuPanel extends React.Component {
     return (
       <View style={{height:'100%', paddingBottom:53, flex:1}}>
         <BoxShadow setting={shadowOpt}>
-          <View style={{paddingTop:20, flex:1, flexDirection:'row', backgroundColor:'#282828'}}>
+          <View style={{paddingTop:20, flex:1, flexDirection:'row', backgroundColor:this.props.config.theme === 'light' ? '#F8F8F8' : '#282828'}}>
             <View style={{width:88, height:'100%', justifyContent:'center', alignItems:'center'}}>
               <Image style={{width:48, height:48, borderWidth:1, borderRadius:4, borderColor:'#666'}} source={{uri:'http://www.chuanke.com/upload/courseware/f/31/3312428/image/09c68fe797fa58d78a1de4f34e0ea40f.gif'}} />
             </View>
@@ -56,7 +56,7 @@ class MenuPanel extends React.Component {
           </View>
         </BoxShadow>
 
-        <ScrollView style={{paddingTop:12, paddingBottom:12, flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
+        <ScrollView style={{paddingTop:12, paddingBottom:12, flex:1, backgroundColor:this.props.config.theme === 'light' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.73)'}}>
           <Ripple onPress={() => {this.props.config.navigation.navigate('AppTheme')}} style={{width:'100%', height:38, flexDirection:'row', alignItems:'center', backgroundColor:'lightgreen'}}>
             <SuperIcon type={'\ueaec'} style={{margin:12}} />
             <Text>个性彩色</Text>
