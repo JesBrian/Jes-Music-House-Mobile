@@ -1,13 +1,6 @@
 import { StyleSheet } from 'react-native'
 
 export const common = StyleSheet.create({
-  lightBg: {
-    backgroundColor: '#F8F8F8',
-  },
-  darkBg: {
-    backgroundColor: '#282828'
-  },
-
   navbarFrame: {
     width:'100%',
     height:'100%',
@@ -19,4 +12,13 @@ export const common = StyleSheet.create({
   },
 
   pageContainer: {}
+});
+
+export const theme = StyleSheet.create({
+  lightBg: {
+    backgroundColor: '#F8F8F8',
+  },
+  darkBg: {
+    backgroundColor: '#282828'
+  }
 });

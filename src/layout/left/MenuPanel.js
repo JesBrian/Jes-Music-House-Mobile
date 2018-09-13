@@ -2,7 +2,6 @@ import React  from 'react';
 
 import {
   Dimensions,
-  StyleSheet,
   Text,
   View,
   ScrollView,
@@ -19,7 +18,7 @@ import { BoxShadow }  from 'react-native-shadow'
 import SuperIcon from '../../components/SuperIcon.js'
 import SuperButton from '../../components/SuperButton.js'
 
-import { common } from '../../assets/styles/common.js'
+import { common, theme } from '../../assets/styles/common.js'
 
 
 class MenuPanel extends React.Component {
@@ -96,9 +95,6 @@ class MenuPanel extends React.Component {
     this.props.closeControlPanel();
   };
 }
-
-const styles = StyleSheet.create({
-})
 
 
 function reduxState(store) {

@@ -2,13 +2,13 @@ import React from 'react';
 
 import {
   Dimensions,
-  StyleSheet,
   View
 } from 'react-native';
 
 import { connect } from 'react-redux'
 import { BoxShadow }  from 'react-native-shadow'
-import {common} from "../../assets/styles/common";
+
+import { common, theme } from '../../assets/styles/common.js'
 
 
 class NavbarFrame extends React.Component {
@@ -24,7 +24,7 @@ class NavbarFrame extends React.Component {
 
     return (
       <BoxShadow setting={shadowOpt}>
-        <View style={[common.navbarFrame, this.props.theme === 'light' ? common.lightBg : common.darkBg]}>
+        <View style={[common.navbarFrame, this.props.theme === 'light' ? theme.lightBg : theme.darkBg]}>
           { this.props.navbarContent }
         </View>
       </BoxShadow>
