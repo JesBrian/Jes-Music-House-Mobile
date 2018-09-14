@@ -16,6 +16,9 @@ import SongMenu from '../layout/bottom/SongMenu.js'
 import SuperModal from '../layout/modal/SuperModal.js'
 
 
+import Test from "./Test/Test";
+
+
 class Root extends React.Component {
   constructor (props) {
     super(props);
@@ -32,6 +35,9 @@ class Root extends React.Component {
         { this.props.showView.bottomPlayList === true ?  <NowPlayList /> : null }
         { this.props.showView.bottomSongMenu === true ?  <SongMenu /> : null }
         { this.props.showView.showModal === true ? <SuperModal /> : null }
+
+
+        <Test />
       </View>
     );
   }
