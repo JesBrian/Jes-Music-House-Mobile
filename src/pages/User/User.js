@@ -2,12 +2,14 @@ import React  from 'react';
 
 import {
   StyleSheet,
+  ScrollView,
   View,
   Text
 } from 'react-native';
 
 import SuperButton from '../../components/SuperButton.js'
 import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
+import SuperUserTab from './SuperUserTab.js'
 
 
 export default class User extends React.Component {
@@ -16,8 +18,12 @@ export default class User extends React.Component {
       <View style={styles.container}>
         <NormalNavbar navigation={this.props.navigation} />
 
+        <ScrollView>
+          <View style={{height:268}}>
+          </View>
 
-
+          <SuperUserTab />
+        </ScrollView>
       </View>
     );
   }

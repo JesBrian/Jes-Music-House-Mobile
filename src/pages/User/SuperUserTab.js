@@ -3,21 +3,21 @@ import React from 'react';
 import ScrollableTabView from 'react-native-scrollable-tab-view'
 
 import SuperTabbar from '../../layout/tab/SuperTabbar.js'
-import IndexSelf from './type/Self/IndexSelf.js'
-import IndexRecommend from './type/Recommend/IndexRecommend.js'
-import IndexFrined from './type/Friend/IndexFriend.js'
+import UserMusic from './type/UserMusic.js'
+import UserTrend from './type/UserTrend.js'
+import UserInfo from './type/UserInfo.js'
 
 
-export default class SuperIndexTab extends React.Component {
+export default class SuperUserTab extends React.Component {
   render() {
     return (
       <ScrollableTabView
         renderTabBar={() => <SuperTabbar />}
         style={{paddingTop:6, backgroundColor:'rgba(0,0,0,0.73)'}}>
 
-        <IndexSelf tabLabel={'音乐'} />
-        <IndexRecommend tabLabel={'动态'} />
-        <IndexFrined tabLabel={'关于我'} />
+        <UserMusic tabLabel={'音乐'} />
+        <UserTrend tabLabel={'动态'} />
+        <UserInfo tabLabel={'关于我'} />
       </ScrollableTabView>
     );
   }
