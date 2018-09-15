@@ -7,14 +7,17 @@ import {
 } from 'react-native';
 
 import SuperButton from '../../components/SuperButton.js'
+import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
 
 
 export default class User extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text onPress={()=>{this.openControlPanel()}} >用户注册 88</Text>
-        <SuperButton label="注册" />
+        <NormalNavbar navigation={this.props.navigation} />
+
+
+
       </View>
     );
   }
@@ -22,6 +25,7 @@ export default class User extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex:1,
     backgroundColor: 'transparent'
   },
 });
