@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  Dimensions,
   StyleSheet,
   View,
   Text,
@@ -26,8 +27,8 @@ class SongImg extends React.Component {
     return (
       <View style={{flex:1}}>
         <TouchableWithoutFeedback onPress={() => this.props.changeSongContentType('lyric')}>
-          <View style={{flex:1}}>
-            <Text>歌曲页面播放[歌曲图片]</Text>
+          <View style={{marginTop:38, flex:1, alignItems:'center'}}>
+            <View style={{width:Dimensions.get('window').width * 0.84, height:Dimensions.get('window').width * 0.84, borderWidth:6, borderColor:'rgba(255,255,255,0.18)', borderRadius:Dimensions.get('window').width * 0.42, backgroundColor:'#333'}} />
           </View>
         </TouchableWithoutFeedback>
         <View style={{height:48, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>

@@ -42,9 +42,16 @@ class Comment extends React.Component {
         <NormalNavbar label={'评论 [11111111]'} />
 
         <View style={{flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
-          <View style={{width:'100%', height:68}}>
-            <Text>hhh</Text>
-          </View>
+          <Ripple style={{width:'100%', height:68, flexDirection:'row', alignItems:'center'}}>
+            <Image style={{width:43, height:43, marginLeft:12, marginRight:18, borderRadius:5}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
+            <View style={{height:'100%', flex:1, justifyContent:'center'}}>
+              <Text style={{marginTop:2, fontSize:17}}>The Name of the Song</Text>
+              <Text>JesBrian</Text>
+            </View>
+            <View style={{marginTop:5, marginRight:18}}>
+              <SuperIcon type={'\ue604'} />
+            </View>
+          </Ripple>
 
           <ScrollView style={{flex:1}}>
             <View style={{height:28, flexDirection:'row', alignItems:'center', backgroundColor:'rgba(255,255,255,0.12)'}}>
