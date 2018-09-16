@@ -5,6 +5,7 @@ import {
   StyleSheet,
   View,
   Text,
+  Image,
   TouchableWithoutFeedback
 } from 'react-native';
 
@@ -28,7 +29,10 @@ class SongImg extends React.Component {
       <View style={{flex:1}}>
         <TouchableWithoutFeedback onPress={() => this.props.changeSongContentType('lyric')}>
           <View style={{marginTop:38, flex:1, alignItems:'center'}}>
-            <View style={{width:Dimensions.get('window').width * 0.84, height:Dimensions.get('window').width * 0.84, borderWidth:6, borderColor:'rgba(255,255,255,0.18)', borderRadius:Dimensions.get('window').width * 0.42, backgroundColor:'#333'}} />
+            <View style={{width:Dimensions.get('window').width * 0.84, height:Dimensions.get('window').width * 0.84, justifyContent:'center', alignItems:'center', position:'relative', borderRadius:Dimensions.get('window').width * 0.42, backgroundColor:'transparent'}} >
+              <Image style={{width:'100%', height:'100%', borderWidth:6, borderColor:'#383838', borderRadius:Dimensions.get('window').width * 0.42}} source={require('./disk.png')} />
+              <Image style={{width:'68%', height:'68%', position:'absolute', borderRadius:Dimensions.get('window').width * 0.2856}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
+            </View>
           </View>
         </TouchableWithoutFeedback>
         <View style={{height:48, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>

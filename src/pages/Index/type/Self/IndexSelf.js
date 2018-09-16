@@ -15,6 +15,7 @@ import Ripple from 'react-native-material-ripple'
 import { BoxShadow }  from 'react-native-shadow'
 
 import SuperIcon from '../../../../components/SuperIcon.js'
+import SuperButton from '../../../../components/SuperButton.js'
 import { goRouter } from '../../../../utils/router/router.js'
 
 
@@ -42,10 +43,17 @@ class IndexSelf extends React.Component {
     return (
       <View style={styles.container}>
         <BoxShadow setting={shadowOpt}>
-          <View style={{height:48, backgroundColor:'#282828'}}>
+          <View style={{height:48, flexDirection:'row', backgroundColor:'#282828'}}>
             <Ripple style={{width:32, height:32, margin:8}} onPress={() => {goRouter(this.props.navigation, 'User')}}>
               <Image style={{flex:1, borderRadius:16}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
             </Ripple>
+            <View style={{flex:1}}>
+              <Text>JesBrian是换xhsc次</Text>
+              <Text>Lv 9</Text>
+            </View>
+            <View style={{marginTop:2, marginRight:6}}>
+              <SuperButton label={'开通会员'} width={88} />
+            </View>
           </View>
         </BoxShadow>
 
