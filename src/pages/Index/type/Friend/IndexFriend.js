@@ -3,9 +3,11 @@ import React  from 'react';
 import {
   StyleSheet,
   ScrollView,
-  Button,
   View,
-  Text
+  Image,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback
 } from 'react-native';
 
 import { connect } from 'react-redux'
@@ -22,7 +24,31 @@ class IndexFriend extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Index Friend</Text>
+        <TouchableWithoutFeedback onPress={() => {alert(6)}} >
+          <View style={{flexDirection:'row'}}>
+            <TouchableOpacity onPress={() => {alert(8)}} style={{width:32, height:32, margin:8}}>
+              <Image style={{flex:1, borderRadius:16}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
+            </TouchableOpacity>
+            <View style={{flex:1, backgroundColor:'lightblue'}}>
+              <View style={{width:'100%', height:48, flexDirection:'row', alignItems:'center', backgroundColor:'lightgreen'}}>
+                <View style={{flex:1, justifyContent:'center'}}>
+                  <Text>JesBrian：</Text>
+                  <Text>2018-09-26</Text>
+                </View>
+                <View style={{width:53, height:28, marginRight:8, justifyContent:'center', alignItems:'center', borderRadius:14, backgroundColor:'#ff8dcd'}}>
+                  <Text>关注</Text>
+                </View>
+              </View>
+              <View>
+                <Text>鬼知道会写什么东西</Text>
+                <Text>鬼知道会写什么东西</Text>
+                <Text>鬼知道会写什么东西</Text>
+                <Text>鬼知道会写什么东西</Text>
+                <Text>鬼知道会写什么东西</Text>
+              </View>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
 
         <View style={{width:50, height:50, right:18, bottom:76, position:'absolute',justifyContent:'center', alignItems:'center', zIndex:5}}>
           <SuperButton onPress={() => {goRouter(this.props.config.navigation, 'WriteTrend')}} width={43} height={43} label={<SuperIcon type={'\ue638'} style={{fontSize:28}} />} />

@@ -47,9 +47,9 @@ class IndexSelf extends React.Component {
             <Ripple style={{width:32, height:32, margin:8}} onPress={() => {goRouter(this.props.navigation, 'User')}}>
               <Image style={{flex:1, borderRadius:16}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
             </Ripple>
-            <View style={{flex:1}}>
-              <Text>JesBrian是换xhsc次</Text>
-              <Text>Lv 9</Text>
+            <View style={{flex:1, justifyContent:'center'}}>
+              <Text style={{fontSize:16, color:'#BBB'}}>JesBrian是换xhsc次</Text>
+              <Text style={{color:'#888'}}>Lv 9</Text>
             </View>
             <View style={{marginTop:2, marginRight:6}}>
               <SuperButton label={'开通会员'} width={88} />

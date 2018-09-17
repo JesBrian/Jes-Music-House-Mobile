@@ -41,7 +41,7 @@ class IndexRecommend extends React.Component {
       <View style={styles.container}>
         <ScrollView style={{width:'100%', flex:1}}>
 
-          <View style={{width:'100%', height:138, marginTop:18, paddingLeft:18, paddingRight:18}}>
+          <View style={{width:'100%', height:138, marginTop:18, paddingLeft:8, paddingRight:8}}>
             <Swiper style={styles.wrapper} showsButtons={true} autoplay={true}>
               {
                 this.state.testData.map((item, index) => {
@@ -146,11 +146,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
   wrapper: {
+    borderRadius:6,
   },
   slide: {
+    marginLeft:4,
+    marginRight:4,
     flex:1,
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius:6,
     backgroundColor: '#9DD6EB',
   },
   text: {
