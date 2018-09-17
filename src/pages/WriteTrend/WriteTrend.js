@@ -17,9 +17,7 @@ class WriteTrend extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <NormalNavbar navigation={this.props.navigation} label={'发布动态'} right={<View style={{marginTop:3, marginRight:18}}>
-          <SuperButton onPress={() => {}} width={68} height={31} label={'发送'} />
-        </View>} />
+        <NormalNavbar navigation={this.props.navigation} label={'发布动态'} right={<View style={{marginTop:3, marginRight:18}}><SuperButton onPress={() => {}} width={68} height={33} label={'发送'} /></View>} />
 
         <View style={{flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
         </View>

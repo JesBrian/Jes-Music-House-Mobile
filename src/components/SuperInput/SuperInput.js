@@ -24,14 +24,14 @@ export default class SuperInput extends React.Component {
   render () {
     return (
       <View style={{width:'100%', height:43, flexDirection:'row', backgroundColor:'#282828'}}>
-        <View style={{flex:1, paddingLeft:12, paddingRight:3}}>
-          <TextInput selectionColor={'#2DC9FF'} underlineColorAndroid='transparent' style={{height:'100%', flex:1, padding:0, color:'#2DC9FF', fontSize:16}} />
-        </View>
-        <Ripple style={{width:45, height:'100%', justifyContent:'center', alignItems:'center'}}>
+        <Ripple style={{width:43, height:'100%', justifyContent:'center', alignItems:'center'}}>
           <SuperIcon type={'\ue614'} style={{fontSize:23, color:'#BBB'}} />
         </Ripple>
-        <Ripple style={{width:60, height:'100%', justifyContent:'center', alignItems:'center'}}>
-          <Text style={{fontSize:18, color:'#BBB'}}>发送</Text>
+        <View style={{flex:1, paddingLeft:6, paddingRight:6}}>
+          <TextInput selectionColor={'#2DC9FF'} underlineColorAndroid='transparent' style={{height:'100%', flex:1, padding:0, color:'#2DC9FF', fontSize:16}} />
+        </View>
+        <Ripple style={{width:43, height:'100%', justifyContent:'center', alignItems:'center'}}>
+          <SuperIcon type={'\ue616'} style={{fontSize:23, color:'#BBB'}} />
         </Ripple>
       </View>
     );

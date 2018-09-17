@@ -42,7 +42,6 @@ class Root extends React.Component {
 
 function reduxState(store) {
   return {
-    config: store.config,
     showView: store.showView
   }
 }
