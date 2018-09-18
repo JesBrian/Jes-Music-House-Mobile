@@ -20,5 +20,19 @@ export const theme = StyleSheet.create({
   },
   darkBg: {
     backgroundColor: '#282828'
+  },
+
+
+  lightFontL: {
+  },
+  darkFontNL: {
+  },
+  lightFontN: {
+  },
+  darkFontN: {
+  },
+  lightFontM: {
+  },
+  darkFontM: {
   }
 });

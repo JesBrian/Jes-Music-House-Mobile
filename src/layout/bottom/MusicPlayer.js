@@ -32,13 +32,13 @@ class MusicPlayer extends React.Component {
     const shadowOpt = {
       width:Dimensions.get('window').width,
       height:53,
-      color:"#181818", border:10, opacity:0.8, x:0, y:-1,
+      color:this.props.config.theme === 'light' ? '#282828' : '#181818', border:12, opacity:0.8, x:0, y:0,
     }
 
     return (
       <View style={{width:Dimensions.get('window').width, height:65, top:Dimensions.get('window').height - (this.props.showView.bottomMusic === false ? 0 : 65), left:0, paddingTop:12, position:'absolute', zIndex:5}}>
         <BoxShadow setting={shadowOpt}>
-          <View style={{flex:1, flexDirection:'row', backgroundColor:'#282828'}}>
+          <View style={{flex:1, flexDirection:'row', backgroundColor:this.props.config.theme === 'light' ? '#F8F8F8' : '#282828'}}>
             <TouchableOpacity onPress={() => {this.props.config.navigation.navigate('Song');}} style={{flex:1, flexDirection:'row', justifyContent:'flex-start'}}>
               <View style={{width:58, flexDirection:'row', alignItems:'center', justifyContent:'center' }}>
                 <TouchableOpacity onPress={() => {this.props.config.navigation.navigate('Song');}} style={{width:'76%', height:'76%', marginLeft:2}}>

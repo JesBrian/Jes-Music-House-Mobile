@@ -44,15 +44,15 @@ class IndexSelf extends React.Component {
       <View style={styles.container}>
         <BoxShadow setting={shadowOpt}>
           <View style={{height:48, flexDirection:'row', backgroundColor:'#282828'}}>
-            <Ripple style={{width:32, height:32, margin:8}} onPress={() => {goRouter(this.props.navigation, 'User')}}>
+            <Ripple style={{width:30, height:30, margin:9}} onPress={() => {goRouter(this.props.navigation, 'User')}}>
               <Image style={{flex:1, borderRadius:16}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
             </Ripple>
             <View style={{flex:1, justifyContent:'center'}}>
-              <Text style={{fontSize:16, color:'#BBB'}}>JesBrian是换xhsc次</Text>
-              <Text style={{color:'#888'}}>Lv 9</Text>
+              <Text style={{fontSize:14, color:'#BBB'}}>JesBrian是换xhsc次</Text>
+              <Text style={{fontSize:12, color:'#888'}}>Lv 9</Text>
             </View>
-            <View style={{marginTop:2, marginRight:6}}>
-              <SuperButton label={'开通会员'} width={88} />
+            <View style={{marginTop:3.5, marginRight:7}}>
+              <SuperButton label={<Text style={{fontSize:13}}>开通会员</Text>} width={72} height={32} />
             </View>
           </View>
         </BoxShadow>

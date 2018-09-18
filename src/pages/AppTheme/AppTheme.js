@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 import { connect } from 'react-redux'
-import { setColor } from '../../redux/actions/ConfigActions.js'
+import { setColor, setTheme } from '../../redux/actions/ConfigActions.js'
 
 
 import Ripple from 'react-native-material-ripple'
@@ -85,11 +85,11 @@ class AppTheme extends React.Component {
                 <Text style={{fontSize:16, color:'#DDD'}}>模式切换</Text>
               </View>
               <View style={{marginTop:8, flexDirection:'row', justifyContent:'space-between'}}>
-                <Ripple style={{width:'45%', height:43, marginTop:3, flexDirection:'row', justifyContent:'center', alignItems:'center', borderRadius:5, borderWidth:1, borderColor:this.state.nowChooseColor, backgroundColor:'rgba(0,0,0,0.28)'}}>
+                <Ripple onPress={this.changeAppTheme.bind(this, 'light')} style={{width:'45%', height:43, marginTop:3, flexDirection:'row', justifyContent:'center', alignItems:'center', borderRadius:5, borderWidth:1, borderColor:this.state.nowChooseColor, backgroundColor:'rgba(0,0,0,0.28)'}}>
                   <SuperIcon type={'\ue6c7'} style={{marginRight:8, fontSize:23, color:this.state.nowChooseColor}}/>
                   <Text style={{fontSize:16, color:this.state.nowChooseColor}}>日间模式</Text>
                 </Ripple>
-                <Ripple style={{width:'45%', height:43, marginTop:3, flexDirection:'row', justifyContent:'center', alignItems:'center', borderRadius:5, borderWidth:1, borderColor:this.state.nowChooseColor, backgroundColor:'rgba(0,0,0,0.28)'}}>
+                <Ripple onPress={this.changeAppTheme.bind(this, 'dark')} style={{width:'45%', height:43, marginTop:3, flexDirection:'row', justifyContent:'center', alignItems:'center', borderRadius:5, borderWidth:1, borderColor:this.state.nowChooseColor, backgroundColor:'rgba(0,0,0,0.28)'}}>
                   <SuperIcon type={'\ue650'} style={{marginRight:8, fontSize:23, color:this.state.nowChooseColor}}/>
                   <Text style={{fontSize:16, color:this.state.nowChooseColor}}>夜间模式</Text>
                 </Ripple>
@@ -105,7 +105,10 @@ class AppTheme extends React.Component {
 
   changeAppColor (color) {
     this.props.dispatch(setColor(color))
-  }
+  };
+  changeAppTheme (theme) {
+    this.props.dispatch(setTheme(theme))
+  };
 }
 
 const styles = StyleSheet.create({
