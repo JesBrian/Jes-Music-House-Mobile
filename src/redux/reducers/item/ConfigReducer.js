@@ -24,7 +24,7 @@ export default function showView(state = initialState, action) {
     }
     case types.SET_THEME: {
       return {
-        ...state, theme: state.theme === 'light' ? 'dark' : 'light'
+        ...state, theme: action.theme
       };
     }
     case types.SET_COLOR: {

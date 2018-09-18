@@ -35,8 +35,8 @@ class IndexFriend extends React.Component {
                   <Text style={{marginBottom:1, fontSize:15, color:'#BBB'}}>JesBrian：</Text>
                   <Text style={{fontSize:12, color:'#888'}}>2018-09-26</Text>
                 </View>
-                <View style={{width:58, height:23, marginRight:8, paddingBottom:1, flexDirection:'row', justifyContent:'center', alignItems:'center', borderRadius:14, backgroundColor:'#ff8dcd'}}>
-                  <SuperIcon type={'\ue80d'} style={{marginTop:1, fontSize:16}} />
+                <View style={{width:62, height:23, marginRight:8, paddingBottom:1, flexDirection:'row', justifyContent:'center', alignItems:'center', borderRadius:14, backgroundColor:'#ff8dcd'}}>
+                  <SuperIcon type={'\ue80d'} style={{marginTop:1, marginRight:3, fontSize:16}} />
                   <Text>关注</Text>
                 </View>
               </View>

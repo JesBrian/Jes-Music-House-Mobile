@@ -63,7 +63,7 @@ class MenuPanel extends React.Component {
         </ScrollView>
 
         <View style={{width:'100%', height:43, paddingBottom:6, flexDirection:'row', backgroundColor:'#333'}}>
-          <Ripple onPress={() => {this.props.dispatch(setTheme())}} style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+          <Ripple onPress={() => {this.props.dispatch(setTheme(this.props.config.theme === 'light' ? 'dark' : 'light'))}} style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
             {
               this.props.config.theme === 'light' ? (
                 <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>

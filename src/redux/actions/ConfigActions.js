@@ -9,8 +9,11 @@ export function setNavigation(obj = {}) {
   }
 }
 
-export function setTheme() {
-  return {type: types.SET_THEME}
+export function setTheme(theme = 'light') {
+  return {
+    type: types.SET_THEME,
+    theme: theme
+  }
 }
 
 export function setColor(color = '#000') {
