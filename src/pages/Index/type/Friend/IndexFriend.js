@@ -30,10 +30,10 @@ class IndexFriend extends React.Component {
               <Image style={{flex:1, borderRadius:16}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
             </TouchableOpacity>
             <View style={{flex:1, backgroundColor:'lightblue'}}>
-              <View style={{width:'100%', height:48, flexDirection:'row', alignItems:'center', backgroundColor:'lightgreen'}}>
+              <View style={{width:'100%', height:48, flexDirection:'row', alignItems:'center'}}>
                 <View style={{flex:1, justifyContent:'center'}}>
-                  <Text>JesBrian：</Text>
-                  <Text>2018-09-26</Text>
+                  <Text style={{fontSize:16, color:'#BBB'}}>JesBrian：</Text>
+                  <Text style={{color:'#888'}}>2018-09-26</Text>
                 </View>
                 <View style={{width:53, height:28, marginRight:8, justifyContent:'center', alignItems:'center', borderRadius:14, backgroundColor:'#ff8dcd'}}>
                   <Text>关注</Text>
@@ -45,6 +45,12 @@ class IndexFriend extends React.Component {
                 <Text>鬼知道会写什么东西</Text>
                 <Text>鬼知道会写什么东西</Text>
                 <Text>鬼知道会写什么东西</Text>
+              </View>
+              <View style={{flexDirection:'row', alignItems:'center'}}>
+                <Text>2222</Text>
+                <Text>68</Text>
+                <Text>68</Text>
+                <SuperIcon type={'\ue653'} style={{float:'right'}} />
               </View>
             </View>
           </View>

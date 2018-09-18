@@ -91,7 +91,7 @@ class IndexRecommend extends React.Component {
               <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
               </View>
               <View style={{width:'100%', height:38, backgroundColor:'#38daf0'}}>
-                <Text>1</Text>
+                <Text>每日推荐</Text>
               </View>
             </View>
             <View style={{width:'31%'}}>
@@ -119,6 +119,13 @@ class IndexRecommend extends React.Component {
               </View>
               <Text>6</Text>
             </View>
+          </View>
+
+          <View style={{marginTop:25, marginLeft:8, marginBottom:6, flexDirection:'row', alignItems:'center'}}>
+            <SuperIcon type={'\ue604'} style={{marginRight:10, fontSize:20, color:this.props.config.color}} />
+            <Text style={{fontSize:16, color:'#DDD'}}>最新音乐</Text>
+          </View>
+          <View style={{width:'100%', paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
           </View>
 
           <View style={{marginTop:25, marginLeft:8, marginBottom:6, flexDirection:'row', alignItems:'center'}}>
