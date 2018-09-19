@@ -86,38 +86,35 @@ class IndexRecommend extends React.Component {
             <SuperIcon type={'\ue604'} style={{marginRight:10, fontSize:20, color:this.props.config.color}} />
             <Text style={{fontSize:16, color:'#DDD'}}>推荐歌单</Text>
           </View>
-          <View style={{width:'100%', paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
+          <View style={{width:'100%', marginBottom:18, paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
             <View style={{width:'31%'}}>
-              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
+              <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:8, backgroundColor:'#f09c9d'}}>
+                <View style={{top:1, right:6, position:'absolute', flexDirection:'row'}}>
+                  <SuperIcon type={'\ue6c8'} style={{marginTop:2, marginRight:3, fontSize:14}} />
+                  <Text style={{fontSize:13}}>555</Text>
+                </View>
               </View>
               <View style={{width:'100%', height:38, backgroundColor:'#38daf0'}}>
                 <Text>每日推荐</Text>
               </View>
             </View>
             <View style={{width:'31%'}}>
-              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
+              <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:8, backgroundColor:'#f09c9d'}}>
+                <View style={{top:1, right:6, position:'absolute', flexDirection:'row'}}>
+                  <SuperIcon type={'\ue6c8'} style={{marginTop:2, marginRight:3, fontSize:14}} />
+                  <Text style={{fontSize:13}}>555</Text>
+                </View>
               </View>
               <Text>2</Text>
             </View>
             <View style={{width:'31%'}}>
-              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
+              <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:8, backgroundColor:'#f09c9d'}}>
+                <View style={{top:1, right:6, position:'absolute', flexDirection:'row'}}>
+                  <SuperIcon type={'\ue6c8'} style={{marginTop:2, marginRight:3, fontSize:14}} />
+                  <Text style={{fontSize:13}}>555</Text>
+                </View>
               </View>
               <Text>3</Text>
-            </View>
-            <View style={{width:'31%'}}>
-              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
-              </View>
-              <Text>4</Text>
-            </View>
-            <View style={{width:'31%'}}>
-              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
-              </View>
-              <Text>5</Text>
-            </View>
-            <View style={{width:'31%'}}>
-              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
-              </View>
-              <Text>6</Text>
             </View>
           </View>
 
@@ -125,7 +122,31 @@ class IndexRecommend extends React.Component {
             <SuperIcon type={'\ue604'} style={{marginRight:10, fontSize:20, color:this.props.config.color}} />
             <Text style={{fontSize:16, color:'#DDD'}}>最新音乐</Text>
           </View>
-          <View style={{width:'100%', paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
+          <View style={{width:'100%', marginBottom:18, paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
+            <View style={{width:'31%'}}>
+              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
+              </View>
+              <View style={{width:'100%', height:38}}>
+                <Text style={{fontSize:13, color:'#BBB'}}>JesBri老中njd</Text>
+                <Text style={{fontSize:11, color:'#888'}}>策略</Text>
+              </View>
+            </View>
+            <View style={{width:'31%'}}>
+              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
+              </View>
+              <View style={{width:'100%', height:38}}>
+                <Text style={{fontSize:13, color:'#BBB'}}>JesBrian是vnjd</Text>
+                <Text style={{fontSize:11, color:'#888'}}>策略</Text>
+              </View>
+            </View>
+            <View style={{width:'31%'}}>
+              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
+              </View>
+              <View style={{width:'100%', height:38}}>
+                <Text style={{fontSize:13, color:'#BBB'}}>JesBrian是vnjd</Text>
+                <Text style={{fontSize:11, color:'#888'}}>策略</Text>
+              </View>
+            </View>
           </View>
 
           <View style={{marginTop:25, marginLeft:8, marginBottom:6, flexDirection:'row', alignItems:'center'}}>

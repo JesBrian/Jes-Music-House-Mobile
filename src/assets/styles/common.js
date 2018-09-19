@@ -23,16 +23,16 @@ export const theme = StyleSheet.create({
   },
 
 
-  lightFontL: {
+  lightFontColorL: {
   },
-  darkFontNL: {
+  darkFontColorL: {
   },
-  lightFontN: {
+  lightFontColorN: {
   },
-  darkFontN: {
+  darkFontColorN: {
   },
-  lightFontM: {
+  lightFontColorM: {
   },
-  darkFontM: {
+  darkFontColorM: {
   }
 });
