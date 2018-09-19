@@ -4,7 +4,6 @@ import {
   Dimensions,
   StyleSheet,
   ScrollView,
-  Button,
   View,
   Text
 } from 'react-native';
@@ -89,9 +88,9 @@ class IndexRecommend extends React.Component {
           <View style={{width:'100%', marginBottom:18, paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
             <View style={{width:'31%'}}>
               <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:8, backgroundColor:'#f09c9d'}}>
-                <View style={{top:1, right:6, position:'absolute', flexDirection:'row'}}>
-                  <SuperIcon type={'\ue6c8'} style={{marginTop:2, marginRight:3, fontSize:14}} />
-                  <Text style={{fontSize:13}}>555</Text>
+                <View style={{top:2, right:6, position:'absolute', flexDirection:'row'}}>
+                  <SuperIcon type={'\ue6c8'} style={{marginTop:1, marginRight:3, fontSize:14, color:'#EEE'}} />
+                  <Text style={{fontSize:13, color:'#FFF'}}>555</Text>
                 </View>
               </View>
               <View style={{width:'100%', height:38, backgroundColor:'#38daf0'}}>
@@ -100,18 +99,18 @@ class IndexRecommend extends React.Component {
             </View>
             <View style={{width:'31%'}}>
               <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:8, backgroundColor:'#f09c9d'}}>
-                <View style={{top:1, right:6, position:'absolute', flexDirection:'row'}}>
-                  <SuperIcon type={'\ue6c8'} style={{marginTop:2, marginRight:3, fontSize:14}} />
-                  <Text style={{fontSize:13}}>555</Text>
+                <View style={{top:2, right:6, position:'absolute', flexDirection:'row'}}>
+                  <SuperIcon type={'\ue6c8'} style={{marginTop:1, marginRight:3, fontSize:14, color:'#FFF'}} />
+                  <Text style={{fontSize:13, color:'#FFF'}}>555</Text>
                 </View>
               </View>
               <Text>2</Text>
             </View>
             <View style={{width:'31%'}}>
               <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:8, backgroundColor:'#f09c9d'}}>
-                <View style={{top:1, right:6, position:'absolute', flexDirection:'row'}}>
-                  <SuperIcon type={'\ue6c8'} style={{marginTop:2, marginRight:3, fontSize:14}} />
-                  <Text style={{fontSize:13}}>555</Text>
+                <View style={{top:2, right:6, position:'absolute', flexDirection:'row'}}>
+                  <SuperIcon type={'\ue6c8'} style={{marginTop:1, marginRight:3, fontSize:14, color:'#FFF'}} />
+                  <Text style={{fontSize:13, color:'#FFF'}}>555</Text>
                 </View>
               </View>
               <Text>3</Text>
@@ -127,7 +126,7 @@ class IndexRecommend extends React.Component {
               <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
               </View>
               <View style={{width:'100%', height:38}}>
-                <Text style={{fontSize:13, color:'#BBB'}}>JesBri老中njd</Text>
+                <Text style={{fontSize:13, color:'#BBB'}}>JesBri老中nggjd</Text>
                 <Text style={{fontSize:11, color:'#888'}}>策略</Text>
               </View>
             </View>

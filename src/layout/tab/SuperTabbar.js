@@ -36,11 +36,12 @@ class SuperTabbar extends React.Component {
     const numberOfTabs = this.props.tabs.length;
     const tabUnderlineStyle = {
       position:'absolute',
-      width: containerWidth / numberOfTabs,
-      height:2,
+      width: containerWidth / numberOfTabs / 2,
+      height:3,
+      left:containerWidth / numberOfTabs / 4,
       backgroundColor:this.props.color,
-      borderRadius:2,
-      bottom:0,
+      borderRadius:3,
+      bottom:3,
     };
 
     const translateX = this.props.scrollValue.interpolate({
@@ -48,7 +49,7 @@ class SuperTabbar extends React.Component {
       outputRange: [0, containerWidth / numberOfTabs],
     });
     return (
-      <View style={[styles.tabs, {backgroundColor: this.props.backgroundColor, }, this.props.style, ]}>
+      <View style={[styles.tabs, {backgroundColor:this.props.backgroundColor}, this.props.style, ]}>
         {this.props.tabs.map((name, page) => {
           const isTabActive = this.props.activeTab === page;
           const renderTab = this.props.renderTab || this.renderTab;
@@ -57,11 +58,7 @@ class SuperTabbar extends React.Component {
         <Animated.View
           style={[
             tabUnderlineStyle,
-            {
-              transform: [
-                { translateX },
-              ]
-            },
+            {transform: [{ translateX },]},
             this.props.underlineStyle,
           ]}
         />
