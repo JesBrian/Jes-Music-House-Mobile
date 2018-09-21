@@ -39,7 +39,7 @@ class PlayListDetail extends React.Component {
         <ScrollView style={{flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
           <TouchableWithoutFeedback>
             <View style={{height:108, paddingTop:8, flexDirection:'row', alignItems:'center'}}>
-              <Image style={{width:70, height:70, margin:16, borderWidth:1, borderRadius:6, borderColor:'#FFF'}} source={{uri:'http://www.chuanke.com/upload/courseware/f/31/3312428/image/09c68fe797fa58d78a1de4f34e0ea40f.gif'}} />
+              <Image style={{width:70, height:70, margin:16, borderWidth:1, borderRadius:6, borderColor:'#FFF'}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
               <View style={{height:'100%', marginLeft:3, flex:1}}>
                 <Text>rfgyhji</Text>
                 <Ripple>

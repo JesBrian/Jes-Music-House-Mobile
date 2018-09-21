@@ -42,7 +42,7 @@ class MusicPlayer extends React.Component {
             <TouchableOpacity onPress={() => {this.props.config.navigation.navigate('Song');}} style={{flex:1, flexDirection:'row', justifyContent:'flex-start'}}>
               <View style={{width:58, flexDirection:'row', alignItems:'center', justifyContent:'center' }}>
                 <TouchableOpacity onPress={() => {this.props.config.navigation.navigate('Song');}} style={{width:'76%', height:'76%', marginLeft:2}}>
-                  <Image style={{flex:1, marginLeft:2, borderWidth:1, borderRadius:4, borderColor:'#666'}} source={{uri:'http://www.chuanke.com/upload/courseware/f/31/3312428/image/09c68fe797fa58d78a1de4f34e0ea40f.gif'}} />
+                  <Image style={{flex:1, marginLeft:2, borderWidth:1, borderRadius:4, borderColor:'#666'}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
                 </TouchableOpacity>
               </View>
               <View style={{flex:1, flexDirection:'column', justifyContent:'center', alignItems:'flex-start'}}>
