@@ -37,6 +37,13 @@ class IndexRecommend extends React.Component {
   }
 
   render() {
+    const recommendData = [
+      {icon:'\ue640', name:'每日推荐'},
+      {icon:'\ue646', name:'歌单'},
+      {icon:'\ue624', name:'歌手'},
+      {icon:'\ue62c', name:'排行榜'},
+    ];
+
     return (
       <View style={styles.container}>
         <ScrollView style={{width:'100%', flex:1}}>
@@ -55,107 +62,99 @@ class IndexRecommend extends React.Component {
             </Swiper>
           </View>
 
-          <View style={{width:'100%', height:68, marginTop:28, paddingLeft:8, paddingRight:8, flexDirection:'row'}}>
-            <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-              <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
-                <SuperIcon type={'\ue640'} style={{paddingTop:3, fontSize:32, color:this.props.config.color, backgroundColor:'transparent'}} />
-              </View>
-              <Text style={{color:'#BBB'}}>每日推荐</Text>
-            </View>
-            <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-              <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
-                <SuperIcon type={'\ue646'} style={{fontSize:32, color:this.props.config.color, backgroundColor:'transparent'}} />
-              </View>
-              <Text style={{color:'#BBB'}}>歌单</Text>
-            </View>
-            <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-              <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
-                <SuperIcon type={'\ue624'} style={{fontSize:32, color:this.props.config.color, backgroundColor:'transparent'}} />
-              </View>
-              <Text style={{color:'#BBB'}}>歌手</Text>
-            </View>
-            <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-              <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
-                <SuperIcon type={'\ue62c'} style={{fontSize:32, color:this.props.config.color, backgroundColor:'transparent'}} />
-              </View>
-              <Text style={{color:'#BBB'}}>排行榜</Text>
-            </View>
+          <View style={{width:'100%', height:68, marginTop:28, marginBottom:13, paddingLeft:8, paddingRight:8, flexDirection:'row'}}>
+            {
+              recommendData.map((item, index) => {
+                return (
+                  <View key={index} style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+                    <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
+                      <SuperIcon type={item.icon} style={{paddingTop:3, fontSize:32, color:this.props.config.color, backgroundColor:'transparent'}} />
+                    </View>
+                    <Text style={{color:'#BBB'}}>{ item.name }</Text>
+                  </View>
+                );
+              })
+            }
           </View>
 
-          <View style={{marginTop:25, marginLeft:8, marginBottom:6, flexDirection:'row', alignItems:'center'}}>
+          <View style={{marginTop:13, marginLeft:8, marginBottom:6, flexDirection:'row', alignItems:'center'}}>
             <SuperIcon type={'\ue604'} style={{marginRight:10, fontSize:20, color:this.props.config.color}} />
             <Text style={{fontSize:16, color:'#DDD'}}>推荐歌单</Text>
           </View>
-          <View style={{width:'100%', marginBottom:8, paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
+          <View style={{width:'100%', paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
             <TouchableWithoutFeedback onPress={() => {alert(33)}}>
-              <View style={{width:'31%'}}>
-                <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:8, backgroundColor:'#f09c9d'}}>
+              <View style={{width:'32%'}}>
+                <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
                   <View style={{top:2, right:6, position:'absolute', flexDirection:'row'}}>
                     <SuperIcon type={'\ue6c8'} style={{marginTop:1, marginRight:3, fontSize:14, color:'#EEE'}} />
                     <Text style={{fontSize:13, color:'#FFF'}}>555</Text>
                   </View>
                 </View>
-                <View style={{width:'100%', height:38, backgroundColor:'#38daf0'}}>
-                  <Text>每日推荐</Text>
+                <View style={{width:'100%', height:48, paddingTop:4, paddingLeft:1, paddingRight:1}}>
+                  <Text style={{fontSize:12.5, lineHeight:14, color:'#CCC'}}>每日推荐每日推荐每日推荐</Text>
                 </View>
               </View>
             </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback>
-              <View style={{width:'31%'}}>
-                <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:8, backgroundColor:'#f09c9d'}}>
+            <TouchableWithoutFeedback onPress={() => {alert(33)}}>
+              <View style={{width:'32%'}}>
+                <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
                   <View style={{top:2, right:6, position:'absolute', flexDirection:'row'}}>
-                    <SuperIcon type={'\ue6c8'} style={{marginTop:1, marginRight:3, fontSize:14, color:'#FFF'}} />
+                    <SuperIcon type={'\ue6c8'} style={{marginTop:1, marginRight:3, fontSize:14, color:'#EEE'}} />
                     <Text style={{fontSize:13, color:'#FFF'}}>555</Text>
                   </View>
                 </View>
-                <Text>2</Text>
+                <View style={{width:'100%', height:48, paddingTop:4, paddingLeft:1, paddingRight:1}}>
+                  <Text style={{fontSize:12.5, lineHeight:14, color:'#CCC'}}>每日推荐每日推荐每日推荐</Text>
+                </View>
               </View>
             </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback>
-              <View style={{width:'31%'}}>
-                <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:8, backgroundColor:'#f09c9d'}}>
+            <TouchableWithoutFeedback onPress={() => {alert(33)}}>
+              <View style={{width:'32%'}}>
+                <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
                   <View style={{top:2, right:6, position:'absolute', flexDirection:'row'}}>
-                    <SuperIcon type={'\ue6c8'} style={{marginTop:1, marginRight:3, fontSize:14, color:'#FFF'}} />
+                    <SuperIcon type={'\ue6c8'} style={{marginTop:1, marginRight:3, fontSize:14, color:'#EEE'}} />
                     <Text style={{fontSize:13, color:'#FFF'}}>555</Text>
                   </View>
                 </View>
-                <Text>3</Text>
+                <View style={{width:'100%', height:48, paddingTop:4, paddingLeft:1, paddingRight:1}}>
+                  <Text style={{fontSize:12.5, lineHeight:14, color:'#CCC'}}>每日推荐每日推荐每日推荐</Text>
+                </View>
               </View>
             </TouchableWithoutFeedback>
           </View>
 
-          <View style={{marginTop:25, marginLeft:8, marginBottom:6, flexDirection:'row', alignItems:'center'}}>
+          <View style={{marginTop:13, marginLeft:8, marginBottom:6, flexDirection:'row', alignItems:'center'}}>
             <SuperIcon type={'\ue604'} style={{marginRight:10, fontSize:20, color:this.props.config.color}} />
             <Text style={{fontSize:16, color:'#DDD'}}>最新音乐</Text>
           </View>
-          <View style={{width:'100%', marginBottom:8, paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
-            <View style={{width:'31%'}}>
-              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
+          <View style={{width:'100%', paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
+            <View style={{width:'32%'}}>
+              <View style={{width:'100%', height:this.state.playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
               </View>
-              <View style={{width:'100%', height:33}}>
-                <Text style={{width:'100%', height:20, lineHeight:20, fontSize:13, color:'#BBB'}}>JesBri老中nggjd</Text>
+              <View style={{width:'100%', height:48, paddingLeft:1, paddingRight:1}}>
+                <Text style={{width:'100%', height:20, lineHeight:20, fontSize:12.5, color:'#CCC'}}>JesBri老中nggjd</Text>
                 <Text style={{fontSize:11, color:'#888'}}>策略</Text>
               </View>
             </View>
-            <View style={{width:'31%'}}>
-              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
+            <View style={{width:'32%'}}>
+              <View style={{width:'100%', height:this.state.playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
               </View>
-              <View style={{width:'100%', height:33}}>
-                <Text style={{width:'100%', height:20, lineHeight:20, fontSize:13, color:'#BBB'}}>JesBrian是vnjd</Text>
+              <View style={{width:'100%', height:48, paddingLeft:1, paddingRight:1}}>
+                <Text style={{width:'100%', height:20, lineHeight:20, fontSize:12.5, color:'#CCC'}}>JesBri老中nggjd</Text>
                 <Text style={{fontSize:11, color:'#888'}}>策略</Text>
               </View>
             </View>
-            <View style={{width:'31%'}}>
-              <View style={{width:'100%', height:this.state.playListSize, borderRadius:8, backgroundColor:'#f09c9d'}}>
+            <View style={{width:'32%'}}>
+              <View style={{width:'100%', height:this.state.playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
               </View>
-              <View style={{width:'100%', height:33}}>
-                <Text style={{width:'100%', height:20, lineHeight:20, fontSize:13, color:'#BBB'}}>JesBrian是vnjd</Text>
+              <View style={{width:'100%', height:48, paddingLeft:1, paddingRight:1}}>
+                <Text style={{width:'100%', height:20, lineHeight:20, fontSize:12.5, color:'#CCC'}}>JesBri老中nggjd</Text>
                 <Text style={{fontSize:11, color:'#888'}}>策略</Text>
               </View>
             </View>
           </View>
 
-          <View style={{marginTop:25, marginLeft:8, marginBottom:6, flexDirection:'row', alignItems:'center'}}>
+          <View style={{marginTop:13, marginLeft:8, marginBottom:6, flexDirection:'row', alignItems:'center'}}>
             <SuperIcon type={'\ue604'} style={{marginRight:10, fontSize:20, color:this.props.config.color}} />
             <Text style={{fontSize:16, color:'#DDD'}}>歌曲排行榜</Text>
           </View>

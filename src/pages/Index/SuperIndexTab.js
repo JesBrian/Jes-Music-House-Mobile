@@ -13,7 +13,7 @@ export default class SuperIndexTab extends React.Component {
     return (
       <ScrollableTabView
         renderTabBar={() => <SuperTabbar />}
-        style={{paddingTop:6, backgroundColor:'rgba(0,0,0,0.73)'}}>
+        style={{backgroundColor:'rgba(0,0,0,0.73)'}}>
 
         <IndexSelf tabLabel={'个人'} />
         <IndexRecommend tabLabel={'推荐'} />

@@ -4,12 +4,13 @@ import {
   StyleSheet,
   View,
   Text,
+  Image,
   Animated
 } from 'react-native'
 
-import Ripple from 'react-native-material-ripple'
 
 import { connect } from 'react-redux'
+import Ripple from 'react-native-material-ripple'
 
 import { common } from '../../assets/styles/common.js'
 
@@ -41,7 +42,7 @@ class SuperTabbar extends React.Component {
       left:containerWidth / numberOfTabs / 4,
       backgroundColor:this.props.color,
       borderRadius:3,
-      bottom:3,
+      bottom:5,
     };
 
     const translateX = this.props.scrollValue.interpolate({
@@ -49,7 +50,7 @@ class SuperTabbar extends React.Component {
       outputRange: [0, containerWidth / numberOfTabs],
     });
     return (
-      <View style={[styles.tabs, {backgroundColor:this.props.backgroundColor}, this.props.style, ]}>
+      <View style={[styles.tabs, this.props.style, ]}>
         {this.props.tabs.map((name, page) => {
           const isTabActive = this.props.activeTab === page;
           const renderTab = this.props.renderTab || this.renderTab;
@@ -62,6 +63,8 @@ class SuperTabbar extends React.Component {
             this.props.underlineStyle,
           ]}
         />
+
+        <Image style={{width:'100%', height:8, bottom:-8, position:'absolute', zIndex:999, backgroundColor:'transparent'}} source={require('../../assets/images/default/shadow.png')} />
       </View>
     );
   }
@@ -75,9 +78,13 @@ const styles = StyleSheet.create({
     paddingBottom:5
   },
   tabs: {
-    height:36,
+    height:40,
+    paddingTop:4,
+    position:'relative',
+    zIndex:333,
     flexDirection:'row',
-    justifyContent:'space-around'
+    justifyContent:'space-around',
+    backgroundColor:'rgba(0,0,0,0.28)'
   },
 });
 
