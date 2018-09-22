@@ -14,12 +14,20 @@ import { changeMusicPlayModel } from '../../redux/actions/MusicActions.js'
 import { hiddenBottomPlayList } from '../../redux/actions/ViewActions.js'
 
 import Ripple from 'react-native-material-ripple'
+import { LargeList } from 'react-native-largelist'
 
 import { common } from '../../assets/styles/common.js'
 import SuperIcon from '../../components/SuperIcon.js'
 
 
 class NowPlayList extends React.Component {
+  color;
+  minCellHeight = 24;
+  maxCellHeight = 48;
+  minSectionHeight = 48;
+  maxSectionHeight = 96;
+  refreshing = false;
+
   constructor (props) {
     super(props);
     this.state = {
@@ -71,29 +79,67 @@ class NowPlayList extends React.Component {
                 </View>
               </Ripple>
             </View>
-            <ScrollView style={{paddingBottom:3, flex:1, backgroundColor:'#282828'}}>
-              <View style={{height:40, flexDirection:'row'}}>
-                <Ripple style={{height:'100%', marginLeft:8, paddingLeft:3, flex:1, flexDirection:'row', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
-                  <SuperIcon type={'\ue6b4'} style={{fontSize:21, color:'#05daf0'}} />
-                  <Text style={{marginLeft:5, fontSize:17}}>
-                    555长cjk沙健id45康
-                    <Text style={{fontSize:13}}> - JesBrian</Text>
-                  </Text>
-                </Ripple>
+            {/*<ScrollView style={{paddingBottom:3, flex:1, backgroundColor:'#282828'}}>*/}
+              {/*<View style={{height:40, flexDirection:'row'}}>*/}
+                {/*<Ripple style={{height:'100%', marginLeft:8, paddingLeft:3, flex:1, flexDirection:'row', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>*/}
+                  {/*<SuperIcon type={'\ue6b4'} style={{fontSize:21, color:'#05daf0'}} />*/}
+                  {/*<Text style={{marginLeft:5, fontSize:17}}>*/}
+                    {/*555长cjk沙健id45康*/}
+                    {/*<Text style={{fontSize:13}}> - JesBrian</Text>*/}
+                  {/*</Text>*/}
+                {/*</Ripple>*/}
 
-                <TouchableWithoutFeedback>
-                  <View style={{width:38, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
-                    <SuperIcon type={'\ue627'} style={{fontSize:24}} />
-                  </View>
-                </TouchableWithoutFeedback>
+                {/*<TouchableWithoutFeedback>*/}
+                  {/*<View style={{width:38, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>*/}
+                    {/*<SuperIcon type={'\ue627'} style={{fontSize:24}} />*/}
+                  {/*</View>*/}
+                {/*</TouchableWithoutFeedback>*/}
 
-                <TouchableWithoutFeedback>
-                  <View style={{width:35, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>
-                    <SuperIcon type={'\ue622'} style={{fontSize:23}} />
+                {/*<TouchableWithoutFeedback>*/}
+                  {/*<View style={{width:35, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.1, borderColor:'#FFF'}}>*/}
+                    {/*<SuperIcon type={'\ue622'} style={{fontSize:23}} />*/}
+                  {/*</View>*/}
+                {/*</TouchableWithoutFeedback>*/}
+              {/*</View>*/}
+            {/*</ScrollView>*/}
+
+            <LargeList
+              style={{ flex:1, backgroundColor:'lightgreen' }}
+              ref={ref => (this.largeList = ref)}
+              bounces={true}
+              refreshing={this.state.refreshing}
+              nativeOptimize={this.props.nativeOptimize}
+              onRefresh={() => {
+                this.setState({ refreshing: true });
+                setTimeout(() => this.setState({ refreshing: false }), 2000);
+              }}
+              numberOfRowsInSection={section => this.props.numberOfEachSection}
+              numberOfSections={()=>5}
+              heightForCell={(section, row) =>
+                row % 2 ? this.minCellHeight : this.maxCellHeight}
+              renderCell={this.renderItem.bind(this)}
+              heightForSection={section =>
+                section % 2 ? this.minSectionHeight : this.maxSectionHeight}
+              // initialOffsetY={800}
+              renderSection={section => {
+                return (
+                  <View
+                    style={{
+                      flex: 1,
+                      backgroundColor: section % 2 ? "grey" : "yellow",
+                      justifyContent: "center",
+                      alignItems: "center"
+                    }}
+                  >
+                    <Text>
+                      I am section {section}
+                    </Text>
                   </View>
-                </TouchableWithoutFeedback>
-              </View>
-            </ScrollView>
+                );
+              }}
+            />
+
+
           </View>
         </View>
       </View>
@@ -103,6 +149,43 @@ class NowPlayList extends React.Component {
 
   changePlayModel () {
     this.props.dispatch(changeMusicPlayModel());
+  };
+
+
+
+
+  renderItem(section, row) {
+    let color;
+    switch (row % 3) {
+      case 0:
+        color = "red";
+        break;
+      case 1:
+        color = "green";
+        break;
+      case 2:
+        color = "blue";
+        break;
+    }
+    return (
+      <TouchableOpacity
+        tag={row}
+        style={{
+          flex: 1,
+          backgroundColor: color,
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+        onPress={()=>{
+          console.log("onPress",section,row);
+        }}
+      >
+        <Text style={{ marginLeft: row % 3 * 50 }}>
+          {"Section " + section + "  Row " + row}
+        </Text>
+      </TouchableOpacity>
+    );
   }
 }
 

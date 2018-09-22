@@ -1,5 +1,5 @@
 import { createStackNavigator } from 'react-navigation'
-import StackViewStyleInterpolator from 'react-navigation/src/views/StackView/StackViewStyleInterpolator'
+// import { forHorizontal } from 'react-navigation/src/views/StackView/StackViewStyleInterpolator'
 
 import Home from '../pages/Home/Home.js'
 import Login from '../pages/Login/Login.js'
@@ -16,6 +16,7 @@ import Recommend from '../pages/Recommend/Recommend.js'
 import Comment from '../pages/Comment/Comment.js'
 import WriteTrend from '../pages/WriteTrend/WriteTrend.js'
 import AppTheme from '../pages/AppTheme/AppTheme.js'
+import TestPage from '../pages/TestPage/TestPage.js'
 
 
 // 注册导航
@@ -34,7 +35,8 @@ const PageRouter = createStackNavigator({
   Recommend: { screen: Recommend },
   Comment: { screen: Comment },
   WriteTrend: { screen: WriteTrend },
-  AppTheme: {screen: AppTheme}
+  AppTheme: {screen: AppTheme},
+  TestPage: {screen: TestPage}
 }, {
   initialRouteName: 'Index', // 默认显示界面
   headerMode: 'none', // 导航栏的显示模式, screen: 有渐变透明效果, float: 无透明效果, none: 隐藏导航栏
@@ -42,7 +44,7 @@ const PageRouter = createStackNavigator({
     gesturesEnabled: true,
   },
   transitionConfig: () => ({ // 页面切换效果 - forHorizontal[right -> left], forVertical[bottom -> up]
-    screenInterpolator: StackViewStyleInterpolator.forHorizontal,
+    // screenInterpolator: forHorizontal,
   })
 });
 
