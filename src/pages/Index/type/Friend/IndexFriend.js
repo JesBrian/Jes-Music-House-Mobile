@@ -2,7 +2,6 @@ import React  from 'react';
 
 import {
   StyleSheet,
-  ScrollView,
   FlatList,
   View,
   Image,
@@ -14,7 +13,6 @@ import {
 import { connect } from 'react-redux'
 
 import Ripple from 'react-native-material-ripple'
-import { LargeList } from 'react-native-largelist'
 
 import SuperButton from '../../../../components/SuperButton.js'
 import SuperIcon from '../../../../components/SuperIcon.js'
@@ -34,7 +32,7 @@ class IndexFriend extends React.Component {
     return (
       <View style={styles.container}>
 
-        <FlatList style={{flex:1, marginBottom:58}}
+        <FlatList style={{marginTop:6, marginBottom:58, flex:1}}
           data={this.state.friendTrend}
           renderItem={({item}) => (
             <TouchableWithoutFeedback onPress={() => {alert(6)}} >

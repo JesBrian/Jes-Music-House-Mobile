@@ -42,7 +42,7 @@ class SuperTabbar extends React.Component {
       left:containerWidth / numberOfTabs / 4,
       backgroundColor:this.props.color,
       borderRadius:3,
-      bottom:5,
+      bottom:4,
     };
 
     const translateX = this.props.scrollValue.interpolate({

@@ -12,7 +12,7 @@ import PageRouter from '../router/IosPageRouter.js'
 import SuperStatusBar from '../layout/statusbar/SuperStatusBar.js'
 import MusicPlayer from '../layout/bottom/MusicPlayer.js'
 import NowPlayList from '../layout/bottom/NowPlayList.js'
-import SongMenu from '../layout/bottom/SongMenu.js'
+import SongMenu from '../layout/bottom/MenuPanel/SongMenu.js'
 import SuperModal from '../layout/modal/SuperModal.js'
 
 

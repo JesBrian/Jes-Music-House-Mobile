@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   },
 
   superButtonLabel: {
-    paddingBottom:2, backgroundColor:'transparent', color:'#AAA', fontSize:16, textShadowOffset:{width:2, height:2}, textShadowRadius:2, textShadowColor:'#000'
+    paddingBottom:1, backgroundColor:'transparent', color:'#AAA', fontSize:16, textShadowOffset:{width:2, height:2}, textShadowRadius:2, textShadowColor:'#000'
   },
   superButtonLabelActive: {
     color:'#20dbfc'
