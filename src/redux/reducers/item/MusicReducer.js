@@ -8,7 +8,7 @@ import * as types from '../../constants/MusicTypes.js';
 const initialState = {
   playStatus: false,
   playModel: 'loop', // [ loop/single-loop/random ]
-}
+};
 
 
 /**

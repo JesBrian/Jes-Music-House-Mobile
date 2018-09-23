@@ -8,9 +8,10 @@ import {
 
 import LinearGradient from 'react-native-linear-gradient'
 import { BoxShadow }  from 'react-native-shadow'
+import {connect} from "react-redux";
 
 
-export default class SuperButton extends React.Component {
+class SuperButton extends React.Component {
   static defaultProps = {
     width: 35,
     height: 35
@@ -29,7 +30,7 @@ export default class SuperButton extends React.Component {
       active: {width:this.props.width, height:this.props.height, color:"#111", border:2.5, radius:3, opacity:0.8, x:0, y:1, style:{marginVertical:5}}
     };
     const colorLinearGradient = {
-      normalOutColorArray: ['#23fcfc', '#2e8ce6'],
+      normalOutColorArray: [this.getColor(), '#2e8ce6'],
       normalInColorArray: ['#535353', '#222'],
       clickInColorArray: ['#333', '#121212']
     }
@@ -39,7 +40,7 @@ export default class SuperButton extends React.Component {
         <TouchableWithoutFeedback onPress={() => this.props.onPress()} onPressIn={this.buttonOnPress.bind(this)} onPressOut={this.buttonOnPress.bind(this)}>
           <LinearGradient colors={colorLinearGradient.normalOutColorArray} style={styles.superButtonOut}>
             <LinearGradient colors={this.state.isClick === false ? colorLinearGradient.normalInColorArray : colorLinearGradient.clickInColorArray} style={[styles.superButtonIn, this.state.isClick === true ? styles.superButtonInActive : '']}>
-              <Text style={[styles.superButtonLabel, this.state.isClick === true ? styles.superButtonLabelActive : null]}>
+              <Text style={[styles.superButtonLabel, this.state.isClick === true ? {color: this.props.color} : null]}>
                 { this.props.label }
               </Text>
             </LinearGradient>
@@ -54,12 +55,16 @@ export default class SuperButton extends React.Component {
     this.setState({
       isClick: !this.state.isClick
     });
+  };
+
+  getColor () {
+    return this.props.color;
   }
 }
 
 const styles = StyleSheet.create({
   superButtonOut: {
-    padding:5,
+    padding:4,
     justifyContent:'center',
     alignItems:'center',
     borderRadius:2,
@@ -78,8 +83,14 @@ const styles = StyleSheet.create({
 
   superButtonLabel: {
     paddingBottom:1, backgroundColor:'transparent', color:'#AAA', fontSize:16, textShadowOffset:{width:2, height:2}, textShadowRadius:2, textShadowColor:'#000'
-  },
-  superButtonLabelActive: {
-    color:'#20dbfc'
   }
 });
+
+
+function reduxState(store) {
+  return {
+    color: store.config.color
+  }
+}
+
+export default connect(reduxState)(SuperButton);

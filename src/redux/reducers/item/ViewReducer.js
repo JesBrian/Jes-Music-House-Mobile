@@ -12,7 +12,7 @@ const initialState = {
 
   showModal: false,
   modalType: ''
-}
+};
 
 /**
  * 在这里可以拿到action并return给index.js进行分发。

@@ -8,8 +8,8 @@ import * as types from '../../constants/ConfigTypes.js';
 const initialState = {
   navigation: null,
   theme: 'dark',
-  color: '#000',
-}
+  color: '#38DAF0',
+};
 
 /**
  * 在这里可以拿到action并return给index.js进行分发。
