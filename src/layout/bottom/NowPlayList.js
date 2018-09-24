@@ -76,7 +76,6 @@ class NowPlayList extends React.Component {
             <LargeList
               style={{flex: 1, backgroundColor: '#282828'}}
               bounces={false}
-              nativeOptimize={this.props.nativeOptimize}
               numberOfRowsInSection={section => 888}
               numberOfSections={() => 1}
               heightForCell={(section, row) => 36}

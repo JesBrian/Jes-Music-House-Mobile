@@ -14,6 +14,7 @@ import { connect } from 'react-redux'
 import { showBottomSongMenu } from '../../redux/actions/ViewActions.js'
 
 import Ripple from 'react-native-material-ripple'
+import { LargeList } from 'react-native-largelist'
 
 import { common } from '../../assets/styles/common.js'
 
@@ -67,7 +68,7 @@ class PlayListDetail extends React.Component {
             </Ripple>
           </View>
 
-          <View style={{width:'100%', height:38, flexDirection:'row', borderTopLeftRadius:12, borderTopRightRadius:12, backgroundColor:'#222'}}>
+          <View style={{width:'100%', height:38, flexDirection:'row', borderTopLeftRadius:12, borderTopRightRadius:12, backgroundColor:'rgba(0,0,0,0.38)'}}>
             <Ripple style={{height:'100%', padding:15, flex:1, flexDirection:'row', justifyContent:'flex-start', alignItems:'center', borderTopLeftRadius:12}}>
               <SuperIcon type={'\ue6b4'} style={{marginTop:1, marginRight:6, fontSize:18, color:'#FFF'}} />
               <Text style={{fontSize:16, color:'#FFF'}}>播放全部 [888]</Text>
@@ -79,21 +80,15 @@ class PlayListDetail extends React.Component {
             </Ripple>
           </View>
 
-          <View style={{height:43, flexDirection:'row'}}>
-            <Ripple style={{flex:1, flexDirection:'row'}}>
-              <View style={{width:43, height:'100%', justifyContent:'center', alignItems:'center'}}>
-                <SuperIcon type={'\ue6b4'} style={{fontSize:23}} />
-                {/*<Text style={{fontSize:20}}>1</Text>*/}
-              </View>
-              <View style={{flex:1, flexDirection:'column', justifyContent:'center'}}>
-                <Text style={{fontSize:16}}>The name of the Song 歌名</Text>
-                <Text style={{fontSize:12}}>JesBrian</Text>
-              </View>
-            </Ripple>
-            <Ripple onPress={this.showSongMenu.bind(this)} style={{width:32, height:'100%', justifyContent:'center', alignItems:'center'}}>
-              <SuperIcon type={'\ue653'} style={{fontSize:26}} />
-            </Ripple>
-          </View>
+          <LargeList
+            style={{flex: 1, backgroundColor: '#282828'}}
+            bounces={false}
+            numberOfRowsInSection={section => 100}
+            numberOfSections={() => 1}
+            heightForCell={(section, row) => 36}
+            renderCell={this.renderItem.bind(this)}
+            renderItemSeparator={()=>null}
+          />
 
         </ScrollView>
       </View>
@@ -102,6 +97,26 @@ class PlayListDetail extends React.Component {
 
   showSongMenu () {
     this.props.dispatch(showBottomSongMenu())
+  };
+
+  renderItem (section, row) {
+    return (
+      <View style={{height:43, flexDirection:'row'}}>
+        <Ripple style={{flex:1, flexDirection:'row'}}>
+          <View style={{width:43, height:'100%', justifyContent:'center', alignItems:'center'}}>
+            <SuperIcon type={'\ue6b4'} style={{fontSize:23}} />
+            {/*<Text style={{fontSize:20}}>1</Text>*/}
+          </View>
+          <View style={{flex:1, flexDirection:'column', justifyContent:'center'}}>
+            <Text style={{fontSize:16}}>The name of the Song 歌名</Text>
+            <Text style={{fontSize:12}}>JesBrian</Text>
+          </View>
+        </Ripple>
+        <Ripple onPress={this.showSongMenu.bind(this)} style={{width:32, height:'100%', justifyContent:'center', alignItems:'center'}}>
+          <SuperIcon type={'\ue653'} style={{fontSize:26}} />
+        </Ripple>
+      </View>
+    );
   }
 }
 
