@@ -24,7 +24,7 @@ export default class SuperLoading extends React.Component {
   }
 
   render () {
-    return <Spinner isVisible={this.props.isVisible} size={this.props.size} type={this.props.type} color={this.props.color}/>
+    return <Spinner style={this.props.style} isVisible={this.props.isVisible} size={this.props.size} type={this.props.type} color={this.props.color}/>
   }
 }
 

@@ -77,7 +77,7 @@ class IndexSelf extends React.Component {
           <View style={{height:28, flexDirection:'row', alignItems:'center', backgroundColor:'rgba(255,255,255,0.12)'}}>
             <TouchableWithoutFeedback onPress={() => {this.setState({isShowCreatePlayList: !this.state.isShowCreatePlayList})}}>
               <View style={{flex:1, flexDirection:'row', alignItems:'center'}}>
-                <SuperIcon type={'\ue600'} style={{margin:8, color:'#BBB'}}/>
+                <SuperIcon type={'\ue600'} style={{margin:8, color:this.props.color}}/>
                 <Text style={{color:'#BBB'}}>创建的歌单</Text>
               </View>
             </TouchableWithoutFeedback>
@@ -122,7 +122,7 @@ class IndexSelf extends React.Component {
           <View style={{height:28, flexDirection:'row', alignItems:'center', backgroundColor:'rgba(255,255,255,0.12)'}}>
             <TouchableWithoutFeedback onPress={() => {this.setState({isShowCollectionPlayList: !this.state.isShowCollectionPlayList})}}>
               <View style={{flex:1, flexDirection:'row', alignItems:'center'}}>
-                <SuperIcon type={'\ue600'} style={{margin:8, color:'#BBB'}}/>
+                <SuperIcon type={'\ue600'} style={{margin:8, color:this.props.color}}/>
                 <Text style={{color:'#BBB'}}>收藏的歌单</Text>
               </View>
             </TouchableWithoutFeedback>

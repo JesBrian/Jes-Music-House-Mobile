@@ -13,13 +13,12 @@ import {
 import { connect } from 'react-redux'
 import { showBottomSongMenu } from '../../redux/actions/ViewActions.js'
 
-import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
-
 import Ripple from 'react-native-material-ripple'
 
 import { common } from '../../assets/styles/common.js'
 
 import { goRouter } from '../../utils/router/router.js'
+import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
 import SuperIcon from '../../components/SuperIcon.js'
 
 
@@ -68,31 +67,27 @@ class PlayListDetail extends React.Component {
             </Ripple>
           </View>
 
-          <View style={{width:'100%', height:48, flexDirection:'row', borderTopLeftRadius:12, borderTopRightRadius:12, backgroundColor:'#222'}}>
-            <Ripple style={{flex:1}}>
-              <View style={{height:'100%', padding:15, flex:1, flexDirection:'row', justifyContent:'flex-start', alignItems:'center', borderTopLeftRadius:12}}>
-                <SuperIcon type={'\ue6b4'} style={{marginRight:4, fontSize:18, color:'#FFF'}} />
-                <Text style={{fontSize:16, color:'#FFF'}}>播放全部 [888]</Text>
-              </View>
+          <View style={{width:'100%', height:38, flexDirection:'row', borderTopLeftRadius:12, borderTopRightRadius:12, backgroundColor:'#222'}}>
+            <Ripple style={{height:'100%', padding:15, flex:1, flexDirection:'row', justifyContent:'flex-start', alignItems:'center', borderTopLeftRadius:12}}>
+              <SuperIcon type={'\ue6b4'} style={{marginTop:1, marginRight:6, fontSize:18, color:'#FFF'}} />
+              <Text style={{fontSize:16, color:'#FFF'}}>播放全部 [888]</Text>
             </Ripple>
 
-            <Ripple>
-              <View style={{width:128, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-                <SuperIcon type={'\ue80d'} style={{marginRight:4, fontSize:18, color:'#FFF'}} />
-                <Text style={{fontSize:16, color:'#FFF'}}> 收藏</Text>
-              </View>
+            <Ripple style={{width:108, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+              <SuperIcon type={'\ue80d'} style={{fontSize:18, color:'#FFF'}} />
+              <Text style={{fontSize:16, color:'#FFF'}}> 收藏</Text>
             </Ripple>
           </View>
 
-          <View style={{height:53, flexDirection:'row'}}>
+          <View style={{height:43, flexDirection:'row'}}>
             <Ripple style={{flex:1, flexDirection:'row'}}>
-              <View style={{width:48, height:'100%', justifyContent:'center', alignItems:'center'}}>
-                <SuperIcon type={'\ue6b4'} style={{fontSize:26}} />
+              <View style={{width:43, height:'100%', justifyContent:'center', alignItems:'center'}}>
+                <SuperIcon type={'\ue6b4'} style={{fontSize:23}} />
                 {/*<Text style={{fontSize:20}}>1</Text>*/}
               </View>
               <View style={{flex:1, flexDirection:'column', justifyContent:'center'}}>
-                <Text style={{fontSize:17}}>The name of the Song 歌名</Text>
-                <Text style={{fontSize:13}}>JesBrian</Text>
+                <Text style={{fontSize:16}}>The name of the Song 歌名</Text>
+                <Text style={{fontSize:12}}>JesBrian</Text>
               </View>
             </Ripple>
             <Ripple onPress={this.showSongMenu.bind(this)} style={{width:32, height:'100%', justifyContent:'center', alignItems:'center'}}>
