@@ -1,5 +1,4 @@
-import React  from 'react';
-
+import React, {Component} from 'react';
 import {
   View
 } from 'react-native';
@@ -7,16 +6,17 @@ import {
 
 import { connect } from 'react-redux'
 
-import PageRouter from '../router/AndroidPageRouter.js'
+import PageRouter from './router/PageRouter.js'
 
-import SuperStatusBar from '../layout/statusbar/SuperStatusBar.js'
-import MusicPlayer from '../layout/bottom/MusicPlayer.js'
-import NowPlayList from '../layout/bottom/NowPlayList.js'
-import SongMenu from '../layout/bottom/MenuPanel/SongMenu.js'
-import SuperModal from '../layout/modal/SuperModal.js'
+import SuperStatusBar from './layout/statusbar/SuperStatusBar.js'
+import MusicPlayer from './layout/bottom/MusicPlayer.js'
+import NowPlayList from './layout/bottom/NowPlayList.js'
+import SongMenu from './layout/bottom/MenuPanel/SongMenu.js'
+import SuperModal from './layout/modal/SuperModal.js'
 
 
-class Root extends React.Component {
+type Props = {};
+class AppRoot extends Component<Props> {
   constructor (props) {
     super(props);
     this.state = {
@@ -43,4 +43,4 @@ function reduxState(store) {
   }
 }
 
-export default connect(reduxState)(Root);
+export default connect(reduxState)(AppRoot);

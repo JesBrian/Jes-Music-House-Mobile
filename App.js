@@ -1,13 +1,14 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
+ *
+ * @format
  * @flow
  */
 
-import React  from 'react';
-
+import React, {Component} from 'react';
 import {
-  AppRegistry
+  View
 } from 'react-native';
 
 
@@ -15,22 +16,22 @@ import { Provider } from 'react-redux'
 import ConfigureStore from './src/redux/store/ConfigureStore.js'
 const store = ConfigureStore();
 
-import Root from './src/pages/root.ios.js'
+import AppRoot from './src/AppRoot.js'
 
-export default class MusicHouseApp extends React.Component {
+
+type Props = {};
+export default class App extends Component<Props> {
   constructor (props) {
     super(props);
     this.state = {
     };
   }
 
-  render() {
+  render () {
     return (
       <Provider store={store}>
-        <Root />
+        <AppRoot />
       </Provider>
     );
   }
 }
-
-AppRegistry.registerComponent('MusicHouseApp', () => MusicHouseApp);

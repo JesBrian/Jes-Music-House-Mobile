@@ -3,8 +3,6 @@ package com.musichouseapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.brentvatne.react.ReactVideoPackage;
-import org.pgsqlite.SQLitePluginPackage;
 import com.horcrux.svg.SvgPackage;
 import com.react.rnspinkit.RNSpinkitPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
@@ -27,13 +25,16 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-		new MainReactPackage(),
-		new RNSpinkitPackage(),
-		new ReactVideoPackage(),
-		new SvgPackage(),
-		new LinearGradientPackage(),
-		new SQLitePluginPackage()
+          new MainReactPackage(),
+            new SvgPackage(),
+            new RNSpinkitPackage(),
+            new LinearGradientPackage()
       );
+    }
+
+    @Override
+    protected String getJSMainModuleName() {
+      return "index";
     }
   };
 

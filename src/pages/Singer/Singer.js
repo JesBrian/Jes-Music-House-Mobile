@@ -9,8 +9,6 @@ import {
 import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
 import SuperButton from '../../components/SuperButton.js'
 
-import Video from 'react-native-video'
-
 export default class Singer extends React.Component {
   render() {
     return (
@@ -21,15 +19,6 @@ export default class Singer extends React.Component {
         <SuperButton label="登录" />
 
         <View style={styles.backgroundVideo} >
-          {/*<Video source={{uri: "http://music.jesbrian.cn/resource/test2.mp3"}}   // Can be a URL or a local file.*/}
-          <Video source={{uri: "http://music.jesbrian.cn/static/music/test2.mp3"}}   // Can be a URL or a local file.
-                 ref={(ref) => {
-                   this.player = ref
-                 }}                                      // Store reference
-            // onBuffer={this.onBuffer}                // Callback when remote video is buffering
-            // onEnd={this.onEnd}                      // Callback when playback finishes
-            // onError={this.videoError}               // Callback when video cannot be loaded
-          />
         </View>
       </View>
     );
