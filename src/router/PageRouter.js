@@ -1,10 +1,15 @@
+import {
+  Platform
+} from 'react-native'
+
 import { createStackNavigator } from 'react-navigation'
 // import StackViewStyleInterpolator from 'react-navigation/src/views/StackView/StackViewStyleInterpolator'
 
 import Home from '../pages/Home/Home.js'
 import Login from '../pages/Login/Login.js'
 import Register from '../pages/Register/Register.js'
-import Index from '../pages/Index/IndexIos.js'
+import IosIndex from '../pages/Index/IndexIos.js'
+import AndroidIndex from '../pages/Index/IndexAndroid.js'
 import Search from '../pages/Search/Search.js'
 import Singer from '../pages/Singer/Singer.js'
 import Song from '../pages/Song/Song.js'
@@ -23,7 +28,7 @@ const PageRouter = createStackNavigator({
   Home: { screen: Home },
   Login: { screen: Login },
   Register: { screen: Register },
-  Index: { screen: Index },
+  Index: { screen: Platform.OS === 'ios' ? IosIndex : AndroidIndex },
   Search: { screen: Search },
   Singer: { screen: Singer },
   Song: { screen: Song },

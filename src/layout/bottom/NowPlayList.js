@@ -97,23 +97,23 @@ class NowPlayList extends React.Component {
 
   renderItem (section, row) {
     return (
-      <View style={{height: 36, flexDirection: 'row'}}>
+      <View style={{height: 40, flexDirection: 'row'}}>
         <Ripple style={{height: '100%', marginLeft:3, paddingLeft: 3, flex: 1, flexDirection: 'row', alignItems: 'center', borderBottomWidth: 0.1, borderColor: '#FFF'}}>
           <SuperIcon type={'\ue6b4'} style={{fontSize: 18, color: '#05daf0'}}/>
           <Text style={{marginLeft: 5, fontSize: 15, color:'#CCC'}}>
             555长cjk沙健id45康
-            <Text style={{fontSize: 12.5, color:'#888'}}> - JesBrian</Text>
+            <Text style={{fontSize: 12, color:'#888'}}> - JesBrian</Text>
           </Text>
         </Ripple>
 
         <TouchableWithoutFeedback>
-          <View style={{width: 30, height: '100%', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 0.1, borderColor: '#FFF'}}>
+          <View style={{width: 35, height: '100%', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 0.1, borderColor: '#FFF'}}>
             <SuperIcon type={'\ue627'} style={{fontSize: 20, color:'#888'}}/>
           </View>
         </TouchableWithoutFeedback>
 
         <TouchableWithoutFeedback>
-          <View style={{width: 30, height: '100%', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 0.1, borderColor: '#FFF'}}>
+          <View style={{width: 35, height: '100%', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 0.1, borderColor: '#FFF'}}>
             <SuperIcon type={'\ue622'} style={{fontSize: 20, color:'#888'}}/>
           </View>
         </TouchableWithoutFeedback>

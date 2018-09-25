@@ -35,7 +35,7 @@ export default class SearchNavbar extends React.Component {
           </TouchableWithoutFeedback>
 
           <View style={{marginLeft:5, marginRight:5, flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center', position:'relative'}}>
-            <TextInput ref='searchInput' autoFocus={true}
+            <TextInput ref='searchInput'
                        onChangeText={(text) => {this.setState({searchKey: text})}} value={this.state.searchKey}
                        selectionColor={'#2DC9FF'} underlineColorAndroid='transparent'
                        style={{width:'100%', height:38, padding:6, paddingLeft:8, paddingRight:33, borderRadius:8, backgroundColor:'rgba(255,255,255,0.08)', color:'#2DC9FF', fontSize:18}} />
