@@ -3,7 +3,7 @@ import {
 } from 'react-native'
 
 import { createStackNavigator } from 'react-navigation'
-// import StackViewStyleInterpolator from 'react-navigation/src/views/StackView/StackViewStyleInterpolator'
+import StackViewStyleInterpolator from 'react-navigation-stack/dist/views/StackView/StackViewStyleInterpolator'
 
 import Home from '../pages/Home/Home.js'
 import Login from '../pages/Login/Login.js'
@@ -46,8 +46,8 @@ const PageRouter = createStackNavigator({
   navigationOptions: {
     gesturesEnabled: true,
   },
-  transitionConfig: () => ({ // 页面切换效果 - forHorizontal[right -> left], forVertical[bottom -> up]
-    // screenInterpolator: StackViewStyleInterpolator.forHorizontal,
+  transitionConfig: () => ({
+    screenInterpolator: StackViewStyleInterpolator.forHorizontal,
   })
 });
 
