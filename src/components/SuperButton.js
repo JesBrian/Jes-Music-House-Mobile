@@ -8,7 +8,9 @@ import {
 
 import LinearGradient from 'react-native-linear-gradient'
 import { BoxShadow }  from 'react-native-shadow'
-import {connect} from "react-redux";
+import { connect } from 'react-redux'
+
+import { getInt2RGB, getRGBStrByArr } from '../utils/common/color.js'
 
 
 class SuperButton extends React.Component {
@@ -30,7 +32,7 @@ class SuperButton extends React.Component {
       active: {width:this.props.width, height:this.props.height, color:"#111", border:2.5, radius:3, opacity:0.8, x:0, y:1, style:{marginVertical:5}}
     };
     const colorLinearGradient = {
-      normalOutColorArray: [this.getColor(), '#2e8ce6'],
+      normalOutColorArray: [this.getShallowColor(), this.props.color, this.getDeepColor()],
       normalInColorArray: ['#535353', '#222'],
       clickInColorArray: ['#333', '#121212']
     }
@@ -57,8 +59,13 @@ class SuperButton extends React.Component {
     });
   };
 
-  getColor () {
-    return this.props.color;
+  getShallowColor () {
+    let str = getRGBStrByArr(getInt2RGB(this.props.color), 48);
+    return str;
+  }
+  getDeepColor () {
+    let str = getRGBStrByArr(getInt2RGB(this.props.color), -68);
+    return str;
   }
 }
 

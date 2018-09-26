@@ -35,7 +35,7 @@ class AppTheme extends React.Component {
   }
 
   render() {
-    const themeColorArr = ['#38daf0', '#ce7df0', '#f09c9d', '#4cf0ab', '#8600ff', '#f07b93', '#779bff', '#0000ff', '#f0ef77', '#f09309'];
+    const themeColorArr = ['#38daf0', '#ce7df0', '#f09c9d', '#4cf0ab', '#2ecfff', '#f07b93', '#779bff', '#0000ff', '#f0ef77', '#f09309'];
 
     return (
       <View style={styles.container}>
