@@ -62,8 +62,6 @@ class IndexRecommend extends React.Component {
             </Swiper>
           </View>
 
-          <SuperRefreshTop />
-
           <View style={{width:'100%', height:68, marginTop:28, marginBottom:13, paddingLeft:8, paddingRight:8, flexDirection:'row'}}>
             {
               recommendData.map((item, index) => {
@@ -84,7 +82,7 @@ class IndexRecommend extends React.Component {
             <Text style={{fontSize:16, color:'#DDD'}}>推荐歌单</Text>
           </View>
           <View style={{width:'100%', paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
-            <TouchableWithoutFeedback onPress={() => {alert(33)}}>
+            <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
               <View style={{width:'32%'}}>
                 <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
                   <View style={{top:2, right:6, position:'absolute', flexDirection:'row'}}>
@@ -97,7 +95,7 @@ class IndexRecommend extends React.Component {
                 </View>
               </View>
             </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback onPress={() => {alert(33)}}>
+            <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
               <View style={{width:'32%'}}>
                 <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
                   <View style={{top:2, right:6, position:'absolute', flexDirection:'row'}}>
@@ -110,7 +108,7 @@ class IndexRecommend extends React.Component {
                 </View>
               </View>
             </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback onPress={() => {alert(33)}}>
+            <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
               <View style={{width:'32%'}}>
                 <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
                   <View style={{top:2, right:6, position:'absolute', flexDirection:'row'}}>
@@ -131,27 +129,33 @@ class IndexRecommend extends React.Component {
           </View>
           <View style={{width:'100%', paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
             <View style={{width:'32%'}}>
-              <View style={{width:'100%', height:this.state.playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
-              </View>
+              <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
+                <View style={{width:'100%', height:this.state.playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
+                </View>
+              </TouchableWithoutFeedback>
               <View style={{width:'100%', height:48, paddingLeft:1, paddingRight:1}}>
-                <Text style={{width:'100%', height:20, lineHeight:20, fontSize:12.5, color:'#CCC'}}>JesBri老中nggjd</Text>
-                <Text style={{fontSize:11, color:'#888'}}>策略</Text>
+                <Text onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}} style={{width:'100%', height:20, lineHeight:20, fontSize:12.5, color:'#CCC'}}>JesBri老中nggjd</Text>
+                <Text onPress={() => {this.props.config.navigation.navigate('Singer')}} style={{fontSize:11, color:'#888'}}>策略</Text>
               </View>
             </View>
             <View style={{width:'32%'}}>
-              <View style={{width:'100%', height:this.state.playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
-              </View>
+              <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
+                <View style={{width:'100%', height:this.state.playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
+                </View>
+              </TouchableWithoutFeedback>
               <View style={{width:'100%', height:48, paddingLeft:1, paddingRight:1}}>
-                <Text style={{width:'100%', height:20, lineHeight:20, fontSize:12.5, color:'#CCC'}}>JesBri老中nggjd</Text>
-                <Text style={{fontSize:11, color:'#888'}}>策略</Text>
+                <Text onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}} style={{width:'100%', height:20, lineHeight:20, fontSize:12.5, color:'#CCC'}}>JesBri老中nggjd</Text>
+                <Text onPress={() => {this.props.config.navigation.navigate('Singer')}} style={{fontSize:11, color:'#888'}}>策略</Text>
               </View>
             </View>
             <View style={{width:'32%'}}>
-              <View style={{width:'100%', height:this.state.playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
-              </View>
+              <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
+                <View style={{width:'100%', height:this.state.playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
+                </View>
+              </TouchableWithoutFeedback>
               <View style={{width:'100%', height:48, paddingLeft:1, paddingRight:1}}>
-                <Text style={{width:'100%', height:20, lineHeight:20, fontSize:12.5, color:'#CCC'}}>JesBri老中nggjd</Text>
-                <Text style={{fontSize:11, color:'#888'}}>策略</Text>
+                <Text onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}} style={{width:'100%', height:20, lineHeight:20, fontSize:12.5, color:'#CCC'}}>JesBri老中nggjd</Text>
+                <Text onPress={() => {this.props.config.navigation.navigate('Singer')}} style={{fontSize:11, color:'#888'}}>策略</Text>
               </View>
             </View>
           </View>
@@ -161,10 +165,10 @@ class IndexRecommend extends React.Component {
             <Text style={{fontSize:16, color:'#DDD'}}>歌曲排行榜</Text>
           </View>
           <View>
-            <Ripple style={{height:58, flexDirection:'row', backgroundColor:'lightgreen'}}>
+            <Ripple onPress={() => {this.props.config.navigation.navigate('Song')}} style={{height:58, flexDirection:'row', backgroundColor:'lightgreen'}}>
               <Text>8</Text>
             </Ripple>
-            <Ripple style={{height:58, flexDirection:'row', backgroundColor:'lightblue'}}>
+            <Ripple onPress={() => {this.props.config.navigation.navigate('Song')}} style={{height:58, flexDirection:'row', backgroundColor:'lightblue'}}>
               <Text>8</Text>
             </Ripple>
           </View>
