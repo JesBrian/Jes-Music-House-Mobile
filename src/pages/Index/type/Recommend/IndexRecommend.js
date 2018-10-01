@@ -62,6 +62,10 @@ class IndexRecommend extends React.Component {
             </Swiper>
           </View>
 
+          <SuperRefreshTop />
+
+          <Text onPress={() => {this.props.config.navigation.navigate('TestPage')}}>测试页面</Text>
+
           <View style={{width:'100%', height:68, marginTop:28, marginBottom:13, paddingLeft:8, paddingRight:8, flexDirection:'row'}}>
             {
               recommendData.map((item, index) => {

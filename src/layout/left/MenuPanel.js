@@ -50,7 +50,7 @@ class MenuPanel extends React.Component {
             </View>
             <View style={{flex:1}}>
               <Text style={{backgroundColor:'transparent'}}>JesBrian</Text>
-              <SuperButton/>
+              <SuperButton onPress={() => {}} label={'签到'} />
             </View>
           </View>
         </BoxShadow>

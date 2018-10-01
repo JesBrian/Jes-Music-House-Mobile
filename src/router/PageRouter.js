@@ -22,6 +22,8 @@ import Comment from '../pages/Comment/Comment.js'
 import WriteTrend from '../pages/WriteTrend/WriteTrend.js'
 import AppTheme from '../pages/AppTheme/AppTheme.js'
 
+import TestPage from '../pages/TestPage/TestPage.js'
+
 
 // 注册导航
 const PageRouter = createStackNavigator({
@@ -39,7 +41,8 @@ const PageRouter = createStackNavigator({
   Recommend: { screen: Recommend },
   Comment: { screen: Comment },
   WriteTrend: { screen: WriteTrend },
-  AppTheme: {screen: AppTheme}
+  AppTheme: {screen: AppTheme},
+  TestPage: {screen: TestPage}
 }, {
   initialRouteName: 'Index', // 默认显示界面
   headerMode: 'none', // 导航栏的显示模式, screen: 有渐变透明效果, float: 无透明效果, none: 隐藏导航栏
