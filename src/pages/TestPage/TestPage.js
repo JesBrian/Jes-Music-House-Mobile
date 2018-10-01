@@ -1,11 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableWithoutFeedback } from "react-native";
 
-
-import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
+import Ripple from 'react-native-material-ripple'
 import { LargeList } from "react-native-largelist-v2";
+import SuperIcon from "../../components/SuperIcon";
 
-class TestPage extends React.Component {
+export default class TestPage extends React.Component {
   _sectionCount = 10;
   _rowCount = 10;
 
@@ -22,7 +22,6 @@ class TestPage extends React.Component {
       <LargeList
         style={styles.container}
         data={data}
-        heightForSection={() => 50}
         heightForIndexPath={() => 50}
         renderIndexPath={this._renderIndexPath}
       />
@@ -31,11 +30,26 @@ class TestPage extends React.Component {
 
   _renderIndexPath = ({ section: section, row: row }) => {
     return (
-      <View style={styles.row}>
-        <Text>
-          Section {section} Row {row}
-        </Text>
-        <View style={styles.line} />
+      <View style={{height: 40, flexDirection: 'row'}}>
+        <Ripple style={{height: '100%', marginLeft:3, paddingLeft: 3, flex: 1, flexDirection: 'row', alignItems: 'center', borderBottomWidth: 0.1, borderColor: '#FFF'}}>
+          <SuperIcon type={'\ue6b4'} style={{fontSize: 18, color: '#05daf0'}}/>
+          <Text style={{marginLeft: 5, fontSize: 15, color:'#CCC'}}>
+            555长cjk沙健id45康
+            <Text style={{fontSize: 12, color:'#888'}}> - JesBrian</Text>
+          </Text>
+        </Ripple>
+
+        <TouchableWithoutFeedback>
+          <View style={{width: 35, height: '100%', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 0.1, borderColor: '#FFF'}}>
+            <SuperIcon type={'\ue627'} style={{fontSize: 20, color:'#888'}}/>
+          </View>
+        </TouchableWithoutFeedback>
+
+        <TouchableWithoutFeedback>
+          <View style={{width: 35, height: '100%', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 0.1, borderColor: '#FFF'}}>
+            <SuperIcon type={'\ue622'} style={{fontSize: 20, color:'#888'}}/>
+          </View>
+        </TouchableWithoutFeedback>
       </View>
     );
   };
@@ -43,16 +57,17 @@ class TestPage extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.38)",
   },
   section: {
     flex: 1,
-    backgroundColor: "gray",
     justifyContent: "center",
     alignItems: "center"
   },
   row: {
     flex: 1,
+    backgroundColor: "#000",
     justifyContent: "center",
     alignItems: "center"
   },
@@ -65,5 +80,3 @@ const styles = StyleSheet.create({
     backgroundColor: "#EEE"
   }
 });
-
-export default gestureHandlerRootHOC(TestPage);

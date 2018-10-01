@@ -13,7 +13,7 @@ import { changeMusicPlayModel } from '../../redux/actions/MusicActions.js'
 import { hiddenBottomPlayList } from '../../redux/actions/ViewActions.js'
 
 import Ripple from 'react-native-material-ripple'
-import { LargeList } from 'react-native-largelist'
+import { LargeList } from 'react-native-largelist-v2'
 
 import { common } from '../../assets/styles/common.js'
 import SuperIcon from '../../components/SuperIcon.js'
@@ -73,14 +73,10 @@ class NowPlayList extends React.Component {
               </Ripple>
             </View>
 
-            <LargeList
-              style={{flex: 1, backgroundColor: '#282828'}}
-              bounces={false}
-              numberOfRowsInSection={section => 888}
-              numberOfSections={() => 1}
-              heightForCell={(section, row) => 36}
-              renderCell={this.renderItem.bind(this)}
-              renderItemSeparator={()=>null}
+            <LargeList style={{flex:1, backgroundColor:'#282828'}}
+              data={[{items: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}]}
+              heightForIndexPath={() => 40}
+              renderIndexPath={this._renderIndexPath}
             />
 
           </View>
@@ -95,7 +91,7 @@ class NowPlayList extends React.Component {
   };
 
 
-  renderItem (section, row) {
+  _renderIndexPath  = () => {
     return (
       <View style={{height: 40, flexDirection: 'row'}}>
         <Ripple style={{height: '100%', marginLeft:3, paddingLeft: 3, flex: 1, flexDirection: 'row', alignItems: 'center', borderBottomWidth: 0.1, borderColor: '#FFF'}}>

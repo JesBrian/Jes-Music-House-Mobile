@@ -12,7 +12,6 @@
 		"react-native": "0.50.0",
 		"react-native-drawer": "^2.5.0",
 		"react-native-gesture-handler": "^1.0.7",
-		"react-native-largelist": "^1.2.12",
 		"react-native-largelist-v2": "^2.1.0",
 		"react-native-linear-gradient": "^2.4.2",
 		"react-native-material-ripple": "^0.8.0",
