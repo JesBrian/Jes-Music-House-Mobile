@@ -88,6 +88,7 @@ export default class Register extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop:75,
     height:'100%',
     backgroundColor: 'transparent'
   },

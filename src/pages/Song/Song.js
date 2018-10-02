@@ -39,7 +39,7 @@ class Song extends React.Component {
 
   render() {
     return (
-      <View style={{width:'100%', height:'100%', top:0, left:0, flex:1, backgroundColor:'#FFF'}}>
+      <View style={{width:'100%', height:'100%', top:0, left:0, paddingTop:75, flex:1, backgroundColor:'#FFF'}}>
         <SongNavbar navigation={this.props.navigation}/>
 
         <View style={{flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>

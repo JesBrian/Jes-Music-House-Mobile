@@ -7,8 +7,7 @@ export const common = StyleSheet.create({
     paddingTop:20,
     flexDirection:'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    zIndex:5
+    justifyContent: 'center'
   },
 
   pageContainer: {}
