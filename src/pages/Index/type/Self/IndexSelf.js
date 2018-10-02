@@ -77,7 +77,11 @@ class IndexSelf extends React.Component {
           <View style={{height:28, flexDirection:'row', alignItems:'center', backgroundColor:'rgba(255,255,255,0.12)'}}>
             <TouchableWithoutFeedback onPress={() => {this.setState({isShowCreatePlayList: !this.state.isShowCreatePlayList})}}>
               <View style={{flex:1, flexDirection:'row', alignItems:'center'}}>
-                <SuperIcon type={'\ue600'} style={{margin:8, color:this.props.color}}/>
+                {
+                  this.state.isShowCreatePlayList ?
+                    <SuperIcon type={'\ue8cb'} style={{margin:8, color:this.props.color}}/> :
+                      <SuperIcon type={'\ue600'} style={{margin:8, color:this.props.color}}/>
+                }
                 <Text style={{color:'#BBB'}}>创建的歌单</Text>
               </View>
             </TouchableWithoutFeedback>
@@ -88,7 +92,7 @@ class IndexSelf extends React.Component {
             </TouchableWithoutFeedback>
           </View>
           {
-            this.state.isShowCreatePlayList === false ? (<View style={{width:'100%', height:0.28}} />) : (
+            this.state.isShowCreatePlayList ? (<View style={{width:'100%', height:0.28}} />) : (
               <View>
                 <View style={{height:53, flexDirection:'row'}}>
                   <Ripple onPress={() => {goRouter(this.props.navigation, 'PlayListDetail')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
@@ -122,7 +126,11 @@ class IndexSelf extends React.Component {
           <View style={{height:28, flexDirection:'row', alignItems:'center', backgroundColor:'rgba(255,255,255,0.12)'}}>
             <TouchableWithoutFeedback onPress={() => {this.setState({isShowCollectionPlayList: !this.state.isShowCollectionPlayList})}}>
               <View style={{flex:1, flexDirection:'row', alignItems:'center'}}>
-                <SuperIcon type={'\ue600'} style={{margin:8, color:this.props.color}}/>
+                {
+                  this.state.isShowCollectionPlayList ?
+                    <SuperIcon type={'\ue8cb'} style={{margin:8, color:this.props.color}}/> :
+                      <SuperIcon type={'\ue600'} style={{margin:8, color:this.props.color}}/>
+                }
                 <Text style={{color:'#BBB'}}>收藏的歌单</Text>
               </View>
             </TouchableWithoutFeedback>
@@ -133,7 +141,7 @@ class IndexSelf extends React.Component {
             </TouchableWithoutFeedback>
           </View>
           {
-            this.state.isShowCollectionPlayList === false ? (null) : (
+            this.state.isShowCollectionPlayList ? (null) : (
               <View>
                 <View style={{height:53, flexDirection:'row'}}>
                   <Ripple onPress={() => {goRouter(this.props.navigation, 'PlayListDetail')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
