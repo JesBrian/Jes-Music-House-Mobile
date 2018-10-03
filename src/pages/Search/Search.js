@@ -9,11 +9,13 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import { connect } from 'react-redux'
+
+import { withNavigation } from 'react-navigation'
 import Ripple from 'react-native-material-ripple'
 
 import SearchNavbar from '../../layout/top/type/SearchNavbar.js'
 import SuperIcon from '../../components/SuperIcon.js'
-import {connect} from "react-redux";
 
 
 class Search extends React.Component {
@@ -35,14 +37,14 @@ class Search extends React.Component {
         <SearchNavbar navigation={this.props.navigation} />
 
         <ScrollView style={{paddingTop:8, flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
-          <Ripple style={{height:38, flexDirection:'row', alignItems:'center'}}>
+          <Ripple onPress={() => {this.props.navigation.navigate('PlayList')}} style={{height:38, flexDirection:'row', alignItems:'center'}}>
             <View style={{height:'100%', paddingLeft:8, flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
               <SuperIcon type={'\ue671'} style={{color:this.props.color, fontSize:23}} />
               <Text style={{marginLeft:18, marginRight:18, color:'#DDD', fontSize:16}}>歌手分类</Text>
               <SuperIcon type={'\ue8cb'} style={{color:this.props.color, fontSize:23}} />
             </View>
           </Ripple>
-          <Ripple style={{height:38, flexDirection:'row', alignItems:'center'}}>
+          <Ripple onPress={() => {this.props.navigation.navigate('Singer')}} style={{height:38, flexDirection:'row', alignItems:'center'}}>
             <View style={{height:'100%', paddingLeft:8, flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
               <SuperIcon type={'\ue62b'} style={{color:this.props.color, fontSize:23}} />
               <Text style={{marginLeft:18, marginRight:18, color:'#DDD', fontSize:16}}>歌单分类</Text>
@@ -112,4 +114,4 @@ function reduxState(store) {
   }
 }
 
-export default connect(reduxState)(Search);
+export default connect(reduxState)(withNavigation(Search));

@@ -6,20 +6,16 @@ import {
   Text
 } from 'react-native';
 
-import { connect } from 'react-redux'
-
-
 import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
 import SuperButton from '../../components/SuperButton.js'
 
-
-class PlayList extends React.Component {
+export default class SingerDetail extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <NormalNavbar label={'歌单'} />
+        <NormalNavbar />
 
-        <Text>歌单分类</Text>
+        <Text>歌手详情</Text>
       </View>
     );
   }
@@ -30,13 +26,14 @@ const styles = StyleSheet.create({
     paddingTop:75,
     backgroundColor: 'transparent'
   },
+
+  backgroundVideo: {
+    width:108,
+    height:108,
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    backgroundColor:'#555'
+  },
 });
-
-
-function reduxState(store) {
-  return {
-    config: store.config
-  }
-}
-
-export default connect(reduxState)(PlayList);

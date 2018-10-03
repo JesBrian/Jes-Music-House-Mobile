@@ -139,7 +139,7 @@ class IndexRecommend extends React.Component {
               </TouchableWithoutFeedback>
               <View style={{width:'100%', height:48, paddingLeft:1, paddingRight:1}}>
                 <Text onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}} style={{width:'100%', height:20, lineHeight:20, fontSize:12.5, color:'#CCC'}}>JesBri老中nggjd</Text>
-                <Text onPress={() => {this.props.config.navigation.navigate('Singer')}} style={{fontSize:11, color:'#888'}}>策略</Text>
+                <Text onPress={() => {this.props.config.navigation.navigate('SingerDetail')}} style={{fontSize:11, color:'#888'}}>策略</Text>
               </View>
             </View>
             <View style={{width:'32%'}}>
@@ -149,7 +149,7 @@ class IndexRecommend extends React.Component {
               </TouchableWithoutFeedback>
               <View style={{width:'100%', height:48, paddingLeft:1, paddingRight:1}}>
                 <Text onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}} style={{width:'100%', height:20, lineHeight:20, fontSize:12.5, color:'#CCC'}}>JesBri老中nggjd</Text>
-                <Text onPress={() => {this.props.config.navigation.navigate('Singer')}} style={{fontSize:11, color:'#888'}}>策略</Text>
+                <Text onPress={() => {this.props.config.navigation.navigate('SingerDetail')}} style={{fontSize:11, color:'#888'}}>策略</Text>
               </View>
             </View>
             <View style={{width:'32%'}}>
@@ -159,7 +159,7 @@ class IndexRecommend extends React.Component {
               </TouchableWithoutFeedback>
               <View style={{width:'100%', height:48, paddingLeft:1, paddingRight:1}}>
                 <Text onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}} style={{width:'100%', height:20, lineHeight:20, fontSize:12.5, color:'#CCC'}}>JesBri老中nggjd</Text>
-                <Text onPress={() => {this.props.config.navigation.navigate('Singer')}} style={{fontSize:11, color:'#888'}}>策略</Text>
+                <Text onPress={() => {this.props.config.navigation.navigate('SingerDetail')}} style={{fontSize:11, color:'#888'}}>策略</Text>
               </View>
             </View>
           </View>

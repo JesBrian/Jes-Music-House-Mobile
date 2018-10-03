@@ -12,6 +12,7 @@ import IosIndex from '../pages/Index/IndexIos.js'
 import AndroidIndex from '../pages/Index/IndexAndroid.js'
 import Search from '../pages/Search/Search.js'
 import Singer from '../pages/Singer/Singer.js'
+import SingerDetail from '../pages/SingerDetail/SingerDetail.js'
 import Song from '../pages/Song/Song.js'
 import User from '../pages/User/User.js'
 import PlayList from '../pages/PlayList/PlayList.js'
@@ -33,6 +34,7 @@ const PageRouter = createStackNavigator({
   Index: { screen: Platform.OS === 'ios' ? IosIndex : AndroidIndex },
   Search: { screen: Search },
   Singer: { screen: Singer },
+  SingerDetail: { screen: SingerDetail },
   Song: { screen: Song },
   User: { screen: User },
   PlayList: { screen: PlayList },
