@@ -7,6 +7,7 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
+import { withNavigation } from 'react-navigation'
 import Ripple from 'react-native-material-ripple'
 
 import NavbarFrame from '../NavbarFrame.js'
@@ -15,7 +16,7 @@ import SuperIcon from '../../../components/SuperIcon.js'
 import { common } from '../../../assets/styles/common.js'
 
 
-export default class SearchNavbar extends React.Component {
+class SearchNavbar extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -58,3 +59,5 @@ export default class SearchNavbar extends React.Component {
     )
   }
 }
+
+export default withNavigation(SearchNavbar);

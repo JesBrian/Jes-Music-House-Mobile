@@ -7,7 +7,9 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
-import { connect } from "react-redux";
+import { connect } from 'react-redux'
+
+import { withNavigation } from 'react-navigation'
 
 import { common } from '../../../assets/styles/common.js'
 import SuperIcon from '../../../components/SuperIcon.js'
@@ -26,7 +28,7 @@ class SongNavbar extends React.Component {
       <NavbarFrame navbarContent={(
 
         <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-          <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.goBack()}}>
+          <TouchableWithoutFeedback onPress={() => {this.props.navigation.goBack()}}>
             <View style={{width:45, flexDirection:'row', justifyContent:'center'}}>
               <SuperIcon type={'\ue8ca'} style={{fontSize:31, color:'#BBB'}} />
             </View>
@@ -54,12 +56,4 @@ class SongNavbar extends React.Component {
 const styles = StyleSheet.create({
 })
 
-
-function reduxState(store) {
-  return {
-    config: store.config,
-    showView: store.showView
-  }
-}
-
-export default connect(reduxState)(SongNavbar);
+export default withNavigation(SongNavbar);

@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import { connect } from 'react-redux'
-
+import { withNavigation } from 'react-navigation'
 import NavbarFrame from '../NavbarFrame.js'
 
 import { common } from '../../../assets/styles/common.js'
@@ -50,10 +50,4 @@ class NormalNavbar extends React.Component {
   }
 }
 
-function reduxState(store) {
-  return {
-    config: store.config
-  }
-}
-
-export default connect(reduxState)(NormalNavbar);
+export default withNavigation(NormalNavbar);

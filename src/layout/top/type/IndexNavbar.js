@@ -6,6 +6,7 @@ import {
   Text
 } from 'react-native';
 
+import { withNavigation } from 'react-navigation'
 
 import NavbarFrame from '../NavbarFrame.js'
 import SuperButton from '../../../components/SuperButton.js'
@@ -13,7 +14,7 @@ import SuperButton from '../../../components/SuperButton.js'
 import { common } from '../../../assets/styles/common.js'
 import SuperIcon from '../../../components/SuperIcon.js'
 
-export default class IndexNavbar extends React.Component {
+class IndexNavbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -40,3 +41,5 @@ export default class IndexNavbar extends React.Component {
     )
   }
 }
+
+export default withNavigation(IndexNavbar)

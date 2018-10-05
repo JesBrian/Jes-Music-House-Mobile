@@ -34,7 +34,7 @@ class Search extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <SearchNavbar navigation={this.props.navigation} />
+        <SearchNavbar />
 
         <ScrollView style={{paddingTop:8, flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
           <Ripple onPress={() => {this.props.navigation.navigate('PlayList')}} style={{height:38, flexDirection:'row', alignItems:'center'}}>

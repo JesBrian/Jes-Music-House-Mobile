@@ -12,7 +12,7 @@ import {
 import { connect } from 'react-redux'
 import { showModal } from '../../../../redux/actions/ViewActions.js'
 
-
+import { withNavigation } from 'react-navigation'
 import Ripple from 'react-native-material-ripple'
 import Swiper from 'react-native-swiper'
 
@@ -215,4 +215,4 @@ function reduxState(store) {
   }
 }
 
-export default connect(reduxState)(IndexRecommend);
+export default connect(reduxState)(withNavigation(IndexRecommend));
