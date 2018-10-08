@@ -2,6 +2,7 @@ import React  from 'react';
 
 import {
   StyleSheet,
+  ScrollView,
   View,
   Text
 } from 'react-native';
@@ -26,15 +27,15 @@ export default class Singer extends React.Component {
       <View style={styles.container}>
         <NormalNavbar label={'歌手分类'} />
 
-        <LargeList style={{flex:1}}
-          data={singerCategory}
-          heightForSection={() => 18}
-          renderSection={this._renderSection}
-          heightForIndexPath={() => 45}
-          renderIndexPath={this._renderIndexPath}
-        />
-
-
+        <ScrollView>
+          <LargeList style={{flex:1}}
+                     data={singerCategory}
+                     heightForSection={() => 18}
+                     renderSection={this._renderSection}
+                     heightForIndexPath={() => 45}
+                     renderIndexPath={this._renderIndexPath}
+          />
+        </ScrollView>
       </View>
     );
   }

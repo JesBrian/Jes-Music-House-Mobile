@@ -20,7 +20,6 @@
 		"react-native-slider": "^0.11.0",
 		"react-native-spinkit": "^1.1.1",
 		"react-native-spring-scrollview": "0.0.24",
-		"react-native-sqlite-storage": "^3.3.6",
 		"react-native-svg": "^5.5.1",
 		"react-native-swiper": "^1.5.13",
 		"react-navigation": "^2.17.0",

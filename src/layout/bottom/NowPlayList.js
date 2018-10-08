@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   StyleSheet,
+  ScrollView,
   View,
   Text,
   TouchableWithoutFeedback
@@ -73,11 +74,13 @@ class NowPlayList extends React.Component {
               </Ripple>
             </View>
 
-            <LargeList style={{flex:1, backgroundColor:'#282828'}}
-              data={[{items: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}]}
-              heightForIndexPath={() => 40}
-              renderIndexPath={this._renderIndexPath}
-            />
+            <ScrollView>
+              <LargeList style={{flex:1, backgroundColor:'#282828'}}
+                         data={[{items: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}]}
+                         heightForIndexPath={() => 40}
+                         renderIndexPath={this._renderIndexPath}
+              />
+            </ScrollView>
 
           </View>
         </View>
