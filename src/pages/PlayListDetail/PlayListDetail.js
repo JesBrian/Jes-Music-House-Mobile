@@ -117,7 +117,6 @@ class PlayListDetail extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop:75,
     flex:1,
     backgroundColor: 'transparent'
   },

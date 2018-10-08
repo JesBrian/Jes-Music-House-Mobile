@@ -56,7 +56,7 @@ export default class Singer extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical:75,
+    paddingBottom:75,
     flex:1,
     backgroundColor:'rgba(0,0,0,0.73)'
   }

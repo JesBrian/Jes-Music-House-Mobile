@@ -114,7 +114,6 @@ class AppTheme extends React.Component {
 const styles = StyleSheet.create({
   container: {
     height:'100%',
-    paddingTop:75,
     flex:1,
     backgroundColor: 'transparent'
   },

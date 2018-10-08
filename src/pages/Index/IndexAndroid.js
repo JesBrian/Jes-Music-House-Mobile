@@ -56,7 +56,6 @@ class Index extends React.Component {
 const styles = StyleSheet.create({
   container: {
     height: '100%',
-    paddingTop:75,
     position: 'relative',
     flexDirection: 'column'
   },

@@ -19,10 +19,7 @@ class NavbarFrame extends React.Component {
 
   render() {
     const shadowOpt = {
-      width:Dimensions.get('window').width, height:75, color:"#181818", border:8, opacity:0.8, x:0, y:1,
-      style:{
-        position:'absolute', zIndex:999
-      }
+      width:Dimensions.get('window').width, height:75, color:"#383838", border:12, opacity:0.8, x:0, y:1
     };
 
     return (

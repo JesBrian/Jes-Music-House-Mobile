@@ -28,7 +28,6 @@ class WriteTrend extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop:75,
     flex:1
   },
 });

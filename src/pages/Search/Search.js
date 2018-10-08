@@ -100,7 +100,6 @@ class Search extends React.Component {
 const styles = StyleSheet.create({
   container: {
     width:'100%', height:'100%',
-    paddingTop:75,
     flex:1,
     flexDirection:'column',
     backgroundColor: 'transparent'
