@@ -50,21 +50,22 @@ class SuperTabbar extends React.Component {
       outputRange: [0, containerWidth / numberOfTabs],
     });
     return (
-      <View style={[styles.tabs, this.props.style, ]}>
-        {this.props.tabs.map((name, page) => {
-          const isTabActive = this.props.activeTab === page;
-          const renderTab = this.props.renderTab || this.renderTab;
-          return renderTab(name, page, isTabActive, this.props.goToPage, this.props.color);
-        })}
-        <Animated.View
-          style={[
-            tabUnderlineStyle,
-            {transform: [{ translateX },]},
-            this.props.underlineStyle,
-          ]}
-        />
-
-        <Image style={{width:'100%', height:8, bottom:-8, position:'absolute', zIndex:999, backgroundColor:'transparent'}} source={require('../../assets/images/default/shadow.png')} />
+      <View style={{height:40}}>
+        <View style={[styles.tabs, this.props.style, ]}>
+          {this.props.tabs.map((name, page) => {
+            const isTabActive = this.props.activeTab === page;
+            const renderTab = this.props.renderTab || this.renderTab;
+            return renderTab(name, page, isTabActive, this.props.goToPage, this.props.color);
+          })}
+          <Animated.View
+            style={[
+              tabUnderlineStyle,
+              {transform: [{ translateX },]},
+              this.props.underlineStyle,
+            ]}
+          />
+        </View>
+        <Image style={{width:'100%', bottom:-11, position:'absolute', zIndex:999, backgroundColor:'transparent'}} source={require('../../assets/images/default/shadow.png')} />
       </View>
     );
   }
@@ -74,8 +75,7 @@ const styles = StyleSheet.create({
   tab: {
     flex: 1,
     alignItems:'center',
-    justifyContent:'center',
-    paddingBottom:5
+    justifyContent:'center'
   },
   tabs: {
     height:40,
