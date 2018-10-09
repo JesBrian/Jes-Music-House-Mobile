@@ -18,8 +18,8 @@ export default class User extends React.Component {
       <View style={styles.container}>
         <NormalNavbar navigation={this.props.navigation} />
 
-        <ScrollView>
-          <View style={{height:268}}>
+        <ScrollView style={{backgroundColor:'rgba(0,0,0,0.73)'}}>
+          <View style={{height:208}}>
           </View>
 
           <SuperUserTab />
@@ -32,6 +32,7 @@ export default class User extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    backgroundColor: 'transparent'
+    paddingBottom:53,
+    backgroundColor:'transparent'
   },
 });
