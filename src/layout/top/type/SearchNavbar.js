@@ -39,7 +39,7 @@ class SearchNavbar extends React.Component {
             <TextInput ref='searchInput'
                        onChangeText={(text) => {this.setState({searchKey: text})}} value={this.state.searchKey}
                        selectionColor={'#2DC9FF'} underlineColorAndroid='transparent'
-                       style={{width:'100%', height:38, padding:6, paddingLeft:8, paddingRight:33, borderRadius:8, backgroundColor:'rgba(255,255,255,0.08)', color:'#2DC9FF', fontSize:18}} />
+                       style={{width:'100%', height:38, padding:6, paddingLeft:8, paddingRight:33, borderRadius:8, backgroundColor:'rgba(255,255,255,0.08)', color:'#2DC9FF', fontSize:16}} />
             {
               this.state.searchKey === '' ? null :
                 <Ripple onPress={() => {this.setState({searchKey: ''})}} style={{width:22, height:22, top:8, right:8, position:'absolute', justifyContent:'center', alignItems:'center', borderRadius:11, backgroundColor:'#333', borderWidth:1, borderColor:'#2EBCC6'}}>
