@@ -13,11 +13,11 @@ export default class SuperUserTab extends React.Component {
     return (
       <ScrollableTabView
         renderTabBar={() => <SuperTabbar />}
-        style={{height:'100%'}}>
+        style={{backgroundColor:'rgba(0,0,0,0.73)'}}>
 
         <UserMusic tabLabel={'音乐'} />
         <UserTrend tabLabel={'动态'} />
-        <UserInfo tabLabel={'关于我'} />
+        <UserInfo tabLabel={'信息'} />
       </ScrollableTabView>
     );
   }

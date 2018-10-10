@@ -2,6 +2,7 @@ import React  from 'react'
 
 import {
   StyleSheet,
+  ScrollView,
   View,
   Image,
   Text
@@ -18,7 +19,7 @@ import SuperIcon from '../../../components/SuperIcon.js'
 class UserMusic extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
 
         <View style={{height:28, flexDirection:'row', alignItems:'center', backgroundColor:'rgba(255,255,255,0.12)'}}>
           <View style={{flex:1, flexDirection:'row', alignItems:'center'}}>
@@ -75,7 +76,7 @@ class UserMusic extends React.Component {
           </View>
         </View>
 
-      </View>
+      </ScrollView>
     );
   }
 }
