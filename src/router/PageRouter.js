@@ -22,6 +22,8 @@ import Recommend from '../pages/Recommend/Recommend.js'
 import Comment from '../pages/Comment/Comment.js'
 import WriteTrend from '../pages/WriteTrend/WriteTrend.js'
 import AppTheme from '../pages/AppTheme/AppTheme.js'
+import Message from '../pages/Message/Message.js'
+import Collection from '../pages/Collection/Collection.js'
 
 import TestPage from '../pages/TestPage/TestPage.js'
 
@@ -44,6 +46,8 @@ const PageRouter = createStackNavigator({
   Comment: { screen: Comment },
   WriteTrend: { screen: WriteTrend },
   AppTheme: {screen: AppTheme},
+  Message: {screen: Message},
+  Collection: {screen: Collection},
   TestPage: {screen: TestPage}
 }, {
   initialRouteName: 'Index', // 默认显示界面

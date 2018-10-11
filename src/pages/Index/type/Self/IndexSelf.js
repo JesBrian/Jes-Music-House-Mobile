@@ -63,7 +63,7 @@ class IndexSelf extends React.Component {
             {
               selfBaseMenu.map((item, index) => {
                 return (
-                  <Ripple key={index} style={{height:38, flexDirection:'row', alignItems:'center'}}>
+                  <Ripple key={index} onPress={() => {goRouter(this.props.navigation, 'Collection')}} style={{height:38, flexDirection:'row', alignItems:'center'}}>
                     <SuperIcon type={item.icon} style={{marginLeft:12, marginRight:5, color:this.props.color, fontSize:23}} />
                     <View style={{height:'100%', paddingLeft:8, flex:1, flexDirection:'row', alignItems:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
                       <Text style={{color:'#DDD', fontSize:16}}>{ item.label }</Text>

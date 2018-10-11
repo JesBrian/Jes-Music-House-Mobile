@@ -35,9 +35,9 @@ class MenuPanel extends React.Component {
 
 
     const menuData = [
-      {icon:'\ue638', name:'我的消息'},
-      {icon:'\ue671', name:'我的消息1'},
-      {icon:'\ueaec', name:'个性彩色'}
+      {icon:'\ue638', name:'我的消息', url:'Message'},
+      {icon:'\ue671', name:'我的收藏', url:'Collection'},
+      {icon:'\ueaec', name:'个性彩色', url:'AppTheme'}
     ];
 
 
@@ -58,7 +58,7 @@ class MenuPanel extends React.Component {
         <FlatList
           style={{marginVertical:8}}
           data={menuData}
-          renderItem={({item}) => <Ripple onPress={() => {this.props.config.navigation.navigate('AppTheme')}} style={{width:'100%', height:38, flexDirection:'row', alignItems:'center'}}>
+          renderItem={({item}) => <Ripple onPress={() => {this.props.config.navigation.navigate(item.url)}} style={{width:'100%', height:38, flexDirection:'row', alignItems:'center'}}>
             <SuperIcon type={item.icon} style={{margin:12, color:this.props.config.color, fontSize:20}} />
             <Text style={{color:'#BBB', fontSize:16}}>{ item.name }</Text>
           </Ripple>
