@@ -25,17 +25,27 @@ class Search extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <SearchNavbar />
+        <SearchNavbar searchContent={this.searchContent} />
 
-        <ScrollView style={{paddingTop:8, flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
+        <View style={{flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
 
           {
             this.state.hasSearch === true ? <SearchResult /> : <SearchKey />
           }
 
-        </ScrollView>
+        </View>
       </View>
     );
+  }
+
+  searchContent = (searchKey = '') => {
+    if (searchKey === '') {
+      return false
+    }
+
+    this.setState({
+      hasSearch: true
+    })
   }
 }
 

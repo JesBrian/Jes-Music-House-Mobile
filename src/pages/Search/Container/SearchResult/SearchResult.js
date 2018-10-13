@@ -6,8 +6,10 @@ import {
   Text
 } from 'react-native';
 
-
 import { withNavigation } from 'react-navigation'
+
+import SuperSearchResultTab from './SuperSearchResultTab.js'
+
 
 class SearchResult extends React.Component {
   constructor (props) {
@@ -21,7 +23,7 @@ class SearchResult extends React.Component {
     return (
       <View style={styles.container}>
 
-        <Text>555</Text>
+        <SuperSearchResultTab />
       </View>
     );
   }

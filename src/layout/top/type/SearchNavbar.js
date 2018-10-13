@@ -48,7 +48,7 @@ class SearchNavbar extends React.Component {
             }
           </View>
 
-          <TouchableWithoutFeedback>
+          <TouchableWithoutFeedback onPress={() => {this.props.searchContent(this.state.searchKey)}}>
             <View style={{width:50, flexDirection:'row', justifyContent:'center'}}>
               <SuperIcon type={'\ue65a'} style={{fontSize:31, color:'#BBB'}} />
             </View>

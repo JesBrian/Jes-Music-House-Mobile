@@ -32,7 +32,7 @@ class SearchKey extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Ripple onPress={() => {this.props.navigation.navigate('Singer')}} style={{height:38, flexDirection:'row', alignItems:'center'}}>
           <View style={{height:'100%', paddingLeft:8, flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
             <SuperIcon type={'\ue671'} style={{color:this.props.color, fontSize:23}} />
@@ -87,13 +87,14 @@ class SearchKey extends React.Component {
                   )}
         />
 
-      </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop:8,
     flex:1
   }
 });
