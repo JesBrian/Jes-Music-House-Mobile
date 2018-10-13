@@ -2,6 +2,7 @@ import React  from 'react';
 
 import {
   StyleSheet,
+  ScrollView,
   View,
   Image,
   Text
@@ -17,16 +18,13 @@ import SuperIcon from '../../../components/SuperIcon.js'
 class CollectionSinger extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-
-        <View style={{paddingBottom:8, flex:1, backgroundColor:'#282828'}}>
-          <LargeList style={{flex:1}}
-                     data={[{items: [0, 1, 2, 3, 4, 5, 6]}]}
-                     heightForIndexPath={() => 48}
-                     renderIndexPath={this._renderIndexPath}
-          />
-        </View>
-      </View>
+      <ScrollView style={{paddingBottom:18, flex:1, backgroundColor:'#282828'}}>
+        <LargeList style={{flex:1}}
+                   data={[{items: [0, 1, 2, 3, 4, 5, 6]}]}
+                   heightForIndexPath={() => 48}
+                   renderIndexPath={this._renderIndexPath}
+        />
+      </ScrollView>
     );
   }
 
