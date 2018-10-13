@@ -59,7 +59,7 @@ class SearchKey extends React.Component {
           {
             this.state.hotKey.map((item, index) => {
               return (
-                <Ripple key={index} style={{height:24, margin:4, paddingLeft:9, paddingRight:9, justifyContent:'center', alignItems:'center', borderRadius:12, borderWidth:1, borderColor:'#AAA', backgroundColor:'rgba(0,0,0,0.18)'}}>
+                <Ripple onPress={() => {this.props.searchContent(item)}} key={index} style={{height:24, margin:4, paddingLeft:9, paddingRight:9, justifyContent:'center', alignItems:'center', borderRadius:12, borderWidth:1, borderColor:'#AAA', backgroundColor:'rgba(0,0,0,0.18)'}}>
                   <Text style={{color:'#AAA'}}>{ item }</Text>
                 </Ripple>
               )
@@ -77,10 +77,10 @@ class SearchKey extends React.Component {
                   data={this.state.historyKey}
                   renderItem={({item, index}) => (
                     <View style={{height:36, flexDirection:'row', alignItems:'center'}}>
-                      <Ripple style={{height:'100%', flex:1, justifyContent:'center'}}>
+                      <Ripple onPress={() => {this.props.searchContent(item)}} style={{height:'100%', flex:1, justifyContent:'center'}}>
                         <Text style={{marginLeft:18, color:'#AAA'}}>{ item }</Text>
                       </Ripple>
-                      <TouchableOpacity style={{width:38, alignItems:'center'}}>
+                      <TouchableOpacity onPress={this.deleteSearchKeyHistory.bind(this, index)} style={{width:38, alignItems:'center'}}>
                         <SuperIcon type={'\ue61f'} style={{fontSize:21, color:'#AAA'}} />
                       </TouchableOpacity>
                     </View>
@@ -89,6 +89,13 @@ class SearchKey extends React.Component {
 
       </ScrollView>
     );
+  }
+
+  deleteSearchKeyHistory (index) {
+    this.state.historyKey.splice(index, 1)
+    this.setState({
+      historyKey: this.state.historyKey
+    })
   }
 }
 

@@ -18,19 +18,20 @@ class Search extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      hasSearch: false
+      hasSearch: false,
+      searchKey: ''
     }
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <SearchNavbar searchContent={this.searchContent} />
+        <SearchNavbar searchKey={this.state.searchKey} searchContent={this.searchContent} />
 
         <View style={{flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
 
           {
-            this.state.hasSearch === true ? <SearchResult /> : <SearchKey />
+            this.state.hasSearch === true ? <SearchResult /> : <SearchKey searchContent={this.searchContent} />
           }
 
         </View>
@@ -44,7 +45,8 @@ class Search extends React.Component {
     }
 
     this.setState({
-      hasSearch: true
+      hasSearch: true,
+      searchKey: searchKey
     })
   }
 }
