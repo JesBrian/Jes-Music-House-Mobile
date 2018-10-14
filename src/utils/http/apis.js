@@ -1,3 +1,5 @@
 export default API_PATH = {
-  phoneLogin: 'phoneLogin'
+  phoneLogin: 'phoneLogin',
+
+  frontendSlider: 'getFrontendSlider',
 }

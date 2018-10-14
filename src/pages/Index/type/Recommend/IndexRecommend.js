@@ -5,6 +5,7 @@ import {
   StyleSheet,
   ScrollView,
   View,
+  Image,
   Text,
   TouchableWithoutFeedback
 } from 'react-native';
@@ -17,23 +18,29 @@ import Ripple from 'react-native-material-ripple'
 import Swiper from 'react-native-swiper'
 
 import SuperIcon from '../../../../components/SuperIcon.js'
-import SuperRefreshTop from "../../../../components/SuperRefresh/SuperRefreshTop";
+import SuperRefreshTop from '../../../../components/SuperRefresh/SuperRefreshTop.js'
 
+import { frontendSlider } from '../../../../utils/http/request/index.js'
+
+
+const playListSize = (Dimensions.get('window').width - 30) * 0.31
 
 class IndexRecommend extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      testData: [],
-      playListSize: 0
+      sliderData: []
     }
   }
 
   componentWillMount () {
-    this.setState({
-      testData: ['Hello Swiper', 'Beautiful', 'And simple'],
-      playListSize: (Dimensions.get('window').width - 30) * 0.31
-    });
+    frontendSlider().then( res => {
+      this.setState({
+        sliderData: res.data,
+      });
+    }).catch( err => {
+      alert(err)
+    })
   }
 
   render() {
@@ -49,20 +56,23 @@ class IndexRecommend extends React.Component {
         <ScrollView style={{width:'100%', flex:1}}>
 
           <View style={{width:'100%', height:138, marginTop:18, paddingLeft:8, paddingRight:8}}>
-            <Swiper style={styles.wrapper} showsButtons={true} autoplay={true}>
-              {
-                this.state.testData.map((item, index) => {
-                  return (
-                    <View key={index} style={styles.slide}>
-                      <Text style={styles.text}>{ item }</Text>
-                    </View>
-                  )
-                })
-              }
-            </Swiper>
+            {
+              this.state.sliderData.length === 0 ? null : (
+                <Swiper style={styles.wrapper} showsButtons={true} autoplay={true}>
+                  {
+                    this.state.sliderData.map((item, index) => {
+                      return (
+                        <View key={index} style={styles.slide}>
+                          {/*<Text style={styles.img}>{ item.id }</Text>*/}
+                          <Image style={styles.img} source={{uri:item.sliderImg}} />
+                        </View>
+                      )
+                    })
+                  }
+                </Swiper>
+              )
+            }
           </View>
-
-          <SuperRefreshTop />
 
           <Text onPress={() => {this.props.config.navigation.navigate('TestPage')}}>测试页面</Text>
 
@@ -88,7 +98,7 @@ class IndexRecommend extends React.Component {
           <View style={{width:'100%', paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
             <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
               <View style={{width:'32%'}}>
-                <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
+                <View style={{width:'100%', height:playListSize, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
                   <View style={{top:2, right:6, position:'absolute', flexDirection:'row'}}>
                     <SuperIcon type={'\ue6c8'} style={{marginTop:1, marginRight:3, fontSize:14, color:'#EEE'}} />
                     <Text style={{fontSize:13, color:'#FFF'}}>555</Text>
@@ -101,7 +111,7 @@ class IndexRecommend extends React.Component {
             </TouchableWithoutFeedback>
             <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
               <View style={{width:'32%'}}>
-                <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
+                <View style={{width:'100%', height:playListSize, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
                   <View style={{top:2, right:6, position:'absolute', flexDirection:'row'}}>
                     <SuperIcon type={'\ue6c8'} style={{marginTop:1, marginRight:3, fontSize:14, color:'#EEE'}} />
                     <Text style={{fontSize:13, color:'#FFF'}}>555</Text>
@@ -114,7 +124,7 @@ class IndexRecommend extends React.Component {
             </TouchableWithoutFeedback>
             <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
               <View style={{width:'32%'}}>
-                <View style={{width:'100%', height:this.state.playListSize, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
+                <View style={{width:'100%', height:playListSize, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
                   <View style={{top:2, right:6, position:'absolute', flexDirection:'row'}}>
                     <SuperIcon type={'\ue6c8'} style={{marginTop:1, marginRight:3, fontSize:14, color:'#EEE'}} />
                     <Text style={{fontSize:13, color:'#FFF'}}>555</Text>
@@ -134,7 +144,7 @@ class IndexRecommend extends React.Component {
           <View style={{width:'100%', paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
             <View style={{width:'32%'}}>
               <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
-                <View style={{width:'100%', height:this.state.playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
+                <View style={{width:'100%', height:playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
                 </View>
               </TouchableWithoutFeedback>
               <View style={{width:'100%', height:48, paddingLeft:1, paddingRight:1}}>
@@ -144,7 +154,7 @@ class IndexRecommend extends React.Component {
             </View>
             <View style={{width:'32%'}}>
               <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
-                <View style={{width:'100%', height:this.state.playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
+                <View style={{width:'100%', height:playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
                 </View>
               </TouchableWithoutFeedback>
               <View style={{width:'100%', height:48, paddingLeft:1, paddingRight:1}}>
@@ -154,7 +164,7 @@ class IndexRecommend extends React.Component {
             </View>
             <View style={{width:'32%'}}>
               <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
-                <View style={{width:'100%', height:this.state.playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
+                <View style={{width:'100%', height:playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
                 </View>
               </TouchableWithoutFeedback>
               <View style={{width:'100%', height:48, paddingLeft:1, paddingRight:1}}>
@@ -197,13 +207,10 @@ const styles = StyleSheet.create({
     flex:1,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius:6,
-    backgroundColor: '#9DD6EB',
   },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
+  img: {
+    width:'100%', height:'100%',
+    borderRadius:6
   }
 });
 
