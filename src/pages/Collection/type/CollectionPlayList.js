@@ -20,9 +20,9 @@ class CollectionPlayList extends React.Component {
   render() {
     return (
       <ScrollView style={{flex:1, backgroundColor:'#282828'}}>
-        <LargeList style={{paddingBottom:18, flex:1}}
+        <LargeList style={{paddingTop:3, paddingBottom:18, flex:1}}
                    data={[{items: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]}]}
-                   heightForIndexPath={() => 48}
+                   heightForIndexPath={() => 53}
                    renderIndexPath={this._renderIndexPath}
         />
       </ScrollView>

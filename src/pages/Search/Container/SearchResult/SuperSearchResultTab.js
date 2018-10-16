@@ -14,7 +14,7 @@ export default class SuperSearchResultTab extends React.Component {
     return (
       <ScrollableTabView
         renderTabBar={() => <SuperTabbar />}
-        style={{flex:1}}>
+        style={{paddingBottom:53, flex:1}}>
 
         <SearchResultSong tabLabel={'单曲'} />
         <SearchResultPlayList tabLabel={'歌单'} />

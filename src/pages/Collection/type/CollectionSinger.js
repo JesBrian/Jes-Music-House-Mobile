@@ -21,7 +21,7 @@ class CollectionSinger extends React.Component {
       <ScrollView style={{paddingBottom:18, flex:1, backgroundColor:'#282828'}}>
         <LargeList style={{flex:1}}
                    data={[{items: [0, 1, 2, 3, 4, 5, 6]}]}
-                   heightForIndexPath={() => 48}
+                   heightForIndexPath={() => 53}
                    renderIndexPath={this._renderIndexPath}
         />
       </ScrollView>
