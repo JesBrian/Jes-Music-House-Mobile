@@ -29,7 +29,7 @@ class SearchResultUser extends React.Component {
   _renderIndexPath = () => {
     return (
       <View style={{height:53, flexDirection:'row'}}>
-        <Ripple onPress={() => {this.props.navigation.navigate('SingerDetail')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
+        <Ripple onPress={() => {this.props.navigation.navigate('User')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
           <Image style={{width:38, height:38, marginLeft:6, marginRight:8, borderRadius:19}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
           <View style={{height:'100%', flex:1, justifyContent:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
             <Text style={{marginLeft:3, fontSize:16, color:'#EEE'}}>搜索的用户</Text>

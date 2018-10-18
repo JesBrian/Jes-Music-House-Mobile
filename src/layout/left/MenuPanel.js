@@ -49,8 +49,8 @@ class MenuPanel extends React.Component {
               <Image style={{width:48, height:48, borderWidth:1, borderRadius:4, borderColor:'#666'}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
             </View>
             <View style={{flex:1}}>
-              <Text style={{backgroundColor:'transparent'}}>JesBrian</Text>
-              <SuperButton onPress={() => {}} label={'签到'} />
+              <Text style={{marginTop:21, backgroundColor:'transparent', fontSize:15, color:'#FFF'}}>JesBrian</Text>
+              <SuperButton onPress={() => {}} width={65} height={30} label={'已签到'} />
             </View>
           </View>
         </BoxShadow>

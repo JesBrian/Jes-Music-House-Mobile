@@ -5,7 +5,8 @@ import {
   ScrollView,
   View,
   Text,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  FlatList
 } from 'react-native';
 
 
@@ -22,6 +23,13 @@ class SongMenu extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
+      menuData: [
+        {icon: '\ue6b4', name: '下一首播放'},
+        {icon: '\ue80d', name: '收藏到歌单'},
+        {icon: '\ue63c', name: '下载'},
+        {icon: '\ue638', name: '评论'},
+        {icon: '\ue615', name: '分享'}
+      ]
     };
   }
 
@@ -33,21 +41,24 @@ class SongMenu extends React.Component {
             <View style={{flex:1}}/>
           </TouchableWithoutFeedback>
 
-          <View style={{width:'100%', height:338, position:'relative', flexDirection:'column'}}>
+          <View style={{width:'100%', height:308, position:'relative', flexDirection:'column'}}>
             <View style={{width:'100%', height:33, justifyContent:'center', borderTopLeftRadius:12, borderTopRightRadius:12, backgroundColor:'#444'}}>
               <Text style={{marginLeft:15, color:'#AAA'}}>歌曲：The Name of the Song</Text>
             </View>
 
-            <ScrollView style={{flex:1, backgroundColor:'#FFF'}}>
-              <Ripple style={{height:33, flexDirection:'row', backgroundColor:'lightgreen'}}>
-                <View style={{width:38, justifyContent:'center', alignItems:'center'}}>
-                  <SuperIcon type={'\ue6b4'} style={{fontSize:21}} />
-                </View>
-                <View style={{justifyContent:'center'}}>
-                  <Text style={{fontSize:15}}>下一首播放</Text>
-                </View>
-              </Ripple>
-            </ScrollView>
+            <FlatList style={{flex:1, backgroundColor:'#282828'}}
+                      data={this.state.menuData}
+                      renderItem={({item, index}) => (
+                        <Ripple style={{height:38, flexDirection:'row'}}>
+                          <View style={{width:38, justifyContent:'center', alignItems:'center'}}>
+                            <SuperIcon type={item.icon} style={{fontSize:21, color:this.props.config.color}} />
+                          </View>
+                          <View style={{justifyContent:'center'}}>
+                            <Text style={{fontSize:15, color:'#DDD'}}>{ item.name }</Text>
+                          </View>
+                        </Ripple>
+                      )}
+            />
           </View>
         </View>
       </View>

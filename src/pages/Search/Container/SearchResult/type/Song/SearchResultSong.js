@@ -34,7 +34,7 @@ class SearchResultSong extends React.Component {
     return (
       <View style={{height:47, flexDirection:'row', borderColor:'#FFF', borderBottomWidth:0.3}}>
         <Ripple style={{flex:1, flexDirection:'row'}}>
-          <View style={{paddingLeft:8, flex:1, flexDirection:'column', justifyContent:'center'}}>
+          <View style={{paddingLeft:12, flex:1, flexDirection:'column', justifyContent:'center'}}>
             <Text style={{fontSize:16, color:'#DDD'}}>The name of the Song 歌名</Text>
             <Text style={{fontSize:12, color:'#999'}}>JesBrian</Text>
           </View>
