@@ -45,10 +45,10 @@ class IndexRecommend extends React.Component {
 
   render() {
     const recommendData = [
-      {icon:'\ue640', name:'每日推荐'},
-      {icon:'\ue646', name:'歌单'},
-      {icon:'\ue624', name:'歌手'},
-      {icon:'\ue62c', name:'排行榜'},
+      {icon:'\ue640', name:'每日推荐', url: ''},
+      {icon:'\ue646', name:'歌单', url: 'PlayList'},
+      {icon:'\ue624', name:'歌手', url: 'Singer'},
+      {icon:'\ue62c', name:'排行榜', url: ''},
     ];
 
     return (
@@ -80,12 +80,14 @@ class IndexRecommend extends React.Component {
             {
               recommendData.map((item, index) => {
                 return (
-                  <View key={index} style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-                    <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
-                      <SuperIcon type={item.icon} style={{paddingTop:3, fontSize:32, color:this.props.config.color, backgroundColor:'transparent'}} />
+                  <TouchableWithoutFeedback onPress={() => {this.props.navigation.navigate(item.url)}}>
+                    <View key={index} style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+                      <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
+                        <SuperIcon type={item.icon} style={{paddingTop:3, fontSize:32, color:this.props.config.color, backgroundColor:'transparent'}} />
+                      </View>
+                      <Text style={{color:'#BBB'}}>{ item.name }</Text>
                     </View>
-                    <Text style={{color:'#BBB'}}>{ item.name }</Text>
-                  </View>
+                  </TouchableWithoutFeedback>
                 );
               })
             }

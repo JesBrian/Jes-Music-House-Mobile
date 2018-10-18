@@ -17,9 +17,8 @@ class PlayList extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <NormalNavbar label={'歌单'} />
+        <NormalNavbar label={'歌单分类'} />
 
-        <Text>歌单分类</Text>
       </View>
     );
   }
