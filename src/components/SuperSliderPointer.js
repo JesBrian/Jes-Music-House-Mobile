@@ -9,7 +9,10 @@ import {
 
 import Slider from 'react-native-slider'
 
-export default class SuperSlider extends React.Component {
+/**
+ * 滑块组件
+ */
+export default class SuperSliderPointer extends React.Component {
   static defaultProps = {
     value: 0
   };
@@ -23,7 +26,7 @@ export default class SuperSlider extends React.Component {
   render () {
     return (
       <TouchableWithoutFeedback onPress={(e) => {this.props.setPropsValue(((e.nativeEvent.locationX / PixelRatio.get() - 6) / 100).toFixed(2))}} >
-        <View style={{marginTop:1, flex:1, justifyContent:'center'}}>
+        <View style={styles.slider}>
           <Slider
             value={Number(this.props.value)}
             maximumTrackTintColor={'#686868'}
@@ -40,4 +43,7 @@ export default class SuperSlider extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  slider: {
+    flex:1, justifyContent:'center'
+  }
 });

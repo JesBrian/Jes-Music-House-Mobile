@@ -10,7 +10,7 @@ import {
 
 import { common } from '../../../assets/styles/common.js'
 import SuperIcon from '../../../components/SuperIcon.js'
-import SuperSlider from '../../../components/SuperSlider.js'
+import SuperSliderPointer from '../../../components/SuperSliderPointer.js'
 
 export default class SongLyric extends React.Component {
   constructor (props) {
@@ -36,7 +36,7 @@ export default class SongLyric extends React.Component {
               </View>
             </TouchableWithoutFeedback>
             <View style={{top:-1, flex:1, justifyContent:'center'}}>
-              <SuperSlider setPropsValue={value => {this.setState({volumeRace: value})}} value={this.state.volumeRace} />
+              <SuperSliderPointer setPropsValue={value => {this.setState({volumeRace: value})}} value={this.state.volumeRace} />
             </View>
           </View>
         </View>

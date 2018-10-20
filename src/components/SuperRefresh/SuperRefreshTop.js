@@ -7,7 +7,9 @@ import {
 } from 'react-native';
 import SuperLoading from "../SuperLoading";
 
-
+/**
+ * 顶部刷新loading组件
+ */
 export default class SuperRefreshTop extends React.Component {
   constructor (props) {
     super(props);

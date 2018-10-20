@@ -1,11 +1,10 @@
 import React  from 'react';
 
-import {
-  StyleSheet
-} from 'react-native';
-
 import Spinner from 'react-native-spinkit'
 
+/**
+ * 加载loading组件
+ */
 export default class SuperLoading extends React.Component {
   static defaultProps = {
     seconds: 35,
@@ -24,9 +23,6 @@ export default class SuperLoading extends React.Component {
   }
 
   render () {
-    return <Spinner style={this.props.style} isVisible={this.props.isVisible} size={this.props.size} type={this.props.type} color={this.props.color}/>
+    return <Spinner style={this.props.style} isVisible={this.props.isVisible} size={this.props.size} type={this.props.type} color={this.props.color} />
   }
 }
-
-const styles = StyleSheet.create({
-});

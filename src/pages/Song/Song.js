@@ -15,7 +15,7 @@ import { changeMusicPlayStatus, changeMusicPlayModel } from '../../redux/actions
 import SongNavbar from '../../layout/top/type/SongNavbar.js'
 import SongImg from './type/SongImg.js'
 import SongLyric from './type/SongLyric.js'
-import SuperSlider from '../../components/SuperSlider.js'
+import SuperSliderPointer from '../../components/SuperSliderPointer.js'
 import SuperIcon from '../../components/SuperIcon.js'
 import {hiddenBottomMusic, showBottomMusic} from "../../redux/actions/ViewActions";
 
@@ -56,7 +56,7 @@ class Song extends React.Component {
                 <Text style={{fontSize:12,  color:'#AAA'}}>00:00</Text>
               </View>
 
-              <SuperSlider setPropsValue={value => {this.setState({nowPlayRace: value})}} value={this.state.nowPlayRace} />
+              <SuperSliderPointer setPropsValue={value => {this.setState({nowPlayRace: value})}} value={this.state.nowPlayRace} />
 
               <View style={{width:68, justifyContent:'center', alignItems:'center'}}>
                 <Text style={{fontSize:12,  color:'#AAA'}}>00:00</Text>

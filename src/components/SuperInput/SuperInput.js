@@ -3,16 +3,16 @@ import React  from 'react';
 import {
   StyleSheet,
   View,
-  Text,
   TextInput
 } from 'react-native';
 
 import Ripple from 'react-native-material-ripple'
 
-import { common } from '../../assets/styles/common.js'
-
 import SuperIcon from '../../components/SuperIcon.js'
 
+/**
+ * 输入框组件
+ */
 export default class SuperInput extends React.Component {
   constructor (props) {
     super(props);
@@ -23,17 +23,17 @@ export default class SuperInput extends React.Component {
 
   render () {
     return (
-      <View style={{width:'100%', height:Math.max(46, this.state.textAreaHeight + 15), flexDirection:'row', backgroundColor:'#282828'}}>
-        <Ripple style={{width:43, height:'100%', justifyContent:'center', alignItems:'center'}}>
-          <SuperIcon type={'\ue614'} style={{fontSize:23, color:'#BBB'}} />
+      <View style={[styles.inputContainer, {height:Math.max(46, this.state.textAreaHeight + 15)}]}>
+        <Ripple style={styles.inputBtn}>
+          <SuperIcon type={'\ue614'} style={styles.inputIcon} />
         </Ripple>
-        <View style={{flex:1, paddingVertical:8, paddingHorizontal:2}}>
+        <View style={styles.inputTextContainer}>
           <TextInput onContentSizeChange={this._onContentSizeChange.bind(this)} multiline = {true}
                      selectionColor={'#2DC9FF'} underlineColorAndroid='transparent'
-                     style={{width:'100%', height:this.state.textAreaHeight, paddingVertical:5, paddingHorizontal:13, color:'#2DC9FF', fontSize:15, borderRadius:20, backgroundColor:'#383838'}} />
+                     style={[styles.inputText, {height:this.state.textAreaHeight}]} />
         </View>
-        <Ripple style={{width:43, height:'100%', justifyContent:'center', alignItems:'center'}}>
-          <SuperIcon type={'\ue616'} style={{fontSize:23, color:'#BBB'}} />
+        <Ripple style={styles.inputBtn}>
+          <SuperIcon type={'\ue616'} style={styles.inputIcon} />
         </Ripple>
       </View>
     );
@@ -47,4 +47,9 @@ export default class SuperInput extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  inputContainer: {width:'100%', flexDirection:'row', backgroundColor:'#282828'},
+  inputBtn: {width:43, height:'100%', justifyContent:'center', alignItems:'center'},
+  inputIcon: {fontSize:23, color:'#BBB'},
+  inputTextContainer: {flex:1, paddingVertical:8, paddingHorizontal:2},
+  inputText: {width:'100%', paddingVertical:5, paddingHorizontal:13, color:'#2DC9FF', fontSize:15, borderRadius:20, backgroundColor:'#383838'}
 });
