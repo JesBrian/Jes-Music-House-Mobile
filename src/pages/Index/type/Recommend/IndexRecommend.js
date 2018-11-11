@@ -18,9 +18,8 @@ import Ripple from 'react-native-material-ripple'
 import Swiper from 'react-native-swiper'
 
 import SuperIcon from '../../../../components/SuperIcon.js'
-import SuperRefreshTop from '../../../../components/SuperRefresh/SuperRefreshTop.js'
 
-import { frontendSlider } from '../../../../utils/http/request/index.js'
+import { frontendSlide } from '../../../../utils/http/request/index.js'
 
 
 const playListSize = (Dimensions.get('window').width - 30) * 0.31
@@ -29,15 +28,16 @@ class IndexRecommend extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      sliderData: []
+      slideData: []
     }
   }
 
   componentWillMount () {
-    frontendSlider().then( res => {
-      this.setState({
-        sliderData: res.data,
-      });
+    frontendSlide().then( res => {
+      // this.setState({
+      //   slideData: res.data,
+      // });
+      alert(res)
     }).catch( err => {
       alert(err)
     })
@@ -57,14 +57,14 @@ class IndexRecommend extends React.Component {
 
           <View style={{width:'100%', height:138, marginTop:18, paddingLeft:8, paddingRight:8}}>
             {
-              this.state.sliderData.length === 0 ? null : (
+              this.state.slideData.length === 0 ? null : (
                 <Swiper style={styles.wrapper} showsButtons={true} autoplay={true}>
                   {
-                    this.state.sliderData.map((item, index) => {
+                    this.state.slideData.map((item, index) => {
                       return (
                         <View key={index} style={styles.slide}>
                           {/*<Text style={styles.img}>{ item.id }</Text>*/}
-                          <Image style={styles.img} source={{uri:item.sliderImg}} />
+                          <Image style={styles.img} source={{uri:item.img}} />
                         </View>
                       )
                     })

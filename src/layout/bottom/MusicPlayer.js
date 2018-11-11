@@ -20,7 +20,9 @@ import { BoxShadow }  from 'react-native-shadow'
 import { common } from '../../assets/styles/common.js'
 import SuperIcon from "../../components/SuperIcon";
 
-
+/**
+ * 底部音乐播放器
+ */
 class MusicPlayer extends React.Component {
   constructor (props) {
     super(props);

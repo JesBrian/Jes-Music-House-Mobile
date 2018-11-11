@@ -19,9 +19,10 @@ import { LargeList } from 'react-native-largelist-v2'
 import { common } from '../../assets/styles/common.js'
 import SuperIcon from '../../components/SuperIcon.js'
 
-
+/**
+ * 当前播放列表
+ */
 class NowPlayList extends React.Component {
-
   constructor (props) {
     super(props);
     this.state = {

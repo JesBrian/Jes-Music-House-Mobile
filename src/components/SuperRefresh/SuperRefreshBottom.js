@@ -3,32 +3,45 @@ import React  from 'react';
 import {
   StyleSheet,
   View,
-  Image
+  Text
 } from 'react-native';
 import SuperLoading from "../SuperLoading";
+
+import { connect } from 'react-redux'
 
 /**
  * 底部刷新loading组件
  */
-export default class SuperRefreshBottom extends React.Component {
+class SuperRefreshBottom extends React.Component {
+  static defaultProps = {
+    label: '内容加载中 ...'
+  }
+
   constructor (props) {
     super(props);
     this.state = {
     };
   }
 
-
   render () {
     return (
-      <View style={{width:53, height:53, position:'absolute', justifyContent:'center', alignItems:'center'}}>
-        <Image source={require('../../assets/images/default/refresh-top.png')} style={{width:'100%', height:'100%', top:0, left:0, position:'absolute'}} />
-        <View style={{width:42, height:42, justifyContent:'center', alignItems:'center', borderRadius:20, backgroundColor:'#666'}}>
-          <SuperLoading size={25} type={'FadingCircle'} style={{marginBottom:4, marginRight:4}} />
-        </View>
+      <View style={styles.refreshBottom}>
+        <SuperLoading size={30} />
+        <Text style={[styles.loadingLabel, {color:this.props.color}]}>{ this.props.label }</Text>
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  refreshBottom: {flex:1, height:43, flexDirection:'row', justifyContent:'center', alignItems:'center'},
+  loadingLabel: {marginLeft:13, fontSize:16}
 });
+
+function reduxState(store) {
+  return {
+    color: store.config.color
+  }
+}
+
+export default connect(reduxState)(SuperRefreshBottom);
