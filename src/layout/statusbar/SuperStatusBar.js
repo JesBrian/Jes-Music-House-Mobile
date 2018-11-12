@@ -6,6 +6,9 @@ import {
 
 import { connect } from 'react-redux'
 
+/**
+ * 屏幕顶部状态栏
+ */
 class SuperStatusBar extends React.Component {
   render () {
     return (

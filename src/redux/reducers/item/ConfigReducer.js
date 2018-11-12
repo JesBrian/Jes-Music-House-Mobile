@@ -7,8 +7,8 @@ import * as types from '../../constants/ConfigTypes.js';
  */
 const initialState = {
   navigation: null,
-  theme: 'dark',
-  color: '#38DAF0',
+  theme: 'dark', // 主题 - dark/light
+  color: '#38DAF0', // 主题色 - 16进制RGB
 };
 
 /**

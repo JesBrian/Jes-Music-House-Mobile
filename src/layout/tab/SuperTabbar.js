@@ -15,7 +15,9 @@ import Ripple from 'react-native-material-ripple'
 
 import { common } from '../../assets/styles/common.js'
 
-
+/**
+ * 标签页导航栏
+ */
 class SuperTabbar extends React.Component {
   renderTab(name, page, isTabActive, onPressHandler, color) {
     const textColor = isTabActive ? color : '#BBB';
@@ -93,18 +95,10 @@ class SuperTabbar extends React.Component {
 
 const styles = StyleSheet.create({
   tab: {
-    flex: 1,
-    alignItems:'center',
-    justifyContent:'center'
+    flex:1, alignItems:'center', justifyContent:'center'
   },
   tabs: {
-    height:40,
-    paddingTop:4,
-    position:'relative',
-    zIndex:333,
-    flexDirection:'row',
-    justifyContent:'space-around',
-    backgroundColor:'rgba(0,0,0,0.28)'
+    height:40, paddingTop:4, position:'relative', zIndex:333, flexDirection:'row', justifyContent:'space-around', backgroundColor:'rgba(0,0,0,0.28)'
   },
 });
 

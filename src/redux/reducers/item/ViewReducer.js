@@ -6,12 +6,12 @@ import * as types from '../../constants/ViewTypes.js';
  * 这里可以初始化一个默认的实体类
  */
 const initialState = {
-  bottomMusic: true,
-  bottomPlayList: false,
-  bottomSongMenu: false,
+  bottomMusic: true, // 底部播放器
+  bottomPlayList: false, // 底部播放列表
+  bottomSongMenu: false, // 底部菜单
 
-  showModal: false,
-  modalType: ''
+  showModal: false, // 模态框
+  modalType: '' // 模态框类型
 };
 
 /**
