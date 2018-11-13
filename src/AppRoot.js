@@ -8,11 +8,11 @@ import { connect } from 'react-redux'
 
 import PageRouter from './router/PageRouter.js'
 
-import SuperStatusBar from './layout/statusbar/SuperStatusBar.js'
-import MusicPlayer from './layout/bottom/MusicPlayer.js'
-import NowPlayList from './layout/bottom/NowPlayList.js'
-import SongMenu from './layout/bottom/MenuPanel/SongMenu.js'
-import SuperModal from './layout/modal/SuperModal.js'
+import SuperStatusBar from './layout/top/TopStatusbar/SuperStatusBar.js'
+import MusicPlayer from './layout/bottom/BottomMusicPlayer/MusicPlayer.js'
+import NowPlayList from './layout/bottom/BottomPlayList/PlayList.js'
+import SongMenu from './layout/bottom/BottomMenuPanel/SongMenu.js'
+import SuperModal from './layout/content/ContentModal/SuperModal.js'
 
 
 type Props = {};

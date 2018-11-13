@@ -9,7 +9,7 @@ import {
 import { connect } from 'react-redux'
 
 
-import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
+import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
 import SuperButton from '../../components/SuperButton.js'
 
 

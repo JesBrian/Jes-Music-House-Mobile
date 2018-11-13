@@ -2,7 +2,7 @@ import React from 'react';
 
 import ScrollableTabView from 'react-native-scrollable-tab-view'
 
-import SuperTabbar from '../../layout/tab/SuperTabbar.js'
+import SuperTabbar from '../../layout/content/ContentTab/SuperTabbar.js'
 import MessagePersonalLetter from './type/MessagePersonalLetter.js'
 import MessageComment from './type/MessageComment.js'
 import MessageNotice from './type/MessageNotice.js'

@@ -10,19 +10,19 @@ import {
 
 
 import { connect } from 'react-redux'
-import { changeMusicPlayModel } from '../../redux/actions/MusicActions.js'
-import { hiddenBottomPlayList } from '../../redux/actions/ViewActions.js'
+import { changeMusicPlayModel } from '../../../redux/actions/MusicActions.js'
+import { hiddenBottomPlayList } from '../../../redux/actions/ViewActions.js'
 
 import Ripple from 'react-native-material-ripple'
 import { LargeList } from 'react-native-largelist-v2'
 
-import { common } from '../../assets/styles/common.js'
-import SuperIcon from '../../components/SuperIcon.js'
+import { common } from '../../../assets/styles/common.js'
+import SuperIcon from '../../../components/SuperIcon.js'
 
 /**
  * 当前播放列表
  */
-class NowPlayList extends React.Component {
+class PlayList extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -132,5 +132,4 @@ function reduxState(store) {
   }
 }
 
-export default connect(reduxState)(NowPlayList);
-
+export default connect(reduxState)(PlayList);

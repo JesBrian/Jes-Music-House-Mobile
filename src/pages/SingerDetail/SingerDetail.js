@@ -6,7 +6,7 @@ import {
   Text
 } from 'react-native';
 
-import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
+import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
 import SuperButton from '../../components/SuperButton.js'
 
 export default class SingerDetail extends React.Component {

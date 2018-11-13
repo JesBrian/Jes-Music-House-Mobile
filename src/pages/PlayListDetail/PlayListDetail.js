@@ -19,7 +19,7 @@ import { LargeList } from 'react-native-largelist-v2'
 import { common } from '../../assets/styles/common.js'
 
 import { goRouter } from '../../utils/router/router.js'
-import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
+import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
 import SuperIcon from '../../components/SuperIcon.js'
 
 

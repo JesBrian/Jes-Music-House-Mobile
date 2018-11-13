@@ -9,10 +9,10 @@ import {
 import { withNavigation } from 'react-navigation'
 
 import NavbarFrame from '../NavbarFrame.js'
-import SuperButton from '../../../components/SuperButton.js'
+import SuperButton from '../../../../components/SuperButton.js'
 
-import { common } from '../../../assets/styles/common.js'
-import SuperIcon from '../../../components/SuperIcon.js'
+import { common } from '../../../../assets/styles/common.js'
+import SuperIcon from '../../../../components/SuperIcon.js'
 
 class IndexNavbar extends React.Component {
   constructor(props) {

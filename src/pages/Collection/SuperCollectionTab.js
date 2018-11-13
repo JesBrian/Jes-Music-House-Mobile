@@ -2,7 +2,7 @@ import React from 'react';
 
 import ScrollableTabView from 'react-native-scrollable-tab-view'
 
-import SuperTabbar from '../../layout/tab/SuperTabbar.js'
+import SuperTabbar from '../../layout/content/ContentTab/SuperTabbar.js'
 import CollectionPlayList from './type/CollectionPlayList.js'
 import CollectionSinger from './type/CollectionSinger.js'
 

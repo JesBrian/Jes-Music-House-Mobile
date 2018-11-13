@@ -15,7 +15,7 @@ import { setColor, setTheme } from '../../redux/actions/ConfigActions.js'
 import Ripple from 'react-native-material-ripple'
 import LinearGradient from 'react-native-linear-gradient'
 
-import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
+import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
 import SuperIcon from '../../components/SuperIcon.js'
 
 

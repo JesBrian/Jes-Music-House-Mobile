@@ -8,7 +8,7 @@ import {
 import { connect } from 'react-redux'
 import { BoxShadow }  from 'react-native-shadow'
 
-import { common, theme } from '../../assets/styles/common.js'
+import { common, theme } from '../../../assets/styles/common.js'
 
 
 class NavbarFrame extends React.Component {

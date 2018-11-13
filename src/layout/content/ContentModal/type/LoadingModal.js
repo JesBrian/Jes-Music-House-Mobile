@@ -8,7 +8,7 @@ import {
 
 import { BoxShadow } from 'react-native-shadow'
 
-import SuperLoading from '../../../components/SuperLoading.js'
+import SuperLoading from '../../../../components/SuperLoading.js'
 
 /**
  * 加载等待模态框
