@@ -21,9 +21,7 @@ class SuperModal extends React.Component {
   render () {
     return (
       <Modal
-        animationType={'fade'}
-        transparent={true}
-        visible={true}
+        animationType={'fade'} transparent={true} visible={true}
         onRequestClose={() => {}}>
         {
           this.props.showView.modalType === 'loading' ? <Loading /> : null

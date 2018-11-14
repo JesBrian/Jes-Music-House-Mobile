@@ -16,6 +16,10 @@ import SuperModal from './layout/content/ContentModal/SuperModal.js'
 
 
 type Props = {};
+
+/**
+ * 项目App - 入口
+ */
 class AppRoot extends Component<Props> {
   constructor (props) {
     super(props);

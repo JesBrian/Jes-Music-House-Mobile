@@ -18,37 +18,31 @@ import SuperIcon from '../../../../components/SuperIcon.js'
  * 菜单面板底部
  */
 class MenuBottom extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
-
   render() {
     return (
-      <View style={{width:'100%', height:43, paddingBottom:6, flexDirection:'row', backgroundColor:'#333'}}>
-        <Ripple onPress={() => {this.props.dispatch(setTheme(this.props.theme === 'light' ? 'dark' : 'light'))}} style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+      <View style={styles.menuBottom}>
+        <Ripple onPress={() => {this.props.dispatch(setTheme(this.props.theme === 'light' ? 'dark' : 'light'))}} style={styles.menuBtn}>
           {
             this.props.theme === 'light' ? (
-              <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-                <SuperIcon type={'\ue650'} style={{marginRight:8, fontSize:20, color:'#DDD'}} />
-                <Text style={{fontSize:18, color:'#DDD'}}>夜间</Text>
+              <View style={styles.menuBtn}>
+                <SuperIcon type={'\ue650'} style={styles.menuIcon} />
+                <Text style={styles.menuLabel}>夜间</Text>
               </View>
             ) : (
-              <View style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-                <SuperIcon type={'\ue6c7'} style={{marginRight:8, fontSize:20, color:'#DDD'}} />
-                <Text style={{fontSize:18, color:'#DDD'}}>日间</Text>
+              <View style={styles.menuBtn}>
+                <SuperIcon type={'\ue6c7'} style={styles.menuIcon} />
+                <Text style={styles.menuLabel}>日间</Text>
               </View>
             )
           }
         </Ripple>
-        <Ripple onPress={() => {}} style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-          <SuperIcon type={'\ue672'} style={{marginRight:8, fontSize:20, color:'#DDD'}} />
-          <Text style={{fontSize:18, color:'#DDD'}}>设置</Text>
+        <Ripple onPress={() => {}} style={styles.menuBtn}>
+          <SuperIcon type={'\ue672'} style={styles.menuIcon} />
+          <Text style={styles.menuLabel}>设置</Text>
         </Ripple>
-        <Ripple onPress={() => {}} style={{flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-          <SuperIcon type={'\ue622'} style={{marginRight:8, fontSize:20, color:'#DDD'}} />
-          <Text style={{fontSize:18, color:'#DDD'}}>退出</Text>
+        <Ripple onPress={() => {}} style={styles.menuBtn}>
+          <SuperIcon type={'\ue622'} style={styles.menuIcon} />
+          <Text style={styles.menuLabel}>退出</Text>
         </Ripple>
       </View>
     )
@@ -56,6 +50,10 @@ class MenuBottom extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  menuBottom: {width:'100%', height:43, paddingBottom:6, flexDirection:'row', backgroundColor:'#333'},
+  menuBtn: {flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'},
+  menuIcon: {marginRight:8, fontSize:20, color:'#DDD'},
+  menuLabel: {fontSize:18, color:'#DDD'}
 });
 
 function reduxState(store) {

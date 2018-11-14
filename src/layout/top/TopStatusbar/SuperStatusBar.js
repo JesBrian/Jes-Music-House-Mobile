@@ -7,19 +7,20 @@ import {
 import { connect } from 'react-redux'
 
 /**
- * 屏幕顶部状态栏
+ * 屏幕顶部状态栏 - 电量、信号那部分
  */
 class SuperStatusBar extends React.Component {
   render () {
     return (
-      <StatusBar translucent={true} backgroundColor={'transparent'} barStyle={this.props.config.theme === 'light' ? 'dark-content' : 'light-content'} />
+      <StatusBar barStyle={this.props.theme === 'light' ? 'dark-content' : 'light-content'}
+                 translucent={true} backgroundColor={'transparent'} />
     );
   }
 }
 
 function reduxState(store) {
   return {
-    config: store.config,
+    theme: store.config.theme,
   }
 }
 
