@@ -17,12 +17,13 @@ import { withNavigation } from 'react-navigation'
 import Ripple from 'react-native-material-ripple'
 import Swiper from 'react-native-swiper'
 
-import SuperIcon from '../../../../components/SuperIcon.js'
+import SuperIcon from '../../../../components/SuperIcon/SuperIcon.js'
+import SuperSectionNavbar from '../../../../components/SuperSectionNavbar/SuperSectionNavbar.js'
 
 import { frontendSlide } from '../../../../utils/http/request/index.js'
 
 
-const playListSize = (Dimensions.get('window').width - 30) * 0.31
+const playListSize = Dimensions.get('window').width * 0.31 * 0.96
 
 class IndexRecommend extends React.Component {
   constructor (props) {
@@ -53,7 +54,7 @@ class IndexRecommend extends React.Component {
 
     return (
       <View style={styles.container}>
-        <ScrollView style={{width:'100%', flex:1}}>
+        <ScrollView style={{width:'96%', flex:1}}>
 
           <View style={{width:'100%', height:138, marginTop:18, paddingLeft:8, paddingRight:8}}>
             {
@@ -76,7 +77,7 @@ class IndexRecommend extends React.Component {
 
           <Text onPress={() => {this.props.config.navigation.navigate('TestPage')}}>测试页面</Text>
 
-          <View style={{width:'100%', height:68, marginTop:28, marginBottom:13, paddingLeft:8, paddingRight:8, flexDirection:'row'}}>
+          <View style={{width:'100%', height:68, marginTop:28, marginBottom:28, paddingLeft:8, paddingRight:8, flexDirection:'row'}}>
             {
               recommendData.map((item, index) => {
                 return (
@@ -93,11 +94,8 @@ class IndexRecommend extends React.Component {
             }
           </View>
 
-          <View style={{marginTop:13, marginLeft:8, marginBottom:6, flexDirection:'row', alignItems:'center'}}>
-            <SuperIcon type={'\ue604'} style={{marginRight:10, fontSize:20, color:this.props.config.color}} />
-            <Text style={{fontSize:16, color:'#DDD'}}>推荐歌单</Text>
-          </View>
-          <View style={{width:'100%', paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
+          <SuperSectionNavbar title={'推荐歌单'} />
+          <View style={{width:'100%', marginTop:8, marginBottom:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
             <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
               <View style={{width:'32%'}}>
                 <View style={{width:'100%', height:playListSize, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
@@ -139,11 +137,8 @@ class IndexRecommend extends React.Component {
             </TouchableWithoutFeedback>
           </View>
 
-          <View style={{marginTop:13, marginLeft:8, marginBottom:6, flexDirection:'row', alignItems:'center'}}>
-            <SuperIcon type={'\ue604'} style={{marginRight:10, fontSize:20, color:this.props.config.color}} />
-            <Text style={{fontSize:16, color:'#DDD'}}>最新音乐</Text>
-          </View>
-          <View style={{width:'100%', paddingLeft:15, paddingRight:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
+          <SuperSectionNavbar title={'最新音乐'} />
+          <View style={{width:'100%', marginTop:8, marginBottom:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
             <View style={{width:'32%'}}>
               <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
                 <View style={{width:'100%', height:playListSize, borderRadius:4, backgroundColor:'#f09c9d'}}>
@@ -176,11 +171,8 @@ class IndexRecommend extends React.Component {
             </View>
           </View>
 
-          <View style={{marginTop:13, marginLeft:8, marginBottom:6, flexDirection:'row', alignItems:'center'}}>
-            <SuperIcon type={'\ue604'} style={{marginRight:10, fontSize:20, color:this.props.config.color}} />
-            <Text style={{fontSize:16, color:'#DDD'}}>歌曲排行榜</Text>
-          </View>
-          <View>
+          <SuperSectionNavbar title={'歌曲排行榜'} />
+          <View style={{marginVertical:8}}>
             <Ripple onPress={() => {this.props.config.navigation.navigate('Song')}} style={{height:58, flexDirection:'row', backgroundColor:'lightgreen'}}>
               <Text>8</Text>
             </Ripple>
@@ -196,7 +188,7 @@ class IndexRecommend extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex:1, justifyContent:'center', alignItems:'center',
     paddingBottom:53,
     backgroundColor: 'transparent'
   },

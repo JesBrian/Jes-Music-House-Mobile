@@ -2,7 +2,7 @@ import React from 'react';
 
 import ScrollableTabView from 'react-native-scrollable-tab-view'
 
-import SuperTabbar from '../../layout/tab/SuperTabbar.js'
+import SuperTabbar from '../../layout/content/ContentTab/SuperTabbar.js'
 import UserMusic from './type/UserMusic.js'
 import UserTrend from './type/UserTrend.js'
 import UserInfo from './type/UserInfo.js'

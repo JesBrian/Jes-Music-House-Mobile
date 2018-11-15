@@ -5,7 +5,7 @@ import {
   View,
   Image
 } from 'react-native';
-import SuperLoading from "../SuperLoading";
+import SuperLoading from "../SuperLoading/SuperLoading";
 
 /**
  * 顶部刷新loading组件

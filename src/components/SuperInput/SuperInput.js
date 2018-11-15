@@ -8,7 +8,7 @@ import {
 
 import Ripple from 'react-native-material-ripple'
 
-import SuperIcon from '../../components/SuperIcon.js'
+import SuperIcon from '../SuperIcon/SuperIcon.js'
 
 /**
  * 输入框组件

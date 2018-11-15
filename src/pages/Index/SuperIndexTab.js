@@ -2,7 +2,7 @@ import React from 'react';
 
 import ScrollableTabView from 'react-native-scrollable-tab-view'
 
-import SuperTabbar from '../../layout/tab/SuperTabbar.js'
+import SuperTabbar from '../../layout/content/ContentTab/SuperTabbar.js'
 import IndexSelf from './type/Self/IndexSelf.js'
 import IndexRecommend from './type/Recommend/IndexRecommend.js'
 import IndexFrined from './type/Friend/IndexFriend.js'

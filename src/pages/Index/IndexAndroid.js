@@ -12,8 +12,8 @@ import { connect } from 'react-redux'
 import { setNavigation } from '../../redux/actions/ConfigActions.js'
 
 
-import IndexNavbar from '../../layout/top/type/IndexNavbar.js'
-import MenuPanel from '../../layout/left/MenuPanel.js'
+import IndexNavbar from '../../layout/top/TopNavbar/type/IndexNavbar.js'
+import MenuPanel from '../../layout/left/LeftMenuPanel/MenuPanel.js'
 import SuperIndexTab from './SuperIndexTab.js'
 
 

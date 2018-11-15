@@ -14,9 +14,9 @@ import { hiddenBottomMusic, showBottomMusic } from '../../redux/actions/ViewActi
 
 import Ripple from 'react-native-material-ripple'
 
-import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
+import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
 import SuperInput from '../../components/SuperInput/SuperInput.js'
-import SuperIcon from '../../components/SuperIcon.js'
+import SuperIcon from '../../components/SuperIcon/SuperIcon.js'
 
 
 class Comment extends React.Component {

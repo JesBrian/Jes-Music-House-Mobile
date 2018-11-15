@@ -15,7 +15,7 @@ import { hiddenBottomSongMenu } from '../../../redux/actions/ViewActions.js'
 import Ripple from 'react-native-material-ripple'
 
 import { common } from '../../../assets/styles/common.js'
-import SuperIcon from '../../../components/SuperIcon.js'
+import SuperIcon from '../../../components/SuperIcon/SuperIcon.js'
 
 
 class SongMenu extends React.Component {

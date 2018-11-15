@@ -10,10 +10,10 @@ import {
 
 import Ripple from 'react-native-material-ripple'
 
-import SuperButton from '../../components/SuperButton.js'
+import SuperButton from '../../components/SuperButton/SuperButton.js'
 
 import { common } from '../../assets/styles/common.js'
-import SuperIcon from '../../components/SuperIcon.js'
+import SuperIcon from '../../components/SuperIcon/SuperIcon.js'
 
 export default class Home extends React.Component {
   render() {

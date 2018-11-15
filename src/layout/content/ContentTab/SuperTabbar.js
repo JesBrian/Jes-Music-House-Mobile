@@ -13,7 +13,7 @@ import {
 import { connect } from 'react-redux'
 import Ripple from 'react-native-material-ripple'
 
-import { common } from '../../assets/styles/common.js'
+import { common } from '../../../assets/styles/common.js'
 
 /**
  * 标签页导航栏
@@ -68,7 +68,7 @@ class SuperTabbar extends React.Component {
             ]}
           />
 
-          <Image style={{width:'100%', height:8, bottom:-8, position:'absolute', zIndex:999, backgroundColor:'transparent'}} source={require('../../assets/images/default/shadow.png')} />
+          <Image style={{width:'100%', height:8, bottom:-8, position:'absolute', zIndex:999, backgroundColor:'transparent'}} source={require('../../../assets/images/default/shadow.png')} />
         </View>
       ) : (
         <View style={{height:40}}>
@@ -86,7 +86,7 @@ class SuperTabbar extends React.Component {
               ]}
             />
           </View>
-          <Image style={{width:'100%', bottom:-11, position:'absolute', zIndex:999, backgroundColor:'transparent'}} source={require('../../assets/images/default/shadow.png')} />
+          <Image style={{width:'100%', bottom:-11, position:'absolute', zIndex:999, backgroundColor:'transparent'}} source={require('../../../assets/images/default/shadow.png')} />
         </View>
       )
     );

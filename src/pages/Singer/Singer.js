@@ -10,7 +10,7 @@ import {
 import { LargeList }  from 'react-native-largelist-v2'
 import Ripple from 'react-native-material-ripple'
 
-import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
+import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
 
 
 const singerCategory = [

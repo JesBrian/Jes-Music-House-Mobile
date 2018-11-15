@@ -7,8 +7,8 @@ import {
   Text
 } from 'react-native';
 
-import SuperButton from '../../components/SuperButton.js'
-import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
+import SuperButton from '../../components/SuperButton/SuperButton.js'
+import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
 import SuperUserTab from './SuperUserTab.js'
 
 

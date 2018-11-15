@@ -13,7 +13,7 @@ import Ripple from 'react-native-material-ripple'
 import { LargeList } from 'react-native-largelist-v2'
 import { withNavigation } from 'react-navigation'
 
-import SuperIcon from '../../../components/SuperIcon.js'
+import SuperIcon from '../../../components/SuperIcon/SuperIcon.js'
 
 
 class CollectionPlayList extends React.Component {

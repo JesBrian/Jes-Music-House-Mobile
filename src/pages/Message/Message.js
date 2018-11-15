@@ -5,7 +5,7 @@ import {
   View
 } from 'react-native';
 
-import NormalNavbar from '../../layout/top/type/NormalNavbar.js'
+import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
 import SuperMessageTab from './SuperMessageTab.js'
 
 

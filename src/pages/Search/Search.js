@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 
 import { withNavigation } from 'react-navigation'
 
-import SearchNavbar from '../../layout/top/type/SearchNavbar.js'
+import SearchNavbar from '../../layout/top/TopNavbar/type/SearchNavbar.js'
 import SearchKey from './Container/SearchKey/SearchKey.js'
 import SearchResult from './Container/SearchResult/SearchResult.js'
 

@@ -10,7 +10,7 @@ import LinearGradient from 'react-native-linear-gradient'
 import { BoxShadow }  from 'react-native-shadow'
 import { connect } from 'react-redux'
 
-import { getInt2RGB, getRGBStrByArr } from '../utils/common/color.js'
+import { getInt2RGB, getRGBStrByArr } from '../../utils/common/color.js'
 
 /**
  * 按钮组件

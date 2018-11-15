@@ -11,14 +11,14 @@ import {
 
 
 import { connect } from 'react-redux'
-import { showBottomPlayList } from '../../redux/actions/ViewActions.js'
-import { changeMusicPlayStatus } from '../../redux/actions/MusicActions.js'
+import { showBottomPlayList } from '../../../redux/actions/ViewActions.js'
+import { changeMusicPlayStatus } from '../../../redux/actions/MusicActions.js'
 
 import Ripple from 'react-native-material-ripple'
 import { BoxShadow }  from 'react-native-shadow'
 
-import { common } from '../../assets/styles/common.js'
-import SuperIcon from "../../components/SuperIcon";
+import { common } from '../../../assets/styles/common.js'
+import SuperIcon from "../../../components/SuperIcon/SuperIcon";
 
 /**
  * 底部音乐播放器
