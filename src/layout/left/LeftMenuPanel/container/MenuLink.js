@@ -6,10 +6,10 @@ import {
   StyleSheet
 } from 'react-native';
 
+import { connect } from 'react-redux'
+
 import Ripple from 'react-native-material-ripple'
 import { withNavigation } from 'react-navigation'
-
-import { connect } from 'react-redux'
 
 import SuperIcon from '../../../../components/SuperIcon/SuperIcon.js'
 
@@ -24,8 +24,8 @@ class MenuLink extends React.Component {
   render() {
     return (
       <FlatList
-        style={styles.menuLink} data={menuData}
-        renderItem={({item}) => this._renderMenuCell(item)}
+        extraData={this.props.color} style={styles.menuLink}
+        data={menuData} renderItem={({item}) => this._renderMenuCell(item)}
       />
     )
   }
