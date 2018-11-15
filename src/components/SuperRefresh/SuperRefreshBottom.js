@@ -5,7 +5,7 @@ import {
   View,
   Text
 } from 'react-native';
-import SuperLoading from "../SuperLoading";
+import SuperLoading from "../SuperLoading/SuperLoading";
 
 import { connect } from 'react-redux'
 

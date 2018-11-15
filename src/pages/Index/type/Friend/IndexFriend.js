@@ -14,8 +14,8 @@ import { connect } from 'react-redux'
 
 import Ripple from 'react-native-material-ripple'
 
-import SuperButton from '../../../../components/SuperButton.js'
-import SuperIcon from '../../../../components/SuperIcon.js'
+import SuperButton from '../../../../components/SuperButton/SuperButton.js'
+import SuperIcon from '../../../../components/SuperIcon/SuperIcon.js'
 
 import { goRouter } from '../../../../utils/router/router.js'
 

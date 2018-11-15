@@ -17,7 +17,7 @@ import Ripple from 'react-native-material-ripple'
 import { LargeList } from 'react-native-largelist-v2'
 
 import { common } from '../../../assets/styles/common.js'
-import SuperIcon from '../../../components/SuperIcon.js'
+import SuperIcon from '../../../components/SuperIcon/SuperIcon.js'
 
 /**
  * 当前播放列表

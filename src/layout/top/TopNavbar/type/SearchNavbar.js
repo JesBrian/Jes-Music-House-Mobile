@@ -11,7 +11,7 @@ import { withNavigation } from 'react-navigation'
 import Ripple from 'react-native-material-ripple'
 
 import NavbarFrame from '../NavbarFrame.js'
-import SuperIcon from '../../../../components/SuperIcon.js'
+import SuperIcon from '../../../../components/SuperIcon/SuperIcon.js'
 
 import { common } from '../../../../assets/styles/common.js'
 

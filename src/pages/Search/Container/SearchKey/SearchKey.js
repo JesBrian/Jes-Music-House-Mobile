@@ -14,7 +14,7 @@ import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
 import Ripple from 'react-native-material-ripple'
 
-import SuperIcon from '../../../../components/SuperIcon.js'
+import SuperIcon from '../../../../components/SuperIcon/SuperIcon.js'
 
 
 class SearchKey extends React.Component {

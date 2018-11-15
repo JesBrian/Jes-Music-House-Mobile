@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableWithoutFeedback } from "react-native";
 
 import Ripple from 'react-native-material-ripple'
 import { LargeList } from "react-native-largelist-v2";
-import SuperIcon from "../../components/SuperIcon";
+import SuperIcon from "../../components/SuperIcon/SuperIcon";
 
 export default class TestPage extends React.Component {
   _sectionCount = 10;

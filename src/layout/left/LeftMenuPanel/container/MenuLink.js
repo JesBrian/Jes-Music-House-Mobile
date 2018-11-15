@@ -11,7 +11,7 @@ import { withNavigation } from 'react-navigation'
 
 import { connect } from 'react-redux'
 
-import SuperIcon from '../../../../components/SuperIcon.js'
+import SuperIcon from '../../../../components/SuperIcon/SuperIcon.js'
 
 
 const menuData = [

@@ -13,7 +13,7 @@ import { withNavigation } from 'react-navigation'
 
 import { connect } from 'react-redux'
 
-import SuperButton from '../../../../components/SuperButton.js'
+import SuperButton from '../../../../components/SuperButton/SuperButton.js'
 
 const shadowOpt = {
   width:Dimensions.get('window').width * 0.82, height:118, color:"#000", border:8, opacity:0.8, x:-6, y:1,

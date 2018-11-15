@@ -16,7 +16,8 @@ import Ripple from 'react-native-material-ripple'
 import LinearGradient from 'react-native-linear-gradient'
 
 import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
-import SuperIcon from '../../components/SuperIcon.js'
+import SuperIcon from '../../components/SuperIcon/SuperIcon.js'
+import SuperSectionNavbar from '../../components/SuperSectionNavbar/SuperSectionNavbar.js'
 
 
 class AppTheme extends React.Component {
@@ -44,11 +45,8 @@ class AppTheme extends React.Component {
         <ScrollView style={{flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
           <View style={{flex:1, alignItems:'center'}}>
 
-            <View style={{width:'90%', height:this.state.colorSize * 2 + 38, marginTop:28}}>
-              <View style={{marginLeft:-6, flexDirection:'row', alignItems:'center'}}>
-                <SuperIcon type={'\ue604'} style={{marginRight:10, fontSize:20, color:this.state.nowChooseColor}} />
-                <Text style={{fontSize:16, color:'#DDD'}}>预设主题色</Text>
-              </View>
+            <View style={{width:'90%', marginVertical:18, alignItems:'center', height:this.state.colorSize * 2 + 38}}>
+              <SuperSectionNavbar title={'预设主题色'} />
               <View style={{marginTop:8, flex:1, flexDirection:'row', justifyContent:'space-between', flexWrap:'wrap'}}>
                 {
                   themeColorArr.map((item) => {
@@ -62,11 +60,8 @@ class AppTheme extends React.Component {
               </View>
             </View>
 
-            <View style={{width:'90%', marginTop:38, position:'relative'}}>
-              <View style={{marginLeft:-6, flexDirection:'row', alignItems:'center'}}>
-                <SuperIcon type={'\ue604'} style={{marginRight:10, fontSize:20, color:this.state.nowChooseColor}} />
-                <Text style={{fontSize:16, color:'#DDD'}}>调色盘</Text>
-              </View>
+            <View style={{width:'90%', marginVertical:18, alignItems:'center', position:'relative'}}>
+              <SuperSectionNavbar title={'调色盘'} />
               <Ripple onPress={this.changeAppColor.bind(this, '#4cf0ab')} style={{width:68, height:28, top:3, right:12, position:'absolute', justifyContent:'center', alignItems:'center', borderRadius:3, borderWidth:1, borderColor:this.state.nowChooseColor, backgroundColor:'rgba(0,0,0,0.28)'}}>
                 <Text style={{color:this.state.nowChooseColor}}>应用</Text>
               </Ripple>
@@ -79,12 +74,9 @@ class AppTheme extends React.Component {
               </View>
             </View>
 
-            <View style={{width:'90%', marginTop:38}}>
-              <View style={{marginLeft:-6, flexDirection:'row', alignItems:'center'}}>
-                <SuperIcon type={'\ue604'} style={{marginRight:10, fontSize:20, color:this.state.nowChooseColor}} />
-                <Text style={{fontSize:16, color:'#DDD'}}>模式切换</Text>
-              </View>
-              <View style={{marginTop:8, flexDirection:'row', justifyContent:'space-between'}}>
+            <View style={{width:'90%', marginVertical:18, alignItems:'center'}}>
+              <SuperSectionNavbar title={'模式切换'} />
+              <View style={{width:'100%', marginTop:8, marginHorizontal:'auto', flexDirection:'row', justifyContent:'space-between'}}>
                 <Ripple onPress={this.changeAppTheme.bind(this, 'light')} style={{width:'45%', height:43, marginTop:3, flexDirection:'row', justifyContent:'center', alignItems:'center', borderRadius:5, borderWidth:1, borderColor:this.state.nowChooseColor, backgroundColor:'rgba(0,0,0,0.28)'}}>
                   <SuperIcon type={'\ue6c7'} style={{marginRight:8, fontSize:23, color:this.state.nowChooseColor}}/>
                   <Text style={{fontSize:16, color:this.state.nowChooseColor}}>日间模式</Text>

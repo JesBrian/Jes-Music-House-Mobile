@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
-import SuperButton from '../../components/SuperButton.js'
+import SuperButton from '../../components/SuperButton/SuperButton.js'
 
 
 export default class Register extends React.Component {

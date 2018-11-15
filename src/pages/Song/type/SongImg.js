@@ -15,7 +15,7 @@ import { connect } from 'react-redux'
 import Ripple from 'react-native-material-ripple'
 
 import { common } from '../../../assets/styles/common.js'
-import SuperIcon from '../../../components/SuperIcon.js'
+import SuperIcon from '../../../components/SuperIcon/SuperIcon.js'
 
 
 class SongImg extends React.Component {

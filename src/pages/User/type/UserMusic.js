@@ -13,7 +13,7 @@ import { connect } from 'react-redux'
 import Ripple from 'react-native-material-ripple'
 import { withNavigation } from 'react-navigation'
 
-import SuperIcon from '../../../components/SuperIcon.js'
+import SuperIcon from '../../../components/SuperIcon/SuperIcon.js'
 
 
 class UserMusic extends React.Component {

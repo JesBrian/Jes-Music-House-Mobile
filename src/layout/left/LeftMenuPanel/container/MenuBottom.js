@@ -12,7 +12,7 @@ import { withNavigation } from 'react-navigation'
 import { connect } from 'react-redux'
 import { setTheme } from '../../../../redux/actions/ConfigActions.js'
 
-import SuperIcon from '../../../../components/SuperIcon.js'
+import SuperIcon from '../../../../components/SuperIcon/SuperIcon.js'
 
 /**
  * 菜单面板底部
