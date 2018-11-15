@@ -17,7 +17,7 @@ import Ripple from 'react-native-material-ripple'
 import SuperButton from '../../../../components/SuperButton.js'
 import SuperIcon from '../../../../components/SuperIcon.js'
 
-import { goRouter } from '../../../../utils/router/router.js'
+import { goRouter } from '../../../../utils/common/router.js'
 
 
 class IndexFriend extends React.Component {

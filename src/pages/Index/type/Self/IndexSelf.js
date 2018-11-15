@@ -16,7 +16,7 @@ import { BoxShadow }  from 'react-native-shadow'
 
 import SuperIcon from '../../../../components/SuperIcon.js'
 import SuperButton from '../../../../components/SuperButton.js'
-import { goRouter } from '../../../../utils/router/router.js'
+import { goRouter } from '../../../../utils/common/router.js'
 
 
 class IndexSelf extends React.Component {
