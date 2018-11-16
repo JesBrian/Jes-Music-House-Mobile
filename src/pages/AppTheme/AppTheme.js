@@ -19,13 +19,14 @@ import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
 import SuperIcon from '../../components/SuperIcon/SuperIcon.js'
 import SuperSectionNavbar from '../../components/SuperSectionNavbar/SuperSectionNavbar.js'
 
+const themeColorArr = ['#38daf0', '#ce7df0', '#f09c9d', '#4cf0ab', '#2ecfff', '#f07b93', '#779bff', '#0000ff', '#f0ef77', '#f09309'];
 
 class AppTheme extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
       colorSize: Dimensions.get('window').width * 0.93 * 0.17,
-      nowChooseColor: '#05DAF0'
+      nowChooseColor: this.props.config.color
     };
   }
 
@@ -36,8 +37,6 @@ class AppTheme extends React.Component {
   }
 
   render() {
-    const themeColorArr = ['#38daf0', '#ce7df0', '#f09c9d', '#4cf0ab', '#2ecfff', '#f07b93', '#779bff', '#0000ff', '#f0ef77', '#f09309'];
-
     return (
       <View style={styles.container}>
         <NormalNavbar label={'个性换肤'} />
@@ -68,8 +67,8 @@ class AppTheme extends React.Component {
               <View style={{height:68, marginTop:8, flexDirection:'row'}}>
                 <View style={{width:53, height:68, marginRight:15, marginBottom:5, position:'relative',borderRadius:8, backgroundColor:this.state.nowChooseColor}} />
                 <View style={{paddingTop:20, flex:1, justifyContent:'center'}}>
-                  <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#00FFFF', '#0000FF', '#8B00FF']} style={{width:'100%', height:10, marginTop:8, marginBottom:8, borderRadius:10}} />
-                  <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#FFF', this.state.nowChooseColor, '#000']} style={{width:'100%', height:10, marginTop:8, marginBottom:8, borderRadius:10}} />
+                  <LinearGradient start={{x:0, y:0}} end={{x:1, y:0}} colors={['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#00FFFF', '#0000FF', '#8B00FF']} style={{width:'100%', height:10, marginTop:8, marginBottom:8, borderRadius:10}} />
+                  <LinearGradient start={{x:0, y:0}} end={{x:1, y:0}} colors={['#FFF', this.state.nowChooseColor, '#000']} style={{width:'100%', height:10, marginTop:8, marginBottom:8, borderRadius:10}} />
                 </View>
               </View>
             </View>

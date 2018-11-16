@@ -42,7 +42,6 @@
 		5ECD5820215A90B6008950EA /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5ECD581C215A90B6008950EA /* iconfont.ttf */; };
 		77DF3FAABED448EFB82FC656 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63620097A7F049969C65104C /* libRNSVG.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		8DA7A812D92C40BAA88B402A /* libSQLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF20CEF06484222BB24F647 /* libSQLite.a */; };
 		982136AF3B8342EFA8133B20 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F563F368DF2E4E4F811B97AD /* libsqlite3.0.tbd */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		C566D26DC87849CF80CB1A4F /* libRNSpinkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6DFA986555436D8E44F8C9 /* libRNSpinkit.a */; };
@@ -412,7 +411,6 @@
 		D1050A53C5854D9BA32DD974 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
 		DA406411553448DABCB16758 /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
 		F563F368DF2E4E4F811B97AD /* libsqlite3.0.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		FFF20CEF06484222BB24F647 /* libSQLite.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libSQLite.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,7 +441,6 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				3452EA1F14A646FA9C0E86D8 /* libBVLinearGradient.a in Frameworks */,
 				C566D26DC87849CF80CB1A4F /* libRNSpinkit.a in Frameworks */,
-				8DA7A812D92C40BAA88B402A /* libSQLite.a in Frameworks */,
 				982136AF3B8342EFA8133B20 /* libsqlite3.0.tbd in Frameworks */,
 				77DF3FAABED448EFB82FC656 /* libRNSVG.a in Frameworks */,
 				FAB7DFCCCC5446DCA6B3805E /* libRNGestureHandler.a in Frameworks */,
