@@ -8,10 +8,9 @@ import {
   Text
 } from 'react-native';
 
-import { connect } from 'react-redux'
+import { withNavigation } from 'react-navigation'
 import Ripple from 'react-native-material-ripple'
 import { LargeList } from 'react-native-largelist-v2'
-import { withNavigation } from 'react-navigation'
 
 import SuperIcon from '../../../components/SuperIcon/SuperIcon.js'
 
@@ -53,10 +52,4 @@ const styles = StyleSheet.create({
   },
 });
 
-function reduxState(store) {
-  return {
-    config: store.config
-  }
-}
-
-export default connect(reduxState)(withNavigation(CollectionPlayList));
+export default withNavigation(CollectionPlayList);

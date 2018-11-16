@@ -12,6 +12,7 @@ export default class SuperIndexTab extends React.Component {
   render() {
     return (
       <ScrollableTabView
+        initialPage={1}
         renderTabBar={() => <SuperTabbar />}
         style={{backgroundColor:'rgba(0,0,0,0.73)'}}>
 

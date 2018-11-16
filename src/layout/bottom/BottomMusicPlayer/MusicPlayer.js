@@ -53,8 +53,8 @@ class MusicPlayer extends React.Component {
                 <Text style={{textAlign:'left', fontSize:13, color:'#AAA'}}>JesBrianj 苏敬雄</Text>
               </View>
             </TouchableOpacity>
-            <View style={{width:80, flexDirection:'row', justifyContent:'center'}}>
-              <Ripple onPress={this.changePlayStatus} style={{paddingHorizontal:8, flexDirection:'column', justifyContent:'center'}}>
+            <View style={{width:88, flexDirection:'row', justifyContent:'center'}}>
+              <Ripple onPress={this.changePlayStatus} style={{paddingHorizontal:10, flexDirection:'column', justifyContent:'center'}}>
 
                 <AnimatedCircularProgress
                   size={26} width={2} fill={20}
