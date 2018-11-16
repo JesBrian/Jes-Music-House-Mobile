@@ -13,7 +13,7 @@ import { Provider } from 'react-redux'
 import ConfigureStore from './src/redux/store/ConfigureStore.js'
 const store = ConfigureStore();
 
-import { storage } from './src/utils/storage/index.js'
+import storage from './src/utils/storage/index.js'
 global.storage = storage;
 
 import AppRoot from './src/AppRoot.js'
