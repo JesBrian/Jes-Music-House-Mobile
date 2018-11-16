@@ -1,41 +1,18 @@
 import React  from 'react';
 
 import {
-  Dimensions,
   StyleSheet,
   ScrollView,
-  View,
-  Text
+  View
 } from 'react-native';
 
-import { connect } from 'react-redux'
-import { setColor, setTheme } from '../../redux/actions/ConfigActions.js'
-
-
-import Ripple from 'react-native-material-ripple'
-import LinearGradient from 'react-native-linear-gradient'
-
 import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
-import SuperIcon from '../../components/SuperIcon/SuperIcon.js'
-import SuperSectionNavbar from '../../components/SuperSectionNavbar/SuperSectionNavbar.js'
 
-const themeColorArr = ['#38daf0', '#ce7df0', '#f09c9d', '#4cf0ab', '#2ecfff', '#f07b93', '#779bff', '#0000ff', '#f0ef77', '#f09309'];
+import SystemColor from './container/SystemColor/SystemColor.js'
+import ChooseColor from './container/ChooseColor/ChooseColor.js'
+import ChooseTheme from "./container/ChooseTheme/ChooseTheme";
 
-class AppTheme extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      colorSize: Dimensions.get('window').width * 0.93 * 0.17,
-      nowChooseColor: this.props.config.color
-    };
-  }
-
-  componentWillReceiveProps (nextProps) {
-    this.setState({
-      nowChooseColor: nextProps.config.color
-    })
-  }
-
+export default class AppTheme extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -44,48 +21,11 @@ class AppTheme extends React.Component {
         <ScrollView style={{flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
           <View style={{flex:1, alignItems:'center'}}>
 
-            <View style={{width:'90%', marginVertical:18, alignItems:'center', height:this.state.colorSize * 2 + 38}}>
-              <SuperSectionNavbar title={'预设主题色'} />
-              <View style={{marginTop:8, flex:1, flexDirection:'row', justifyContent:'space-between', flexWrap:'wrap'}}>
-                {
-                  themeColorArr.map((item) => {
-                    return (
-                      <Ripple key={item} onPress={this.changeAppColor.bind(this, item)} style={{width:'17%', height:this.state.colorSize, marginBottom:9, position:'relative',borderRadius:8, backgroundColor:item}} >
-                        <View style={{width:12, height:12, top:3, right:3, position:'absolute', borderRadius:12, backgroundColor:'#333',}} />
-                      </Ripple>
-                    )
-                  })
-                }
-              </View>
-            </View>
+            <SystemColor />
 
-            <View style={{width:'90%', marginVertical:18, alignItems:'center', position:'relative'}}>
-              <SuperSectionNavbar title={'调色盘'} />
-              <Ripple onPress={this.changeAppColor.bind(this, '#4cf0ab')} style={{width:68, height:28, top:3, right:12, position:'absolute', justifyContent:'center', alignItems:'center', borderRadius:3, borderWidth:1, borderColor:this.state.nowChooseColor, backgroundColor:'rgba(0,0,0,0.28)'}}>
-                <Text style={{color:this.state.nowChooseColor}}>应用</Text>
-              </Ripple>
-              <View style={{height:68, marginTop:8, flexDirection:'row'}}>
-                <View style={{width:53, height:68, marginRight:15, marginBottom:5, position:'relative',borderRadius:8, backgroundColor:this.state.nowChooseColor}} />
-                <View style={{paddingTop:20, flex:1, justifyContent:'center'}}>
-                  <LinearGradient start={{x:0, y:0}} end={{x:1, y:0}} colors={['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#00FFFF', '#0000FF', '#8B00FF']} style={{width:'100%', height:10, marginTop:8, marginBottom:8, borderRadius:10}} />
-                  <LinearGradient start={{x:0, y:0}} end={{x:1, y:0}} colors={['#FFF', this.state.nowChooseColor, '#000']} style={{width:'100%', height:10, marginTop:8, marginBottom:8, borderRadius:10}} />
-                </View>
-              </View>
-            </View>
+            <ChooseColor />
 
-            <View style={{width:'90%', marginVertical:18, alignItems:'center'}}>
-              <SuperSectionNavbar title={'模式切换'} />
-              <View style={{width:'100%', marginTop:8, marginHorizontal:'auto', flexDirection:'row', justifyContent:'space-between'}}>
-                <Ripple onPress={this.changeAppTheme.bind(this, 'light')} style={{width:'45%', height:43, marginTop:3, flexDirection:'row', justifyContent:'center', alignItems:'center', borderRadius:5, borderWidth:1, borderColor:this.state.nowChooseColor, backgroundColor:'rgba(0,0,0,0.28)'}}>
-                  <SuperIcon type={'\ue6c7'} style={{marginRight:8, fontSize:23, color:this.state.nowChooseColor}}/>
-                  <Text style={{fontSize:16, color:this.state.nowChooseColor}}>日间模式</Text>
-                </Ripple>
-                <Ripple onPress={this.changeAppTheme.bind(this, 'dark')} style={{width:'45%', height:43, marginTop:3, flexDirection:'row', justifyContent:'center', alignItems:'center', borderRadius:5, borderWidth:1, borderColor:this.state.nowChooseColor, backgroundColor:'rgba(0,0,0,0.28)'}}>
-                  <SuperIcon type={'\ue650'} style={{marginRight:8, fontSize:23, color:this.state.nowChooseColor}}/>
-                  <Text style={{fontSize:16, color:this.state.nowChooseColor}}>夜间模式</Text>
-                </Ripple>
-              </View>
-            </View>
+            <ChooseTheme />
 
           </View>
         </ScrollView>
@@ -93,13 +33,6 @@ class AppTheme extends React.Component {
       </View>
     );
   }
-
-  changeAppColor (color) {
-    this.props.dispatch(setColor(color))
-  };
-  changeAppTheme (theme) {
-    this.props.dispatch(setTheme(theme))
-  };
 }
 
 const styles = StyleSheet.create({
@@ -109,12 +42,3 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
 });
-
-
-function reduxState(store) {
-  return {
-    config: store.config
-  }
-}
-
-export default connect(reduxState)(AppTheme);
