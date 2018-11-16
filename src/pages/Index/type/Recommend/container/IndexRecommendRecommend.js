@@ -7,10 +7,12 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
+import { withNavigation } from 'react-navigation'
+
 import SuperIcon from '../../../../../components/SuperIcon/SuperIcon.js'
 import SuperSectionNavbar from '../../../../../components/SuperSectionNavbar/SuperSectionNavbar.js'
 
-export default class IndexRecommendRecommend extends React.Component {
+class IndexRecommendRecommend extends React.Component {
   static defaultProps = {
     size: 0
   }
@@ -26,7 +28,7 @@ export default class IndexRecommendRecommend extends React.Component {
       <View>
         <SuperSectionNavbar title={'推荐歌单'} />
         <View style={{width:'100%', marginTop:8, marginBottom:15, flexDirection:'row', justifyContent:'space-around', flexWrap:'wrap'}}>
-          <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
+          <TouchableWithoutFeedback onPress={() => {this.props.navigation.navigate('PlayListDetail')}}>
             <View style={{width:this.props.size}}>
               <View style={{width:'100%', height:this.props.size, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
                 <View style={{top:2, right:6, position:'absolute', flexDirection:'row'}}>
@@ -39,7 +41,7 @@ export default class IndexRecommendRecommend extends React.Component {
               </View>
             </View>
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
+          <TouchableWithoutFeedback onPress={() => {this.props.navigation.navigate('PlayListDetail')}}>
             <View style={{width:this.props.size}}>
               <View style={{width:'100%', height:this.props.size, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
                 <View style={{top:2, right:6, position:'absolute', flexDirection:'row'}}>
@@ -52,7 +54,7 @@ export default class IndexRecommendRecommend extends React.Component {
               </View>
             </View>
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => {this.props.config.navigation.navigate('PlayListDetail')}}>
+          <TouchableWithoutFeedback onPress={() => {this.props.navigation.navigate('PlayListDetail')}}>
             <View style={{width:this.props.size}}>
               <View style={{width:'100%', height:this.props.size, position:'relative', borderRadius:4, backgroundColor:'#f09c9d'}}>
                 <View style={{top:2, right:6, position:'absolute', flexDirection:'row'}}>
@@ -73,3 +75,5 @@ export default class IndexRecommendRecommend extends React.Component {
 
 const styles = StyleSheet.create({
 });
+
+export default withNavigation(IndexRecommendRecommend);

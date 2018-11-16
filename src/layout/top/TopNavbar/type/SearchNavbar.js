@@ -7,6 +7,8 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
+import { connect } from 'react-redux'
+
 import { withNavigation } from 'react-navigation'
 import Ripple from 'react-native-material-ripple'
 
@@ -44,12 +46,12 @@ class SearchNavbar extends React.Component {
           <View style={{marginLeft:5, marginRight:5, flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center', position:'relative'}}>
             <TextInput ref='searchInput'
                        onChangeText={text => {this.setState({searchKey: text})}} value={this.state.searchKey}
-                       selectionColor={'#2DC9FF'} underlineColorAndroid='transparent'
-                       style={{width:'100%', height:38, padding:6, paddingLeft:8, paddingRight:33, borderRadius:8, backgroundColor:'rgba(255,255,255,0.08)', color:'#2DC9FF', fontSize:16}} />
+                       selectionColor={this.props.color} underlineColorAndroid='transparent'
+                       style={{width:'100%', height:38, padding:6, paddingLeft:8, paddingRight:33, borderRadius:8, backgroundColor:'rgba(255,255,255,0.08)', color:this.props.color, fontSize:16}} />
             {
               this.state.searchKey === '' ? null :
-                <Ripple onPress={() => {this.setState({searchKey: ''})}} style={{width:22, height:22, top:8, right:8, position:'absolute', justifyContent:'center', alignItems:'center', borderRadius:11, backgroundColor:'#333', borderWidth:1, borderColor:'#2EBCC6'}}>
-                  <SuperIcon type={'\ue629'} style={{color:'#2DC9FF', backgroundColor:'transparent'}} />
+                <Ripple onPress={() => {this.setState({searchKey: ''})}} style={{width:22, height:22, top:8, right:8, position:'absolute', justifyContent:'center', alignItems:'center', borderRadius:11, backgroundColor:'#333', borderWidth:1, borderColor:this.props.color}}>
+                  <SuperIcon type={'\ue629'} style={{color:this.props.color, backgroundColor:'transparent'}} />
                 </Ripple>
             }
           </View>
@@ -66,4 +68,10 @@ class SearchNavbar extends React.Component {
   }
 }
 
-export default withNavigation(SearchNavbar);
+function reduxState(store) {
+  return {
+    color: store.config.color
+  }
+}
+
+export default connect(reduxState)(withNavigation(SearchNavbar));

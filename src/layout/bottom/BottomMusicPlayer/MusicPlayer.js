@@ -14,6 +14,7 @@ import { connect } from 'react-redux'
 import { showBottomPlayList } from '../../../redux/actions/ViewActions.js'
 import { changeMusicPlayStatus } from '../../../redux/actions/MusicActions.js'
 
+import { AnimatedCircularProgress } from 'react-native-circular-progress'
 import Ripple from 'react-native-material-ripple'
 import { BoxShadow }  from 'react-native-shadow'
 
@@ -53,12 +54,20 @@ class MusicPlayer extends React.Component {
               </View>
             </TouchableOpacity>
             <View style={{width:80, flexDirection:'row', justifyContent:'center'}}>
-              <Ripple onPress={this.changePlayStatus} style={{paddingTop:2, paddingLeft:6, paddingRight:8, flexDirection:'column', justifyContent:'center'}}>
-                {
-                  this.props.music.playStatus === false ?
-                    <SuperIcon type={'\ue6b4'} style={{fontSize:28, color:'#CCC'}} /> :
-                      <SuperIcon type={'\ue8c8'} style={{fontSize:28, color:'#CCC'}} />
-                }
+              <Ripple onPress={this.changePlayStatus} style={{paddingHorizontal:8, flexDirection:'column', justifyContent:'center'}}>
+
+                <AnimatedCircularProgress
+                  size={26} width={2} fill={20}
+                  tintColor={this.props.config.color}
+                  backgroundColor="#CCC">
+                  {
+                    (fill) => (
+                      this.props.music.playStatus === false ?
+                        <SuperIcon type={'\ue9f9'} style={{fontSize:16, color:'#CCC'}} /> :
+                          <SuperIcon type={'\ue7fa'} style={{fontSize:16, color:this.props.config.color}} />
+                    )
+                  }
+                </AnimatedCircularProgress>
               </Ripple>
               <TouchableOpacity onPress={() => {this.props.dispatch(showBottomPlayList())}} style={{paddingLeft:8, paddingRight:18, flexDirection:'column', justifyContent:'center'}}>
                 <SuperIcon type={'\ue654'} style={{fontSize:26, color:'#CCC'}} />

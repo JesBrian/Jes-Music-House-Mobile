@@ -6,8 +6,9 @@ import {
   Text
 } from 'react-native';
 
-import Ripple from 'react-native-material-ripple'
 import { withNavigation } from 'react-navigation'
+
+import Ripple from 'react-native-material-ripple'
 
 import SuperSectionNavbar from '../../../../../components/SuperSectionNavbar/SuperSectionNavbar.js'
 

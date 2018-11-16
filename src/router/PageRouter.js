@@ -15,8 +15,10 @@ import Singer from '../pages/Singer/Singer.js'
 import SingerDetail from '../pages/SingerDetail/SingerDetail.js'
 import Song from '../pages/Song/Song.js'
 import User from '../pages/User/User.js'
+import Member from '../pages/Member/Member.js'
 import PlayList from '../pages/PlayList/PlayList.js'
 import PlayListDetail from '../pages/PlayListDetail/PlayListDetail.js'
+import ListenHistory from '../pages/ListenHistory/ListenHistory.js'
 import Rank from '../pages/Rank/Rank.js'
 import Recommend from '../pages/Recommend/Recommend.js'
 import Comment from '../pages/Comment/Comment.js'
@@ -39,8 +41,10 @@ const PageRouter = createStackNavigator({
   SingerDetail: { screen: SingerDetail },
   Song: { screen: Song },
   User: { screen: User },
+  Member: { screen: Member },
   PlayList: { screen: PlayList },
   PlayListDetail: { screen: PlayListDetail },
+  ListenHistory: { screen: ListenHistory },
   Rank: { screen: Rank },
   Recommend: { screen: Recommend },
   Comment: { screen: Comment },
