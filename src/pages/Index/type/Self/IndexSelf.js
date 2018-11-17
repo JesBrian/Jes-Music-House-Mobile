@@ -8,10 +8,10 @@ import {
 
 import { connect } from 'react-redux'
 
-import IndexSelfUserInfo from './container/IndexSelfUserInfo.js'
-import IndexSelfNavLink from './container/IndexSelfNavLink.js'
-import IndexSelfCreatePlayList from './container/IndexSelfCreatePlayList.js'
-import IndexSelfCollectionPlayList from './container/IndexSelfCollectionPlayList.js'
+import UserInfo from './container/UserInfo/UserInfo.js'
+import NavLink from './container/NavLink/NavLink.js'
+import CreatePlayList from './container/CreatePlayList/CreatePlayList.js'
+import CollectionPlayList from './container/CollectionPlayList/CollectionPlayList.js'
 
 class IndexSelf extends React.Component {
   constructor (props) {
@@ -23,12 +23,12 @@ class IndexSelf extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <IndexSelfUserInfo />
+        <UserInfo />
 
         <ScrollView style={{flex:1}}>
-          <IndexSelfNavLink />
-          <IndexSelfCreatePlayList />
-          <IndexSelfCollectionPlayList />
+          <NavLink />
+          <CreatePlayList />
+          <CollectionPlayList />
         </ScrollView>
       </View>
     );

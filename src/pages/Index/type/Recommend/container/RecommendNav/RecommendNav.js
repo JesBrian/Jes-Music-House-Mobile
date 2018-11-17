@@ -10,7 +10,7 @@ import {
 import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
 
-import SuperIcon from '../../../../../components/SuperIcon/SuperIcon.js'
+import SuperIcon from '../../../../../../components/SuperIcon/SuperIcon.js'
 
 const recommendData = [
   {icon:'\ue640', name:'每日推荐', url: ''},
@@ -19,7 +19,7 @@ const recommendData = [
   {icon:'\ue62c', name:'排行榜', url: ''},
 ];
 
-class IndexRecommendNav extends React.Component {
+class RecommendNav extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -35,7 +35,7 @@ class IndexRecommendNav extends React.Component {
               <TouchableWithoutFeedback onPress={() => {this.props.navigation.navigate(item.url)}}>
                 <View key={index} style={{flex:1, justifyContent:'center', alignItems:'center'}}>
                   <View style={{width:44, height:44, marginBottom:5, justifyContent:'center', alignItems:'center', borderRadius:22, backgroundColor:'rgba(0,0,0,0.3)'}}>
-                    <SuperIcon type={item.icon} style={{paddingTop:3, fontSize:32, color:this.props.color, backgroundColor:'transparent'}} />
+                    <SuperIcon type={item.icon} style={{paddingTop:3, fontSize:28, color:this.props.color, backgroundColor:'transparent'}} />
                   </View>
                   <Text style={{color:'#BBB'}}>{ item.name }</Text>
                 </View>
@@ -57,4 +57,4 @@ function reduxState(store) {
   }
 }
 
-export default connect(reduxState)(withNavigation(IndexRecommendNav));
+export default connect(reduxState)(withNavigation(RecommendNav));

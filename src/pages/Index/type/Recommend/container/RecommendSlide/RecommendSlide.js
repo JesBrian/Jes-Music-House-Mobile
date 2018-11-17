@@ -9,7 +9,7 @@ import {
 
 import Swiper from 'react-native-swiper'
 
-export default class IndexRecommendSlide extends React.Component {
+export default class RecommendSlide extends React.Component {
   static defaultProps = {
     slideData: []
   }

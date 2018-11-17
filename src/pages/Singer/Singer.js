@@ -28,7 +28,7 @@ export default class Singer extends React.Component {
         <NormalNavbar label={'歌手分类'} />
 
         <ScrollView>
-          <LargeList style={{flex:1}}
+          <LargeList style={{paddingBottom:75, flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}
                      data={singerCategory}
                      heightForSection={() => 18}
                      renderSection={this._renderSection}
@@ -56,8 +56,6 @@ export default class Singer extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingBottom:75,
-    flex:1,
-    backgroundColor:'rgba(0,0,0,0.73)'
+    flex:1
   }
 });

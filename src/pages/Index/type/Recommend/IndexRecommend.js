@@ -9,11 +9,11 @@ import {
 
 import { withNavigation } from 'react-navigation'
 
-import IndexRecommendSlide from './container/IndexRecommendSlide.js'
-import IndexRecommendNav from './container/IndexRecommendNav.js'
-import IndexRecommendRecommend from './container/IndexRecommendRecommend.js'
-import IndexRecommendNews from './container/IndexRecommendNews.js'
-import IndexRecommendRank from './container/IndexRecommendRank.js'
+import RecommendSlide from './container/RecommendSlide/RecommendSlide.js'
+import RecommendNav from './container/RecommendNav/RecommendNav.js'
+import RecommendEveryday from './container/RecommendEveryday/RecommendEveryday.js'
+import RecommendNews from './container/RecommendNews/RecommendNews.js'
+import RecommendRank from './container/RecommendRank/RecommendRank.js'
 
 import { frontendSlide } from '../../../../utils/http/request/index.js'
 
@@ -43,17 +43,17 @@ class IndexRecommend extends React.Component {
       <View style={styles.container}>
         <ScrollView style={{width:'96%', flex:1}}>
 
-          <IndexRecommendSlide slideData={this.state.slideData} />
+          <RecommendSlide slideData={this.state.slideData} />
 
           {/*<Text onPress={() => {this.props.navigation.navigate('TestPage')}}>测试页面</Text>*/}
 
-          <IndexRecommendNav />
+          <RecommendNav />
 
-          <IndexRecommendRecommend size={playListSize} />
+          <RecommendEveryday size={playListSize} />
 
-          <IndexRecommendNews size={playListSize} />
+          <RecommendNews size={playListSize} />
 
-          <IndexRecommendRank />
+          <RecommendRank />
         </ScrollView>
       </View>
     );

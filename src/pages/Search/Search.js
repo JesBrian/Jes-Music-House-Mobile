@@ -11,8 +11,8 @@ import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
 
 import SearchNavbar from '../../layout/top/TopNavbar/type/SearchNavbar.js'
-import SearchKey from './Container/SearchKey/SearchKey.js'
-import SearchResult from './Container/SearchResult/SearchResult.js'
+import SearchKey from './page/SearchKey/SearchKey.js'
+import SearchResult from './page/SearchResult/SearchResult.js'
 
 class Search extends React.Component {
   constructor (props) {
@@ -32,6 +32,7 @@ class Search extends React.Component {
 
           {
             this.state.hasSearch === true ? <SearchResult /> : <SearchKey searchContent={this.searchContent} />
+            // <SearchKey searchContent={this.searchContent} />
           }
 
         </View>

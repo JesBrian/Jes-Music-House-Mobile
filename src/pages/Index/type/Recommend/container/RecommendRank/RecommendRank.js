@@ -10,9 +10,9 @@ import { withNavigation } from 'react-navigation'
 
 import Ripple from 'react-native-material-ripple'
 
-import SuperSectionNavbar from '../../../../../components/SuperSectionNavbar/SuperSectionNavbar.js'
+import SuperSectionNavbar from '../../../../../../components/SuperSectionNavbar/SuperSectionNavbar.js'
 
-class IndexRecommendRank extends React.Component {
+class RecommendRank extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -39,4 +39,4 @@ class IndexRecommendRank extends React.Component {
 const styles = StyleSheet.create({
 });
 
-export default withNavigation(IndexRecommendRank);
+export default withNavigation(RecommendRank);

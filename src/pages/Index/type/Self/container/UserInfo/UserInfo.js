@@ -14,14 +14,14 @@ import { withNavigation } from 'react-navigation'
 import Ripple from 'react-native-material-ripple'
 import { BoxShadow }  from 'react-native-shadow'
 
-import SuperButton from '../../../../../components/SuperButton/SuperButton.js'
+import SuperButton from '../../../../../../components/SuperButton/SuperButton.js'
 
 const shadowOpt = {
   width:Dimensions.get('window').width - 40, height:48, color:"#000", border:12, opacity:0.8, x:0, y:1,
   style: {marginLeft:20, marginRight:20, marginBottom:23}
 };
 
-class IndexSelfUserInfo extends React.Component {
+class UserInfo extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -57,4 +57,4 @@ function reduxState(store) {
   }
 }
 
-export default connect(reduxState)(withNavigation(IndexSelfUserInfo));
+export default connect(reduxState)(withNavigation(UserInfo));

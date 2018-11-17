@@ -9,10 +9,10 @@ import {
 
 import { withNavigation } from 'react-navigation'
 
-import SuperIcon from '../../../../../components/SuperIcon/SuperIcon.js'
-import SuperSectionNavbar from '../../../../../components/SuperSectionNavbar/SuperSectionNavbar.js'
+import SuperIcon from '../../../../../../components/SuperIcon/SuperIcon.js'
+import SuperSectionNavbar from '../../../../../../components/SuperSectionNavbar/SuperSectionNavbar.js'
 
-class IndexRecommendRecommend extends React.Component {
+class RecommendEveryday extends React.Component {
   static defaultProps = {
     size: 0
   }
@@ -76,4 +76,4 @@ class IndexRecommendRecommend extends React.Component {
 const styles = StyleSheet.create({
 });
 
-export default withNavigation(IndexRecommendRecommend);
+export default withNavigation(RecommendEveryday);

@@ -11,7 +11,7 @@ import { withNavigation } from 'react-navigation'
 
 import Ripple from 'react-native-material-ripple'
 
-import SuperIcon from '../../../../../components/SuperIcon/SuperIcon.js'
+import SuperIcon from '../../../../../../components/SuperIcon/SuperIcon.js'
 
 const selfBaseMenu = [
   {icon:'\ue661', label:'本地音乐', url:'Collection'},
@@ -20,7 +20,7 @@ const selfBaseMenu = [
   {icon:'\ue80d', label:'我的收藏', url:'Collection'}
 ];
 
-class IndexSelfNavLink extends React.Component {
+class NavLink extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -57,4 +57,4 @@ function reduxState(store) {
   }
 }
 
-export default connect(reduxState)(withNavigation(IndexSelfNavLink));
+export default connect(reduxState)(withNavigation(NavLink));

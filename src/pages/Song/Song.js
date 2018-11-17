@@ -9,7 +9,7 @@ import {
 
 
 import { connect } from 'react-redux'
-import { showBottomPlayList } from '../../redux/actions/ViewActions.js'
+import { showBottomPlayList, hiddenBottomMusic } from '../../redux/actions/ViewActions.js'
 import { changeMusicPlayStatus, changeMusicPlayModel } from '../../redux/actions/MusicActions.js'
 
 import SongNavbar from '../../layout/top/TopNavbar/type/SongNavbar.js'
@@ -17,8 +17,6 @@ import SongImg from './type/SongImg.js'
 import SongLyric from './type/SongLyric.js'
 import SuperSliderPointer from '../../components/SuperSliderPointer.js'
 import SuperIcon from '../../components/SuperIcon/SuperIcon.js'
-import {hiddenBottomMusic, showBottomMusic} from "../../redux/actions/ViewActions";
-
 
 class Song extends React.Component {
   constructor (props) {

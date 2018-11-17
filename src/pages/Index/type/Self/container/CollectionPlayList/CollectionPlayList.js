@@ -13,13 +13,13 @@ import { withNavigation } from 'react-navigation'
 
 import Ripple from 'react-native-material-ripple'
 
-import SuperIcon from '../../../../../components/SuperIcon/SuperIcon.js'
+import SuperIcon from '../../../../../../components/SuperIcon/SuperIcon.js'
 
-class IndexSelfCreatePlayList extends React.Component {
+class CollectionPlayList extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      isShowCreatePlayList: true
+      isShowCollectionPlayList: true
     };
   }
 
@@ -27,14 +27,14 @@ class IndexSelfCreatePlayList extends React.Component {
     return (
       <View>
         <View style={{height:28, flexDirection:'row', alignItems:'center', backgroundColor:'rgba(255,255,255,0.12)'}}>
-          <TouchableWithoutFeedback onPress={() => {this.setState({isShowCreatePlayList: !this.state.isShowCreatePlayList})}}>
+          <TouchableWithoutFeedback onPress={() => {this.setState({isShowCollectionPlayList: !this.state.isShowCollectionPlayList})}}>
             <View style={{flex:1, flexDirection:'row', alignItems:'center'}}>
               {
-                this.state.isShowCreatePlayList ?
+                this.state.isShowCollectionPlayList ?
                   <SuperIcon type={'\ue600'} style={{margin:8, color:this.props.color}}/> :
                   <SuperIcon type={'\ue8cb'} style={{margin:8, color:this.props.color}}/>
               }
-              <Text style={{color:'#BBB'}}>创建的歌单</Text>
+              <Text style={{color:'#BBB'}}>收藏的歌单</Text>
             </View>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback>
@@ -44,7 +44,7 @@ class IndexSelfCreatePlayList extends React.Component {
           </TouchableWithoutFeedback>
         </View>
         {
-          this.state.isShowCreatePlayList === false ? (<View style={{width:'100%', height:0.28}} />) : (
+          this.state.isShowCollectionPlayList === false ? (null) : (
             <View>
               <View style={{height:53, flexDirection:'row'}}>
                 <Ripple onPress={() => {this.props.navigation.navigate('PlayListDetail')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
@@ -87,4 +87,4 @@ function reduxState(store) {
   }
 }
 
-export default connect(reduxState)(withNavigation(IndexSelfCreatePlayList));
+export default connect(reduxState)(withNavigation(CollectionPlayList));
