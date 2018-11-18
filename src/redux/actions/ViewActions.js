@@ -16,11 +16,14 @@ export function hiddenBottomPlayList() {
   return {type: types.VIEW_BOTTOM_HIDDEN_PLAYLIST}
 }
 
-export function showBottomSongMenu() {
-  return {type: types.VIEW_BOTTOM_SHOW_SONGMENU}
+export function showBottomMenu(menuType = '') {
+  return {
+    type: types.VIEW_BOTTOM_SHOW_MENU,
+    menuType: menuType
+  }
 }
-export function hiddenBottomSongMenu() {
-  return {type: types.VIEW_BOTTOM_HIDDEN_SONGMENU}
+export function hiddenBottomMenu() {
+  return {type: types.VIEW_BOTTOM_HIDDEN_MENU}
 }
 
 export function showModal(modalType = '') {

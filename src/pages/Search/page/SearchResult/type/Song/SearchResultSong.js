@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import { connect } from 'react-redux'
-import { showBottomSongMenu } from '../../../../../../redux/actions/ViewActions.js'
+import { showBottomMenu } from '../../../../../../redux/actions/ViewActions.js'
 
 import Ripple from 'react-native-material-ripple'
 import { LargeList } from 'react-native-largelist-v2'
@@ -47,7 +47,7 @@ class SearchResultSong extends React.Component {
   }
 
   showSongMenu () {
-    this.props.dispatch(showBottomSongMenu())
+    this.props.dispatch(showBottomMenu())
   };
 }
 

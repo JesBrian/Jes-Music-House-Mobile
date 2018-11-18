@@ -11,6 +11,7 @@ import {
 
 
 import { connect } from 'react-redux'
+import { showBottomMenu } from '../../../../redux/actions/ViewActions.js'
 
 import Ripple from 'react-native-material-ripple'
 
@@ -41,16 +42,20 @@ class SongImg extends React.Component {
           <Ripple style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
             <SuperIcon type={'\ue63c'} style={{fontSize:28, color:'#AAA'}} />
           </Ripple>
-          <Ripple  onPress={() => {this.props.config.navigation.navigate('Comment')}} style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+          <Ripple onPress={() => {this.props.config.navigation.navigate('Comment')}} style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
             <SuperIcon type={'\ue638'} style={{fontSize:28, color:'#AAA'}} />
           </Ripple>
-          <Ripple style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+          <Ripple onPress={this.showSongMenu.bind(this)} style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
             <SuperIcon type={'\ue653'} style={{fontSize:28, color:'#AAA'}} />
           </Ripple>
         </View>
       </View>
     );
   }
+
+  showSongMenu () {
+    this.props.dispatch(showBottomMenu('SongPage'))
+  };
 }
 
 const styles = StyleSheet.create({});

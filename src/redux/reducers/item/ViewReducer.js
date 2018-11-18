@@ -8,10 +8,8 @@ import * as types from '../../constants/ViewTypes.js';
 const initialState = {
   bottomMusic: true, // 底部播放器
   bottomPlayList: false, // 底部播放列表
-  bottomSongMenu: false, // 底部菜单
-
-  showModal: false, // 模态框
-  modalType: '' // 模态框类型
+  bottomMenu: '', // 底部菜单
+  showModal: '', // 模态框
 };
 
 /**
@@ -42,25 +40,25 @@ export default function showView(state = initialState, action) {
       };
     }
 
-    case types.VIEW_BOTTOM_SHOW_SONGMENU: {
+    case types.VIEW_BOTTOM_SHOW_MENU: {
       return {
-        ...state, bottomSongMenu: true
+        ...state, bottomMenu: action.menuType
       };
     }
-    case types.VIEW_BOTTOM_HIDDEN_SONGMENU: {
+    case types.VIEW_BOTTOM_HIDDEN_MENU: {
       return {
-        ...state, bottomSongMenu: false
+        ...state, bottomMenu: ''
       };
     }
 
     case types.VIEW_MODAL_SHOW: {
       return {
-        ...state, showModal: true, modalType: action.modalType
+        ...state, showModal: action.modalType
       };
     }
     case types.VIEW_MODAL_HIDDEN: {
       return {
-        ...state, showModal: false
+        ...state, showModal: ''
       };
     }
 

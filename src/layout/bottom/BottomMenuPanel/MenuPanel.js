@@ -10,20 +10,29 @@ import {
 
 
 import { connect } from 'react-redux'
-import { hiddenBottomSongMenu } from '../../../redux/actions/ViewActions.js'
+import { hiddenBottomMenu } from '../../../redux/actions/ViewActions.js'
 
 import Ripple from 'react-native-material-ripple'
 
-import { common } from '../../../assets/styles/common.js'
 import SuperIcon from '../../../components/SuperIcon/SuperIcon.js'
-
 import { goRouter } from '../../../utils/common/router.js'
 
-class SongMenu extends React.Component {
-  static defaultProps = {
+const BOTTOM_MENU_DATA_MAP = {
+  PlayListPage: {
+    menuTitle: '歌曲：The Name of the Song - 1',
     menuData: [
       {icon:'\ue6b4', name:'播放该歌曲', handler: (that) => {alert('now')}},
-      {icon:'\ue6b4', name:'下一首播放', handler: (that) => {alert('next')}},
+      {icon:'\ue66c', name:'下一首播放', handler: (that) => {alert('next')}},
+      {icon:'\ue80d', name:'收藏到歌单', handler: (that) => {alert('collection')}},
+      {icon:'\ue671', name:'歌手:xxx', handler: (that) => {goRouter(that.props.config.navigation, 'SingerDetail')}},
+      {icon:'\ue63c', name:'下载', handler: (that) => {alert('download')}},
+      {icon:'\ue638', name:'评论', handler: (that) => {goRouter(that.props.config.navigation, 'Comment')}},
+      {icon:'\ue615', name:'分享', handler: (that) => {alert('share')}}
+    ]
+  },
+  SongPage: {
+    menuTitle: '歌曲：The Name of the Song - 2',
+    menuData: [
       {icon:'\ue80d', name:'收藏到歌单', handler: (that) => {alert('collection')}},
       {icon:'\ue671', name:'歌手:xxx', handler: (that) => {goRouter(that.props.config.navigation, 'SingerDetail')}},
       {icon:'\ue63c', name:'下载', handler: (that) => {alert('download')}},
@@ -31,10 +40,13 @@ class SongMenu extends React.Component {
       {icon:'\ue615', name:'分享', handler: (that) => {alert('share')}}
     ]
   }
+};
 
+class MenuPanel extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
+      data: BOTTOM_MENU_DATA_MAP[this.props.bottomMenu]
     };
   }
 
@@ -42,19 +54,19 @@ class SongMenu extends React.Component {
     return (
       <View style={{width:'100%', height:'100%', top:0, left:0, flex:1, position:'absolute', backgroundColor:'transparent', zIndex:18}}>
         <View style={{flex:1, backgroundColor:'rgba(0, 0, 0, 0.68)'}}>
-          <TouchableWithoutFeedback onPress={() => {this.props.dispatch(hiddenBottomSongMenu())}}>
+          <TouchableWithoutFeedback onPress={() => {this.props.dispatch(hiddenBottomMenu())}}>
             <View style={{flex:1}}/>
           </TouchableWithoutFeedback>
 
           <View style={{width:'100%', height:308, position:'relative', flexDirection:'column'}}>
-            <View style={{width:'100%', height:33, justifyContent:'center', borderTopLeftRadius:12, borderTopRightRadius:12, backgroundColor:'#444'}}>
-              <Text style={{marginLeft:15, color:'#AAA'}}>歌曲：The Name of the Song</Text>
+            <View style={{width:'100%', height:33, justifyContent:'center', borderTopLeftRadius:8, borderTopRightRadius:8, backgroundColor:'#444'}}>
+              <Text style={{marginLeft:15, color:'#AAA'}}>{ this.state.data.menuTitle }</Text>
             </View>
 
             <FlatList style={{flex:1, backgroundColor:'#282828'}}
-                      data={this.props.menuData}
+                      data={this.state.data.menuData}
                       renderItem={({item, index}) => (
-                        <Ripple onPress={() => {let that = this; item.handler(that); this.props.dispatch(hiddenBottomSongMenu());}} style={{height:38, flexDirection:'row'}}>
+                        <Ripple onPress={() => {item.handler(this); this.props.dispatch(hiddenBottomMenu());}} style={{height:38, flexDirection:'row'}}>
                           <View style={{width:38, justifyContent:'center', alignItems:'center'}}>
                             <SuperIcon type={item.icon} style={{fontSize:21, color:this.props.config.color}} />
                           </View>
@@ -77,9 +89,8 @@ const styles = StyleSheet.create({
 function reduxState(store) {
   return {
     config: store.config,
-    showView: store.showView
+    bottomMenu: store.showView.bottomMenu
   }
 }
 
-export default connect(reduxState)(SongMenu);
-
+export default connect(reduxState)(MenuPanel);
