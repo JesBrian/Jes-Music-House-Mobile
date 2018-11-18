@@ -22,7 +22,7 @@ export default class RecommendSlide extends React.Component {
 
   render () {
     return (
-      <View style={{width:'100%', height:138, marginTop:18, paddingHorizontal:8}}>
+      <View style={{width:'100%', height:138, marginTop:8}}>
         {
           this.props.slideData.length === 0 ? null : (
             <Swiper style={styles.wrapper} showsButtons={true} autoplay={true}>

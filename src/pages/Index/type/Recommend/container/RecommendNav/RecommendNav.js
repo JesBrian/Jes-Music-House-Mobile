@@ -28,7 +28,7 @@ class RecommendNav extends React.Component {
 
   render () {
     return (
-      <View style={{width:'100%', height:68, marginVertical:28, flexDirection:'row'}}>
+      <View style={{width:'100%', height:68, marginTop:18, marginBottom:28, flexDirection:'row'}}>
         {
           recommendData.map((item, index) => {
             return (
