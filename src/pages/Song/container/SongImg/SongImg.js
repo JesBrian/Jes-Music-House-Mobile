@@ -4,7 +4,6 @@ import {
   Dimensions,
   StyleSheet,
   View,
-  Text,
   Image,
   TouchableWithoutFeedback
 } from 'react-native';
@@ -58,8 +57,8 @@ class SongImg extends React.Component {
   };
 }
 
-const styles = StyleSheet.create({});
-
+const styles = StyleSheet.create({
+});
 
 function reduxState(store) {
   return {

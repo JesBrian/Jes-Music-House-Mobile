@@ -7,12 +7,14 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
+import { connect } from 'react-redux'
+
 import Slider from 'react-native-slider'
 
 /**
  * 滑块组件
  */
-export default class SuperSliderPointer extends React.Component {
+class SuperSliderPointer extends React.Component {
   static defaultProps = {
     value: 0
   };
@@ -30,10 +32,9 @@ export default class SuperSliderPointer extends React.Component {
           <Slider
             value={Number(this.props.value)}
             maximumTrackTintColor={'#686868'}
-            minimumTrackTintColor={'#2DC9FF'}
-            thumbStyle={{width:16, height:16, paddingTop:1}}
-            thumbTintColor={'#222'}
-            thumbImage={require('../assets/images/default/slide-pointer.png')}
+            minimumTrackTintColor={this.props.color}
+            thumbStyle={{width:14, height:14, backgroundColor:this.props.color, borderColor:'#282828', borderWidth:5, borderRadius:10, shadowColor:'#000', shadowOffset:{width:0, height:2}, shadowRadius:2, shadowOpacity:0.38}}
+            thumbTintColor={'transparent'}
             onValueChange={value => this.setState({ value })}
           />
         </View>
@@ -47,3 +48,11 @@ const styles = StyleSheet.create({
     flex:1, justifyContent:'center'
   }
 });
+
+function reduxState(store) {
+  return {
+    color: store.config.color,
+  }
+}
+
+export default connect(reduxState)(SuperSliderPointer);

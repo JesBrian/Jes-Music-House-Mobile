@@ -50,19 +50,19 @@ class Song extends React.Component {
 
           <View style={{width:'100%', height:98, alignItems:'center'}}>
             <View style={{width:'90%', height:28, flexDirection:'row', justifyContent:'center'}}>
-              <View style={{width:68, justifyContent:'center', alignItems:'center'}}>
-                <Text style={{fontSize:12,  color:'#AAA'}}>00:00</Text>
+              <View style={{width:48, justifyContent:'center', alignItems:'center'}}>
+                <Text style={{fontSize:11,  color:'#AAA'}}>00:00</Text>
               </View>
 
               <SuperSliderPointer setPropsValue={value => {this.setState({nowPlayRace: value})}} value={this.state.nowPlayRace} />
 
-              <View style={{width:68, justifyContent:'center', alignItems:'center'}}>
-                <Text style={{fontSize:12,  color:'#AAA'}}>00:00</Text>
+              <View style={{width:48, justifyContent:'center', alignItems:'center'}}>
+                <Text style={{fontSize:11,  color:'#AAA'}}>00:00</Text>
               </View>
             </View>
 
             <View style={{width:'96%', flex:1, flexDirection:'row'}}>
-              <View style={{width:68, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+              <View style={{width:68, paddingRight:12, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
                 <TouchableWithoutFeedback onPress={this.changePlayModel} >
                   <View>
                     {
@@ -89,7 +89,7 @@ class Song extends React.Component {
                 <SuperIcon type={'\ue604'} style={{fontSize:28,  color:'#AAA'}}/>
               </View>
               <TouchableWithoutFeedback onPress={() => {this.props.dispatch(showBottomPlayList());}}>
-                <View style={{width:68, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+                <View style={{width:68, paddingLeft:18, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
                   <SuperIcon type={'\ue618'} style={{fontSize:24, color:'#AAA'}}/>
                 </View>
               </TouchableWithoutFeedback>
