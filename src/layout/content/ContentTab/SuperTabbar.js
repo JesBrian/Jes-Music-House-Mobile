@@ -9,11 +9,8 @@ import {
   Animated
 } from 'react-native'
 
-
 import { connect } from 'react-redux'
 import Ripple from 'react-native-material-ripple'
-
-import { common } from '../../../assets/styles/common.js'
 
 /**
  * 标签页导航栏
@@ -40,9 +37,9 @@ class SuperTabbar extends React.Component {
     const numberOfTabs = this.props.tabs.length;
     const tabUnderlineStyle = {
       position:'absolute',
-      width: containerWidth / numberOfTabs / 2,
+      width:containerWidth / numberOfTabs / 1.5,
       height:3,
-      left:containerWidth / numberOfTabs / 4,
+      left:containerWidth / numberOfTabs / 6,
       backgroundColor:this.props.color,
       borderRadius:3,
       bottom:4,

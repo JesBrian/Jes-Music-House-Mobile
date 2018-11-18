@@ -19,7 +19,7 @@ import Ripple from 'react-native-material-ripple'
 import { BoxShadow }  from 'react-native-shadow'
 
 import { common } from '../../../assets/styles/common.js'
-import SuperIcon from "../../../components/SuperIcon/SuperIcon";
+import SuperIcon from '../../../components/SuperIcon/SuperIcon.js'
 
 /**
  * 底部音乐播放器

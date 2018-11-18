@@ -11,14 +11,12 @@ import {
 } from 'react-native';
 
 import { connect } from 'react-redux'
+import { withNavigation } from 'react-navigation'
 
 import Ripple from 'react-native-material-ripple'
 
 import SuperButton from '../../../../components/SuperButton/SuperButton.js'
 import SuperIcon from '../../../../components/SuperIcon/SuperIcon.js'
-
-import { goRouter } from '../../../../utils/common/router.js'
-
 
 class IndexFriend extends React.Component {
   constructor (props) {
@@ -46,7 +44,7 @@ class IndexFriend extends React.Component {
                       <Text style={{fontSize:13.5, color:'#CCC'}}>JesBrian：</Text>
                       <Text style={{fontSize:11, color:'#888'}}>2018-09-26</Text>
                     </View>
-                    <Ripple onPress={() => {alert('关注成功')}} style={{width:64, height:23, marginRight:8, paddingBottom:1, flexDirection:'row', justifyContent:'center', alignItems:'center', borderRadius:14, backgroundColor:this.props.config.color}}>
+                    <Ripple onPress={() => {alert('关注成功')}} style={{width:64, height:23, marginRight:8, paddingBottom:1, flexDirection:'row', justifyContent:'center', alignItems:'center', borderRadius:14, backgroundColor:this.props.color}}>
                       <SuperIcon type={'\ue80d'} style={{marginTop:1, marginRight:3, fontSize:16, color:'#FFF'}} />
                       <Text style={{fontWeight:'700', color:'#FFF'}}>关注</Text>
                     </Ripple>
@@ -80,7 +78,7 @@ class IndexFriend extends React.Component {
         />
 
         <View style={{width:50, height:50, right:18, bottom:76, position:'absolute', justifyContent:'center', alignItems:'center', zIndex:5}}>
-          <SuperButton onPress={() => {goRouter(this.props.config.navigation, 'WriteTrend')}} width={43} height={43} label={<SuperIcon type={'\ue638'} style={{fontSize:28}} />} />
+          <SuperButton onPress={() => {this.props.navigation.navigate('WriteTrend')}} width={43} height={43} label={<SuperIcon type={'\ue638'} style={{fontSize:28}} />} />
         </View>
       </View>
     );
@@ -96,8 +94,8 @@ const styles = StyleSheet.create({
 
 function reduxState(store) {
   return {
-    config: store.config
+    color: store.config.color
   }
 }
 
-export default connect(reduxState)(IndexFriend);
+export default connect(reduxState)(withNavigation(IndexFriend));

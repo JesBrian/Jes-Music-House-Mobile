@@ -6,14 +6,12 @@ import {
   View
 } from 'react-native';
 
-import { connect } from 'react-redux'
-
 import UserInfo from './container/UserInfo/UserInfo.js'
 import NavLink from './container/NavLink/NavLink.js'
 import CreatePlayList from './container/CreatePlayList/CreatePlayList.js'
 import CollectionPlayList from './container/CollectionPlayList/CollectionPlayList.js'
 
-class IndexSelf extends React.Component {
+export default class IndexSelf extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -42,13 +40,3 @@ const styles = StyleSheet.create({
     backgroundColor:'rgba(0,0,0,0.28)'
   },
 });
-
-
-function reduxState(store) {
-  return {
-    navigation: store.config.navigation,
-    color: store.config.color
-  }
-}
-
-export default connect(reduxState)(IndexSelf);

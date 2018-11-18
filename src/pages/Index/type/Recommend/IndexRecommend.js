@@ -7,8 +7,6 @@ import {
   View
 } from 'react-native';
 
-import { withNavigation } from 'react-navigation'
-
 import RecommendSlide from './container/RecommendSlide/RecommendSlide.js'
 import RecommendNav from './container/RecommendNav/RecommendNav.js'
 import RecommendEveryday from './container/RecommendEveryday/RecommendEveryday.js'
@@ -20,7 +18,7 @@ import { frontendSlide } from '../../../../utils/http/request/index.js'
 
 const playListSize = Dimensions.get('window').width * 0.31 * 0.96
 
-class IndexRecommend extends React.Component {
+export default class IndexRecommend extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -45,8 +43,6 @@ class IndexRecommend extends React.Component {
 
           <RecommendSlide slideData={this.state.slideData} />
 
-          {/*<Text onPress={() => {this.props.navigation.navigate('TestPage')}}>测试页面</Text>*/}
-
           <RecommendNav />
 
           <RecommendEveryday size={playListSize} />
@@ -67,5 +63,3 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   }
 });
-
-export default withNavigation(IndexRecommend);

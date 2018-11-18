@@ -2,20 +2,23 @@ import React  from 'react';
 
 import {
   StyleSheet,
-  View,
-  Text
+  View
 } from 'react-native';
 
 import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
-import SuperButton from '../../components/SuperButton/SuperButton.js'
+import SuperSingerDetailTab from './SuperSingerDetailTab.js'
 
-export default class SingerDetail extends React.Component {
+
+export default class User extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <NormalNavbar />
+        <NormalNavbar navigation={this.props.navigation} />
 
-        <Text>歌手详情</Text>
+        <View style={{height:208}}>
+        </View>
+
+        <SuperSingerDetailTab />
       </View>
     );
   }
@@ -23,16 +26,8 @@ export default class SingerDetail extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'transparent'
-  },
-
-  backgroundVideo: {
-    width:108,
-    height:108,
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-    backgroundColor:'#555'
+    flex:1,
+    paddingBottom:53,
+    backgroundColor:'transparent'
   },
 });

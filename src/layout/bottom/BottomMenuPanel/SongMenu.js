@@ -17,18 +17,24 @@ import Ripple from 'react-native-material-ripple'
 import { common } from '../../../assets/styles/common.js'
 import SuperIcon from '../../../components/SuperIcon/SuperIcon.js'
 
+import { goRouter } from '../../../utils/common/router.js'
 
 class SongMenu extends React.Component {
+  static defaultProps = {
+    menuData: [
+      {icon:'\ue6b4', name:'播放该歌曲', handler: (that) => {alert('now')}},
+      {icon:'\ue6b4', name:'下一首播放', handler: (that) => {alert('next')}},
+      {icon:'\ue80d', name:'收藏到歌单', handler: (that) => {alert('collection')}},
+      {icon:'\ue671', name:'歌手:xxx', handler: (that) => {goRouter(that.props.config.navigation, 'SingerDetail')}},
+      {icon:'\ue63c', name:'下载', handler: (that) => {alert('download')}},
+      {icon:'\ue638', name:'评论', handler: (that) => {goRouter(that.props.config.navigation, 'Comment')}},
+      {icon:'\ue615', name:'分享', handler: (that) => {alert('share')}}
+    ]
+  }
+
   constructor (props) {
     super(props);
     this.state = {
-      menuData: [
-        {icon: '\ue6b4', name: '下一首播放'},
-        {icon: '\ue80d', name: '收藏到歌单'},
-        {icon: '\ue63c', name: '下载'},
-        {icon: '\ue638', name: '评论'},
-        {icon: '\ue615', name: '分享'}
-      ]
     };
   }
 
@@ -46,9 +52,9 @@ class SongMenu extends React.Component {
             </View>
 
             <FlatList style={{flex:1, backgroundColor:'#282828'}}
-                      data={this.state.menuData}
+                      data={this.props.menuData}
                       renderItem={({item, index}) => (
-                        <Ripple style={{height:38, flexDirection:'row'}}>
+                        <Ripple onPress={() => {let that = this; item.handler(that); this.props.dispatch(hiddenBottomSongMenu());}} style={{height:38, flexDirection:'row'}}>
                           <View style={{width:38, justifyContent:'center', alignItems:'center'}}>
                             <SuperIcon type={item.icon} style={{fontSize:21, color:this.props.config.color}} />
                           </View>
@@ -71,7 +77,6 @@ const styles = StyleSheet.create({
 function reduxState(store) {
   return {
     config: store.config,
-    music: store.music,
     showView: store.showView
   }
 }

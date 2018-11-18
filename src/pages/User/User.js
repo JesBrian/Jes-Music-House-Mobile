@@ -2,12 +2,9 @@ import React  from 'react';
 
 import {
   StyleSheet,
-  ScrollView,
-  View,
-  Text
+  View
 } from 'react-native';
 
-import SuperButton from '../../components/SuperButton/SuperButton.js'
 import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
 import SuperUserTab from './SuperUserTab.js'
 
