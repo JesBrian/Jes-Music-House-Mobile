@@ -2,23 +2,27 @@ import React  from 'react';
 
 import {
   StyleSheet,
+  ScrollView,
   View,
   Text
 } from 'react-native';
+
+import SuperSongGroup from '../../../components/SuperSongGroup/SuperSongGroup.js'
 
 
 export default class UserInfo extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>关于我</Text>
-      </View>
+      <ScrollView style={styles.container}>
+
+        <SuperSongGroup />
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    height:'100%'
+    flex:1
   },
 });

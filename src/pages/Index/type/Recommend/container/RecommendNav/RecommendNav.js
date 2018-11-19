@@ -13,10 +13,10 @@ import { withNavigation } from 'react-navigation'
 import SuperIcon from '../../../../../../components/SuperIcon/SuperIcon.js'
 
 const recommendData = [
-  {icon:'\ue640', name:'每日推荐', url: ''},
+  {icon:'\ue640', name:'每日推荐', url: 'Recommend'},
   {icon:'\ue646', name:'歌单', url: 'PlayList'},
   {icon:'\ue624', name:'歌手', url: 'Singer'},
-  {icon:'\ue62c', name:'排行榜', url: ''},
+  {icon:'\ue62c', name:'排行榜', url: 'Rank'},
 ];
 
 class RecommendNav extends React.Component {
