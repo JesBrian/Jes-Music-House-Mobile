@@ -21,6 +21,7 @@ const menuData = [
   {icon:'\ue656', name:'听歌排行', url:'ListenHistory'},
   {icon:'\ueaec', name:'个性彩色', url:'AppTheme'},
   {icon:'\ue625', name:'办理会员', url:'Member'},
+  {icon:'\ue60d', name:'修改信息', url:''},
 ];
 
 class MenuLink extends React.Component {

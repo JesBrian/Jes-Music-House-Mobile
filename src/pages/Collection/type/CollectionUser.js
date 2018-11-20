@@ -9,9 +9,9 @@ import {
 } from 'react-native'
 
 import { connect } from 'react-redux'
+import { withNavigation } from 'react-navigation'
 
 import Ripple from 'react-native-material-ripple'
-import { withNavigation } from 'react-navigation'
 
 class CollectionUser extends React.Component {
   render() {
