@@ -39,6 +39,31 @@ const BOTTOM_MENU_DATA_MAP = {
       {icon:'\ue638', name:'评论', handler: (that) => {goRouter(that.props.config.navigation, 'Comment')}},
       {icon:'\ue615', name:'分享', handler: (that) => {alert('share')}}
     ]
+  },
+  SelfPageLike: {
+    menuTitle: '歌单：我喜欢的音乐',
+    menuData: [
+      {icon:'\ue63c', name:'下载', handler: (that) => {alert('download')}},
+      {icon:'\ue615', name:'分享', handler: (that) => {alert('share')}}
+    ]
+  },
+  SelfPageCreate: {
+    menuTitle: '歌单：创建的歌单 - xxxx',
+    menuData: [
+      {icon:'\ue63c', name:'下载', handler: (that) => {alert('download')}},
+      {icon:'\ue615', name:'分享', handler: (that) => {alert('share')}},
+      {icon:'\ue638', name:'编辑歌单信息', handler: (that) => {alert('edit')}},
+      {icon:'\ue61f', name:'删除', handler: (that) => {alert('del')}}
+    ]
+  },
+  SelfPageCollection: {
+    menuTitle: '歌单：收藏的歌单 - zzzz',
+    menuData: [
+      {icon:'\ue63c', name:'下载', handler: (that) => {alert('download')}},
+      {icon:'\ue615', name:'分享', handler: (that) => {alert('share')}},
+      {icon:'\ue671', name:'歌单作者', handler: (that) => {goRouter(that.props.config.navigation, 'User')}},
+      {icon:'\ue61f', name:'删除', handler: (that) => {alert('del')}}
+    ]
   }
 };
 

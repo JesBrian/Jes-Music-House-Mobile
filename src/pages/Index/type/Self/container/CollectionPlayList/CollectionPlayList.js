@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import { connect } from 'react-redux'
+import { showBottomMenu } from '../../../../../../redux/actions/ViewActions.js'
 import { withNavigation } from 'react-navigation'
 
 import Ripple from 'react-native-material-ripple'
@@ -54,7 +55,7 @@ class CollectionPlayList extends React.Component {
                     <Text style={{fontSize:13, color:'#AAA'}}>180 首</Text>
                   </View>
                 </Ripple>
-                <Ripple style={{width:43, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
+                <Ripple onPress={this.showBottomMenu.bind(this, 'SelfPageCollection')} style={{width:43, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
                   <SuperIcon type={'\ue653'} style={{fontSize:23, color:'#BBB'}} />
                 </Ripple>
               </View>
@@ -66,7 +67,7 @@ class CollectionPlayList extends React.Component {
                     <Text style={{fontSize:13, color:'#AAA'}}>180 首</Text>
                   </View>
                 </Ripple>
-                <Ripple style={{width:43, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
+                <Ripple onPress={this.showBottomMenu.bind(this, 'SelfPageCollection')} style={{width:43, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
                   <SuperIcon type={'\ue653'} style={{fontSize:23, color:'#BBB'}} />
                 </Ripple>
               </View>
@@ -76,6 +77,10 @@ class CollectionPlayList extends React.Component {
       </View>
     )
   }
+
+  showBottomMenu (type = '') {
+    this.props.dispatch(showBottomMenu(type))
+  };
 }
 
 const styles = StyleSheet.create({

@@ -17,7 +17,7 @@ import SuperIcon from '../SuperIcon/SuperIcon.js'
 class SuperSongGroup extends React.Component {
   render () {
     return (
-      <LargeList style={{paddingBottom:53, flex:1, backgroundColor:'rgba(0, 0, 0, 0.38)'}}
+      <LargeList style={{paddingBottom:3, flex:1, backgroundColor:'rgba(0, 0, 0, 0.38)'}}
                  data={[{items: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}]}
                  heightForIndexPath={() => 48}
                  renderIndexPath={this._renderIndexPath}

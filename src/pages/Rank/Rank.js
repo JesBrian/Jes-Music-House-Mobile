@@ -10,8 +10,6 @@ import { connect } from 'react-redux'
 
 
 import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
-import SuperButton from '../../components/SuperButton/SuperButton.js'
-
 
 class Rank extends React.Component {
   render() {
