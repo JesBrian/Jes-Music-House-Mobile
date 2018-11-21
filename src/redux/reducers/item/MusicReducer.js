@@ -6,6 +6,8 @@ import * as types from '../../constants/MusicTypes.js';
  * 这里可以初始化一个默认的实体类
  */
 const initialState = {
+  nowIndex: 0, // 播放下标
+  playList: [], // 播放列表
   playStatus: false, // 播放状态
   playModel: 'loop', // 播放模式 - loop/single-loop/random
 };

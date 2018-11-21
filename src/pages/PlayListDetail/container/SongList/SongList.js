@@ -34,7 +34,9 @@ export default class SongList extends React.Component {
           </Ripple>
         </View>
 
-        <SuperSongGroup />
+        <View style={{backgroundColor:'rgba(0, 0, 0, 0.38)'}}>
+          <SuperSongGroup />
+        </View>
 
       </View>
     )

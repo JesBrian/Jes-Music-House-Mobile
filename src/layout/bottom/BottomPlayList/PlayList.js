@@ -16,7 +16,6 @@ import { hiddenBottomPlayList } from '../../../redux/actions/ViewActions.js'
 import Ripple from 'react-native-material-ripple'
 import { LargeList } from 'react-native-largelist-v2'
 
-import { common } from '../../../assets/styles/common.js'
 import SuperIcon from '../../../components/SuperIcon/SuperIcon.js'
 
 /**
@@ -97,7 +96,7 @@ class PlayList extends React.Component {
     return (
       <View style={styles.cell}>
         <Ripple style={{height: '100%', marginLeft:3, paddingLeft: 3, flex: 1, flexDirection: 'row', alignItems: 'center', borderBottomWidth: 0.1, borderColor: '#FFF'}}>
-          <SuperIcon type={'\ue6b4'} style={{fontSize: 18, color: '#05daf0'}}/>
+          <SuperIcon type={'\ue6b4'} style={{fontSize: 18, color:this.props.color}}/>
           <Text style={{marginLeft: 5, fontSize: 15, color:'#CCC'}}>
             555长cjk沙健id45康
             <Text style={{fontSize: 12, color:'#888'}}> - JesBrian</Text>
@@ -134,6 +133,7 @@ const styles = StyleSheet.create({
 
 function reduxState(store) {
   return {
+    color: store.config.color,
     music: store.music,
     showView: store.showView
   }

@@ -21,7 +21,7 @@ export default class Recommend extends React.Component {
           <View style={{height:108, backgroundColor:'rgba(0, 0, 0, 0.38)'}}>
           </View>
 
-          <View style={{paddingBottom:50}}>
+          <View style={{paddingBottom:50, backgroundColor:'rgba(0, 0, 0, 0.38)'}}>
             <SuperSongGroup />
           </View>
         </ScrollView>
