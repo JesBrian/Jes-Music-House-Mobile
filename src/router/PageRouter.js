@@ -15,6 +15,7 @@ import Singer from '../pages/Singer/Singer.js'
 import SingerDetail from '../pages/SingerDetail/SingerDetail.js'
 import Song from '../pages/Song/Song.js'
 import User from '../pages/User/User.js'
+import Setting from '../pages/Setting/Setting.js'
 import Member from '../pages/Member/Member.js'
 import PlayList from '../pages/PlayList/PlayList.js'
 import PlayListDetail from '../pages/PlayListDetail/PlayListDetail.js'
@@ -41,6 +42,7 @@ const PageRouter = createStackNavigator({
   SingerDetail: { screen: SingerDetail },
   Song: { screen: Song },
   User: { screen: User },
+  Setting: { screen: Setting },
   Member: { screen: Member },
   PlayList: { screen: PlayList },
   PlayListDetail: { screen: PlayListDetail },
