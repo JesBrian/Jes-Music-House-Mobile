@@ -17,18 +17,16 @@ class SuperModal extends React.Component {
   constructor (props) {
     super(props);
     this.state = {};
-
-    console.log(this.props.modalType);
   }
 
   render () {
     return (
       <Modal
-        animationType={'fade'} transparent={false} visible={true}
+        animationType={'fade'} transparent={true} visible={true}
         onRequestClose={() => {}}>
         {
-          this.props.modalType === 'loading' ? <Loading />
-            : this.props.modalType === 'multiSelectSong' ? <MultiSelectSong /> : null
+          this.props.showModal === 'loading' ? <Loading />
+            : this.props.showModal === 'multiSelectSong' ? <MultiSelectSong /> : null
         }
       </Modal>
     )
@@ -37,7 +35,7 @@ class SuperModal extends React.Component {
 
 function reduxState (store) {
   return {
-    modalType: store.showView.modalType
+    showModal: store.showView.showModal
   }
 }
 

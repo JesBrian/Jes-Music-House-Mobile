@@ -17,7 +17,7 @@ class MultiSelectSongModal extends React.Component {
 
   render () {
     return (
-      <View style={{flex:1, justifyContent:'center', alignItems:'center', backgroundColor:'rgba(0, 0, 0, 0.58)'}}>
+      <View style={{flex:1, justifyContent:'center', alignItems:'center', backgroundColor:'#383838'}}>
         <Text onPress={() => {this.props.dispatch(hiddenModal())}}>CheckboxSongModal</Text>
         <Text onPress={() => {this.props.dispatch(hiddenModal())}}>CheckboxSongModal</Text>
         <Text onPress={() => {this.props.dispatch(hiddenModal())}}>CheckboxSongModal</Text>
