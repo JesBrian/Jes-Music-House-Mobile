@@ -71,7 +71,3 @@ export const getGradientColorByIndex = function (startColor, endColor, step = 10
 function colorRgb(rgbColorStr = 'rgb(0,0,0)') {
   return rgbColorStr.replace(/(?:\(|\)|rgb)*/g, '').split(',');
 }
-
-let color = getGradientColorByIndex('rgb(68,36,0)', 'rgb(232,68,133)', 20, 0);
-console.log(color);//控制台输出
-

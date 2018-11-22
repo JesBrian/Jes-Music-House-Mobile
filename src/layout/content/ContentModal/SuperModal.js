@@ -7,7 +7,8 @@ import {
 
 import { connect } from 'react-redux'
 
-import Loading from './type/LoadingModal.js'
+import Loading from './type/Loading/LoadingModal.js'
+import MultiSelectSong from './type/MultiSelectSong/MultiSelectSongModal.js'
 
 /**
  * 模态框组件
@@ -16,25 +17,27 @@ class SuperModal extends React.Component {
   constructor (props) {
     super(props);
     this.state = {};
+
+    console.log(this.props.modalType);
   }
 
   render () {
     return (
       <Modal
-        animationType={'fade'} transparent={true} visible={true}
+        animationType={'fade'} transparent={false} visible={true}
         onRequestClose={() => {}}>
         {
-          this.props.showView.modalType === 'loading' ? <Loading /> : null
+          this.props.modalType === 'loading' ? <Loading />
+            : this.props.modalType === 'multiSelectSong' ? <MultiSelectSong /> : null
         }
       </Modal>
     )
   }
 }
 
-
 function reduxState (store) {
   return {
-    showView: store.showView
+    modalType: store.showView.modalType
   }
 }
 

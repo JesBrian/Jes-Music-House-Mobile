@@ -6,6 +6,8 @@ import {
   Text
 } from 'react-native';
 
+import { connect } from 'react-redux'
+import { showModal } from '../../../../redux/actions/ViewActions.js'
 import { withNavigation } from 'react-navigation'
 import Ripple from 'react-native-material-ripple'
 
@@ -27,7 +29,7 @@ class NavLink extends React.Component {
           <SuperIcon type={'\ue63c'} style={{marginBottom:5, fontSize:22, color:'#FFF'}} />
           <Text style={{fontSize:13, color:'#DDD'}}>下载</Text>
         </Ripple>
-        <Ripple style={{flex:1, flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
+        <Ripple onPress={() => {this.props.dispatch(showModal('multiSelectSong'))}} style={{flex:1, flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
           <SuperIcon type={'\ue654'} style={{marginBottom:5, fontSize:22, color:'#FFF'}} />
           <Text style={{fontSize:13, color:'#DDD'}}>多选</Text>
         </Ripple>
@@ -39,4 +41,9 @@ class NavLink extends React.Component {
 const styles = StyleSheet.create({
 });
 
-export default withNavigation(NavLink)
+function reduxState (store) {
+  return {
+  }
+}
+
+export default connect(reduxState)(withNavigation(NavLink));

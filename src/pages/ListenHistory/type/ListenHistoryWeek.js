@@ -7,12 +7,15 @@ import {
   Text
 } from 'react-native';
 
+import { connect } from 'react-redux'
+import { showModal } from '../../../redux/actions/ViewActions.js'
+
 import Ripple from 'react-native-material-ripple'
 
 import SuperListenGroup from '../../../components/SuperListenGroup/SuperListenGroup.js'
 import SuperIcon from '../../../components/SuperIcon/SuperIcon.js'
 
-export default class ListenHistoryWeek extends React.Component {
+class ListenHistoryWeek extends React.Component {
   render() {
     return (
       <ScrollView style={{flex:1, backgroundColor:'#282828'}}>
@@ -23,7 +26,7 @@ export default class ListenHistoryWeek extends React.Component {
             <Text style={{fontSize:16, color:'#FFF'}}>播放全部 [888]</Text>
           </Ripple>
 
-          <Ripple onPress={() => {this.setState({showCheckboxSongModal: true})}} style={{width:108, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+          <Ripple onPress={() => {this.props.dispatch(showModal('multiSelectSong'))}} style={{width:108, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
             <SuperIcon type={'\ue654'} style={{fontSize:18, color:'#FFF'}} />
             <Text style={{fontSize:16, color:'#FFF'}}> 多选</Text>
           </Ripple>
@@ -37,3 +40,10 @@ export default class ListenHistoryWeek extends React.Component {
 
 const styles = StyleSheet.create({
 });
+
+function reduxState (store) {
+  return {
+  }
+}
+
+export default connect(reduxState)(ListenHistoryWeek);

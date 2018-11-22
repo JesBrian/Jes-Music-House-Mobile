@@ -7,19 +7,19 @@ import {
   Text
 } from 'react-native';
 
+import { connect } from 'react-redux'
+import { showModal } from '../../redux/actions/ViewActions.js'
+
 import Ripple from 'react-native-material-ripple'
 
 import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
 import SuperIcon from '../../components/SuperIcon/SuperIcon.js'
 import SuperSongGroup from '../../components/SuperSongGroup/SuperSongGroup.js'
 
-import CheckboxSongModal from '../../layout/content/ContentModal/type/CheckboxSong/CheckboxSongModal.js'
-
-export default class Recommend extends React.Component {
+class Recommend extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      showCheckboxSongModal: false
     }
   }
 
@@ -38,7 +38,7 @@ export default class Recommend extends React.Component {
               <Text style={{fontSize:16, color:'#FFF'}}>播放全部 [888]</Text>
             </Ripple>
 
-            <Ripple onPress={() => {this.setState({showCheckboxSongModal: true})}} style={{width:108, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+            <Ripple onPress={() => {this.props.dispatch(showModal('multiSelectSong'))}} style={{width:108, height:'100%', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
               <SuperIcon type={'\ue654'} style={{fontSize:18, color:'#FFF'}} />
               <Text style={{fontSize:16, color:'#FFF'}}> 多选</Text>
             </Ripple>
@@ -48,16 +48,8 @@ export default class Recommend extends React.Component {
             <SuperSongGroup />
           </View>
         </ScrollView>
-
-        <CheckboxSongModal visible={this.state.showCheckboxSongModal} closeModal={this.closeModal.bind(this)} />
       </View>
     );
-  }
-
-  closeModal () {
-    this.setState({
-      showCheckboxSongModal: false
-    });
   }
 }
 
@@ -67,3 +59,10 @@ const styles = StyleSheet.create({
     backgroundColor:'rgba(0, 0, 0, 0.6)'
   },
 });
+
+function reduxState (store) {
+  return {
+  }
+}
+
+export default connect(reduxState)(Recommend);

@@ -7,13 +7,11 @@ import {
 
 import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
 import SuperListenHistoryTab from './SuperListenHistoryTab.js'
-import CheckboxSongModal from '../../layout/content/ContentModal/type/CheckboxSong/CheckboxSongModal.js'
 
 export default class ListenHistory extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      showCheckboxSongModal: false
     }
   }
 
@@ -23,16 +21,8 @@ export default class ListenHistory extends React.Component {
         <NormalNavbar label={'听歌排行'} />
 
         <SuperListenHistoryTab />
-
-        <CheckboxSongModal visible={this.state.showCheckboxSongModal} closeModal={this.closeModal.bind(this)} />
       </View>
     );
-  }
-
-  closeModal () {
-    this.setState({
-      showCheckboxSongModal: false
-    });
   }
 }
 
