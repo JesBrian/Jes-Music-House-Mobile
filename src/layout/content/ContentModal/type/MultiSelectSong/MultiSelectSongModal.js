@@ -1,12 +1,15 @@
 import React  from 'react';
 
 import {
+  ScrollView,
   View,
-  Text,
+  Text
 } from 'react-native';
 
 import { connect } from 'react-redux'
 import { hiddenModal } from '../../../../../redux/actions/ViewActions.js'
+
+import MultiSelectNavbar from '../../../../top/TopNavbar/type/MultiSelectNavbar.js'
 
 class MultiSelectSongModal extends React.Component {
   constructor (props) {
@@ -17,16 +20,24 @@ class MultiSelectSongModal extends React.Component {
 
   render () {
     return (
-      <View style={{flex:1, justifyContent:'center', alignItems:'center', backgroundColor:'#383838'}}>
-        <Text onPress={() => {this.props.dispatch(hiddenModal())}}>CheckboxSongModal</Text>
-        <Text onPress={() => {this.props.dispatch(hiddenModal())}}>CheckboxSongModal</Text>
-        <Text onPress={() => {this.props.dispatch(hiddenModal())}}>CheckboxSongModal</Text>
-        <Text onPress={() => {this.props.dispatch(hiddenModal())}}>CheckboxSongModal</Text>
-        <Text onPress={() => {this.props.dispatch(hiddenModal())}}>CheckboxSongModal</Text>
-        <Text onPress={() => {this.props.dispatch(hiddenModal())}}>CheckboxSongModal</Text>
-        <Text onPress={() => {this.props.dispatch(hiddenModal())}}>CheckboxSongModal</Text>
-        <Text onPress={() => {this.props.dispatch(hiddenModal())}}>CheckboxSongModal</Text>
-        <Text onPress={() => {this.props.dispatch(hiddenModal())}}>CheckboxSongModal</Text>
+      <View style={{flex:1, backgroundColor:'#888'}}>
+        <MultiSelectNavbar label={''} />
+
+        <ScrollView style={{flex:1, backgroundColor:'rgba(0,0,0,0.5)'}}>
+          <Text onPress={() => this.props.dispatch(hiddenModal())}>CheckboxSongModal</Text>
+          <Text onPress={() => this.props.dispatch(hiddenModal())}>CheckboxSongModal</Text>
+          <Text onPress={() => this.props.dispatch(hiddenModal())}>CheckboxSongModal</Text>
+          <Text onPress={() => this.props.dispatch(hiddenModal())}>CheckboxSongModal</Text>
+          <Text onPress={() => this.props.dispatch(hiddenModal())}>CheckboxSongModal</Text>
+          <Text onPress={() => this.props.dispatch(hiddenModal())}>CheckboxSongModal</Text>
+          <Text onPress={() => this.props.dispatch(hiddenModal())}>CheckboxSongModal</Text>
+          <Text onPress={() => this.props.dispatch(hiddenModal())}>CheckboxSongModal</Text>
+          <Text onPress={() => this.props.dispatch(hiddenModal())}>CheckboxSongModal</Text>
+        </ScrollView>
+
+        <View>
+          <Text>bottom</Text>
+        </View>
       </View>
     );
   }

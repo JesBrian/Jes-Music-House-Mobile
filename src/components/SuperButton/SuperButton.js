@@ -6,9 +6,10 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
+import { connect } from 'react-redux'
+
 import LinearGradient from 'react-native-linear-gradient'
 import { BoxShadow }  from 'react-native-shadow'
-import { connect } from 'react-redux'
 
 import { getInt2RGB, getRGBStrByArr } from '../../utils/common/color.js'
 
