@@ -83,7 +83,7 @@ class MenuPanel extends React.Component {
             <View style={{flex:1}}/>
           </TouchableWithoutFeedback>
 
-          <View style={{width:'100%', height:308, position:'relative', flexDirection:'column'}}>
+          <View style={{width:'100%', height:this.state.data.menuData.length * 38 + 33 > 308 ? 308 : this.state.data.menuData.length * 38 + 33, position:'relative', flexDirection:'column'}}>
             <View style={{width:'100%', height:33, justifyContent:'center', borderTopLeftRadius:8, borderTopRightRadius:8, backgroundColor:'#444'}}>
               <Text style={{marginLeft:15, color:'#AAA'}}>{ this.state.data.menuTitle }</Text>
             </View>

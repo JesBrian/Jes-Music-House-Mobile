@@ -9,7 +9,10 @@ import {
 import { connect } from 'react-redux'
 import { hiddenModal } from '../../../../../redux/actions/ViewActions.js'
 
+import Ripple from 'react-native-material-ripple'
+
 import MultiSelectNavbar from '../../../../top/TopNavbar/type/MultiSelectNavbar.js'
+import SuperIcon from "../../../../../components/SuperIcon/SuperIcon";
 
 class MultiSelectSongModal extends React.Component {
   constructor (props) {
@@ -35,8 +38,19 @@ class MultiSelectSongModal extends React.Component {
           <Text onPress={() => this.props.dispatch(hiddenModal())}>CheckboxSongModal</Text>
         </ScrollView>
 
-        <View>
-          <Text>bottom</Text>
+        <View style={{height:70, flexDirection:'row'}}>
+          <Ripple style={{flex:1}}>
+            <SuperIcon />
+            <Text>1</Text>
+          </Ripple>
+          <Ripple style={{flex:1}}>
+            <SuperIcon />
+            <Text>1</Text>
+          </Ripple>
+          <Ripple style={{flex:1}}>
+            <SuperIcon />
+            <Text>1</Text>
+          </Ripple>
         </View>
       </View>
     );
