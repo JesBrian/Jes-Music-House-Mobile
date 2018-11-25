@@ -14,6 +14,7 @@ import { LargeList } from 'react-native-largelist-v2'
 
 import MultiSelectNavbar from '../../../../top/TopNavbar/type/MultiSelectNavbar.js'
 import SuperIcon from '../../../../../components/SuperIcon/SuperIcon.js'
+import SuperCheckbox from '../../../../../components/SuperCheckbox/SuperCheckbox.js'
 
 class MultiSelectSongModal extends React.Component {
   constructor (props) {
@@ -58,9 +59,7 @@ class MultiSelectSongModal extends React.Component {
     return (
       <Ripple style={{height:48, marginLeft:3, flex: 1, flexDirection: 'row', alignItems: 'center'}}>
         <View style={{width:38, height:'100%', justifyContent:'center', alignItems:'center'}}>
-          <View style={{width:22, height:22, marginTop:2, borderWidth:1, borderColor:this.props.color, borderRadius:3, backgroundColor:this.props.color}} >
-            <Text style={{color:'#282828'}}>√</Text>
-          </View>
+          <SuperCheckbox />
         </View>
         <View style={{height:'100%', paddingLeft:5, flex:1, justifyContent:'center', borderBottomWidth:0.2, borderColor: '#FFF'}}>
           <Text style={{fontSize: 15, color:'#CCC'}}>555长cjk沙健id45康</Text>

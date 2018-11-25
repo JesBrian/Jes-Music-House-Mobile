@@ -43,7 +43,7 @@ class MultiSelectNavbar extends React.Component {
           </View>
 
           <View style={{marginRight:8}}>
-            <SuperButton label={'取消全选'} width={78} onPress={() => {}}/>
+            <SuperButton label={'取消全选'} width={82} onPress={() => {}}/>
           </View>
         </View>
 
