@@ -7,9 +7,13 @@ import {
   Text
 } from 'react-native';
 
+import { connect } from 'react-redux'
+
 import Swiper from 'react-native-swiper'
 
-export default class RecommendSlide extends React.Component {
+import SuperIcon from '../../../../../../components/SuperIcon/SuperIcon.js'
+
+class RecommendSlide extends React.Component {
   static defaultProps = {
     slideData: []
   }
@@ -25,7 +29,10 @@ export default class RecommendSlide extends React.Component {
       <View style={{width:'100%', height:138, marginTop:8}}>
         {
           this.props.slideData.length === 0 ? null : (
-            <Swiper style={styles.wrapper} showsButtons={true} autoplay={true}>
+            <Swiper style={styles.wrapper} showsButtons={true} autoplay={true}
+                    dotStyle={{top:18}} activeDotStyle={{top:18}} dotColor={'rgba(0,0,0,0.5)'} activeDotColor={this.props.color}
+                    prevButton={<SuperIcon type={'\ue8ca'} style={{fontSize:28, color:this.props.color}} />}
+                    nextButton={<SuperIcon type={'\ue8cb'} style={{fontSize:28, color:this.props.color}} />} >
               {
                 this.props.slideData.map((item, index) => {
                   return (
@@ -60,3 +67,11 @@ const styles = StyleSheet.create({
     borderRadius:6
   }
 });
+
+function reduxState(store) {
+  return {
+    color: store.config.color
+  }
+}
+
+export default connect(reduxState)(RecommendSlide);
