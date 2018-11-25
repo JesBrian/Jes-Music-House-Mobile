@@ -19,13 +19,14 @@ class MultiSelectSongModal extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
+      num: 0
     };
   }
 
   render () {
     return (
       <View style={{flex:1, backgroundColor:'#888'}}>
-        <MultiSelectNavbar />
+        <MultiSelectNavbar label={`已选择 ${this.state.num} 项`} />
 
         <ScrollView style={{flex:1, backgroundColor:'rgba(0,0,0,0.5)'}}>
           <LargeList style={{marginVertical:3, flex:1}}
@@ -55,10 +56,13 @@ class MultiSelectSongModal extends React.Component {
 
   _renderIndexPath  = () => {
     return (
-      <Ripple style={{height:48, marginLeft:3, paddingLeft: 3, flex: 1, flexDirection: 'row', alignItems: 'center'}}>
-        <View style={{width:38, height:'100%'}}>
+      <Ripple style={{height:48, marginLeft:3, flex: 1, flexDirection: 'row', alignItems: 'center'}}>
+        <View style={{width:38, height:'100%', justifyContent:'center', alignItems:'center'}}>
+          <View style={{width:22, height:22, marginTop:2, borderWidth:1, borderColor:this.props.color, borderRadius:3, backgroundColor:this.props.color}} >
+            <Text style={{color:'#282828'}}>√</Text>
+          </View>
         </View>
-        <View style={{height:'100%', paddingLeft:3, flex:1, justifyContent:'center', borderBottomWidth:0.2, borderColor: '#FFF'}}>
+        <View style={{height:'100%', paddingLeft:5, flex:1, justifyContent:'center', borderBottomWidth:0.2, borderColor: '#FFF'}}>
           <Text style={{fontSize: 15, color:'#CCC'}}>555长cjk沙健id45康</Text>
           <Text style={{fontSize: 12, color:'#888'}}> - JesBrian</Text>
         </View>

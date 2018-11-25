@@ -2,6 +2,7 @@ import React  from 'react';
 
 import {
   StyleSheet,
+  ScrollView,
   View
 } from 'react-native';
 
@@ -13,6 +14,8 @@ export default class Setting extends React.Component {
       <View style={styles.container}>
         <NormalNavbar label={'修改个人信息'} />
 
+        <ScrollView style={{backgroundColor:'rgba(0,0,0,0.73)'}}>
+        </ScrollView>
       </View>
     );
   }
@@ -20,6 +23,7 @@ export default class Setting extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'transparent'
+    flex:1,
+    backgroundColor:'transparent'
   },
 });
