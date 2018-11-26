@@ -39,7 +39,7 @@ class MusicPlayer extends React.Component {
     }
 
     return (
-      <View style={{width:Dimensions.get('window').width, height:65, top:Dimensions.get('window').height - (this.props.showView.bottomMusic === false ? 0 : 65), left:0, paddingTop:12, position:'absolute', zIndex:5}}>
+      <View style={{width:Dimensions.get('window').width, height:65, top:Dimensions.get('window').height - (this.props.isShow === false ? 0 : 65), left:0, paddingTop:12, position:'absolute', zIndex:5}}>
         <BoxShadow setting={shadowOpt}>
           <View style={{flex:1, flexDirection:'row', backgroundColor:this.props.config.theme === 'light' ? '#F8F8F8' : '#282828'}}>
             <TouchableOpacity onPress={() => {this.props.config.navigation.navigate('Song');}} style={{flex:1, flexDirection:'row', justifyContent:'flex-start'}}>
@@ -95,7 +95,7 @@ function reduxState(store) {
   return {
     config: store.config,
     music: store.music,
-    showView: store.showView,
+    isShow: store.showView.bottomMusic,
   }
 }
 
