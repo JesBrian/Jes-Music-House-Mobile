@@ -13,6 +13,7 @@ import { connect } from 'react-redux'
 import { showBottomMenu } from '../../../../redux/actions/ViewActions.js'
 
 import Ripple from 'react-native-material-ripple'
+import Canvas from 'react-native-canvas'
 
 import SuperIcon from '../../../../components/SuperIcon/SuperIcon.js'
 
@@ -31,6 +32,7 @@ class SongImg extends React.Component {
             <View style={{width:Dimensions.get('window').width * 0.84, height:Dimensions.get('window').width * 0.84, justifyContent:'center', alignItems:'center', position:'relative', borderRadius:Dimensions.get('window').width * 0.42, backgroundColor:'transparent'}} >
               <Image style={{width:'100%', height:'100%', borderWidth:6, borderColor:'#383838', borderRadius:Dimensions.get('window').width * 0.42}} source={require('../../../../assets/images/default/disk.png')} />
               <Image style={{width:'68%', height:'68%', position:'absolute', borderRadius:Dimensions.get('window').width * 0.2856}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
+              {/*<Canvas ref={this.renderCanvas}/>*/}
             </View>
           </View>
         </TouchableWithoutFeedback>
@@ -55,6 +57,10 @@ class SongImg extends React.Component {
   showSongMenu () {
     this.props.dispatch(showBottomMenu('SongPage'))
   };
+
+  renderCanvas (canvas) {
+    const ctx = canvas.getContext('2d');
+  }
 }
 
 const styles = StyleSheet.create({
