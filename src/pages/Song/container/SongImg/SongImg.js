@@ -12,8 +12,8 @@ import {
 import { connect } from 'react-redux'
 import { showBottomMenu } from '../../../../redux/actions/ViewActions.js'
 
+import Swiper from 'react-native-swiper'
 import Ripple from 'react-native-material-ripple'
-import Canvas from 'react-native-canvas'
 
 import SuperIcon from '../../../../components/SuperIcon/SuperIcon.js'
 
@@ -27,15 +27,24 @@ class SongImg extends React.Component {
   render() {
     return (
       <View style={{flex:1}}>
-        <TouchableWithoutFeedback onPress={() => this.props.changeSongContentType('lyric')}>
-          <View style={{marginTop:38, flex:1, alignItems:'center'}}>
-            <View style={{width:Dimensions.get('window').width * 0.84, height:Dimensions.get('window').width * 0.84, justifyContent:'center', alignItems:'center', position:'relative', borderRadius:Dimensions.get('window').width * 0.42, backgroundColor:'transparent'}} >
-              <Image style={{width:'100%', height:'100%', borderWidth:6, borderColor:'#383838', borderRadius:Dimensions.get('window').width * 0.42}} source={require('../../../../assets/images/default/disk.png')} />
-              <Image style={{width:'68%', height:'68%', position:'absolute', borderRadius:Dimensions.get('window').width * 0.2856}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
-              {/*<Canvas ref={this.renderCanvas}/>*/}
-            </View>
+        <View style={{flex:1, alignItems:'center'}}>
+          <View style={{width:Dimensions.get('window').width * 0.83, height:Dimensions.get('window').width * 0.83, top:28, borderRadius:Dimensions.get('window').width * 0.465, backgroundColor:'#333', borderWidth:1, borderColor:'#282828'}}>
+            <Swiper loop={true} showButtons={false} showsPagination={false} >
+              <TouchableWithoutFeedback onPress={() => this.props.changeSongContentType('lyric')}>
+                <View style={{flex:1, justifyContent:'center', alignItems:'center', position:'relative'}} >
+                  <Image style={{width:Dimensions.get('window').width * 0.8, height:Dimensions.get('window').width * 0.8, borderRadius:Dimensions.get('window').width * 0.4}} source={require('../../../../assets/images/default/disk.png')} />
+                  <Image style={{width:Dimensions.get('window').width * 0.5, height:Dimensions.get('window').width * 0.5, position:'absolute', borderRadius:Dimensions.get('window').width * 0.25}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
+                </View>
+              </TouchableWithoutFeedback>
+              <TouchableWithoutFeedback onPress={() => this.props.changeSongContentType('lyric')}>
+                <View style={{flex:1, justifyContent:'center', alignItems:'center', position:'relative'}} >
+                  <Image style={{width:Dimensions.get('window').width * 0.8, height:Dimensions.get('window').width * 0.8, borderRadius:Dimensions.get('window').width * 0.4}} source={require('../../../../assets/images/default/disk.png')} />
+                  <Image style={{width:Dimensions.get('window').width * 0.5, height:Dimensions.get('window').width * 0.5, position:'absolute', borderRadius:Dimensions.get('window').width * 0.25}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
+                </View>
+              </TouchableWithoutFeedback>
+            </Swiper>
           </View>
-        </TouchableWithoutFeedback>
+        </View>
         <View style={{height:48, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
           <Ripple style={{height:'100%', flex:1, flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
             <SuperIcon type={'\ue80d'} style={{fontSize:28, color:'#AAA'}} />
