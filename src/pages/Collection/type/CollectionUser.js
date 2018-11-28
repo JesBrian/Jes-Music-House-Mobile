@@ -1,27 +1,19 @@
-import React  from 'react'
+import React  from 'react';
 
 import {
   StyleSheet,
-  ScrollView,
-  View,
-  Image,
-  Text
-} from 'react-native'
+  ScrollView
+} from 'react-native';
 
-import { connect } from 'react-redux'
-import { withNavigation } from 'react-navigation'
+import SuperUserGroup from '../../../components/SuperUserGroup/SuperUserGroup.js'
 
-import Ripple from 'react-native-material-ripple'
 
-class CollectionUser extends React.Component {
+export default class CollectionUser extends React.Component {
   render() {
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView style={{flex:1, backgroundColor:'#282828'}}>
 
-        <View>
-          <Text>关注的用户</Text>
-        </View>
-
+        <SuperUserGroup />
       </ScrollView>
     );
   }
@@ -29,17 +21,6 @@ class CollectionUser extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
-    paddingBottom:3,
-    backgroundColor:'rgba(0,0,0,0.28)',
+    height:'100%'
   },
 });
-
-
-function reduxState(store) {
-  return {
-    color: store.config.color
-  }
-}
-
-export default connect(reduxState)(withNavigation(CollectionUser));
