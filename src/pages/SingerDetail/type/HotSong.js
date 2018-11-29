@@ -14,30 +14,32 @@ export default class UserInfo extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      y1: 0,
-      y2: 0
+      y: 0
     }
   }
 
   render() {
     return (
-      <ScrollView style={styles.container} scrollEventThrottle={200}
-                  onScrollBeginDrag={(e) => {this.setStateValue('y1', e.nativeEvent.contentOffset.y)}}
-                  onScroll={(e) => {this.setStateValue('y2', e.nativeEvent.contentOffset.y)}}
-                  onMomentumScrollEnd={(e) => {this.setStateValue('y2', e.nativeEvent.contentOffset.y)}} >
+      <ScrollView style={styles.container} scrollEventThrottle={2000}
+                  onScroll={(e) => {this.setStateValue(e.nativeEvent.contentOffset.y)}}
+                  onMomentumScrollEnd={(e) => {this.setStateValue(e.nativeEvent.contentOffset.y)}} >
 
         <SuperSongGroup />
       </ScrollView>
     );
   }
 
-  setStateValue (key, value) {
+  setStateValue (value) {
     this.setState({
-      key: value
+      y: value
     });
 
-    if (key === 'y2') {
-      this.props.scrollEvent(value - this.state.y1);
+    let tempValue = value;
+    console.log(tempValue)
+    if (tempValue <= 208) {
+      this.props.scrollEvent(tempValue);
+    } else {
+      this.props.scrollEvent(208);
     }
   }
 }

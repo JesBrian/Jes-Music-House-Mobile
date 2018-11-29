@@ -13,7 +13,7 @@ export default class User extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      top: 75
+      top: 0
     }
   }
 
@@ -22,21 +22,20 @@ export default class User extends React.Component {
       <View style={styles.container}>
         <NormalNavbar navigation={this.props.navigation} />
 
-        <View style={{width:'100%', height:208, top:this.state.top, position:'absolute', zIndex:-1, backgroundColor:'lightgreen'}}>
+        <View style={{width:'100%', height:208, top:75 - this.state.top, position:'absolute', zIndex:-1, backgroundColor:'lightgreen'}}>
         </View>
 
-        <View style={{marginTop:208, flex:1}}>
-          <SuperSingerDetailTab scrollEvent={this.changePosterContainerHeight} />
+        <View style={{marginTop:208 - this.state.top, flex:1}}>
+          <SuperSingerDetailTab scrollEvent={this.changePosterContainerHeight.bind(this)} />
         </View>
       </View>
     );
   }
 
   changePosterContainerHeight (top = 0) {
-    // this.setState({
-    //   top: 75 - top
-    // });
-    console.log(top);
+    this.setState({
+      top: top
+    });
   }
 }
 
