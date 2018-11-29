@@ -35,7 +35,7 @@ export default class SongList extends React.Component {
         </View>
 
         <View style={{backgroundColor:'rgba(0, 0, 0, 0.38)'}}>
-          <SuperSongGroup />
+          <SuperSongGroup moreType={'PlayListPage'} />
         </View>
 
       </View>

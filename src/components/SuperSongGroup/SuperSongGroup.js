@@ -15,6 +15,16 @@ import { LargeList } from 'react-native-largelist-v2'
 import SuperIcon from '../SuperIcon/SuperIcon.js'
 
 class SuperSongGroup extends React.Component {
+  static defaultProps = {
+    moreType: ''
+  }
+
+  constructor (props) {
+    super(props);
+    this.state = {
+    }
+  }
+
   render () {
     return (
       <LargeList style={{paddingBottom:8, flex:1}}
@@ -38,15 +48,19 @@ class SuperSongGroup extends React.Component {
             <Text style={{fontSize:12, color:'#999'}}>JesBrian</Text>
           </View>
         </Ripple>
-        <Ripple onPress={this.showSongMenu.bind(this)} style={{width:32, height:'100%', justifyContent:'center', alignItems:'center'}}>
-          <SuperIcon type={'\ue653'} style={{fontSize:26, color:'#999'}} />
-        </Ripple>
+        {
+          this.props.moreType === '' ? null : (
+            <Ripple onPress={this.showBottomMenu.bind(this)} style={{width:36, height:'100%', justifyContent:'center', alignItems:'center'}}>
+              <SuperIcon type={'\ue653'} style={{fontSize:26, color:'#999'}} />
+            </Ripple>
+          )
+        }
       </View>
     );
   }
 
-  showSongMenu () {
-    this.props.dispatch(showBottomMenu('PlayListPage'))
+  showBottomMenu () {
+    this.props.dispatch(showBottomMenu(this.props.moreType))
   };
 }
 

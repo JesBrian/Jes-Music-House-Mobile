@@ -13,8 +13,19 @@ import Ripple from 'react-native-material-ripple'
 import { LargeList } from 'react-native-largelist-v2'
 
 import SuperIcon from '../SuperIcon/SuperIcon.js'
+import {showBottomMenu} from "../../redux/actions/ViewActions";
 
 class SuperUserGroup extends React.Component {
+  static defaultProps = {
+    moreType: ''
+  }
+
+  constructor (props) {
+    super(props);
+    this.state = {
+    }
+  }
+
   render () {
     return (
       <LargeList style={{paddingBottom:8, flex:1}}
@@ -34,9 +45,20 @@ class SuperUserGroup extends React.Component {
             <Text style={{marginLeft:3, fontSize:16, color:'#EEE'}}>用户名</Text>
           </View>
         </Ripple>
+        {
+          this.props.moreType === '' ? null : (
+            <Ripple onPress={this.showBottomMenu.bind(this)} style={{width:36, height:'100%', justifyContent:'center', alignItems:'center'}}>
+              <SuperIcon type={'\ue653'} style={{fontSize:26, color:'#999'}} />
+            </Ripple>
+          )
+        }
       </View>
     );
   }
+
+  showBottomMenu () {
+    this.props.dispatch(showBottomMenu(this.props.moreType))
+  };
 }
 
 const styles = StyleSheet.create({

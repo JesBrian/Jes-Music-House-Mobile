@@ -13,8 +13,19 @@ import Ripple from 'react-native-material-ripple'
 import { LargeList } from 'react-native-largelist-v2'
 
 import SuperIcon from '../SuperIcon/SuperIcon.js'
+import {showBottomMenu} from "../../redux/actions/ViewActions";
 
 class SuperPlayListGroup extends React.Component {
+  static defaultProps = {
+    moreType: ''
+  }
+
+  constructor (props) {
+    super(props);
+    this.state = {
+    }
+  }
+
   render () {
     return (
       <LargeList style={{paddingTop:3, paddingBottom:18, flex:1}}
@@ -35,12 +46,20 @@ class SuperPlayListGroup extends React.Component {
             <Text style={{fontSize:13, color:'#AAA'}}>180 首</Text>
           </View>
         </Ripple>
-        <Ripple style={{width:43, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
-          <SuperIcon type={'\ue653'} style={{fontSize:23, color:'#BBB'}} />
-        </Ripple>
+        {
+          this.props.moreType === '' ? null : (
+            <Ripple onPress={this.showBottomMenu.bind(this)} style={{width:36, height:'100%', justifyContent:'center', alignItems:'center'}}>
+              <SuperIcon type={'\ue653'} style={{fontSize:26, color:'#999'}} />
+            </Ripple>
+          )
+        }
       </View>
     );
   }
+
+  showBottomMenu () {
+    this.props.dispatch(showBottomMenu(this.props.moreType))
+  };
 }
 
 const styles = StyleSheet.create({
