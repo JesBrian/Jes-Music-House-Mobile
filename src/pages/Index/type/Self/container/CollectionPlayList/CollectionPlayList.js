@@ -3,18 +3,15 @@ import React  from 'react';
 import {
   StyleSheet,
   View,
-  Image,
   Text,
   TouchableWithoutFeedback
 } from 'react-native';
 
 import { connect } from 'react-redux'
-import { showBottomMenu } from '../../../../../../redux/actions/ViewActions.js'
 import { withNavigation } from 'react-navigation'
 
-import Ripple from 'react-native-material-ripple'
-
 import SuperIcon from '../../../../../../components/SuperIcon/SuperIcon.js'
+import SuperPlayListGroup from '../../../../../../components/SuperPlayListGroup/SuperPlayListGroup.js'
 
 class CollectionPlayList extends React.Component {
   constructor (props) {
@@ -46,41 +43,12 @@ class CollectionPlayList extends React.Component {
         </View>
         {
           this.state.isShowCollectionPlayList === false ? (null) : (
-            <View>
-              <View style={{height:53, flexDirection:'row'}}>
-                <Ripple onPress={() => {this.props.navigation.navigate('PlayListDetail')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
-                  <Image style={{width:42.5, height:42.5, marginLeft:6, marginRight:8, borderRadius:3}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
-                  <View style={{height:'100%', flex:1, justifyContent:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
-                    <Text style={{marginTop:5, marginBottom:3, fontSize:16, color:'#EEE'}}>我喜欢的音乐</Text>
-                    <Text style={{fontSize:13, color:'#AAA'}}>180 首</Text>
-                  </View>
-                </Ripple>
-                <Ripple onPress={this.showBottomMenu.bind(this, 'SelfPageCollection')} style={{width:43, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
-                  <SuperIcon type={'\ue653'} style={{fontSize:23, color:'#BBB'}} />
-                </Ripple>
-              </View>
-              <View style={{height:53, flexDirection:'row'}}>
-                <Ripple onPress={() => {this.props.navigation.navigate('PlayListDetail')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
-                  <Image style={{width:42.5, height:42.5, marginLeft:6, marginRight:8, borderRadius:3}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
-                  <View style={{height:'100%', flex:1, justifyContent:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
-                    <Text style={{marginTop:5, marginBottom:3, fontSize:16, color:'#EEE'}}>我喜欢的音乐</Text>
-                    <Text style={{fontSize:13, color:'#AAA'}}>180 首</Text>
-                  </View>
-                </Ripple>
-                <Ripple onPress={this.showBottomMenu.bind(this, 'SelfPageCollection')} style={{width:43, height:'100%', justifyContent:'center', alignItems:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
-                  <SuperIcon type={'\ue653'} style={{fontSize:23, color:'#BBB'}} />
-                </Ripple>
-              </View>
-            </View>
+            <SuperPlayListGroup moreType={'SelfPageCollection'} />
           )
         }
       </View>
     )
   }
-
-  showBottomMenu (type = '') {
-    this.props.dispatch(showBottomMenu(type))
-  };
 }
 
 const styles = StyleSheet.create({

@@ -7,8 +7,9 @@ import {
   Text
 } from 'react-native';
 
-import { withNavigation } from 'react-navigation'
+import { connect } from 'react-redux'
 import { showBottomMenu } from '../../redux/actions/ViewActions.js'
+import { withNavigation } from 'react-navigation'
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
 
 import Ripple from 'react-native-material-ripple'
@@ -66,4 +67,9 @@ class SuperUserGroup extends React.Component {
 const styles = StyleSheet.create({
 });
 
-export default withNavigation(gestureHandlerRootHOC(SuperUserGroup));
+function reduxState(store) {
+  return {
+  }
+}
+
+export default withNavigation(gestureHandlerRootHOC(connect(reduxState)(SuperUserGroup)));
