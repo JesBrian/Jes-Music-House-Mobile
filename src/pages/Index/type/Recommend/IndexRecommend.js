@@ -39,7 +39,7 @@ export default class IndexRecommend extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView style={{width:'96%', flex:1}}>
+        <ScrollView style={{width:'98%', flex:1}}>
 
           <RecommendSlide slideData={this.state.slideData} />
 

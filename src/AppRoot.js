@@ -38,7 +38,7 @@ class AppRoot extends Component<Props> {
       <View style={{flex:1, position:'relative'}}>
         <SuperStatusBar />
         <PageRouter onNavigationStateChange={(prevState, currentState) => {
-          if (currentState.isTransitioning === true) {
+          if (currentState.isTransitioning === false) {
             MUSIC_PLAYER_NOT_SHOE_ROUTER.includes(currentState.routes[currentState.routes.length - 1].routeName) === true ?
               this.props.dispatch(hiddenBottomMusic()) : this.props.dispatch(showBottomMusic())
           }
