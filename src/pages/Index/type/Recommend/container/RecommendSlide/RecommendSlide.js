@@ -1,6 +1,7 @@
 import React  from 'react';
 
 import {
+  Platform,
   StyleSheet,
   View,
   Image,
@@ -26,11 +27,13 @@ class RecommendSlide extends React.Component {
 
   render () {
     return (
-      <View style={{width:'100%', height:138, marginTop:8}}>
+      <View style={{width:'100%', height:168, marginTop:8}}>
         {
           this.props.slideData.length === 0 ? null : (
             <Swiper style={styles.wrapper} showsButtons={true} autoplay={true}
-                    dotStyle={{top:18}} activeDotStyle={{top:18}} dotColor={'rgba(0,0,0,0.5)'} activeDotColor={this.props.color}
+                    dotStyle={{top:Platform.OS === 'ios' ? 18 : 3}}
+                    activeDotStyle={{top:Platform.OS === 'ios' ? 18 : 3}}
+                    dotColor={'rgba(0,0,0,0.5)'} activeDotColor={this.props.color}
                     prevButton={<SuperIcon type={'\ue8ca'} style={{fontSize:28, color:this.props.color}} />}
                     nextButton={<SuperIcon type={'\ue8cb'} style={{fontSize:28, color:this.props.color}} />} >
               {
@@ -53,14 +56,14 @@ class RecommendSlide extends React.Component {
 
 const styles = StyleSheet.create({
   wrapper: {
-    borderRadius:6,
+    borderRadius:6
   },
   slide: {
     marginLeft:4,
     marginRight:4,
     flex:1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   img: {
     width:'100%', height:'100%',
