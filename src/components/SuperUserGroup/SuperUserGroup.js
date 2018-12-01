@@ -8,12 +8,14 @@ import {
 } from 'react-native';
 
 import { withNavigation } from 'react-navigation'
+import { showBottomMenu } from '../../redux/actions/ViewActions.js'
+import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
 
 import Ripple from 'react-native-material-ripple'
 import { LargeList } from 'react-native-largelist-v2'
 
 import SuperIcon from '../SuperIcon/SuperIcon.js'
-import {showBottomMenu} from "../../redux/actions/ViewActions";
+
 
 class SuperUserGroup extends React.Component {
   static defaultProps = {
@@ -64,4 +66,4 @@ class SuperUserGroup extends React.Component {
 const styles = StyleSheet.create({
 });
 
-export default withNavigation(SuperUserGroup);
+export default withNavigation(gestureHandlerRootHOC(SuperUserGroup));

@@ -8,6 +8,7 @@ import {
 
 import { connect } from 'react-redux'
 import { showBottomMenu } from '../../redux/actions/ViewActions.js'
+import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
 
 import Ripple from 'react-native-material-ripple'
 import { LargeList } from 'react-native-largelist-v2'
@@ -73,4 +74,4 @@ function reduxState(store) {
   }
 }
 
-export default connect(reduxState)(SuperSongGroup);
+export default gestureHandlerRootHOC(connect(reduxState)(SuperSongGroup));

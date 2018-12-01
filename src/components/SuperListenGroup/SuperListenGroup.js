@@ -6,12 +6,14 @@ import {
   Text
 } from 'react-native';
 
+import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
+
 import Ripple from 'react-native-material-ripple'
 import { LargeList } from 'react-native-largelist-v2'
 
 import SuperIcon from '../SuperIcon/SuperIcon.js'
 
-export default class SuperListenGroup extends React.Component {
+class SuperListenGroup extends React.Component {
   render () {
     return (
       <LargeList style={{paddingVertical:3, flex:1}}
@@ -44,3 +46,5 @@ export default class SuperListenGroup extends React.Component {
 
 const styles = StyleSheet.create({
 });
+
+export default gestureHandlerRootHOC(SuperListenGroup);

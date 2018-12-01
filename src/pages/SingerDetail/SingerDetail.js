@@ -8,7 +8,6 @@ import {
 import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
 import SuperSingerDetailTab from './SuperSingerDetailTab.js'
 
-
 export default class User extends React.Component {
   constructor (props) {
     super(props);
@@ -26,16 +25,10 @@ export default class User extends React.Component {
         </View>
 
         <View style={{marginTop:208 - this.state.top, flex:1}}>
-          <SuperSingerDetailTab scrollEvent={this.changePosterContainerHeight.bind(this)} />
+          <SuperSingerDetailTab />
         </View>
       </View>
     );
-  }
-
-  changePosterContainerHeight (top = 0) {
-    this.setState({
-      top: top
-    });
   }
 }
 
