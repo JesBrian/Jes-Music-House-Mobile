@@ -11,7 +11,7 @@ import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
 import Ripple from 'react-native-material-ripple'
 import { LargeList } from 'react-native-largelist-v2'
 
-import SuperIcon from '../SuperIcon/SuperIcon.js'
+import SuperIcon from '../../SuperIcon/SuperIcon.js'
 
 class SuperListenGroup extends React.Component {
   render () {

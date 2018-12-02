@@ -11,7 +11,7 @@ import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
 
 import SuperIcon from '../../../../../../components/SuperIcon/SuperIcon.js'
-import SuperPlayListGroup from '../../../../../../components/SuperPlayListGroup/SuperPlayListGroup.js'
+import SuperPlayListGroup from '../../../../../../components/SuperGroup/PlayList/SuperPlayListGroup.js'
 
 class CreatePlayList extends React.Component {
   constructor (props) {

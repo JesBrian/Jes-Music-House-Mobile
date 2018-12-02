@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 
 import SuperSectionNavbar from '../../../../../../components/SuperSectionNavbar/SuperSectionNavbar.js'
-import SuperSongGroup from '../../../../../../components/SuperSongGroup/SuperSongGroup.js'
+import SuperSongGroup from '../../../../../../components/SuperGroup/Song/SuperSongGroup.js'
 
 export default class RecommendRank extends React.Component {
   constructor (props) {

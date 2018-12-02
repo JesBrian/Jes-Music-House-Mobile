@@ -1,6 +1,6 @@
 import React  from 'react';
 
-import SuperSingerGroup from '../../../../../../components/SuperSingerGroup/SuperSingerGroup.js'
+import SuperSingerGroup from '../../../../../../components/SuperGroup/Singer/SuperSingerGroup.js'
 
 export default class SearchResultSinger extends React.Component {
   render() {

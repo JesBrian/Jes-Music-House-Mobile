@@ -9,7 +9,7 @@ import {
 import Ripple from 'react-native-material-ripple'
 
 import SuperIcon from '../../../../components/SuperIcon/SuperIcon.js'
-import SuperSongGroup from '../../../../components/SuperSongGroup/SuperSongGroup.js'
+import SuperSongGroup from '../../../../components/SuperGroup/Song/SuperSongGroup.js'
 
 export default class SongList extends React.Component {
   constructor (props) {

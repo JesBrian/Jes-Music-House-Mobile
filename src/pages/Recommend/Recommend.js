@@ -14,7 +14,7 @@ import Ripple from 'react-native-material-ripple'
 
 import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
 import SuperIcon from '../../components/SuperIcon/SuperIcon.js'
-import SuperSongGroup from '../../components/SuperSongGroup/SuperSongGroup.js'
+import SuperSongGroup from '../../components/SuperGroup/Song/SuperSongGroup.js'
 
 class Recommend extends React.Component {
   constructor (props) {

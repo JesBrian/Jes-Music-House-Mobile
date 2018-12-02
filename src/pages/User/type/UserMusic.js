@@ -10,7 +10,7 @@ import {
 import { connect } from 'react-redux'
 
 import SuperIcon from '../../../components/SuperIcon/SuperIcon.js'
-import SuperPlayListGroup from '../../../components/SuperPlayListGroup/SuperPlayListGroup.js'
+import SuperPlayListGroup from '../../../components/SuperGroup/PlayList/SuperPlayListGroup.js'
 
 
 class UserMusic extends React.Component {

@@ -12,7 +12,7 @@ import { showModal } from '../../../redux/actions/ViewActions.js'
 
 import Ripple from 'react-native-material-ripple'
 
-import SuperListenGroup from '../../../components/SuperListenGroup/SuperListenGroup.js'
+import SuperListenGroup from '../../../components/SuperGroup/Listen/SuperListenGroup.js'
 import SuperIcon from '../../../components/SuperIcon/SuperIcon.js'
 
 class ListenHistoryAll extends React.Component {

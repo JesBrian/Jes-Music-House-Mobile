@@ -8,16 +8,17 @@ import {
 } from 'react-native';
 
 import { connect } from 'react-redux'
-import { showBottomMenu } from '../../redux/actions/ViewActions.js'
+import { showBottomMenu } from '../../../redux/actions/ViewActions.js'
 import { withNavigation } from 'react-navigation'
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
 
 import Ripple from 'react-native-material-ripple'
 import { LargeList } from 'react-native-largelist-v2'
 
-import SuperIcon from '../SuperIcon/SuperIcon.js'
+import SuperIcon from '../../SuperIcon/SuperIcon.js'
 
-class SuperPlayListGroup extends React.Component {
+
+class SuperUserGroup extends React.Component {
   static defaultProps = {
     moreType: ''
   }
@@ -31,7 +32,7 @@ class SuperPlayListGroup extends React.Component {
   render () {
     return (
       <LargeList style={[{flex:1}, this.props.style]}
-                 data={[{items: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]}]}
+                 data={[{items: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}]}
                  heightForIndexPath={() => 53}
                  renderIndexPath={this._renderIndexPath}
       />
@@ -41,11 +42,10 @@ class SuperPlayListGroup extends React.Component {
   _renderIndexPath = () => {
     return (
       <View style={{height:53, flexDirection:'row'}}>
-        <Ripple onPress={() => {this.props.navigation.navigate('PlayListDetail')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
-          <Image style={{width:42.5, height:42.5, marginLeft:6, marginRight:8, borderRadius:3}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
+        <Ripple onPress={() => {this.props.navigation.navigate('User')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
+          <Image style={{width:38, height:38, marginLeft:6, marginRight:8, borderRadius:19}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
           <View style={{height:'100%', flex:1, justifyContent:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
-            <Text style={{marginTop:5, marginBottom:3, fontSize:16, color:'#EEE'}}>收藏的专辑</Text>
-            <Text style={{fontSize:13, color:'#AAA'}}>180 首</Text>
+            <Text style={{marginLeft:3, fontSize:16, color:'#EEE'}}>用户名</Text>
           </View>
         </Ripple>
         {
@@ -72,4 +72,4 @@ function reduxState(store) {
   }
 }
 
-export default withNavigation(gestureHandlerRootHOC(connect(reduxState)(SuperPlayListGroup)));
+export default withNavigation(gestureHandlerRootHOC(connect(reduxState)(SuperUserGroup)));

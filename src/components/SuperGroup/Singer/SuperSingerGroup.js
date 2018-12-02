@@ -8,14 +8,14 @@ import {
 } from 'react-native';
 
 import { connect } from 'react-redux'
-import { showBottomMenu } from '../../redux/actions/ViewActions.js'
+import { showBottomMenu } from '../../../redux/actions/ViewActions.js'
 import { withNavigation } from 'react-navigation'
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
 
 import Ripple from 'react-native-material-ripple'
 import { LargeList } from 'react-native-largelist-v2'
 
-import SuperIcon from '../SuperIcon/SuperIcon.js'
+import SuperIcon from '../../SuperIcon/SuperIcon.js'
 
 class SuperSingerGroup extends React.Component {
   static defaultProps = {
