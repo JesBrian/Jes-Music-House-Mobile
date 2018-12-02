@@ -13,7 +13,7 @@ export default class SuperCollectionTab extends React.Component {
     return (
       <ScrollableTabView
         renderTabBar={() => <SuperTabbar />}
-        style={{backgroundColor:'rgba(0,0,0,0.73)'}}>
+        style={{paddingBottom:8, backgroundColor:'rgba(0,0,0,0.73)'}}>
 
         <CollectionPlayList tabLabel={'专辑'} />
         <CollectionSinger tabLabel={'歌手'} />

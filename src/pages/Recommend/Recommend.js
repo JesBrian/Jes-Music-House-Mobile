@@ -26,7 +26,7 @@ class Recommend extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <NormalNavbar label={'个性推荐'} />
+        <NormalNavbar label={'每日推荐'} />
 
         <ScrollView style={{backgroundColor:'rgba(0, 0, 0, 0.38)'}}>
           <View style={{height:108}}>

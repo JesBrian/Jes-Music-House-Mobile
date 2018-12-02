@@ -16,8 +16,8 @@ import SuperIcon from '../../../../components/SuperIcon/SuperIcon.js'
 
 const menuData = [
   {icon:'\ue638', name:'我的消息', url:'Message'},
-  {icon:'\ue671', name:'我的收藏', url:'Collection'},
-  {icon:'\ue659', name:'个性推荐', url:'Recommend'},
+  {icon:'\ue671', name:'个人收藏', url:'Collection'},
+  {icon:'\ue659', name:'每日推荐', url:'Recommend'},
   {icon:'\ue656', name:'听歌排行', url:'ListenHistory'},
   {icon:'\ueaec', name:'个性彩色', url:'AppTheme'},
   {icon:'\ue625', name:'办理会员', url:'Member'},

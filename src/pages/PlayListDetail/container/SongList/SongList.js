@@ -34,10 +34,7 @@ export default class SongList extends React.Component {
           </Ripple>
         </View>
 
-        <View style={{backgroundColor:'rgba(0, 0, 0, 0.38)'}}>
-          <SuperSongGroup moreType={'PlayListPage'} />
-        </View>
-
+        <SuperSongGroup moreType={'PlayListPage'} style={{paddingBottom:8, backgroundColor:'rgba(0,0,0,0.38)'}} />
       </View>
     )
   }

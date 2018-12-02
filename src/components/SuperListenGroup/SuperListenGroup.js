@@ -16,7 +16,7 @@ import SuperIcon from '../SuperIcon/SuperIcon.js'
 class SuperListenGroup extends React.Component {
   render () {
     return (
-      <LargeList style={{paddingVertical:3, flex:1}}
+      <LargeList style={[{flex:1}, this.props.style]}
                  data={[{items: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]}]}
                  heightForIndexPath={() => 48}
                  renderIndexPath={this._renderIndexPath}

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  Platform,
   Dimensions,
   StyleSheet,
   View,
@@ -28,8 +29,8 @@ class SongImg extends React.Component {
     return (
       <View style={{flex:1}}>
         <View style={{flex:1, alignItems:'center', position:'relative'}}>
-          <View style={{width:Dimensions.get('window').width * 0.83, height:Dimensions.get('window').width * 0.83, top:60, borderRadius:Dimensions.get('window').width * 0.465, position:'absolute', backgroundColor:'#333', borderWidth:1, borderColor:'#282828'}} />
-          <Swiper loop={true} showButtons={false} showsPagination={false} style={{width:Dimensions.get('window').width * 0.98}} >
+          <View style={{width:Dimensions.get('window').width * 0.83, height:Dimensions.get('window').width * 0.83, top:Platform.OS === 'ios' ? 40 : 60, borderRadius:Dimensions.get('window').width * 0.465, position:'absolute', backgroundColor:'#333', borderWidth:1, borderColor:'#282828'}} />
+          <Swiper loop={true} showButtons={false} showsPagination={false} style={{width:Platform.OS === 'ios' ? 'auto' : Dimensions.get('window').width * 0.98}} >
             <TouchableWithoutFeedback onPress={() => this.props.changeSongContentType('lyric')}>
               <View style={{flex:1, justifyContent:'center', alignItems:'center', position:'relative'}} >
                 <Image style={{width:Dimensions.get('window').width * 0.8, height:Dimensions.get('window').width * 0.8, borderRadius:Dimensions.get('window').width * 0.4}} source={require('../../../../assets/images/default/disk.png')} />
