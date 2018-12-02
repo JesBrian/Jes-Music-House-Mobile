@@ -27,6 +27,8 @@ import WriteTrend from '../pages/WriteTrend/WriteTrend.js'
 import AppTheme from '../pages/AppTheme/AppTheme.js'
 import Message from '../pages/Message/Message.js'
 import Collection from '../pages/Collection/Collection.js'
+import Local from '../pages/Local/Local.js'
+import DownloadManagement from '../pages/DownloadManagement/DownloadManagement.js'
 
 import TestPage from '../pages/TestPage/TestPage.js'
 
@@ -54,6 +56,8 @@ const PageRouter = createStackNavigator({
   AppTheme: {screen: AppTheme},
   Message: {screen: Message},
   Collection: {screen: Collection},
+  Local: {screen: Local},
+  DownloadManagement: {screen: DownloadManagement},
   TestPage: {screen: TestPage}
 }, {
   initialRouteName: 'Index', // 默认显示界面

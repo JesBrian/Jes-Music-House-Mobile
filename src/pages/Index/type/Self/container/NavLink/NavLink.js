@@ -14,9 +14,9 @@ import Ripple from 'react-native-material-ripple'
 import SuperIcon from '../../../../../../components/SuperIcon/SuperIcon.js'
 
 const selfBaseMenu = [
-  {icon:'\ue661', label:'本地音乐', url:'Collection'},
+  {icon:'\ue661', label:'本地音乐', url:'Local'},
   {icon:'\ue601', label:'最近播放', url:'ListenHistory'},
-  {icon:'\ue63c', label:'下载管理', url:'Collection'},
+  {icon:'\ue63c', label:'下载管理', url:'DownloadManagement'},
   {icon:'\ue80d', label:'我的收藏', url:'Collection'}
 ];
 
