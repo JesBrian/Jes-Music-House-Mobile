@@ -17,7 +17,8 @@ import SuperIcon from '../../SuperIcon/SuperIcon.js'
 
 class SuperSongGroup extends React.Component {
   static defaultProps = {
-    moreType: ''
+    moreType: '',
+    dataSource: []
   }
 
   constructor (props) {

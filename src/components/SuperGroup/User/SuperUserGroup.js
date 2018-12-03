@@ -17,10 +17,10 @@ import { LargeList } from 'react-native-largelist-v2'
 
 import SuperIcon from '../../SuperIcon/SuperIcon.js'
 
-
 class SuperUserGroup extends React.Component {
   static defaultProps = {
-    moreType: ''
+    moreType: '',
+    dataSource: []
   }
 
   constructor (props) {

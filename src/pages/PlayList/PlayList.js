@@ -3,11 +3,11 @@ import React  from 'react';
 import {
   StyleSheet,
   ScrollView,
+  SectionList,
   View,
   Text
 } from 'react-native';
 
-import { LargeList }  from 'react-native-largelist-v2'
 import Ripple from 'react-native-material-ripple'
 
 import NormalNavbar from '../../layout/top/TopNavbar/type/NormalNavbar.js'
@@ -25,13 +25,10 @@ export default class PlayList extends React.Component {
   componentWillMount () {
     getAllStyle().then( res => {
       if (res.state === '200') {
-        let tempData = JSON.parse(JSON.stringify(res.data).replace(/cell/g, 'items'))
-        // setTimeout(() => {
-          this.setState({
-            styleList: tempData
-          })
-        // }, 5000)
-        alert(JSON.stringify(res.data).replace(/cell/g, 'items'))
+        let tempData = JSON.parse(JSON.stringify(res.data).replace(/cell/g, 'data'))
+        this.setState({
+          styleList: tempData
+        })
       }
     }).catch( err => {
       alert(err)
@@ -43,28 +40,29 @@ export default class PlayList extends React.Component {
       <View style={styles.container}>
         <NormalNavbar label={'歌单分类'} />
 
-        <ScrollView>
-          <LargeList style={{flex:1}}
-                     data={this.state.styleList}
-                     heightForSection={() => 18}
-                     renderSection={this._renderSection}
-                     heightForIndexPath={() => 45}
-                     renderIndexPath={this._renderTypeCell}
-          />
-        </ScrollView>
+        <SectionList
+          style={{paddingBottom:18, backgroundColor:'rgba(0,0,0,0.73)'}}
+          renderSectionHeader={({section}) => this._renderSection(section)}
+          renderItem={({item}) => this._renderTypeCell(item)}
+          sections={this.state.styleList}
+        />
       </View>
     );
   }
 
 
-  _renderSection = () => {
-    return null;
+  _renderSection (section) {
+    return (
+      <View>
+        <Text>{ section.name }</Text>
+      </View>
+    );
   };
 
-  _renderTypeCell = ({ section: section, row: row }) => {
+  _renderTypeCell = (item) => {
     return (
-      <Ripple style={{paddingLeft:23, flex:1, justifyContent:'center', backgroundColor:'rgba(0,0,0,0.3)'}}>
-        <Text style={{color:'#BBB'}}>{ this.state.styleList[section].items[row].name }</Text>
+      <Ripple style={{height:45, paddingLeft:23, flex:1, justifyContent:'center', backgroundColor:'rgba(0,0,0,0.3)'}}>
+        <Text style={{color:'#BBB'}}>{ item.name }</Text>
       </Ripple>
     );
   };
@@ -72,8 +70,8 @@ export default class PlayList extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingBottom:75,
+    paddingBottom:53,
     flex:1,
-    backgroundColor:'rgba(0,0,0,0.73)'
+    backgroundColor:'transparent'
   },
 });

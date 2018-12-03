@@ -43,7 +43,7 @@ class CreatePlayList extends React.Component {
         </View>
         {
           this.state.isShowCreatePlayList === false ? (<View style={{width:'100%', height:0.28}} />) : (
-            <SuperPlayListGroup moreType={'SelfPageCreate'} />
+            <SuperPlayListGroup ownLikeMusic={1} moreType={'SelfPageCreate'} />
           )
         }
       </View>
