@@ -31,7 +31,6 @@ export default class Singer extends React.Component {
           <LargeList style={{paddingBottom:75, flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}
                      data={singerCategory}
                      heightForSection={() => 18}
-                     renderSection={this._renderSection}
                      heightForIndexPath={() => 45}
                      renderIndexPath={this._renderIndexPath}
           />
@@ -39,11 +38,6 @@ export default class Singer extends React.Component {
       </View>
     );
   }
-
-
-  _renderSection = () => {
-    return null;
-  };
 
   _renderIndexPath = ({ section: section, row: row }) => {
     return (

@@ -41,7 +41,8 @@ export default class PlayList extends React.Component {
         <NormalNavbar label={'歌单分类'} />
 
         <SectionList
-          style={{paddingBottom:18, backgroundColor:'rgba(0,0,0,0.73)'}}
+          style={{paddingTop:5, paddingBottom:75, backgroundColor:'rgba(0,0,0,0.73)'}}
+          stickySectionHeadersEnabled={false}
           renderSectionHeader={({section}) => this._renderSection(section)}
           renderItem={({item}) => this._renderTypeCell(item)}
           sections={this.state.styleList}
@@ -53,9 +54,7 @@ export default class PlayList extends React.Component {
 
   _renderSection (section) {
     return (
-      <View>
-        <Text>{ section.name }</Text>
-      </View>
+      <Text style={{margin:8, color:'#EEE'}}>{ section.name }</Text>
     );
   };
 
@@ -70,8 +69,6 @@ export default class PlayList extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingBottom:53,
-    flex:1,
-    backgroundColor:'transparent'
+    flex:1
   },
 });
