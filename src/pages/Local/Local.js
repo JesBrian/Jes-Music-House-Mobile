@@ -23,7 +23,7 @@ class Local extends React.Component {
 
         <View style={{paddingTop:3, paddingBottom:56, flex:1, backgroundColor:'rgba(0,0,0,0.8)'}}>
           <View style={{width:'100%', height:38, flexDirection:'row', backgroundColor:'rgba(0,0,0,0.18)'}}>
-            <Ripple style={{height:'100%', padding:15, flex:1, flexDirection:'row', justifyContent:'flex-start', alignItems:'center', borderTopLeftRadius:12}}>
+            <Ripple style={{height:'100%', padding:15, flex:1, flexDirection:'row', justifyContent:'flex-start', alignItems:'center'}}>
               <SuperIcon type={'\ue6b4'} style={{marginTop:1, marginRight:6, fontSize:18, color:'#FFF'}} />
               <Text style={{fontSize:16, color:'#FFF'}}>播放全部 [888]</Text>
             </Ripple>
