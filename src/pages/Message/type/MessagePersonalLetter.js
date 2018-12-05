@@ -1,18 +1,16 @@
 import React  from 'react';
 
 import {
-  StyleSheet,
-  View,
-  Text
+  StyleSheet
 } from 'react-native';
+
+import SuperPersonalLetterGroup from '../../../components/SuperGroup/PersonalLetter/SuperPersonalLetterGroup.js'
 
 
 export default class MessagePersonalLetter extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>消息 - 私信</Text>
-      </View>
+      <SuperPersonalLetterGroup />
     );
   }
 }
