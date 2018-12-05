@@ -33,9 +33,8 @@ class Comment extends React.Component {
         <NormalNavbar label={'评论 [11111111]'} />
 
         <View style={{flex:1, backgroundColor:'rgba(0,0,0,0.73)'}}>
-          <CommentSource />
-
-          <ScrollView style={{flex:1}}>
+          <ScrollView>
+            <CommentSource />
             <CommentSpecial />
             <CommentAll />
           </ScrollView>

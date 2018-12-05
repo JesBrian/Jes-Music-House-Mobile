@@ -1,18 +1,16 @@
 import React  from 'react';
 
 import {
-  StyleSheet,
-  View,
-  Text
+  StyleSheet
 } from 'react-native';
+
+import SuperNoticeGroup from '../../../components/SuperGroup/Notice/SuperNoticeGroup.js'
 
 
 export default class MessageNotice extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>消息 - 通知</Text>
-      </View>
+      <SuperNoticeGroup />
     );
   }
 }

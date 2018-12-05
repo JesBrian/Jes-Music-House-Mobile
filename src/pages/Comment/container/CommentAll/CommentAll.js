@@ -10,6 +10,7 @@ import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
 
 import SuperIcon from '../../../../components/SuperIcon/SuperIcon.js'
+import SuperCommentGroup from '../../../../components/SuperGroup/Comment/SuperCommentGroup.js'
 
 class CommentAll extends React.Component {
   render () {
@@ -19,6 +20,7 @@ class CommentAll extends React.Component {
           <SuperIcon type={'\ue8cb'} style={{margin:8, color:this.props.color}}/>
           <Text style={{color:'#EEE'}}>最新评论</Text>
         </View>
+        <SuperCommentGroup dataSource={[1, 2, 3, 4, 5]} />
       </View>
     );
   }

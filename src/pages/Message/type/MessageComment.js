@@ -1,18 +1,16 @@
 import React  from 'react';
 
 import {
-  StyleSheet,
-  View,
-  Text
+  StyleSheet
 } from 'react-native';
+
+import SuperPersonalLetterGroup from '../../../components/SuperGroup/OtherComment/SuperOtherCommentGroup.js'
 
 
 export default class MessageNotice extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>消息 - 评论</Text>
-      </View>
+      <SuperPersonalLetterGroup />
     );
   }
 }
