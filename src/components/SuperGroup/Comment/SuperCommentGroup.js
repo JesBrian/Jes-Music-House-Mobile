@@ -48,18 +48,18 @@ class SuperCommentGroup extends React.Component {
               <TouchableWithoutFeedback onPress={() => {this.props.navigation.navigate('User')}}>
                 <Text style={{color:this.props.color}}>JesBrian</Text>
               </TouchableWithoutFeedback>
-              <Text style={{fontSize:12}}>2018-09-16</Text>
+              <Text style={{fontSize:12, color:'#AAA'}}>2018-09-16</Text>
               <TouchableWithoutFeedback onPress={() => {alert(8)}}>
                 <View style={{top:2, right:4, padding:6, position:'absolute', flexDirection:'row'}}>
-                  <Text>333</Text>
-                  <SuperIcon type={'\ue80d'} style={{marginLeft:3, fontSize:16}} />
+                  <Text style={{color:'#AAA'}}>333</Text>
+                  <SuperIcon type={'\ue80d'} style={{marginLeft:3, fontSize:16, color:'#AAA'}} />
                 </View>
               </TouchableWithoutFeedback>
             </View>
             <View style={{paddingRight:10, paddingBottom:8, borderBottomWidth:0.18, borderColor:'#CCC'}}>
-              <Text>cbdbchdsbv出版社不成熟超声波还不成熟cnjs32不开花那会计难看324该2看cdnsjc4充满了32</Text>
+              <Text style={{color:'#DDD'}}>cbdbchdsbv出版社不成熟超声波还不成熟cnjs32不开花那会计难看324该2看cdnsjc4充满了32</Text>
               <View style={{marginTop:8, marginBottom:6, padding:6, borderRadius:4, borderWidth:0.38, borderColor:'#888', backgroundColor:'#333'}}>
-                <Text>
+                <Text style={{color:'#BBB'}}>
                   <TouchableWithoutFeedback onPress={() => {this.props.navigation.navigate('User')}}>
                     <Text style={{color:this.props.color}}>JesBrian</Text>
                   </TouchableWithoutFeedback>

@@ -13,7 +13,7 @@ export default class SuperMessageTab extends React.Component {
     return (
       <ScrollableTabView
         renderTabBar={() => <SuperTabbar />}
-        style={{paddingBottom:13, backgroundColor:'rgba(0,0,0,0.73)'}}>
+        style={{paddingBottom:4, backgroundColor:'rgba(0,0,0,0.73)'}}>
 
         <MessagePersonalLetter tabLabel={'私信'} />
         <MessageComment tabLabel={'评论'} />
