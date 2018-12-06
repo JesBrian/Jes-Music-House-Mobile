@@ -4,9 +4,11 @@ import {
   StyleSheet,
   View,
   Image,
-  Text
+  Text,
+  TouchableWithoutFeedback
 } from 'react-native';
 
+import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
 
@@ -28,7 +30,7 @@ class SuperNoticeGroup extends React.Component {
     return (
       <LargeList style={[{flex:1}, this.props.style]}
                  data={[{items: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}]}
-                 heightForIndexPath={() => 53}
+                 heightForIndexPath={() => 43}
                  renderIndexPath={this._renderIndexPath}
       />
     )
@@ -36,14 +38,16 @@ class SuperNoticeGroup extends React.Component {
 
   _renderIndexPath = () => {
     return (
-      <View style={{height:53, flexDirection:'row'}}>
-        <Ripple onPress={() => {this.props.navigation.navigate('')}} style={{flex:1, flexDirection:'row', alignItems:'center'}}>
-          <Image style={{width:38, height:38, marginLeft:6, marginRight:8, borderRadius:19}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
-          <View style={{height:'100%', flex:1, justifyContent:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
-            <Text style={{marginLeft:3, fontSize:16, color:'#EEE'}}>用户名</Text>
-          </View>
-        </Ripple>
-      </View>
+      <Ripple onPress={() => {this.props.navigation.navigate('')}} style={{height:43, flexDirection:'row', alignItems:'center'}}>
+        <TouchableWithoutFeedback>
+          <Image style={{width:28, height:28, marginHorizontal:5, borderRadius:14}} source={{uri:'https://avatars3.githubusercontent.com/u/25942696?s=88&v=4'}} />
+        </TouchableWithoutFeedback>
+        <View style={{height:'100%', paddingLeft:3, flex:1, justifyContent:'center', borderBottomWidth:0.18, borderColor:'#888'}}>
+          <Text style={{marginBottom:2, fontSize:13, color:this.props.color}}>用户名</Text>
+          <Text style={{fontSize:13, color:'#DDD'}}>黑 yy 科 zz 技 黑 yy 科 zz 技</Text>
+          <Text style={{top:0, right:4, padding:6, position:'absolute', fontSize:12, color:'#AAA'}}>2018-09-16</Text>
+        </View>
+      </Ripple>
     );
   }
 }
@@ -51,4 +55,10 @@ class SuperNoticeGroup extends React.Component {
 const styles = StyleSheet.create({
 });
 
-export default withNavigation(gestureHandlerRootHOC(SuperNoticeGroup));
+function reduxState(store) {
+  return {
+    color: store.config.color
+  }
+}
+
+export default connect(reduxState)(withNavigation(gestureHandlerRootHOC(SuperNoticeGroup)));

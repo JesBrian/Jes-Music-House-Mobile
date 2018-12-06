@@ -12,8 +12,6 @@ import {
 import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
 
-import SuperIcon from '../../SuperIcon/SuperIcon.js'
-
 class SuperPersonalLetterGroup extends React.Component {
   static defaultProps = {
     dataSource: [1, 2, 3, 4, 5, 6, 7, 8]
